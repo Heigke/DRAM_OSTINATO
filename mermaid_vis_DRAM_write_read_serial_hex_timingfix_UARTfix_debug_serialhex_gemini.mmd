@@ -1,0 +1,98 @@
+flowchart TD
+
+    subgraph Top[dram_simple Module]
+        direction TB
+        CLK100MHZ((CLK100MHZ))
+        SW((SW))
+        LED((LED))
+        uart_txd_in((UART_TXD))
+
+        subgraph DDR3_Ifc[DDR3_Interface]
+            ddr3_addr
+            ddr3_ba
+            ddr3_cas_n
+            ddr3_ck_n
+            ddr3_ck_p
+            ddr3_cke
+            ddr3_cs_n
+            ddr3_dm
+            ddr3_dq
+            ddr3_dqs_n
+            ddr3_dqs_p
+            ddr3_odt
+            ddr3_ras_n
+            ddr3_reset_n
+            ddr3_we_n
+        end
+
+        subgraph StateMachine["Main_DDR3_StateMachine"]
+            direction TB
+            RESET --init--> INIT_NOP
+            INIT_NOP --init--> INIT_MRS2
+            INIT_MRS2 --init--> INIT_MRS3
+            INIT_MRS3 --init--> INIT_MRS1
+            INIT_MRS1 --init--> INIT_MRS0
+            INIT_MRS0 --init--> INIT_ZQCL
+            INIT_ZQCL --init--> IDLE
+            IDLE --write_req/SW--> ACTIVATE
+            IDLE --read_req/SW--> ACTIVATE
+            ACTIVATE --write--> WRITE
+            ACTIVATE --read--> READ
+            WRITE --done--> PRECHARGE
+            READ --done--> PRECHARGE
+            PRECHARGE --done--> IDLE
+        end
+
+        subgraph DDR3_DataFlow["DDR3_DataFlow"]
+            dq_oe
+            dq_out
+            dqs_oe
+            dqs_out
+            dm
+        end
+
+        subgraph UART["UART_TX_Logic"]
+            uart_send
+            uart_data
+            uart_busy
+            uart_done
+        end
+
+        subgraph IOBUFs["IOBUF_Banks"]
+            dq_iobufs["DQ_IOBUF"]
+            dqs_iobufds["DQS_IOBUFDS"]
+        end
+
+        subgraph ClockGen["ClockGen"]
+            clk_ddr
+            ddr_ck_p_inst["CK_P"]
+            ddr_ck_n_inst["CK_N"]
+        end
+
+        subgraph LEDs["LEDs"]
+            LED0["LED0"]
+            LED1["LED1"]
+            LED2["LED2"]
+            LED3["LED3"]
+        end
+
+        subgraph ILA["ILA"]
+        end
+    end
+
+    CLK100MHZ --> StateMachine
+    CLK100MHZ --> UART
+    CLK100MHZ --> ClockGen
+    CLK100MHZ --> LEDs
+    SW --> StateMachine
+
+    StateMachine --> DDR3_DataFlow
+    DDR3_DataFlow --> IOBUFs
+    IOBUFs --> DDR3_Ifc
+    DDR3_DataFlow --> DDR3_Ifc
+    ClockGen --> DDR3_Ifc
+    StateMachine --> UART
+    UART --> uart_txd_in
+
+    StateMachine --> LEDs
+    StateMachine --> ILA

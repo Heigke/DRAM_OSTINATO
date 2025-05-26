@@ -1,0 +1,131 @@
+flowchart TD
+
+    subgraph Top["dram_simple Module"]
+        direction TB
+        CLK100MHZ((CLK100MHZ))
+        SW((SW))
+        LED_pin((LED))
+        uart_txd_pin((UART_TXD))
+
+        subgraph DDR3_Ifc["DDR3_Interface"]
+            %% Signals within DDR3 Interface
+            ifc_ddr3_addr[ddr3_addr]
+            ifc_ddr3_ba[ddr3_ba]
+            ifc_ddr3_cas_n[ddr3_cas_n]
+            ifc_ddr3_ck_n[ddr3_ck_n]
+            ifc_ddr3_ck_p[ddr3_ck_p]
+            ifc_ddr3_cke[ddr3_cke]
+            ifc_ddr3_cs_n[ddr3_cs_n]
+            ifc_ddr3_dm[ddr3_dm]
+            ifc_ddr3_dq[ddr3_dq]
+            ifc_ddr3_dqs_n[ddr3_dqs_n]
+            ifc_ddr3_dqs_p[ddr3_dqs_p]
+            ifc_ddr3_odt[ddr3_odt]
+            ifc_ddr3_ras_n[ddr3_ras_n]
+            ifc_ddr3_reset_n[ddr3_reset_n]
+            ifc_ddr3_we_n[ddr3_we_n]
+        end
+
+        subgraph StateMachine["Main_DDR3_StateMachine"]
+            direction TB
+            %% State machine states (rounded rectangle shape)
+            sm_RESET(RESET) --init--> sm_INIT_NOP(INIT_NOP)
+            sm_INIT_NOP --init--> sm_INIT_MRS2(INIT_MRS2)
+            sm_INIT_MRS2 --init--> sm_INIT_MRS3(INIT_MRS3)
+            sm_INIT_MRS3 --init--> sm_INIT_MRS1(INIT_MRS1)
+            sm_INIT_MRS1 --init--> sm_INIT_MRS0(INIT_MRS0)
+            sm_INIT_MRS0 --init--> sm_INIT_ZQCL(INIT_ZQCL)
+            sm_INIT_ZQCL --init--> sm_IDLE(IDLE)
+            sm_IDLE --"write_req/SW"--> sm_ACTIVATE(ACTIVATE)
+            sm_IDLE --"read_req/SW"--> sm_ACTIVATE
+            sm_ACTIVATE --write--> sm_WRITE(WRITE)
+            sm_ACTIVATE --read--> sm_READ(READ)
+            sm_WRITE --done--> sm_PRECHARGE(PRECHARGE)
+            sm_READ --done--> sm_PRECHARGE
+            sm_PRECHARGE --done--> sm_IDLE
+        end
+
+        subgraph DDR3_DataFlow["DDR3_DataFlow"]
+            %% Signals within DDR3 DataFlow
+            df_dq_oe[dq_oe]
+            df_dq_out[dq_out]
+            df_dqs_oe[dqs_oe]
+            df_dqs_out[dqs_out]
+            df_dm[dm]
+        end
+
+        subgraph UART_sub["UART_TX_Logic"]
+            %% Signals within UART Logic
+            uart_s_send[uart_send]
+            uart_s_data[uart_data]
+            uart_s_busy[uart_busy]
+            uart_s_done[uart_done]
+        end
+
+        subgraph IOBUFs["IOBUF_Banks"]
+            %% IO Buffer representations
+            iob_dq_iobufs["DQ_IOBUF"]
+            iob_dqs_iobufds["DQS_IOBUFDS"]
+        end
+
+        subgraph ClockGen["ClockGen"]
+            %% Clock generation signals
+            cg_clk_ddr[clk_ddr]
+            cg_ddr_ck_p_inst["CK_P"]
+            cg_ddr_ck_n_inst["CK_N"]
+        end
+
+        subgraph LEDs_sub["LEDs"]
+            %% LED representations
+            leds_LED0[LED0]
+            leds_LED1[LED1]
+            leds_LED2[LED2]
+            leds_LED3[LED3]
+        end
+
+        subgraph ILA_sub["ILA"]
+            %% ILA representation
+            ila_probes[Probes]
+        end
+    end
+
+    %% Connections between modules and signals
+    CLK100MHZ --> StateMachine
+    CLK100MHZ --> UART_sub
+    CLK100MHZ --> ClockGen
+    CLK100MHZ --> LEDs_sub
+    SW --> StateMachine
+
+    StateMachine --> DDR3_DataFlow
+    DDR3_DataFlow --> IOBUFs
+    IOBUFs --> DDR3_Ifc
+    DDR3_DataFlow --> DDR3_Ifc
+    ClockGen --> DDR3_Ifc
+    StateMachine --> UART_sub
+    UART_sub --> uart_txd_pin
+
+    StateMachine --> LEDs_sub
+    StateMachine --> ILA_sub
+
+    %% Styling Definitions
+
+    %% Class Definitions for node styling (inputs, outputs, states)
+    classDef inputStyle fill:#E0F2FE,stroke:#0284C7,stroke-width:2px,color:#000000,font-size:12px
+    classDef outputStyle fill:#D1FAE5,stroke:#059669,stroke-width:2px,color:#000000,font-size:12px
+    classDef stateStyle fill:#FFFBEB,stroke:#F59E0B,stroke-width:2px,color:#374151,font-weight:bold,font-size:12px
+
+    %% Apply styles to specific nodes using their unique IDs
+    class CLK100MHZ,SW inputStyle
+    class LED_pin,uart_txd_pin outputStyle
+    class sm_RESET,sm_INIT_NOP,sm_INIT_MRS2,sm_INIT_MRS3,sm_INIT_MRS1,sm_INIT_MRS0,sm_INIT_ZQCL,sm_IDLE,sm_ACTIVATE,sm_WRITE,sm_READ,sm_PRECHARGE stateStyle
+
+    %% Style for Subgraph Backgrounds, Borders, and Title Text Color
+    style Top fill:#F5F5F5,stroke:#525252,stroke-width:2px,color:#262626
+    style StateMachine fill:#FEF3C7,stroke:#D97706,stroke-width:2px,color:#A16207
+    style DDR3_Ifc fill:#CFFAFE,stroke:#06B6D4,stroke-width:2px,color:#0891B2
+    style DDR3_DataFlow fill:#E9D5FF,stroke:#8B5CF6,stroke-width:2px,color:#7C3AED
+    style IOBUFs fill:#E9D5FF,stroke:#8B5CF6,stroke-width:2px,color:#7C3AED
+    style UART_sub fill:#DBEAFE,stroke:#3B82F6,stroke-width:2px,color:#2563EB
+    style LEDs_sub fill:#DBEAFE,stroke:#3B82F6,stroke-width:2px,color:#2563EB
+    style ClockGen fill:#DCFCE7,stroke:#16A34A,stroke-width:2px,color:#15803D
+    style ILA_sub fill:#FEE2E2,stroke:#EF4444,stroke-width:2px,color:#DC2626

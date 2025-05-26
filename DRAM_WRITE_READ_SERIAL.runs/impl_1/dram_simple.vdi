@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Mon May 26 15:15:45 2025
+# Process ID         : 613661
+# Current directory  : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/impl_1
+# Command line       : vivado -log dram_simple.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source dram_simple.tcl -notrace
+# Log file           : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/impl_1/dram_simple.vdi
+# Journal file       : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/impl_1/vivado.jou
+# Running On         : Heigke
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+# CPU Frequency      : 3886.521 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16440 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18587 MB
+# Available Virtual  : 4369 MB
+#-----------------------------------------------------------
+source dram_simple.tcl -notrace
+Command: link_design -top dram_simple -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1524.117 ; gain = 0.000 ; free physical = 1274 ; free virtual = 3710
+INFO: [Netlist 29-17] Analyzing 178 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'ila_inst/inst'
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc] for cell 'ila_inst/inst'
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'ila_inst/inst'
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'ila_inst/inst'
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'DIFF_SSTL135_T_DCI' is not supported on 'xc7a100tcsg324-1' part. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc:78]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'DIFF_SSTL135_T_DCI' is not supported on 'xc7a100tcsg324-1' part. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc:79]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'DIFF_SSTL135_T_DCI' is not supported on 'xc7a100tcsg324-1' part. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc:80]
+CRITICAL WARNING: [Vivado 12-4470] I/O Standard 'DIFF_SSTL135_T_DCI' is not supported on 'xc7a100tcsg324-1' part. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc:81]
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-1687] 2 scoped IP constraints or related sub-commands were skipped due to synthesis logic optimizations usually triggered by constant connectivity or unconnected output pins. To review the skipped constraints and messages, run the command 'set_param netlist.IPMsgFiltering false' before opening the design.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1766.488 ; gain = 0.000 ; free physical = 1155 ; free virtual = 3593
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 114 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 96 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
+
+8 Infos, 0 Warnings, 4 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1766.488 ; gain = 388.504 ; free physical = 1155 ; free virtual = 3593
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[0] has multiple drivers: captured_read_data_posedge_reg[0]__0/Q, and captured_read_data_posedge_reg[0]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[10] has multiple drivers: captured_read_data_posedge_reg[10]__0/Q, and captured_read_data_posedge_reg[10]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[11] has multiple drivers: captured_read_data_posedge_reg[11]__0/Q, and captured_read_data_posedge_reg[11]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[12] has multiple drivers: captured_read_data_posedge_reg[12]__0/Q, and captured_read_data_posedge_reg[12]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[13] has multiple drivers: captured_read_data_posedge_reg[13]__0/Q, and captured_read_data_posedge_reg[13]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[14] has multiple drivers: captured_read_data_posedge_reg[14]__0/Q, and captured_read_data_posedge_reg[14]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[15] has multiple drivers: captured_read_data_posedge_reg[15]__0/Q, and captured_read_data_posedge_reg[15]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[1] has multiple drivers: captured_read_data_posedge_reg[1]__0/Q, and captured_read_data_posedge_reg[1]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[2] has multiple drivers: captured_read_data_posedge_reg[2]__0/Q, and captured_read_data_posedge_reg[2]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[3] has multiple drivers: captured_read_data_posedge_reg[3]__0/Q, and captured_read_data_posedge_reg[3]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[4] has multiple drivers: captured_read_data_posedge_reg[4]__0/Q, and captured_read_data_posedge_reg[4]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[5] has multiple drivers: captured_read_data_posedge_reg[5]__0/Q, and captured_read_data_posedge_reg[5]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[6] has multiple drivers: captured_read_data_posedge_reg[6]__0/Q, and captured_read_data_posedge_reg[6]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[7] has multiple drivers: captured_read_data_posedge_reg[7]__0/Q, and captured_read_data_posedge_reg[7]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[8] has multiple drivers: captured_read_data_posedge_reg[8]__0/Q, and captured_read_data_posedge_reg[8]/Q.
+ERROR: [DRC MDRV-1] Multiple Driver Nets: Net captured_read_data_posedge[9] has multiple drivers: captured_read_data_posedge_reg[9]__0/Q, and captured_read_data_posedge_reg[9]/Q.
+INFO: [Project 1-461] DRC finished with 16 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+ERROR: [Vivado_Tcl 4-78] Error(s) found during DRC. Opt_design not run.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.69 . Memory (MB): peak = 1882.668 ; gain = 116.180 ; free physical = 1088 ; free virtual = 3526
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 0 Warnings, 4 Critical Warnings and 17 Errors encountered.
+opt_design failed
+ERROR: [Common 17-39] 'opt_design' failed due to earlier errors.
+
+INFO: [Common 17-206] Exiting Vivado at Mon May 26 15:15:57 2025...
