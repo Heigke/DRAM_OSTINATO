@@ -1,3 +1,15 @@
 # DRAM OSTINATO
 ![Alt text](img.png)
 
+| **Concept**                              | **Explanation / Plan**                                                                                                                               | **Benefit / Purpose**                                   |
+| ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
+| **Network Size & Problem**               | 20-neuron network to solve the XOR problem (2 input, 1 output).                                                                                      | Simple test case, demonstrates feasibility.             |
+| **Pipelining**                           | Use pipelining (from CPU design): begin the next instruction before the previous one has finished—multiple mini-charged writes per refresh cycle.    | Increases throughput, mimics biological parallelism.    |
+| **Refresh Rate / Timing**                | Each complete forward pass (inference) runs in 30-60 ms (limited by DRAM charge decay). Each row (layer) is updated sequentially within this window. | Low energy, time constraints based on hardware.         |
+| **Immediate Writebacks**                 | After computation, write back immediately to DRAM to avoid losing cell state and reduce wear (avoiding unnecessary writes).                          | Preserves memory, hardware-friendly.                    |
+| **Forward-Forward (FF) Learning**        | Replace traditional backpropagation with online, layer-wise FF learning (using positive/negative phase separation).                                  | More biologically plausible; compatible with hardware.  |
+| **Goodness Metric: STDP**                | Use biologically inspired STDP (spike-timing-dependent plasticity) for learning—timing of charge decay/refresh acts as the learning signal.          | Mimics biological synaptic updates.                     |
+| **Modeling DRAM Decay**                  | Use DRAM charge decay (usually a bug) as a feature for temporal learning—decay acts as a temporal gradient for learning.                             | Turns hardware limitation into a functional advantage.  |
+| **Partial / Analog Writes**              | Explore partial (not fully digital) writes to cells, leveraging analog state for richer representation and learning.                                 | Utilizes physical properties for more nuance.           |
+| **Predicting Decay / Branch Prediction** | If possible, model or predict which cells retain charge longer—use for better learning or state retention (branch prediction analog).                | Could further improve efficiency and learning.          |
+| **Exploiting Cell Variability**          | Some cells may hold charge for longer (minutes vs ms). Intend to use this natural variation to advantage, not just assume worst-case 60 ms for all.  | Exploits hardware diversity for potential improvements. |
