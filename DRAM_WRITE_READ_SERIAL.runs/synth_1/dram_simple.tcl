@@ -79,7 +79,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/uart_tx.v
-  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_readtimingfix.v
+  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v
 }
 read_ip -quiet /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]

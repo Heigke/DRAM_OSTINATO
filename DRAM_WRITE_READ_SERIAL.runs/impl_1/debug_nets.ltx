@@ -1,0 +1,1275 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "ila_inst",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "B65D52E476D5562DB4292AFCA0F6D0A3",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "state",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "state[3]",
+                                                "parentNetId": 0
+                                            },
+                                            {
+                                                "name": "state[2]",
+                                                "parentNetId": 1
+                                            },
+                                            {
+                                                "name": "state[1]",
+                                                "parentNetId": 2
+                                            },
+                                            {
+                                                "name": "state[0]",
+                                                "parentNetId": 3
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 3,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "sw_sync",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "sw_sync[3]"
+                                            },
+                                            {
+                                                "name": "sw_sync[2]"
+                                            },
+                                            {
+                                                "name": "sw_sync[1]"
+                                            },
+                                            {
+                                                "name": "sw_sync[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "cmd_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "cmd_write",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "send_hex_value",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "dq_oe",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "captured_read_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "captured_read_data[15]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[14]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[13]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[12]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[11]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[10]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[9]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[8]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[7]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[6]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[5]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[4]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[3]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[2]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[1]"
+                                            },
+                                            {
+                                                "name": "captured_read_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "last_write_data",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "last_write_data[15]"
+                                            },
+                                            {
+                                                "name": "last_write_data[14]"
+                                            },
+                                            {
+                                                "name": "last_write_data[13]"
+                                            },
+                                            {
+                                                "name": "last_write_data[12]"
+                                            },
+                                            {
+                                                "name": "last_write_data[11]"
+                                            },
+                                            {
+                                                "name": "last_write_data[10]"
+                                            },
+                                            {
+                                                "name": "last_write_data[9]"
+                                            },
+                                            {
+                                                "name": "last_write_data[8]"
+                                            },
+                                            {
+                                                "name": "last_write_data[7]"
+                                            },
+                                            {
+                                                "name": "last_write_data[6]"
+                                            },
+                                            {
+                                                "name": "last_write_data[5]"
+                                            },
+                                            {
+                                                "name": "last_write_data[4]"
+                                            },
+                                            {
+                                                "name": "last_write_data[3]"
+                                            },
+                                            {
+                                                "name": "last_write_data[2]"
+                                            },
+                                            {
+                                                "name": "last_write_data[1]"
+                                            },
+                                            {
+                                                "name": "last_write_data[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 7,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "delay_cnt",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "delay_cnt[7]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[6]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[5]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[4]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[3]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[2]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[1]"
+                                            },
+                                            {
+                                                "name": "delay_cnt[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "ddr3_cs_n_OBUF",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ddr3_cs_n_OBUF[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "ddr3_we_n_OBUF",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 2,
+                                "rightIndex": 2,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "ddr3_ras_n_OBUF",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 3,
+                                "rightIndex": 3,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "ddr3_cas_n_OBUF",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "odt",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 2,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "hex_state",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "hex_state[2]",
+                                                "parentNetId": 57
+                                            },
+                                            {
+                                                "name": "hex_state[1]",
+                                                "parentNetId": 58
+                                            },
+                                            {
+                                                "name": "hex_state[0]",
+                                                "parentNetId": 59
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 15,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "dqs_p_in0",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 16,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "dqs_capture_en",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 17,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "read_data_change_cnt",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 18,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 1,
+                                "rightIndex": 1,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "<const0>_1",
+                                        "isBus": false,
+                                        "parentNetId": 63
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 19,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 2,
+                                "rightIndex": 2,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "<const0>_2",
+                                        "isBus": false,
+                                        "parentNetId": 63
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 20,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 3,
+                                "rightIndex": 3,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "<const0>_3",
+                                        "isBus": false,
+                                        "parentNetId": 63
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 21,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 4,
+                                "rightIndex": 4,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "<const0>",
+                                        "isBus": false,
+                                        "parentNetId": 63
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe15",
+                                "id": 22,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 15,
+                                "nets": [
+                                    {
+                                        "name": "dqs0_toggled",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe16",
+                                "id": 23,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 16,
+                                "nets": [
+                                    {
+                                        "name": "dqs1_toggled",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe17",
+                                "id": 24,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 17,
+                                "nets": [
+                                    {
+                                        "name": "read_data_raw",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "read_data_raw[15]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[14]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[13]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[12]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[11]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[10]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[9]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[8]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[7]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[6]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[5]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[4]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[3]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[2]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[1]"
+                                            },
+                                            {
+                                                "name": "read_data_raw[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe18",
+                                "id": 25,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 18,
+                                "nets": [
+                                    {
+                                        "name": "dq_tristate",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "dq_tristate[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe19",
+                                "id": 26,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 19,
+                                "nets": [
+                                    {
+                                        "name": "read_data_any",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "read_data_any[15]"
+                                            },
+                                            {
+                                                "name": "read_data_any[14]"
+                                            },
+                                            {
+                                                "name": "read_data_any[13]"
+                                            },
+                                            {
+                                                "name": "read_data_any[12]"
+                                            },
+                                            {
+                                                "name": "read_data_any[11]"
+                                            },
+                                            {
+                                                "name": "read_data_any[10]"
+                                            },
+                                            {
+                                                "name": "read_data_any[9]"
+                                            },
+                                            {
+                                                "name": "read_data_any[8]"
+                                            },
+                                            {
+                                                "name": "read_data_any[7]"
+                                            },
+                                            {
+                                                "name": "read_data_any[6]"
+                                            },
+                                            {
+                                                "name": "read_data_any[5]"
+                                            },
+                                            {
+                                                "name": "read_data_any[4]"
+                                            },
+                                            {
+                                                "name": "read_data_any[3]"
+                                            },
+                                            {
+                                                "name": "read_data_any[2]"
+                                            },
+                                            {
+                                                "name": "read_data_any[1]"
+                                            },
+                                            {
+                                                "name": "read_data_any[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 0,
+                        "name": "state[3]",
+                        "state_reg": [
+                            {
+                                "name": "state_reg[3]",
+                                "states": [
+                                    {
+                                        "name": "RESET",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "INIT_NOP",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "INIT_MRS2",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "INIT_MRS3",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "INIT_MRS1",
+                                        "val": "0100"
+                                    },
+                                    {
+                                        "name": "INIT_MRS0",
+                                        "val": "0101"
+                                    },
+                                    {
+                                        "name": "INIT_ZQCL",
+                                        "val": "0110"
+                                    },
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0111"
+                                    },
+                                    {
+                                        "name": "ACTIVATE",
+                                        "val": "1000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "1001"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "1010"
+                                    },
+                                    {
+                                        "name": "PRECHARGE",
+                                        "val": "1011"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 1,
+                        "name": "state[2]",
+                        "state_reg": [
+                            {
+                                "name": "state_reg[2]",
+                                "states": [
+                                    {
+                                        "name": "RESET",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "INIT_NOP",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "INIT_MRS2",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "INIT_MRS3",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "INIT_MRS1",
+                                        "val": "0100"
+                                    },
+                                    {
+                                        "name": "INIT_MRS0",
+                                        "val": "0101"
+                                    },
+                                    {
+                                        "name": "INIT_ZQCL",
+                                        "val": "0110"
+                                    },
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0111"
+                                    },
+                                    {
+                                        "name": "ACTIVATE",
+                                        "val": "1000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "1001"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "1010"
+                                    },
+                                    {
+                                        "name": "PRECHARGE",
+                                        "val": "1011"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "state[1]",
+                        "state_reg": [
+                            {
+                                "name": "state_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "RESET",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "INIT_NOP",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "INIT_MRS2",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "INIT_MRS3",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "INIT_MRS1",
+                                        "val": "0100"
+                                    },
+                                    {
+                                        "name": "INIT_MRS0",
+                                        "val": "0101"
+                                    },
+                                    {
+                                        "name": "INIT_ZQCL",
+                                        "val": "0110"
+                                    },
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0111"
+                                    },
+                                    {
+                                        "name": "ACTIVATE",
+                                        "val": "1000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "1001"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "1010"
+                                    },
+                                    {
+                                        "name": "PRECHARGE",
+                                        "val": "1011"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "state[0]",
+                        "state_reg": [
+                            {
+                                "name": "state_reg[0]",
+                                "states": [
+                                    {
+                                        "name": "RESET",
+                                        "val": "0000"
+                                    },
+                                    {
+                                        "name": "INIT_NOP",
+                                        "val": "0001"
+                                    },
+                                    {
+                                        "name": "INIT_MRS2",
+                                        "val": "0010"
+                                    },
+                                    {
+                                        "name": "INIT_MRS3",
+                                        "val": "0011"
+                                    },
+                                    {
+                                        "name": "INIT_MRS1",
+                                        "val": "0100"
+                                    },
+                                    {
+                                        "name": "INIT_MRS0",
+                                        "val": "0101"
+                                    },
+                                    {
+                                        "name": "INIT_ZQCL",
+                                        "val": "0110"
+                                    },
+                                    {
+                                        "name": "IDLE",
+                                        "val": "0111"
+                                    },
+                                    {
+                                        "name": "ACTIVATE",
+                                        "val": "1000"
+                                    },
+                                    {
+                                        "name": "WRITE",
+                                        "val": "1001"
+                                    },
+                                    {
+                                        "name": "READ",
+                                        "val": "1010"
+                                    },
+                                    {
+                                        "name": "PRECHARGE",
+                                        "val": "1011"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 57,
+                        "name": "hex_state[2]",
+                        "state_reg": [
+                            {
+                                "name": "hex_state_reg[2]",
+                                "states": [
+                                    {
+                                        "name": "iSTATE",
+                                        "val": "00000"
+                                    },
+                                    {
+                                        "name": "iSTATE0",
+                                        "val": "00001"
+                                    },
+                                    {
+                                        "name": "iSTATE1",
+                                        "val": "00010"
+                                    },
+                                    {
+                                        "name": "iSTATE2",
+                                        "val": "00011"
+                                    },
+                                    {
+                                        "name": "iSTATE3",
+                                        "val": "00100"
+                                    },
+                                    {
+                                        "name": "iSTATE4",
+                                        "val": "00101"
+                                    },
+                                    {
+                                        "name": "iSTATE5",
+                                        "val": "00110"
+                                    },
+                                    {
+                                        "name": "iSTATE6",
+                                        "val": "00111"
+                                    },
+                                    {
+                                        "name": "iSTATE7",
+                                        "val": "01000"
+                                    },
+                                    {
+                                        "name": "iSTATE8",
+                                        "val": "01001"
+                                    },
+                                    {
+                                        "name": "iSTATE9",
+                                        "val": "01010"
+                                    },
+                                    {
+                                        "name": "iSTATE10",
+                                        "val": "01011"
+                                    },
+                                    {
+                                        "name": "iSTATE11",
+                                        "val": "01100"
+                                    },
+                                    {
+                                        "name": "iSTATE12",
+                                        "val": "01101"
+                                    },
+                                    {
+                                        "name": "iSTATE13",
+                                        "val": "01110"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 58,
+                        "name": "hex_state[1]",
+                        "state_reg": [
+                            {
+                                "name": "hex_state_reg[1]",
+                                "states": [
+                                    {
+                                        "name": "iSTATE",
+                                        "val": "00000"
+                                    },
+                                    {
+                                        "name": "iSTATE0",
+                                        "val": "00001"
+                                    },
+                                    {
+                                        "name": "iSTATE1",
+                                        "val": "00010"
+                                    },
+                                    {
+                                        "name": "iSTATE2",
+                                        "val": "00011"
+                                    },
+                                    {
+                                        "name": "iSTATE3",
+                                        "val": "00100"
+                                    },
+                                    {
+                                        "name": "iSTATE4",
+                                        "val": "00101"
+                                    },
+                                    {
+                                        "name": "iSTATE5",
+                                        "val": "00110"
+                                    },
+                                    {
+                                        "name": "iSTATE6",
+                                        "val": "00111"
+                                    },
+                                    {
+                                        "name": "iSTATE7",
+                                        "val": "01000"
+                                    },
+                                    {
+                                        "name": "iSTATE8",
+                                        "val": "01001"
+                                    },
+                                    {
+                                        "name": "iSTATE9",
+                                        "val": "01010"
+                                    },
+                                    {
+                                        "name": "iSTATE10",
+                                        "val": "01011"
+                                    },
+                                    {
+                                        "name": "iSTATE11",
+                                        "val": "01100"
+                                    },
+                                    {
+                                        "name": "iSTATE12",
+                                        "val": "01101"
+                                    },
+                                    {
+                                        "name": "iSTATE13",
+                                        "val": "01110"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 59,
+                        "name": "hex_state[0]",
+                        "state_reg": [
+                            {
+                                "name": "hex_state_reg[0]",
+                                "states": [
+                                    {
+                                        "name": "iSTATE",
+                                        "val": "00000"
+                                    },
+                                    {
+                                        "name": "iSTATE0",
+                                        "val": "00001"
+                                    },
+                                    {
+                                        "name": "iSTATE1",
+                                        "val": "00010"
+                                    },
+                                    {
+                                        "name": "iSTATE2",
+                                        "val": "00011"
+                                    },
+                                    {
+                                        "name": "iSTATE3",
+                                        "val": "00100"
+                                    },
+                                    {
+                                        "name": "iSTATE4",
+                                        "val": "00101"
+                                    },
+                                    {
+                                        "name": "iSTATE5",
+                                        "val": "00110"
+                                    },
+                                    {
+                                        "name": "iSTATE6",
+                                        "val": "00111"
+                                    },
+                                    {
+                                        "name": "iSTATE7",
+                                        "val": "01000"
+                                    },
+                                    {
+                                        "name": "iSTATE8",
+                                        "val": "01001"
+                                    },
+                                    {
+                                        "name": "iSTATE9",
+                                        "val": "01010"
+                                    },
+                                    {
+                                        "name": "iSTATE10",
+                                        "val": "01011"
+                                    },
+                                    {
+                                        "name": "iSTATE11",
+                                        "val": "01100"
+                                    },
+                                    {
+                                        "name": "iSTATE12",
+                                        "val": "01101"
+                                    },
+                                    {
+                                        "name": "iSTATE13",
+                                        "val": "01110"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 63,
+                        "name": "<const0>",
+                        "const_load": "GND",
+                        "state_reg": [
+                            {
+                                "name": "hex_state_reg[4]",
+                                "states": [
+                                    {
+                                        "name": "iSTATE",
+                                        "val": "00000"
+                                    },
+                                    {
+                                        "name": "iSTATE0",
+                                        "val": "00001"
+                                    },
+                                    {
+                                        "name": "iSTATE1",
+                                        "val": "00010"
+                                    },
+                                    {
+                                        "name": "iSTATE2",
+                                        "val": "00011"
+                                    },
+                                    {
+                                        "name": "iSTATE3",
+                                        "val": "00100"
+                                    },
+                                    {
+                                        "name": "iSTATE4",
+                                        "val": "00101"
+                                    },
+                                    {
+                                        "name": "iSTATE5",
+                                        "val": "00110"
+                                    },
+                                    {
+                                        "name": "iSTATE6",
+                                        "val": "00111"
+                                    },
+                                    {
+                                        "name": "iSTATE7",
+                                        "val": "01000"
+                                    },
+                                    {
+                                        "name": "iSTATE8",
+                                        "val": "01001"
+                                    },
+                                    {
+                                        "name": "iSTATE9",
+                                        "val": "01010"
+                                    },
+                                    {
+                                        "name": "iSTATE10",
+                                        "val": "01011"
+                                    },
+                                    {
+                                        "name": "iSTATE11",
+                                        "val": "01100"
+                                    },
+                                    {
+                                        "name": "iSTATE12",
+                                        "val": "01101"
+                                    },
+                                    {
+                                        "name": "iSTATE13",
+                                        "val": "01110"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
