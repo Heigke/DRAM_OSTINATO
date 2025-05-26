@@ -1,3 +1,3 @@
 # DRAM OSTINATO
-![Alt text](brain.webp)
+![Alt text](img.png)
 
