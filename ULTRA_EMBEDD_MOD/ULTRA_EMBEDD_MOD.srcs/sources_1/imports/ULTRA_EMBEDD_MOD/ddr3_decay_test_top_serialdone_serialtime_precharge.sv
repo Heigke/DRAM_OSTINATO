@@ -356,7 +356,8 @@ module ddr3_decay_test_top (
         if (sys_rst_fsm_phy) begin
             current_state_q    <= S_IDLE;
             timer_q           <= 24'd0;
-            data_to_write_q   <= 32'hDEADBEEF;  // Changed pattern for better visibility
+            //data_to_write_q   <= 32'hDEADBEEF;  
+            data_to_write_q <= 32'h1234ABCD;
             data_read_q       <= 32'd0;
             status_led0_o     <= 1'b0;
             status_led1_o     <= 1'b0;

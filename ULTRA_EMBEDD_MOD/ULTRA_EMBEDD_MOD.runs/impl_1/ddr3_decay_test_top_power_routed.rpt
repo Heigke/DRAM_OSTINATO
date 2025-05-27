@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Tue May 27 19:12:31 2025
+| Date             : Tue May 27 21:39:51 2025
 | Host             : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file ddr3_decay_test_top_power_routed.rpt -pb ddr3_decay_test_top_power_summary_routed.pb -rpx ddr3_decay_test_top_power_routed.rpx
 | Design           : ddr3_decay_test_top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.470        |
+| Total On-Chip Power (W)  | 0.472        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.364        |
+| Dynamic (W)              | 0.365        |
 | Device Static (W)        | 0.107        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 82.9         |
-| Junction Temperature (C) | 27.1         |
+| Max Ambient (C)          | 82.8         |
+| Junction Temperature (C) | 27.2         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.041 |        9 |       --- |             --- |
-| Slice Logic              |     0.006 |     7161 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     2279 |     63400 |            3.59 |
-|   Register               |    <0.001 |     3312 |    126800 |            2.61 |
+| Clocks                   |     0.043 |        9 |       --- |             --- |
+| Slice Logic              |     0.007 |     7075 |       --- |             --- |
+|   LUT as Logic           |     0.006 |     2228 |     63400 |            3.51 |
+|   Register               |    <0.001 |     3261 |    126800 |            2.57 |
 |   LUT as Shift Register  |    <0.001 |      258 |     19000 |            1.36 |
-|   CARRY4                 |    <0.001 |       88 |     15850 |            0.56 |
+|   CARRY4                 |    <0.001 |       91 |     15850 |            0.57 |
+|   F7/F8 Muxes            |    <0.001 |       11 |     63400 |            0.02 |
 |   LUT as Distributed RAM |    <0.001 |       24 |     19000 |            0.13 |
-|   F7/F8 Muxes            |    <0.001 |        3 |     63400 |           <0.01 |
 |   Others                 |     0.000 |      585 |       --- |             --- |
-| Signals                  |     0.013 |     5515 |       --- |             --- |
+| Signals                  |     0.015 |     5386 |       --- |             --- |
 | Block RAM                |     0.023 |       66 |       135 |           48.89 |
 | MMCM                     |     0.099 |        1 |         6 |           16.67 |
-| I/O                      |     0.182 |       56 |       210 |           26.67 |
+| I/O                      |     0.178 |       56 |       210 |           26.67 |
 | Static Power             |     0.107 |          |           |                 |
-| Total                    |     0.470 |          |           |                 |
+| Total                    |     0.472 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,13 +76,13 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.108 |       0.090 |      0.018 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.123 |       0.104 |      0.018 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.117 |       0.099 |      0.018 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.136 |       0.118 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco135   |       1.350 |     0.066 |       0.062 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.041 |       0.037 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccbram   |       1.000 |     0.004 |       0.002 |      0.002 |       NA    | Unspecified | NA         |
@@ -151,37 +151,36 @@ Table of Contents
 +--------------------------+-----------+
 | Name                     | Power (W) |
 +--------------------------+-----------+
-| ddr3_decay_test_top      |     0.364 |
+| ddr3_decay_test_top      |     0.365 |
 |   dbg_hub                |     0.005 |
 |     inst                 |     0.005 |
 |       BSCANID.u_xsdbm_id |     0.005 |
 |   u_clk_wiz              |     0.101 |
 |     inst                 |     0.101 |
-|   u_ddr3_phy_inst        |     0.136 |
+|   u_ddr3_phy_inst        |     0.133 |
 |     u_pad_ck             |     0.011 |
-|     u_pad_dq0            |     0.003 |
-|     u_pad_dq1            |     0.003 |
-|     u_pad_dq10           |     0.003 |
-|     u_pad_dq11           |     0.003 |
-|     u_pad_dq12           |     0.003 |
-|     u_pad_dq13           |     0.003 |
-|     u_pad_dq14           |     0.003 |
-|     u_pad_dq15           |     0.003 |
-|     u_pad_dq2            |     0.003 |
-|     u_pad_dq3            |     0.003 |
+|     u_pad_dq0            |     0.002 |
+|     u_pad_dq1            |     0.002 |
+|     u_pad_dq10           |     0.002 |
+|     u_pad_dq11           |     0.002 |
+|     u_pad_dq12           |     0.002 |
+|     u_pad_dq13           |     0.002 |
+|     u_pad_dq14           |     0.002 |
+|     u_pad_dq15           |     0.002 |
+|     u_pad_dq2            |     0.002 |
+|     u_pad_dq3            |     0.002 |
 |     u_pad_dq4            |     0.002 |
-|     u_pad_dq5            |     0.003 |
-|     u_pad_dq6            |     0.003 |
-|     u_pad_dq7            |     0.003 |
+|     u_pad_dq5            |     0.002 |
+|     u_pad_dq6            |     0.002 |
+|     u_pad_dq7            |     0.002 |
 |     u_pad_dq8            |     0.002 |
-|     u_pad_dq9            |     0.003 |
+|     u_pad_dq9            |     0.002 |
 |     u_pad_dqs0           |     0.002 |
-|       OBUFTDS            |     0.002 |
 |     u_pad_dqs1           |     0.002 |
-|       OBUFTDS            |     0.002 |
-|   u_ila                  |     0.061 |
-|     inst                 |     0.061 |
-|       ila_core_inst      |     0.061 |
+|   u_ila                  |     0.062 |
+|     inst                 |     0.062 |
+|       ila_core_inst      |     0.062 |
+|   u_uart_tx              |     0.008 |
 +--------------------------+-----------+
 
 

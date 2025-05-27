@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue May 27 19:12:28 2025
+| Date         : Tue May 27 21:39:48 2025
 | Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file ddr3_decay_test_top_methodology_drc_routed.rpt -pb ddr3_decay_test_top_methodology_drc_routed.pb -rpx ddr3_decay_test_top_methodology_drc_routed.rpx
 | Design       : ddr3_decay_test_top
@@ -23,13 +23,13 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 60
+             Checks found: 90
 +-----------+------------------+---------------------------------------------+--------+
 | Rule      | Severity         | Description                                 | Checks |
 +-----------+------------------+---------------------------------------------+--------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                 | 32     |
-| LUTAR-1   | Warning          | LUT drives async reset alert                | 6      |
-| TIMING-16 | Warning          | Large setup violation                       | 1      |
+| LUTAR-1   | Warning          | LUT drives async reset alert                | 5      |
+| TIMING-16 | Warning          | Large setup violation                       | 32     |
 | TIMING-18 | Warning          | Missing input or output delay               | 3      |
 | XDCB-5    | Warning          | Runtime inefficient way to find pin objects | 2      |
 | REQP-1959 | Advisory         | connects_SERDES_RST_driver_not_FF           | 16     |
@@ -227,29 +227,173 @@ Related violations: <none>
 
 LUTAR-1#5 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_phy_inst_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) uart_cmd_ack_sync1_reg/CLR, uart_cmd_ack_sync2_reg/CLR,
-uart_cmd_data_200mhz_reg[0]/CLR, uart_cmd_data_200mhz_reg[1]/CLR,
-uart_cmd_data_200mhz_reg[2]/CLR, uart_cmd_data_200mhz_reg[3]/CLR,
-uart_cmd_data_200mhz_reg[4]/CLR, uart_cmd_data_200mhz_reg[5]/CLR,
-uart_cmd_data_200mhz_reg[6]/CLR, uart_cmd_req_200mhz_reg/CLR,
-uart_current_msg_q_reg[0]/CLR, uart_current_msg_q_reg[1]/CLR,
-uart_tx_busy_sync0_reg/CLR, uart_tx_busy_sync1_reg/CLR,
-uart_tx_busy_sync2_reg/CLR (the first 15 of 143 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
-LUTAR-1#6 Warning
-LUT drives async reset alert  
-LUT cell u_uart_tx_inst/FSM_sequential_state[1]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) uart_cmd_ack_100mhz_reg/CLR, uart_cmd_req_sync0_reg/CLR,
-uart_cmd_req_sync1_reg/CLR, uart_cmd_req_sync2_reg/CLR,
-uart_tx_data_to_uart_reg[0]/CLR, uart_tx_data_to_uart_reg[1]/CLR,
-uart_tx_data_to_uart_reg[2]/CLR, uart_tx_data_to_uart_reg[3]/CLR,
-uart_tx_data_to_uart_reg[4]/CLR, uart_tx_data_to_uart_reg[5]/CLR,
-uart_tx_data_to_uart_reg[6]/CLR, uart_tx_start_to_uart_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_phy_inst/u_serdes_dq0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) timer_q_reg[23]/CLR, timer_q_reg[2]/CLR, timer_q_reg[3]/CLR,
+timer_q_reg[4]/CLR, timer_q_reg[5]/CLR, timer_q_reg[6]/CLR,
+timer_q_reg[7]/CLR, timer_q_reg[8]/CLR, timer_q_reg[9]/CLR,
+uart_msg_idx_q_reg[0]/CLR, uart_msg_idx_q_reg[1]/CLR,
+uart_msg_idx_q_reg[2]/CLR, uart_msg_idx_q_reg[3]/CLR,
+uart_msg_type_q_reg[0]/CLR, uart_msg_type_q_reg[1]/CLR
+ (the first 15 of 87 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-16#1 Warning
 Large setup violation  
-There is a large setup violation of -1.005 ns between timer_q_reg[10]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[18]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+There is a large setup violation of -1.010 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[3]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.019 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[17]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.019 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[4]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.022 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[2]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.038 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[23]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.044 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and init_done_q_reg/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.045 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[11]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#8 Warning
+Large setup violation  
+There is a large setup violation of -1.067 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[9]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#9 Warning
+Large setup violation  
+There is a large setup violation of -1.081 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[20]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#10 Warning
+Large setup violation  
+There is a large setup violation of -1.088 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[1]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#11 Warning
+Large setup violation  
+There is a large setup violation of -1.090 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[1]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#12 Warning
+Large setup violation  
+There is a large setup violation of -1.095 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[15]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#13 Warning
+Large setup violation  
+There is a large setup violation of -1.098 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[19]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#14 Warning
+Large setup violation  
+There is a large setup violation of -1.102 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[13]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#15 Warning
+Large setup violation  
+There is a large setup violation of -1.105 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[22]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#16 Warning
+Large setup violation  
+There is a large setup violation of -1.116 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[21]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#17 Warning
+Large setup violation  
+There is a large setup violation of -1.123 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[2]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#18 Warning
+Large setup violation  
+There is a large setup violation of -1.126 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[12]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#19 Warning
+Large setup violation  
+There is a large setup violation of -1.137 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[16]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#20 Warning
+Large setup violation  
+There is a large setup violation of -1.141 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[0]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#21 Warning
+Large setup violation  
+There is a large setup violation of -1.141 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[10]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#22 Warning
+Large setup violation  
+There is a large setup violation of -1.143 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[14]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#23 Warning
+Large setup violation  
+There is a large setup violation of -1.166 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[8]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#24 Warning
+Large setup violation  
+There is a large setup violation of -1.170 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[7]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#25 Warning
+Large setup violation  
+There is a large setup violation of -1.189 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_type_q_reg[0]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#26 Warning
+Large setup violation  
+There is a large setup violation of -1.306 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_type_q_reg[1]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#27 Warning
+Large setup violation  
+There is a large setup violation of -1.336 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[0]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#28 Warning
+Large setup violation  
+There is a large setup violation of -1.513 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[0]/CE (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#29 Warning
+Large setup violation  
+There is a large setup violation of -1.513 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[1]/CE (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#30 Warning
+Large setup violation  
+There is a large setup violation of -1.513 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[2]/CE (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#31 Warning
+Large setup violation  
+There is a large setup violation of -1.513 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and uart_msg_idx_q_reg[3]/CE (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#32 Warning
+Large setup violation  
+There is a large setup violation of -1.535 ns between timer_q_reg[19]/C (clocked by clk_phy_sys_clk_wiz_0) and timer_q_reg[5]/D (clocked by clk_phy_sys_clk_wiz_0). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

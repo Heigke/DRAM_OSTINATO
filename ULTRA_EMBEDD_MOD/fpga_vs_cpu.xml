@@ -1,0 +1,227 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="FPGA vs CPU Detailed" id="1">
+    <mxGraphModel dx="1500" dy="750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- CPU Section Title -->
+        <mxCell id="2" value="Normal Computer (CPU)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="60" width="340" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- CPU Block (outer) -->
+        <mxCell id="3" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fce5cd;strokeColor=#e69138;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="340" height="330" as="geometry"/>
+        </mxCell>
+        
+        <!-- CPU Core Block -->
+        <mxCell id="4" value="CPU Core" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f4cccc;strokeColor=#a61c00;fontSize=14;fontStyle=1;" vertex="1" parent="3">
+          <mxGeometry x="20" y="20" width="180" height="160" as="geometry"/>
+        </mxCell>
+        
+        <!-- ALU Block inside CPU Core -->
+        <mxCell id="5" value="ALU" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#1155cc;fontSize=13;" vertex="1" parent="4">
+          <mxGeometry x="35" y="40" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Registers Block inside CPU Core -->
+        <mxCell id="6" value="Registers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ead1dc;strokeColor=#a64d79;fontSize=12;" vertex="1" parent="4">
+          <mxGeometry x="110" y="40" width="50" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Control Unit -->
+        <mxCell id="7" value="Control Unit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9ead3;strokeColor=#38761d;fontSize=12;" vertex="1" parent="4">
+          <mxGeometry x="40" y="110" width="90" height="35" as="geometry"/>
+        </mxCell>
+        
+        <!-- CPU Bus -->
+        <mxCell id="8" value="Data Bus" style="text;html=1;fontSize=11;fontColor=#38761d;" vertex="1" parent="3">
+          <mxGeometry x="100" y="150" width="50" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#93c47d;strokeWidth=4;endArrow=none;" edge="1" parent="3" source="4" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- RAM (off core) -->
+        <mxCell id="10" value="RAM" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0e0e3;strokeColor=#134f5c;fontSize=14;" vertex="1" parent="3">
+          <mxGeometry x="220" y="65" width="90" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: CPU Core to RAM -->
+        <mxCell id="11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#bdbdbd;dashed=1;endArrow=blockThin;" edge="1" parent="3" source="4" target="10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- CPU IO (off core) -->
+        <mxCell id="12" value="IO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f6b26b;strokeColor=#783f04;fontSize=13;" vertex="1" parent="3">
+          <mxGeometry x="250" y="180" width="60" height="40" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: CPU Core to IO -->
+        <mxCell id="13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#bdbdbd;dashed=1;endArrow=blockThin;" edge="1" parent="3" source="4" target="12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- CPU Instructions Box -->
+        <mxCell id="14" value="Software Instructions" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#b7b7b7;fontSize=12;" vertex="1" parent="3">
+          <mxGeometry x="240" y="270" width="70" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#f1c232;dashed=1;endArrow=blockThin;" edge="1" parent="3" source="14" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- CPU Callout / Explanation -->
+        <mxCell id="16" value="Fixed Data Paths (hardware)&#10;General Purpose: Logic is hardwired&#10;Executes instructions one by one" style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#a61c00;" vertex="1" parent="3">
+          <mxGeometry x="10" y="190" width="180" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- Divider -->
+        <mxCell id="100" value="" style="line;strokeColor=#c0c0c0;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="430" y="40" width="0" height="470" as="geometry"/>
+        </mxCell>
+
+        <!-- FPGA Section Title -->
+        <mxCell id="17" value="FPGA" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d9ead3;strokeColor=#38761d;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="500" y="60" width="620" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- FPGA Block (outer) -->
+        <mxCell id="18" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e2efda;strokeColor=#274e13;" vertex="1" parent="1">
+          <mxGeometry x="500" y="130" width="620" height="340" as="geometry"/>
+        </mxCell>
+        
+        <!-- FPGA Grid of Logic Blocks (CLBs, block-in-block) -->
+        <!-- Row 1 -->
+        <mxCell id="19" value="CLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#274e13;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="30" y="30" width="55" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="20" value="CLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#274e13;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="105" y="30" width="55" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" value="CLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#274e13;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="180" y="30" width="55" height="55" as="geometry"/>
+        </mxCell>
+        <!-- Row 2 -->
+        <mxCell id="22" value="CLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#274e13;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="30" y="105" width="55" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" value="CLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#274e13;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="105" y="105" width="55" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="24" value="CLB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#274e13;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="180" y="105" width="55" height="55" as="geometry"/>
+        </mxCell>
+        
+        <!-- FPGA CLB zoom-in (block-in-block, inset) -->
+        <mxCell id="25" value="CLB (Configurable Logic Block)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b6d7a8;strokeColor=#38761d;fontSize=13;fontStyle=1;" vertex="1" parent="18">
+          <mxGeometry x="295" y="30" width="160" height="110" as="geometry"/>
+        </mxCell>
+        <!-- LUT inside CLB -->
+        <mxCell id="26" value="LUT (Lookup Table)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9cb9c;strokeColor=#b45f06;fontSize=12;" vertex="1" parent="25">
+          <mxGeometry x="15" y="15" width="60" height="25" as="geometry"/>
+        </mxCell>
+        <!-- Flip-Flop inside CLB -->
+        <mxCell id="27" value="Flip-Flop" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0e0e3;strokeColor=#3d85c6;fontSize=12;" vertex="1" parent="25">
+          <mxGeometry x="90" y="15" width="50" height="25" as="geometry"/>
+        </mxCell>
+        <!-- Multiplexer inside CLB -->
+        <mxCell id="28" value="Mux" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4a7d6;strokeColor=#674ea7;fontSize=12;" vertex="1" parent="25">
+          <mxGeometry x="15" y="55" width="40" height="25" as="geometry"/>
+        </mxCell>
+        <!-- Config Bit inside CLB -->
+        <mxCell id="29" value="Config Bit" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#b7b7b7;fontSize=11;" vertex="1" parent="25">
+          <mxGeometry x="95" y="60" width="22" height="22" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: Config Bit to LUT -->
+        <mxCell id="30" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#b45f06;dashed=1;endArrow=blockThin;" edge="1" parent="25" source="29" target="26">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: Config Bit to Mux -->
+        <mxCell id="31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#674ea7;dashed=1;endArrow=blockThin;" edge="1" parent="25" source="29" target="28">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- FPGA Interconnect network -->
+        <mxCell id="32" value="Routing Switch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4a7d6;strokeColor=#674ea7;fontSize=10;" vertex="1" parent="18">
+          <mxGeometry x="80" y="180" width="80" height="32" as="geometry"/>
+        </mxCell>
+        <mxCell id="33" value="Routing Switch" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b4a7d6;strokeColor=#674ea7;fontSize=10;" vertex="1" parent="18">
+          <mxGeometry x="180" y="180" width="80" height="32" as="geometry"/>
+        </mxCell>
+        
+        <!-- Interconnect Arrows -->
+        <mxCell id="34" value="Configurable Interconnect" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#00b050;strokeWidth=2;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="19" target="32">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="35" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#00b050;strokeWidth=2;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="20" target="32">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#00b050;strokeWidth=2;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="32" target="33">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#00b050;strokeWidth=2;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="33" target="21">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- IO Blocks -->
+        <mxCell id="38" value="IO Block" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe599;strokeColor=#b7b7b7;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="390" y="250" width="70" height="45" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: Interconnect to IO -->
+        <mxCell id="39" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#ffe599;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="33" target="38">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- Config SRAM -->
+        <mxCell id="40" value="Config SRAM (holds bits for logic, routing, IO)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#b7b7b7;fontSize=12;" vertex="1" parent="18">
+          <mxGeometry x="480" y="60" width="110" height="55" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: Config SRAM to CLB -->
+        <mxCell id="41" value="Config bits" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#f6b26b;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="40" target="25">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: Config SRAM to Routing -->
+        <mxCell id="42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#f6b26b;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="40" target="32">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Arrow: Config SRAM to IO -->
+        <mxCell id="43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#f6b26b;dashed=1;endArrow=blockThin;" edge="1" parent="18" source="40" target="38">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        
+        <!-- FPGA Explanation -->
+        <mxCell id="44" value="Configurable: Hardware rewires by setting config bits.&#10;Each block can become AND, OR, adder, etc.&#10;Data flows through reconfigurable connections and logic." style="text;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#274e13;" vertex="1" parent="18">
+          <mxGeometry x="315" y="230" width="270" height="60" as="geometry"/>
+        </mxCell>
+        
+        <!-- LEGEND -->
+        <mxCell id="50" value="Legend" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e6e6e6;strokeColor=#000000;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1170" y="60" width="210" height="200" as="geometry"/>
+        </mxCell>
+        <mxCell id="51" value="&#9632; CPU Data Path" style="text;whiteSpace=wrap;html=1;fillColor=#93c47d;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="35" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="52" value="&#9632; FPGA Configurable Interconnect" style="text;whiteSpace=wrap;html=1;fillColor=#b6d7a8;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="55" width="190" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="53" value="&#9632; LUT: implements logic function" style="text;whiteSpace=wrap;html=1;fillColor=#f9cb9c;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="75" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="54" value="&#9632; Config Bit / SRAM" style="text;whiteSpace=wrap;html=1;fillColor=#fff2cc;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="95" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="55" value="&#9632; IO Block" style="text;whiteSpace=wrap;html=1;fillColor=#ffe599;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="115" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="56" value="&#9632; Flip-Flop: 1-bit storage" style="text;whiteSpace=wrap;html=1;fillColor=#d0e0e3;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="135" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="57" value="&#9632; Mux: routing selector" style="text;whiteSpace=wrap;html=1;fillColor=#b4a7d6;fontSize=12;" vertex="1" parent="50">
+          <mxGeometry x="10" y="155" width="160" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="58" value="Arrows show direction of data/configuration" style="text;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="50">
+          <mxGeometry x="10" y="175" width="190" height="20" as="geometry"/>
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
