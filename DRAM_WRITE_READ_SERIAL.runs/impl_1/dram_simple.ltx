@@ -481,86 +481,35 @@
                                 "direction": "IN",
                                 "isVector": true,
                                 "leftIndex": 0,
-                                "rightIndex": 0,
-                                "portIndex": 14,
-                                "nets": [
-                                    {
-                                        "name": "read_data_change_cnt",
-                                        "isBus": false
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe14",
-                                "id": 18,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 1,
-                                "rightIndex": 1,
-                                "portIndex": 14,
-                                "nets": [
-                                    {
-                                        "name": "<const0>_1",
-                                        "isBus": false,
-                                        "parentNetId": 63
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe14",
-                                "id": 19,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 2,
-                                "rightIndex": 2,
-                                "portIndex": 14,
-                                "nets": [
-                                    {
-                                        "name": "<const0>_2",
-                                        "isBus": false,
-                                        "parentNetId": 63
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe14",
-                                "id": 20,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 3,
-                                "rightIndex": 3,
-                                "portIndex": 14,
-                                "nets": [
-                                    {
-                                        "name": "<const0>_3",
-                                        "isBus": false,
-                                        "parentNetId": 63
-                                    }
-                                ]
-                            },
-                            {
-                                "name": "probe14",
-                                "id": 21,
-                                "type": "DATA_TRIGGER",
-                                "direction": "IN",
-                                "isVector": true,
-                                "leftIndex": 4,
                                 "rightIndex": 4,
                                 "portIndex": 14,
                                 "nets": [
                                     {
-                                        "name": "<const0>",
-                                        "isBus": false,
-                                        "parentNetId": 63
+                                        "name": "read_data_change_cnt",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "read_data_change_cnt[4]"
+                                            },
+                                            {
+                                                "name": "read_data_change_cnt[3]"
+                                            },
+                                            {
+                                                "name": "read_data_change_cnt[2]"
+                                            },
+                                            {
+                                                "name": "read_data_change_cnt[1]"
+                                            },
+                                            {
+                                                "name": "read_data_change_cnt[0]"
+                                            }
+                                        ]
                                     }
                                 ]
                             },
                             {
                                 "name": "probe15",
-                                "id": 22,
+                                "id": 18,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -576,7 +525,7 @@
                             },
                             {
                                 "name": "probe16",
-                                "id": 23,
+                                "id": 19,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -592,7 +541,7 @@
                             },
                             {
                                 "name": "probe17",
-                                "id": 24,
+                                "id": 20,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -658,7 +607,7 @@
                             },
                             {
                                 "name": "probe18",
-                                "id": 25,
+                                "id": 21,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": false,
@@ -679,7 +628,7 @@
                             },
                             {
                                 "name": "probe19",
-                                "id": 26,
+                                "id": 22,
                                 "type": "DATA_TRIGGER",
                                 "direction": "IN",
                                 "isVector": true,
@@ -1131,78 +1080,6 @@
                         "state_reg": [
                             {
                                 "name": "hex_state_reg[0]",
-                                "states": [
-                                    {
-                                        "name": "iSTATE",
-                                        "val": "00000"
-                                    },
-                                    {
-                                        "name": "iSTATE0",
-                                        "val": "00001"
-                                    },
-                                    {
-                                        "name": "iSTATE1",
-                                        "val": "00010"
-                                    },
-                                    {
-                                        "name": "iSTATE2",
-                                        "val": "00011"
-                                    },
-                                    {
-                                        "name": "iSTATE3",
-                                        "val": "00100"
-                                    },
-                                    {
-                                        "name": "iSTATE4",
-                                        "val": "00101"
-                                    },
-                                    {
-                                        "name": "iSTATE5",
-                                        "val": "00110"
-                                    },
-                                    {
-                                        "name": "iSTATE6",
-                                        "val": "00111"
-                                    },
-                                    {
-                                        "name": "iSTATE7",
-                                        "val": "01000"
-                                    },
-                                    {
-                                        "name": "iSTATE8",
-                                        "val": "01001"
-                                    },
-                                    {
-                                        "name": "iSTATE9",
-                                        "val": "01010"
-                                    },
-                                    {
-                                        "name": "iSTATE10",
-                                        "val": "01011"
-                                    },
-                                    {
-                                        "name": "iSTATE11",
-                                        "val": "01100"
-                                    },
-                                    {
-                                        "name": "iSTATE12",
-                                        "val": "01101"
-                                    },
-                                    {
-                                        "name": "iSTATE13",
-                                        "val": "01110"
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        "id": 63,
-                        "name": "<const0>",
-                        "const_load": "GND",
-                        "state_reg": [
-                            {
-                                "name": "hex_state_reg[4]",
                                 "states": [
                                     {
                                         "name": "iSTATE",

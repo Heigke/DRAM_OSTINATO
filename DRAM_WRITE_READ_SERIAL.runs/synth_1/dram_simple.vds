@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon May 26 20:03:58 2025
-# Process ID         : 713534
+# Start of session at: Tue May 27 07:00:04 2025
+# Process ID         : 764784
 # Current directory  : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1
 # Command line       : vivado -log dram_simple.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dram_simple.tcl
 # Log file           : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1/dram_simple.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
-# CPU Frequency      : 4099.239 MHz
+# CPU Frequency      : 4099.990 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16440 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18587 MB
-# Available Virtual  : 3912 MB
+# Available Virtual  : 8579 MB
 #-----------------------------------------------------------
 source dram_simple.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/utils_1/imports/synth_1/dram_simple.dcp
@@ -34,11 +34,10 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 713589
+INFO: [Synth 8-7075] Helper process launched with PID 764828
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1936.094 ; gain = 418.828 ; free physical = 323 ; free virtual = 2690
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1935.832 ; gain = 420.797 ; free physical = 2757 ; free virtual = 7055
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-11241] undeclared symbol 'read_data_change_cnt', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:670]
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_ext.vh:30]
 INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_ext.vh:32]
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_ext.vh:69]
@@ -138,8 +137,9 @@ INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_vec.vh:240]
 INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_vec.vh:242]
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_vec.vh:275]
+INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_vec.vh:277]
 INFO: [Common 17-14] Message 'Synth 8-11241' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6157] synthesizing module 'dram_simple' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:3]
+INFO: [Synth 8-6157] synthesizing module 'dram_simple' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:3]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
 	Parameter IBUF_LOW_PWR bound to: FALSE - type: string 
 	Parameter IOSTANDARD bound to: SSTL135 - type: string 
@@ -154,7 +154,7 @@ INFO: [Synth 8-6155] done synthesizing module 'IOBUFDS' (0#1) [/tools/Xilinx/Viv
 INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/uart_tx.v:3]
 	Parameter CLKS_PER_BIT bound to: 868 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/uart_tx.v:3]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:654]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:702]
 INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/synth/ila_0.v:48]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:3129]
 INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:3129]
@@ -176,14 +176,14 @@ WARNING: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_16_ila' is unconnect
 WARNING: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_16_ila' is unconnected for instance 'inst' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/synth/ila_0.v:3247]
 WARNING: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_16_ila' has 1033 connections declared, but only 1027 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/synth/ila_0.v:3247]
 INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/synth/ila_0.v:48]
-WARNING: [Synth 8-689] width (1) of port connection 'probe14' does not match port width (5) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:670]
-INFO: [Synth 8-6155] done synthesizing module 'dram_simple' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:3]
+WARNING: [Synth 8-689] width (8) of port connection 'probe14' does not match port width (5) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:718]
+INFO: [Synth 8-6155] done synthesizing module 'dram_simple' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:3]
 WARNING: [Synth 8-3848] Net sl_iport0 in module/entity ila_0 does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/synth/ila_0.v:136]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_inst'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:654]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dqs0_iobufds_inst'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:342]
-WARNING: [Synth 8-6014] Unused sequential element captured_read_data_negedge_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:372]
-WARNING: [Synth 8-6014] Unused sequential element captured_read_data_negedge_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:385]
-WARNING: [Synth 8-3936] Found unconnected internal register 'sw_prev_reg' and it is trimmed from '4' to '3' bits. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:130]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ila_inst'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:702]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'dqs0_iobufds_inst'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:362]
+WARNING: [Synth 8-6014] Unused sequential element captured_read_data_negedge_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:401]
+WARNING: [Synth 8-6014] Unused sequential element captured_read_data_negedge_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:421]
+WARNING: [Synth 8-3936] Found unconnected internal register 'sw_prev_reg' and it is trimmed from '4' to '3' bits. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:137]
 WARNING: [Synth 8-7129] Port CLKB in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DOUTA_I[102] in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DOUTA_I[101] in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
@@ -286,18 +286,18 @@ WARNING: [Synth 8-7129] Port DOUTA_I[5] in module blk_mem_gen_v8_4_9_blk_mem_out
 WARNING: [Synth 8-7129] Port DOUTA_I[4] in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2364.539 ; gain = 847.273 ; free physical = 309 ; free virtual = 2298
+Finished RTL Elaboration : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2365.277 ; gain = 850.242 ; free physical = 2419 ; free virtual = 6715
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2364.539 ; gain = 847.273 ; free physical = 309 ; free virtual = 2298
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2365.277 ; gain = 850.242 ; free physical = 2427 ; free virtual = 6717
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2364.539 ; gain = 847.273 ; free physical = 309 ; free virtual = 2298
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2365.277 ; gain = 850.242 ; free physical = 2427 ; free virtual = 6717
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 2364.539 ; gain = 0.000 ; free physical = 308 ; free virtual = 2303
+Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.09 . Memory (MB): peak = 2365.277 ; gain = 0.000 ; free physical = 2434 ; free virtual = 6724
 INFO: [Netlist 29-17] Analyzing 236 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -308,9 +308,12 @@ Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_RE
 Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc] for cell 'ila_inst/inst'
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/dram_simple_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/dram_simple_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc]
-Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/dram_simple_propImpl.xdc].
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot set DRIVE_STRENGTH for standard 'SSTL135' that doesn't support DRIVE_STRENGTH [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc:82]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot set DRIVE_STRENGTH for standard 'DIFF_SSTL135' that doesn't support DRIVE_STRENGTH [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc:83]
+CRITICAL WARNING: [Common 17-69] Command failed: Cannot set DRIVE_STRENGTH for standard 'DIFF_SSTL135' that doesn't support DRIVE_STRENGTH [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc:84]
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/dram_simple_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/dram_simple_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1/dont_touch.xdc]
@@ -318,7 +321,7 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/dram_simple_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2428.570 ; gain = 0.000 ; free physical = 324 ; free virtual = 2311
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2429.309 ; gain = 0.000 ; free physical = 2431 ; free virtual = 6737
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 174 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 132 instances
@@ -326,18 +329,18 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2428.570 ; gain = 0.000 ; free physical = 323 ; free virtual = 2311
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2429.309 ; gain = 0.000 ; free physical = 2430 ; free virtual = 6736
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2428.570 ; gain = 911.305 ; free physical = 320 ; free virtual = 2311
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2429.309 ; gain = 914.273 ; free physical = 2424 ; free virtual = 6730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 320 ; free virtual = 2311
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2437.312 ; gain = 922.277 ; free physical = 2424 ; free virtual = 6730
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -345,7 +348,7 @@ Start Applying 'set_property' XDC Constraints
 Applied set_property KEEP_HIERARCHY = SOFT for ila_inst/inst. (constraint file  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1/dont_touch.xdc, line 10).
 Applied set_property KEEP_HIERARCHY = SOFT for ila_inst. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 320 ; free virtual = 2311
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 2437.312 ; gain = 922.277 ; free physical = 2427 ; free virtual = 6733
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_4_reg_p2s'
@@ -656,7 +659,7 @@ INFO: [Synth 8-6159] Found Keep on FSM register 'hex_state_reg' in module 'dram_
                 iSTATE13 |                            01110 |                            01110
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 314 ; free virtual = 2308
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:34 . Memory (MB): peak = 2437.312 ; gain = 922.277 ; free physical = 2425 ; free virtual = 6733
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -678,25 +681,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 320 ; free virtual = 2301
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:49 ; elapsed = 00:00:51 . Memory (MB): peak = 2453.320 ; gain = 938.285 ; free physical = 2507 ; free virtual = 6828
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:58 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 317 ; free virtual = 2309
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 2453.320 ; gain = 938.285 ; free physical = 2511 ; free virtual = 6838
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:58 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 317 ; free virtual = 2309
+Finished Timing Optimization : Time (s): cpu = 00:00:56 ; elapsed = 00:00:59 . Memory (MB): peak = 2453.320 ; gain = 938.285 ; free physical = 2514 ; free virtual = 6842
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 2436.574 ; gain = 919.309 ; free physical = 318 ; free virtual = 2310
+Finished Technology Mapping : Time (s): cpu = 00:00:58 ; elapsed = 00:01:00 . Memory (MB): peak = 2453.320 ; gain = 938.285 ; free physical = 2511 ; free virtual = 6838
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -753,40 +756,39 @@ WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[1] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:trig_in to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:trig_out_ack to constant 0
-WARNING: [Synth 8-3295] tying undriven pin read_data_change_cnt_inferred:in0 to constant 0
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v:365]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v:386]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished IO Insertion : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2509 ; free virtual = 6836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2509 ; free virtual = 6836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2507 ; free virtual = 6834
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2507 ; free virtual = 6834
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2507 ; free virtual = 6834
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2503 ; free virtual = 6830
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -803,22 +805,22 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     2|
-|2     |CARRY4   |    71|
+|2     |CARRY4   |    73|
 |3     |CFGLUT5  |   156|
-|4     |LUT1     |    71|
-|5     |LUT2     |   189|
-|6     |LUT3     |   184|
-|7     |LUT4     |   310|
-|8     |LUT5     |   235|
-|9     |LUT6     |   895|
-|10    |MUXF7    |    58|
+|4     |LUT1     |    72|
+|5     |LUT2     |   178|
+|6     |LUT3     |   189|
+|7     |LUT4     |   327|
+|8     |LUT5     |   241|
+|9     |LUT6     |   919|
+|10    |MUXF7    |    57|
 |11    |MUXF8    |     1|
 |12    |ODDR     |     2|
 |13    |RAMB36E1 |     3|
 |14    |SRL16E   |   106|
 |15    |SRLC16E  |     2|
 |16    |SRLC32E  |    17|
-|17    |FDRE     |  2643|
+|17    |FDRE     |  2681|
 |18    |FDSE     |    10|
 |19    |IBUF     |     5|
 |20    |IOBUF    |    16|
@@ -826,19 +828,19 @@ Report Cell Usage:
 |22    |OBUF     |    33|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.449 ; gain = 935.184 ; free physical = 316 ; free virtual = 2309
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 2461.258 ; gain = 946.223 ; free physical = 2503 ; free virtual = 6830
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 3840 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 2452.449 ; gain = 871.152 ; free physical = 316 ; free virtual = 2310
-Synthesis Optimization Complete : Time (s): cpu = 00:01:01 ; elapsed = 00:01:03 . Memory (MB): peak = 2452.457 ; gain = 935.184 ; free physical = 316 ; free virtual = 2310
+Synthesis finished with 0 errors, 0 critical warnings and 3839 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:57 ; elapsed = 00:01:00 . Memory (MB): peak = 2461.258 ; gain = 882.191 ; free physical = 2503 ; free virtual = 6830
+Synthesis Optimization Complete : Time (s): cpu = 00:01:02 ; elapsed = 00:01:04 . Memory (MB): peak = 2461.266 ; gain = 946.223 ; free physical = 2503 ; free virtual = 6830
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2452.457 ; gain = 0.000 ; free physical = 465 ; free virtual = 2464
-INFO: [Netlist 29-17] Analyzing 309 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2461.266 ; gain = 0.000 ; free physical = 2668 ; free virtual = 6996
+INFO: [Netlist 29-17] Analyzing 310 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Chipscope 16-324] Core: ila_inst UUID: b65d52e4-76d5-562d-b429-2afca0f6d0a3 
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2508.477 ; gain = 0.000 ; free physical = 460 ; free virtual = 2463
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2517.285 ; gain = 0.000 ; free physical = 2673 ; free virtual = 6999
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 174 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 132 instances
@@ -846,14 +848,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
 
-Synth Design complete | Checksum: 450ae0d7
+Synth Design complete | Checksum: 32126ed4
 INFO: [Common 17-83] Releasing license: Synthesis
-206 Infos, 156 Warnings, 0 Critical Warnings and 0 Errors encountered.
+206 Infos, 155 Warnings, 3 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:10 . Memory (MB): peak = 2508.477 ; gain = 1046.746 ; free physical = 460 ; free virtual = 2464
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1895.244; main = 1728.330; forked = 314.779
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3360.738; main = 2508.480; forked = 924.160
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2532.488 ; gain = 0.000 ; free physical = 459 ; free virtual = 2464
+synth_design: Time (s): cpu = 00:01:10 ; elapsed = 00:01:10 . Memory (MB): peak = 2517.285 ; gain = 1078.785 ; free physical = 2675 ; free virtual = 7001
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2062.849; main = 1895.726; forked = 313.612
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3377.484; main = 2517.289; forked = 924.160
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00 . Memory (MB): peak = 2541.297 ; gain = 0.000 ; free physical = 2675 ; free virtual = 7001
 INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1/dram_simple.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file dram_simple_utilization_synth.rpt -pb dram_simple_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon May 26 20:05:14 2025...
+INFO: [Common 17-206] Exiting Vivado at Tue May 27 07:01:20 2025...

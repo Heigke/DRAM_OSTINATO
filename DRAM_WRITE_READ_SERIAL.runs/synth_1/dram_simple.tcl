@@ -79,7 +79,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/uart_tx.v
-  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread.v
+  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.v
 }
 read_ip -quiet /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/ip/ila_0/ila_0.xci
 set_property used_in_synthesis false [get_files -all /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.gen/sources_1/ip/ila_0/ila_v6_2/constraints/ila_impl.xdc]
@@ -96,8 +96,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc
-set_property used_in_implementation false [get_files /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc]
+read_xdc /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc
+set_property used_in_implementation false [get_files /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]

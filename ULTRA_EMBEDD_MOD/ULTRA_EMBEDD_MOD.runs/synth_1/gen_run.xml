@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748337355">
+  <File Type="VDS-TIMING-PB" Name="ddr3_decay_test_top_timing_summary_synth.pb"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="ddr3_decay_test_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-RDS" Name="ddr3_decay_test_top.vds"/>
+  <File Type="REPORTS-TCL" Name="ddr3_decay_test_top_reports.tcl"/>
+  <File Type="PA-TCL" Name="ddr3_decay_test_top.tcl"/>
+  <File Type="RDS-DCP" Name="ddr3_decay_test_top.dcp"/>
+  <File Type="RDS-PROPCONSTRS" Name="ddr3_decay_test_top_drc_synth.rpt"/>
+  <File Type="RDS-UTIL" Name="ddr3_decay_test_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="ddr3_decay_test_top_utilization_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_dfi_phy.v"/>
+        <Attr Name="ImportTime" Val="1748334912"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/uart_tx.v"/>
+        <Attr Name="ImportTime" Val="1748267568"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top.sv"/>
+        <Attr Name="ImportTime" Val="1748337341"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ddr3_decay_test_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/constraints_top.xdc"/>
+        <Attr Name="ImportTime" Val="1748335417"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

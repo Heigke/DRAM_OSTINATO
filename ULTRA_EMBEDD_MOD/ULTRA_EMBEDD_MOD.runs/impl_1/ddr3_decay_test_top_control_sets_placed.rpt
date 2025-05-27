@@ -1,0 +1,88 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Tue May 27 11:17:21 2025
+| Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_control_sets -verbose -file ddr3_decay_test_top_control_sets_placed.rpt
+| Design       : ddr3_decay_test_top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    10 |
+|    Minimum number of control sets                        |    10 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    33 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    10 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     3 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               5 |            3 |
+| No           | No                    | Yes                    |              11 |            8 |
+| No           | Yes                   | No                     |              47 |           15 |
+| Yes          | No                    | No                     |               7 |            6 |
+| Yes          | No                    | Yes                    |              62 |           24 |
+| Yes          | Yes                   | No                     |              11 |            3 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+-------------------------------------------------------+---------------------------------+------------------+----------------+--------------+
+|         Clock Signal        |                     Enable Signal                     |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+-------------------------------------------------------+---------------------------------+------------------+----------------+--------------+
+|  u_clk_wiz/inst/clk_phy_sys |                                                       |                                 |                1 |              2 |         2.00 |
+|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/FSM_sequential_current_state_q_reg[3] | u_ddr3_phy_inst/sys_rst_fsm_phy |                1 |              2 |         2.00 |
+|  clk100mhz_i_IBUF_BUFG      |                                                       |                                 |                2 |              3 |         1.50 |
+|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/tx_done_reg[0]                        | u_ddr3_phy_inst/sys_rst_fsm_phy |                2 |              4 |         2.00 |
+|  clk100mhz_i_IBUF_BUFG      |                                                       | u_uart_tx_inst/rst_for_uart     |                3 |              6 |         2.00 |
+|  clk100mhz_i_IBUF_BUFG      | u_uart_tx_inst/tx_data_reg[6]_i_1_n_0                 |                                 |                6 |              7 |         1.17 |
+|  clk100mhz_i_IBUF_BUFG      | u_uart_tx_inst/state__0[2]                            | u_uart_tx_inst/rst_for_uart     |                3 |             11 |         3.67 |
+|  u_clk_wiz/inst/clk_phy_sys | timer_s                                               | u_ddr3_phy_inst/sys_rst_fsm_phy |               15 |             24 |         1.60 |
+|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/E[0]                                  | u_ddr3_phy_inst/sys_rst_fsm_phy |                6 |             32 |         5.33 |
+|  u_clk_wiz/inst/clk_phy_sys |                                                       | u_ddr3_phy_inst/sys_rst_fsm_phy |               20 |             52 |         2.60 |
++-----------------------------+-------------------------------------------------------+---------------------------------+------------------+----------------+--------------+
+
+

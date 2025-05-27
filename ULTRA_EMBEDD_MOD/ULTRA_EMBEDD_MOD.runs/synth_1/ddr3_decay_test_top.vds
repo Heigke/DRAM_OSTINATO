@@ -1,0 +1,553 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Tue May 27 11:15:58 2025
+# Process ID         : 798526
+# Current directory  : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1
+# Command line       : vivado -log ddr3_decay_test_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ddr3_decay_test_top.tcl
+# Log file           : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/ddr3_decay_test_top.vds
+# Journal file       : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/vivado.jou
+# Running On         : Heigke
+# Platform           : Ubuntu
+# Operating System   : Ubuntu 22.04.5 LTS
+# Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
+# CPU Frequency      : 4099.931 MHz
+# CPU Physical cores : 4
+# CPU Logical cores  : 8
+# Host memory        : 16440 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 18587 MB
+# Available Virtual  : 9522 MB
+#-----------------------------------------------------------
+source ddr3_decay_test_top.tcl -notrace
+Command: synth_design -top ddr3_decay_test_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 798579
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1917.449 ; gain = 416.828 ; free physical = 2936 ; free virtual = 7953
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'ddr3_decay_test_top' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:68]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0_clk_wiz' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:68]
+INFO: [Synth 8-6157] synthesizing module 'MMCME2_ADV' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84588]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 8.000000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 4.000000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT1_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT2_DIVIDE bound to: 2 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 90.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT3_DIVIDE bound to: 4 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
+	Parameter CLKOUT4_CASCADE bound to: FALSE - type: string 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 1 - type: integer 
+	Parameter STARTUP_WAIT bound to: FALSE - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'MMCME2_ADV' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:84588]
+INFO: [Synth 8-6157] synthesizing module 'BUFG' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0_clk_wiz' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_clk_wiz.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.v:68]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_phy' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:25]
+	Parameter REFCLK_FREQUENCY bound to: 200 - type: integer 
+	Parameter DQS_TAP_DELAY_INIT bound to: 15 - type: integer 
+	Parameter DQ_TAP_DELAY_INIT bound to: 1 - type: integer 
+	Parameter TPHY_RDLAT bound to: 4 - type: integer 
+	Parameter TPHY_WRLAT bound to: 3 - type: integer 
+	Parameter TPHY_WRDATA bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:99442]
+	Parameter IOSTANDARD bound to: DIFF_SSTL135 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'OBUFDS' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:99442]
+INFO: [Synth 8-6157] synthesizing module 'IOBUFDS' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80408]
+	Parameter IOSTANDARD bound to: DIFF_SSTL135 - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUFDS' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80408]
+INFO: [Synth 8-6157] synthesizing module 'OSERDESE2' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103679]
+	Parameter DATA_RATE_OQ bound to: DDR - type: string 
+	Parameter DATA_RATE_TQ bound to: BUF - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+	Parameter TRISTATE_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'OSERDESE2' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:103679]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
+	Parameter IOSTANDARD bound to: SSTL135 - type: string 
+	Parameter SLEW bound to: FAST - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:80391]
+INFO: [Synth 8-6157] synthesizing module 'IDELAYE2' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: IDATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
+	Parameter IDELAY_TYPE bound to: VARIABLE - type: string 
+	Parameter IDELAY_VALUE bound to: 15 - type: integer 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
+	Parameter SIGNAL_PATTERN bound to: CLOCK - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934]
+INFO: [Synth 8-6157] synthesizing module 'IDELAYCTRL' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77921]
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYCTRL' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77921]
+INFO: [Synth 8-6157] synthesizing module 'IDELAYE2__parameterized0' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934]
+	Parameter CINVCTRL_SEL bound to: FALSE - type: string 
+	Parameter DELAY_SRC bound to: IDATAIN - type: string 
+	Parameter HIGH_PERFORMANCE_MODE bound to: TRUE - type: string 
+	Parameter IDELAY_TYPE bound to: VARIABLE - type: string 
+	Parameter IDELAY_VALUE bound to: 1 - type: integer 
+	Parameter PIPE_SEL bound to: FALSE - type: string 
+	Parameter REFCLK_FREQUENCY bound to: 200.000000 - type: double 
+	Parameter SIGNAL_PATTERN bound to: DATA - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IDELAYE2__parameterized0' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:77934]
+INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:82955]
+	Parameter DATA_RATE bound to: DDR - type: string 
+	Parameter DATA_WIDTH bound to: 4 - type: integer 
+	Parameter INTERFACE_TYPE bound to: MEMORY - type: string 
+	Parameter IOBDELAY bound to: IFD - type: string 
+	Parameter NUM_CE bound to: 1 - type: integer 
+	Parameter SERDES_MODE bound to: MASTER - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:82955]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1473]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1473]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1473]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1473]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in0' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1473]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1550]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1550]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1550]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1550]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in1' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1550]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1627]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1627]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1627]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1627]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in2' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1627]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1704]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1704]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1704]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1704]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in3' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1704]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1781]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1781]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1781]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1781]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in4' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1781]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1858]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1858]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1858]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1858]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in5' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1858]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1935]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1935]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1935]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1935]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in6' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:1935]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2012]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2012]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2012]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2012]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in7' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2012]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2089]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2089]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2089]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2089]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in8' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2089]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2166]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2166]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2166]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2166]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in9' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2166]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2243]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2243]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2243]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2243]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in10' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2243]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2320]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2320]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2320]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2320]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in11' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2320]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2397]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2397]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2397]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2397]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in12' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2397]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2474]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2474]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2474]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2474]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in13' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2474]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2551]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2551]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2551]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2551]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in14' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2551]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2628]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2628]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2628]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2628]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in15' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:2628]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_phy' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v:25]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_decay_test_top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:2]
+WARNING: [Synth 8-7129] Port cfg_i[31] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[30] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[29] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[28] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[27] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[26] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[25] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[24] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[15] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[14] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[13] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[12] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[11] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[7] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[6] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[5] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[4] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dfi_address_i[14] in module ddr3_dfi_phy is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1996.387 ; gain = 495.766 ; free physical = 2843 ; free virtual = 7860
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2014.199 ; gain = 513.578 ; free physical = 2843 ; free virtual = 7860
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2014.199 ; gain = 513.578 ; free physical = 2843 ; free virtual = 7860
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2020.137 ; gain = 0.000 ; free physical = 2840 ; free virtual = 7857
+INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz/inst'
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc] for cell 'u_clk_wiz/inst'
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz/inst'
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc] for cell 'u_clk_wiz/inst'
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc:9]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc:11]
+CRITICAL WARNING: [Common 17-161] Invalid option value '#' specified for 'objects'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc:12]
+CRITICAL WARNING: [Vivado 12-1449] IO Bank number '32' is not a valid IO Bank. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc:115]
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ddr3_decay_test_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/ddr3_decay_test_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/dont_touch.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/dont_touch.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/ddr3_decay_test_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/ddr3_decay_test_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc] for cell 'u_clk_wiz/inst'
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc] for cell 'u_clk_wiz/inst'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2162.949 ; gain = 0.000 ; free physical = 2852 ; free virtual = 7870
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 19 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2162.949 ; gain = 0.000 ; free physical = 2852 ; free virtual = 7870
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2162.949 ; gain = 662.328 ; free physical = 2898 ; free virtual = 7909
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2170.953 ; gain = 670.332 ; free physical = 2898 ; free virtual = 7909
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for u_clk_wiz/inst. (constraint file  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/dont_touch.xdc, line 10).
+Applied set_property KEEP_HIERARCHY = SOFT for u_clk_wiz. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2170.953 ; gain = 670.332 ; free physical = 2904 ; free virtual = 7915
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_q_reg' in module 'ddr3_decay_test_top'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                              000
+               START_BIT |                              001 |                              001
+               DATA_BITS |                              010 |                              010
+                STOP_BIT |                              011 |                              011
+                 CLEANUP |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_tx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  S_IDLE |                            00000 |                           000000
+      S_INIT_START_RESET |                            00001 |                           000001
+    S_INIT_WAIT_POWER_ON |                            00010 |                           000010
+    S_INIT_CKE_HIGH_WAIT |                            00011 |                           000100
+         S_INIT_CMD_PREA |                            00100 |                           000101
+         S_INIT_CMD_EMR2 |                            00101 |                           000110
+         S_INIT_CMD_EMR3 |                            00110 |                           000111
+         S_INIT_CMD_EMR1 |                            00111 |                           001000
+S_INIT_CMD_MR0_DLL_RESET |                            01000 |                           001001
+         S_INIT_CMD_ZQCL |                            01001 |                           001010
+    S_INIT_CMD_MR0_FINAL |                            01010 |                           001011
+      S_INIT_WAIT_DLL_ZQ |                            01011 |                           001100
+                S_ACT_WR |                            01100 |                           001101
+                S_WR_CMD |                            01101 |                           001110
+          S_WR_DATA_WAIT |                            01110 |                           001111
+     S_DECAY_WAIT_PERIOD |                            01111 |                           010000
+                S_ACT_RD |                            10000 |                           010001
+                S_RD_CMD |                            10001 |                           010010
+          S_RD_DATA_WAIT |                            10010 |                           010011
+       S_RD_DATA_CAPTURE |                            10011 |                           010100
+       S_UART_SETUP_CHAR |                            10100 |                           010101
+     S_UART_WAIT_TX_DONE |                            10101 |                           010110
+                  S_DONE |                            10110 |                           010111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_q_reg' using encoding 'sequential' in module 'ddr3_decay_test_top'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2170.953 ; gain = 670.332 ; free physical = 2911 ; free virtual = 7916
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 1     
+	   2 Input   24 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 1     
+	   2 Input    7 Bit       Adders := 2     
+	   2 Input    4 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 1     
+	               14 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 5     
+	                1 Bit    Registers := 23    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 1     
+	  23 Input   32 Bit        Muxes := 1     
+	   2 Input   24 Bit        Muxes := 10    
+	  23 Input   24 Bit        Muxes := 1     
+	   5 Input   16 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 1     
+	  23 Input   11 Bit        Muxes := 1     
+	   7 Input    7 Bit        Muxes := 1     
+	   6 Input    7 Bit        Muxes := 2     
+	   2 Input    7 Bit        Muxes := 2     
+	   4 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 34    
+	  23 Input    6 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 24    
+	  23 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	  23 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 4     
+	   4 Input    2 Bit        Muxes := 1     
+	  23 Input    2 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 6     
+	   2 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 3     
+	  23 Input    1 Bit        Muxes := 12    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port cfg_i[31] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[30] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[29] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[28] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[27] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[26] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[25] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[24] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[15] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[14] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[13] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[12] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[11] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[7] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[6] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[5] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port cfg_i[4] in module ddr3_dfi_phy is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dfi_address_i[14] in module ddr3_dfi_phy is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 2170.953 ; gain = 670.332 ; free physical = 2921 ; free virtual = 7929
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2189.953 ; gain = 689.332 ; free physical = 2864 ; free virtual = 7872
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2230.992 ; gain = 730.371 ; free physical = 2828 ; free virtual = 7835
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2239.000 ; gain = 738.379 ; free physical = 2820 ; free virtual = 7828
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |BUFG       |     6|
+|2     |CARRY4     |     9|
+|3     |IDELAYCTRL |     1|
+|4     |IDELAYE2   |    18|
+|6     |ISERDESE2  |    16|
+|7     |LUT1       |     5|
+|8     |LUT2       |    32|
+|9     |LUT3       |    54|
+|10    |LUT4       |    21|
+|11    |LUT5       |    43|
+|12    |LUT6       |   121|
+|13    |MMCME2_ADV |     1|
+|14    |OSERDESE2  |    20|
+|15    |FDCE       |    73|
+|16    |FDRE       |    85|
+|17    |FDSE       |     2|
+|18    |IBUF       |     3|
+|19    |IOBUF      |    16|
+|20    |IOBUFDS    |     2|
+|21    |OBUF       |    31|
+|22    |OBUFDS     |     1|
++------+-----------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.812 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2378.812 ; gain = 729.441 ; free physical = 2709 ; free virtual = 7717
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2378.820 ; gain = 878.191 ; free physical = 2709 ; free virtual = 7717
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2378.820 ; gain = 0.000 ; free physical = 2709 ; free virtual = 7717
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 3 inverter(s) to 32 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2434.840 ; gain = 0.000 ; free physical = 2866 ; free virtual = 7873
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 19 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+  IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
+  OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
+
+Synth Design complete | Checksum: 7750e21e
+INFO: [Common 17-83] Releasing license: Synthesis
+53 Infos, 117 Warnings, 4 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 2434.840 ; gain = 1023.691 ; free physical = 2866 ; free virtual = 7873
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1785.636; main = 1785.636; forked = 311.819
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3095.117; main = 2434.844; forked = 924.160
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2458.852 ; gain = 0.000 ; free physical = 2866 ; free virtual = 7873
+INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/ddr3_decay_test_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file ddr3_decay_test_top_utilization_synth.rpt -pb ddr3_decay_test_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May 27 11:16:34 2025...

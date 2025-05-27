@@ -126,7 +126,7 @@ OPTRACE "add files" START { }
   add_files -quiet /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.runs/synth_1/dram_simple.dcp
   read_ip -quiet /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/sources_1/ip/ila_0/ila_0.xci
 OPTRACE "read constraints: implementation" START { }
-  read_xdc /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini.xdc
+  read_xdc /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/DRAM_WRITE_READ_SERIAL.srcs/constrs_1/imports/DRAM_WRITE_READ_SERIAL/DRAM_write_read_serial_hex_timingfix_UARTfix_debug_serialhex_gemini_DQSread_use_writetimingfix_readtimingfix_dqsdebug_forceread_timingfix.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

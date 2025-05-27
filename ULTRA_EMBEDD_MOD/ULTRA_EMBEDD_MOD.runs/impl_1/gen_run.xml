@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748337355">
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="ddr3_decay_test_top_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS" Name="ddr3_decay_test_top_routed.rqs"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="ddr3_decay_test_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="ddr3_decay_test_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="ddr3_decay_test_top_routed_bb.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="ddr3_decay_test_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DCP" Name="ddr3_decay_test_top_routed.dcp"/>
+  <File Type="ROUTE-DRC-RPX" Name="ddr3_decay_test_top_drc_routed.rpx"/>
+  <File Type="ROUTE-ERROR-DCP" Name="ddr3_decay_test_top_routed_error.dcp"/>
+  <File Type="PHYSOPT-TIMING" Name="ddr3_decay_test_top_timing_summary_physopted.rpt"/>
+  <File Type="PHYSOPT-DRC" Name="ddr3_decay_test_top_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="ddr3_decay_test_top_physopt.dcp"/>
+  <File Type="ROUTE-PWR" Name="ddr3_decay_test_top_power_routed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="ddr3_decay_test_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="ddr3_decay_test_top_postplace_pwropt.dcp"/>
+  <File Type="ROUTE-DRC-PB" Name="ddr3_decay_test_top_drc_routed.pb"/>
+  <File Type="PLACE-TIMING" Name="ddr3_decay_test_top_timing_summary_placed.rpt"/>
+  <File Type="PLACE-CTRL" Name="ddr3_decay_test_top_control_sets_placed.rpt"/>
+  <File Type="OPT-DRC" Name="ddr3_decay_test_top_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="ddr3_decay_test_top.hwdef"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="ddr3_decay_test_top_methodology_drc_opted.rpt"/>
+  <File Type="OPT-DCP" Name="ddr3_decay_test_top_opt.dcp"/>
+  <File Type="ROUTE-DRC" Name="ddr3_decay_test_top_drc_routed.rpt"/>
+  <File Type="PWROPT-TIMING" Name="ddr3_decay_test_top_timing_summary_pwropted.rpt"/>
+  <File Type="PA-TCL" Name="ddr3_decay_test_top.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="ddr3_decay_test_top_bus_skew_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="ddr3_decay_test_top_reports.tcl"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="ddr3_decay_test_top_bus_skew_routed.rpx"/>
+  <File Type="PWROPT-DRC" Name="ddr3_decay_test_top_drc_pwropted.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="ddr3_decay_test_top_incremental_reuse_placed.rpt"/>
+  <File Type="INIT-TIMING" Name="ddr3_decay_test_top_timing_summary_init.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="ddr3_decay_test_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="OPT-TIMING" Name="ddr3_decay_test_top_timing_summary_opted.rpt"/>
+  <File Type="PWROPT-DCP" Name="ddr3_decay_test_top_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="ddr3_decay_test_top_placed.dcp"/>
+  <File Type="OPT-RQA-PB" Name="ddr3_decay_test_top_rqa_opted.pb"/>
+  <File Type="PLACE-IO" Name="ddr3_decay_test_top_io_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="ddr3_decay_test_top_rqa_placed.pb"/>
+  <File Type="PLACE-CLK" Name="ddr3_decay_test_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="ddr3_decay_test_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="ddr3_decay_test_top_utilization_placed.pb"/>
+  <File Type="ROUTE-PWR-SUM" Name="ddr3_decay_test_top_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="ddr3_decay_test_top_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="ddr3_decay_test_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="ddr3_decay_test_top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="ddr3_decay_test_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="ddr3_decay_test_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="ddr3_decay_test_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="ddr3_decay_test_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="ddr3_decay_test_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="ddr3_decay_test_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-RQS-PB" Name="ddr3_decay_test_top_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="ddr3_decay_test_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="ddr3_decay_test_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="ddr3_decay_test_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="ddr3_decay_test_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="RDI-RDI" Name="ddr3_decay_test_top.vdi"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="ddr3_decay_test_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="ddr3_decay_test_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="ddr3_decay_test_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="ddr3_decay_test_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="ddr3_decay_test_top.bit"/>
+  <File Type="PDI-FILE" Name="ddr3_decay_test_top.pdi"/>
+  <File Type="BG-BIN" Name="ddr3_decay_test_top.bin"/>
+  <File Type="CFI_FILE" Name="ddr3_decay_test_top.cfi"/>
+  <File Type="BITSTR-MSK" Name="ddr3_decay_test_top.msk"/>
+  <File Type="RNPI_FILE" Name="ddr3_decay_test_top.rnpi"/>
+  <File Type="BITSTR-RBT" Name="ddr3_decay_test_top.rbt"/>
+  <File Type="NPI_FILE" Name="ddr3_decay_test_top.npi"/>
+  <File Type="BITSTR-NKY" Name="ddr3_decay_test_top.nky"/>
+  <File Type="RBD_FILE" Name="ddr3_decay_test_top.rbd"/>
+  <File Type="BITSTR-BMM" Name="ddr3_decay_test_top_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="ddr3_decay_test_top.mmi"/>
+  <File Type="BOOT-PDI-FILE" Name="ddr3_decay_test_top_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="ddr3_decay_test_top_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="ddr3_decay_test_top.rcfi"/>
+  <File Type="BG-BGN" Name="ddr3_decay_test_top.bgn"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="ddr3_decay_test_top.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="ddr3_decay_test_top.sysdef"/>
+  <File Type="BG-DRC" Name="ddr3_decay_test_top.drc"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_dfi_phy.v"/>
+        <Attr Name="ImportTime" Val="1748334912"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/uart_tx.v"/>
+        <Attr Name="ImportTime" Val="1748267568"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top.sv"/>
+        <Attr Name="ImportTime" Val="1748337341"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="ddr3_decay_test_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/ULTRA_EMBEDD_MOD/constraints_top.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/constraints_top.xdc"/>
+        <Attr Name="ImportTime" Val="1748335417"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024">
+      <Desc>Default settings for Implementation.</Desc>
+    </StratHandle>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

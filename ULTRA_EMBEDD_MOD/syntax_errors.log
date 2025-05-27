@@ -1,0 +1,23 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module ddr3_decay_test_top
+ERROR: [VRFC 10-4982] syntax error near ''0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:179]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:227]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:232]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:237]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:276]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:299]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:303]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:326]
+WARNING: [VRFC 10-3306] expected a system function, not system task '$display' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:328]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:328]
+ERROR: [VRFC 10-4982] syntax error near '}' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:332]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:419]
+ERROR: [VRFC 10-4982] syntax error near '=' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:434]
+ERROR: [VRFC 10-2967] 'S_INIT_WAIT_POWER_ON' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:227]
+ERROR: [VRFC 10-2967] 'S_INIT_CKE_HIGH_WAIT' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:232]
+ERROR: [VRFC 10-2967] 'S_INIT_CMD_PREA' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:237]
+ERROR: [VRFC 10-2967] 'S_ACT_WR' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:276]
+ERROR: [VRFC 10-2967] 'S_DECAY_WAIT_PERIOD' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:299]
+ERROR: [VRFC 10-2967] 'S_ACT_RD' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:303]
+ERROR: [VRFC 10-2967] 'S_RD_DATA_CAPTURE' is not a task [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv:326]
+INFO: [#UNDEF] Sorry, too many errors..
