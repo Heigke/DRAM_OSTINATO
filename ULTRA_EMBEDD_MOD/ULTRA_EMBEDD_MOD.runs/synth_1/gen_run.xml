@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748337355">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748338745" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ddr3_decay_test_top.dcp">
   <File Type="VDS-TIMING-PB" Name="ddr3_decay_test_top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="ddr3_decay_test_top_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="ddr3_decay_test_top.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="ddr3_decay_test_top_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="ddr3_decay_test_top_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="ddr3_decay_test_top_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="ddr3_decay_test_top.vds"/>
   <File Type="REPORTS-TCL" Name="ddr3_decay_test_top_reports.tcl"/>
   <File Type="PA-TCL" Name="ddr3_decay_test_top.tcl"/>
-  <File Type="RDS-DCP" Name="ddr3_decay_test_top.dcp"/>
-  <File Type="RDS-PROPCONSTRS" Name="ddr3_decay_test_top_drc_synth.rpt"/>
-  <File Type="RDS-UTIL" Name="ddr3_decay_test_top_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ddr3_decay_test_top_utilization_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
@@ -36,10 +36,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv">
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top.sv"/>
-        <Attr Name="ImportTime" Val="1748337341"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone.sv"/>
+        <Attr Name="ImportTime" Val="1748338732"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -67,6 +67,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/ddr3_decay_test_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

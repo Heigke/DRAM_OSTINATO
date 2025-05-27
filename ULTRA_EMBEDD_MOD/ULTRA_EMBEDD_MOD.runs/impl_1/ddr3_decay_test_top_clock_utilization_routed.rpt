@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue May 27 11:18:16 2025
+| Date         : Tue May 27 11:41:36 2025
 | Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_clock_utilization -file ddr3_decay_test_top_clock_utilization_routed.rpt
 | Design       : ddr3_decay_test_top
@@ -51,7 +51,7 @@ Table of Contents
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+--------------------------+------------------------------+---------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site           | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                    | Driver Pin                   | Net                                   |
 +-----------+-----------+-----------------+------------+----------------+--------------+-------------------+-------------+-----------------+--------------+--------------------------+------------------------------+---------------------------------------+
-| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 1 |         187 |               1 |        5.000 | clk_phy_sys_clk_wiz_0    | u_clk_wiz/inst/clkout1_buf/O | u_clk_wiz/inst/clk_phy_sys            |
+| g0        | src0      | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |                 1 |         190 |               1 |        5.000 | clk_phy_sys_clk_wiz_0    | u_clk_wiz/inst/clkout1_buf/O | u_clk_wiz/inst/clk_phy_sys            |
 | g1        | src1      | BUFG/O          | None       | BUFGCTRL_X0Y1  | n/a          |                 1 |          34 |               0 |        2.500 | clk_phy_ddr_clk_wiz_0    | u_clk_wiz/inst/clkout2_buf/O | u_clk_wiz/inst/clk_phy_ddr            |
 | g2        | src2      | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |                 2 |          28 |               0 |       10.000 | sys_clk_pin              | clk100mhz_i_IBUF_BUFG_inst/O | clk100mhz_i_IBUF_BUFG                 |
 | g3        | src3      | BUFG/O          | None       | BUFGCTRL_X0Y2  | n/a          |                 1 |           2 |               0 |        2.500 | clk_phy_ddr90_clk_wiz_0  | u_clk_wiz/inst/clkout3_buf/O | u_clk_wiz/inst/clk_phy_ddr90          |
@@ -104,7 +104,7 @@ Table of Contents
 | X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    1 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y0              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     4 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1500 |    0 |   550 |    0 |    40 |    0 |    20 |    0 |    40 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2000 |    0 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
-| X1Y1              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |   16 |    50 |   37 |    50 |  160 |  1900 |   46 |   650 |    0 |    60 |    0 |    30 |    0 |    40 |
+| X1Y1              |    5 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |   16 |    50 |   37 |    50 |  163 |  1900 |   54 |   650 |    0 |    60 |    0 |    30 |    0 |    40 |
 | X0Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2000 |    0 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y2              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  1900 |    0 |   650 |    0 |    60 |    0 |    30 |    0 |    40 |
 | X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   600 |    0 |    20 |    0 |    10 |    0 |    20 |
@@ -133,7 +133,7 @@ All Modules
 +-----------+-----------------+-------------------+-----------------------+-------------+---------------+-------------+----------+----------------+----------+----------------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                 | Period (ns) | Waveform (ns) | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                        |
 +-----------+-----------------+-------------------+-----------------------+-------------+---------------+-------------+----------+----------------+----------+----------------------------+
-| g0        | BUFG/O          | n/a               | clk_phy_sys_clk_wiz_0 |       5.000 | {0.000 2.500} |         152 |       36 |              0 |        0 | u_clk_wiz/inst/clk_phy_sys |
+| g0        | BUFG/O          | n/a               | clk_phy_sys_clk_wiz_0 |       5.000 | {0.000 2.500} |         155 |       36 |              0 |        0 | u_clk_wiz/inst/clk_phy_sys |
 +-----------+-----------------+-------------------+-----------------------+-------------+---------------+-------------+----------+----------------+----------+----------------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -146,7 +146,7 @@ All Modules
 +----+----+------+-----------------------+
 | Y3 |  0 |    0 |                     - |
 | Y2 |  0 |    0 |                     - |
-| Y1 |  0 |  188 |                     0 |
+| Y1 |  0 |  191 |                     0 |
 | Y0 |  0 |    0 |                     - |
 +----+----+------+-----------------------+
 
@@ -291,7 +291,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                           |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+-------------------------------+
-| g0        | n/a   | BUFG/O          | None       |         187 |               1 | 133 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_clk_wiz/inst/clk_phy_sys    |
+| g0        | n/a   | BUFG/O          | None       |         190 |               1 | 136 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_clk_wiz/inst/clk_phy_sys    |
 | g1        | n/a   | BUFG/O          | None       |          34 |               0 |   0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_clk_wiz/inst/clk_phy_ddr    |
 | g2        | n/a   | BUFG/O          | None       |          27 |               0 |  27 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | clk100mhz_i_IBUF_BUFG         |
 | g3        | n/a   | BUFG/O          | None       |           2 |               0 |   0 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | u_clk_wiz/inst/clk_phy_ddr90  |

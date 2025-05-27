@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue May 27 11:16:34 2025
+| Date         : Tue May 27 11:39:52 2025
 | Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_utilization -file ddr3_decay_test_top_utilization_synth.rpt -pb ddr3_decay_test_top_utilization_synth.pb
 | Design       : ddr3_decay_test_top
@@ -31,11 +31,11 @@ Table of Contents
 +-------------------------+------+-------+------------+-----------+-------+
 |        Site Type        | Used | Fixed | Prohibited | Available | Util% |
 +-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             |  244 |     0 |          0 |     63400 |  0.38 |
-|   LUT as Logic          |  244 |     0 |          0 |     63400 |  0.38 |
+| Slice LUTs*             |  252 |     0 |          0 |     63400 |  0.40 |
+|   LUT as Logic          |  252 |     0 |          0 |     63400 |  0.40 |
 |   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         |  160 |    17 |          0 |    126800 |  0.13 |
-|   Register as Flip Flop |  160 |    17 |          0 |    126800 |  0.13 |
+| Slice Registers         |  163 |    17 |          0 |    126800 |  0.13 |
+|   Register as Flip Flop |  163 |    17 |          0 |    126800 |  0.13 |
 |   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
 | F7 Muxes                |    0 |     0 |          0 |     31700 |  0.00 |
 | F8 Muxes                |    0 |     0 |          0 |     15850 |  0.00 |
@@ -57,8 +57,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 0     |          Yes |           - |          Set |
-| 73    |          Yes |           - |        Reset |
+| 2     |          Yes |           - |          Set |
+| 74    |          Yes |           - |        Reset |
 | 2     |          Yes |         Set |            - |
 | 85    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
@@ -152,14 +152,14 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +------------+------+---------------------+
 |  Ref Name  | Used | Functional Category |
 +------------+------+---------------------+
-| LUT6       |  121 |                 LUT |
+| LUT6       |  135 |                 LUT |
 | FDRE       |   85 |        Flop & Latch |
-| FDCE       |   73 |        Flop & Latch |
+| FDCE       |   74 |        Flop & Latch |
 | LUT3       |   54 |                 LUT |
-| LUT5       |   43 |                 LUT |
-| LUT2       |   32 |                 LUT |
+| LUT2       |   39 |                 LUT |
+| LUT5       |   35 |                 LUT |
 | OBUF       |   31 |                  IO |
-| LUT4       |   21 |                 LUT |
+| LUT4       |   22 |                 LUT |
 | OSERDESE2  |   20 |                  IO |
 | IBUF       |   19 |                  IO |
 | IDELAYE2   |   18 |                  IO |
@@ -173,6 +173,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | LUT1       |    2 |                 LUT |
 | IBUFDS     |    2 |                  IO |
 | FDSE       |    2 |        Flop & Latch |
+| FDPE       |    2 |        Flop & Latch |
 | MMCME2_ADV |    1 |               Clock |
 | IDELAYCTRL |    1 |                  IO |
 +------------+------+---------------------+

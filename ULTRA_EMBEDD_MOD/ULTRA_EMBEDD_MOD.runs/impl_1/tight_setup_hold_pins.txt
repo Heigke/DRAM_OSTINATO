@@ -1,12 +1,13 @@
 +=======================+=======================+=========================================+
 | Launch Setup Clock    | Launch Hold Clock     | Pin                                     |
 +=======================+=======================+=========================================+
-| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[3]/D     |
 | clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[1]/D     |
+| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | timer_q_reg[0]/D                        |
 | clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[4]/D     |
-| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[5]/D     |
-| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[6]/D     |
+| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[3]/D     |
 | clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[0]/D     |
-| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | FSM_sequential_current_state_q_reg[0]/D |
+| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[6]/D     |
+| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | u_uart_tx_inst/tx_data_reg_reg[5]/D     |
 | clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | FSM_sequential_current_state_q_reg[2]/D |
+| clk_phy_sys_clk_wiz_0 | clk_phy_sys_clk_wiz_0 | FSM_sequential_current_state_q_reg[3]/D |
 +-----------------------+-----------------------+-----------------------------------------+

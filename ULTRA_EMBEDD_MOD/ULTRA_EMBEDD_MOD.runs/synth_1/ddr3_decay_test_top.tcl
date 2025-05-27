@@ -77,7 +77,7 @@ set_property ip_output_repo /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRA
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_verilog -library xil_defaultlib -sv /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv
+read_verilog -library xil_defaultlib -sv /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone.sv
 read_verilog -library xil_defaultlib {
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_dfi_phy.v
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v
@@ -103,6 +103,8 @@ set_property used_in_implementation false [get_files /home/heigke/Dokument/TAIF_
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/utils_1/imports/synth_1/ddr3_decay_test_top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
