@@ -1,2 +1,22 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top.sv" into library work
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv" into library work
 INFO: [VRFC 10-311] analyzing module ddr3_decay_test_top
+ERROR: [VRFC 10-4982] syntax error near '}' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:697]
+ERROR: [VRFC 10-4982] syntax error near '?' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:736]
+ERROR: [VRFC 10-4982] syntax error near 'W' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:741]
+ERROR: [VRFC 10-4982] syntax error near ':' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:742]
+ERROR: [VRFC 10-4982] syntax error near ''' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:743]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:746]
+ERROR: [VRFC 10-4982] syntax error near ''' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:748]
+ERROR: [VRFC 10-4982] syntax error near '?' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:749]
+ERROR: [VRFC 10-4982] syntax error near 'R' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:754]
+ERROR: [VRFC 10-4982] syntax error near ':' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:755]
+ERROR: [VRFC 10-4982] syntax error near ''' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:756]
+ERROR: [VRFC 10-4982] syntax error near ';' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:759]
+ERROR: [VRFC 10-4982] syntax error near ''' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:761]
+ERROR: [VRFC 10-4982] syntax error near '?' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:762]
+ERROR: [VRFC 10-4982] syntax error near '-' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:767]
+ERROR: [VRFC 10-4982] syntax error near ''' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:768]
+ERROR: [VRFC 10-4982] syntax error near 'M' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:769]
+ERROR: [VRFC 10-4982] syntax error near ''' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:770]
+ERROR: [VRFC 10-4982] syntax error near '\n';' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge.sv:771]
+INFO: [#UNDEF] Sorry, too many errors..

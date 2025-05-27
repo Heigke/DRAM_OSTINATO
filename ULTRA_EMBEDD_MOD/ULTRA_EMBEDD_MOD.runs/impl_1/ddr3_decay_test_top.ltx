@@ -1,0 +1,1101 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "dbg_hub",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "200000001"
+                    },
+                    {
+                        "type": "ILA_V3",
+                        "name": "u_ila",
+                        "spec": "labtools_ila_v6",
+                        "ipName": "ila",
+                        "core_location": {
+                            "user_chain": 1,
+                            "slave_index": 0,
+                            "bscan_switch_index": 0
+                        },
+                        "uuid": "C30A833047BA52038DBC7E3E3214D902",
+                        "pins": [
+                            {
+                                "name": "probe0",
+                                "id": 0,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 5,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "ila_state",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_state[5]"
+                                            },
+                                            {
+                                                "name": "ila_state[4]"
+                                            },
+                                            {
+                                                "name": "ila_state[3]"
+                                            },
+                                            {
+                                                "name": "ila_state[2]"
+                                            },
+                                            {
+                                                "name": "ila_state[1]"
+                                            },
+                                            {
+                                                "name": "ila_state[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe1",
+                                "id": 1,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 15,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "ila_timer",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_timer[15]"
+                                            },
+                                            {
+                                                "name": "ila_timer[14]"
+                                            },
+                                            {
+                                                "name": "ila_timer[13]"
+                                            },
+                                            {
+                                                "name": "ila_timer[12]"
+                                            },
+                                            {
+                                                "name": "ila_timer[11]"
+                                            },
+                                            {
+                                                "name": "ila_timer[10]"
+                                            },
+                                            {
+                                                "name": "ila_timer[9]"
+                                            },
+                                            {
+                                                "name": "ila_timer[8]"
+                                            },
+                                            {
+                                                "name": "ila_timer[7]"
+                                            },
+                                            {
+                                                "name": "ila_timer[6]"
+                                            },
+                                            {
+                                                "name": "ila_timer[5]"
+                                            },
+                                            {
+                                                "name": "ila_timer[4]"
+                                            },
+                                            {
+                                                "name": "ila_timer[3]"
+                                            },
+                                            {
+                                                "name": "ila_timer[2]"
+                                            },
+                                            {
+                                                "name": "ila_timer[1]"
+                                            },
+                                            {
+                                                "name": "ila_timer[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe2",
+                                "id": 2,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_cmd_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe3",
+                                "id": 3,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 2,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_cmd",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_dfi_cmd[2]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_cmd[1]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_cmd[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe4",
+                                "id": 4,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 14,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_address",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_dfi_address[14]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[13]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[12]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[11]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[10]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[9]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[8]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[7]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[6]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[5]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[4]",
+                                                "parentNetId": 36
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[3]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[2]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[1]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_address[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe5",
+                                "id": 5,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 2,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_bank",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_dfi_bank[2]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_bank[1]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_bank[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe6",
+                                "id": 6,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 6,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_rddata_valid",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe7",
+                                "id": 7,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 7,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_rddata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_dfi_rddata[31]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[30]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[29]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[28]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[27]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[26]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[25]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[24]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[23]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[22]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[21]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[20]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[19]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[18]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[17]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[16]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[15]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[14]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[13]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[12]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[11]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[10]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[9]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[8]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[7]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[6]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[5]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[4]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[3]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[2]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[1]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_rddata[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe8",
+                                "id": 8,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 8,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_wrdata_en",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe9",
+                                "id": 9,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 9,
+                                "nets": [
+                                    {
+                                        "name": "ila_dfi_wrdata",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_dfi_wrdata[31]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[30]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[29]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[28]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[27]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[26]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[25]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[24]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[23]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[22]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[21]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[20]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[19]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[18]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[17]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[16]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[15]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[14]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[13]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[12]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[11]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[10]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[9]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[8]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[7]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[6]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[5]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[4]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[3]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[2]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[1]"
+                                            },
+                                            {
+                                                "name": "ila_dfi_wrdata[0]",
+                                                "parentNetId": 109
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe10",
+                                "id": 10,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 10,
+                                "nets": [
+                                    {
+                                        "name": "ila_start_btn_sync",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe11",
+                                "id": 11,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 11,
+                                "nets": [
+                                    {
+                                        "name": "ila_data_read",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "ila_data_read[31]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[30]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[29]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[28]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[27]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[26]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[25]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[24]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[23]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[22]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[21]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[20]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[19]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[18]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[17]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[16]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[15]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[14]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[13]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[12]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[11]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[10]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[9]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[8]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[7]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[6]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[5]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[4]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[3]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[2]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[1]"
+                                            },
+                                            {
+                                                "name": "ila_data_read[0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe12",
+                                "id": 12,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 12,
+                                "nets": [
+                                    {
+                                        "name": "ila_data_match",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe13",
+                                "id": 13,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 13,
+                                "nets": [
+                                    {
+                                        "name": "dfi_cke_s",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe14",
+                                "id": 14,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 14,
+                                "nets": [
+                                    {
+                                        "name": "dfi_reset_n_s",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe15",
+                                "id": 15,
+                                "type": "DATA_TRIGGER",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 15,
+                                "nets": [
+                                    {
+                                        "name": "dfi_odt_s",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "parent_nets": [
+                    {
+                        "id": 36,
+                        "name": "ila_dfi_address[4]",
+                        "state_reg": [
+                            {
+                                "name": "FSM_onehot_current_state_q_reg[11]",
+                                "states": [
+                                    {
+                                        "name": "S_INIT_WAIT_POWER_ON",
+                                        "val": "00000000000000000000000000000000000000000100"
+                                    },
+                                    {
+                                        "name": "S_INIT_START_RESET",
+                                        "val": "00000000000000000000000000000000000000000010"
+                                    },
+                                    {
+                                        "name": "S_IDLE",
+                                        "val": "00000000000000000000000000000000000000000001"
+                                    },
+                                    {
+                                        "name": "S_ACT_WR",
+                                        "val": "00000000000000001000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_ACT_RD_WAIT",
+                                        "val": "00000000100000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_BEFORE_WR_WAIT",
+                                        "val": "00000000000000000100000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_MR0_FINAL",
+                                        "val": "00000000000000000000100000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH2_WAIT",
+                                        "val": "00000000000000000000010000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_ACT_RD",
+                                        "val": "00000000010000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_BEFORE_WR",
+                                        "val": "00000000000000000010000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_WAIT_DLLK",
+                                        "val": "00000000000000000001000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH2",
+                                        "val": "00000000000000000000001000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_DECAY_WAIT_PERIOD",
+                                        "val": "00000000001000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_ZQCL",
+                                        "val": "00000000000000000000000000001000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_WR_WAIT",
+                                        "val": "00000000000100000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH1_WAIT",
+                                        "val": "00000000000000000000000100000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_MR0_DLL_WAIT",
+                                        "val": "00000000000000000000000000000100000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_MR0_DLL_RESET",
+                                        "val": "00000000000000000000000000000010000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_EMR1_WAIT",
+                                        "val": "00000000000000000000000000000001000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH1",
+                                        "val": "00000000000000000000000010000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_PREA_BEFORE_REF_WAIT",
+                                        "val": "00000000000000000000000001000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_EMR1",
+                                        "val": "00000000000000000000000000000000100000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_PREA_BEFORE_REF",
+                                        "val": "00000000000000000000000000100000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_EMR2",
+                                        "val": "00000000000000000000000000000000000010000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_EMR3_WAIT",
+                                        "val": "00000000000000000000000000000000010000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_WAIT_TZQOPER",
+                                        "val": "00000000000000000000000000010000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_PREA_WAIT",
+                                        "val": "00000000000000000000000000000000000001000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_EMR3",
+                                        "val": "00000000000000000000000000000000001000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_PREA",
+                                        "val": "00000000000000000000000000000000000000100000"
+                                    },
+                                    {
+                                        "name": "S_INIT_EMR2_WAIT",
+                                        "val": "00000000000000000000000000000000000100000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CKE_HIGH_WAIT",
+                                        "val": "00000000000000000000000000000000000000010000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_WR",
+                                        "val": "00000000000010000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_DONE",
+                                        "val": "10000000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_RD",
+                                        "val": "00001000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_WR_DATA_WAIT",
+                                        "val": "00000000000001000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_UART_WAIT_TX_DONE",
+                                        "val": "01000000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_RD_DATA_CAPTURE",
+                                        "val": "00000100000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_UART_SETUP_CHAR",
+                                        "val": "00100000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_WR_CMD",
+                                        "val": "00000000000000100000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_RD_WAIT",
+                                        "val": "00010000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_RD_DATA_WAIT",
+                                        "val": "00000010000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_ACT_WR_WAIT",
+                                        "val": "00000000000000010000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_RD_CMD",
+                                        "val": "00000001000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_DEASSERT_RESET",
+                                        "val": "00000000000000000000000000000000000000001000"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "id": 109,
+                        "name": "ila_dfi_wrdata[0]",
+                        "state_reg": [
+                            {
+                                "name": "FSM_onehot_current_state_q_reg[29]",
+                                "states": [
+                                    {
+                                        "name": "S_INIT_WAIT_POWER_ON",
+                                        "val": "00000000000000000000000000000000000000000100"
+                                    },
+                                    {
+                                        "name": "S_INIT_START_RESET",
+                                        "val": "00000000000000000000000000000000000000000010"
+                                    },
+                                    {
+                                        "name": "S_IDLE",
+                                        "val": "00000000000000000000000000000000000000000001"
+                                    },
+                                    {
+                                        "name": "S_ACT_WR",
+                                        "val": "00000000000000001000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_ACT_RD_WAIT",
+                                        "val": "00000000100000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_BEFORE_WR_WAIT",
+                                        "val": "00000000000000000100000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_MR0_FINAL",
+                                        "val": "00000000000000000000100000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH2_WAIT",
+                                        "val": "00000000000000000000010000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_ACT_RD",
+                                        "val": "00000000010000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_BEFORE_WR",
+                                        "val": "00000000000000000010000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_WAIT_DLLK",
+                                        "val": "00000000000000000001000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH2",
+                                        "val": "00000000000000000000001000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_DECAY_WAIT_PERIOD",
+                                        "val": "00000000001000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_ZQCL",
+                                        "val": "00000000000000000000000000001000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_WR_WAIT",
+                                        "val": "00000000000100000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH1_WAIT",
+                                        "val": "00000000000000000000000100000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_MR0_DLL_WAIT",
+                                        "val": "00000000000000000000000000000100000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_MR0_DLL_RESET",
+                                        "val": "00000000000000000000000000000010000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_EMR1_WAIT",
+                                        "val": "00000000000000000000000000000001000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_AUTO_REFRESH1",
+                                        "val": "00000000000000000000000010000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_PREA_BEFORE_REF_WAIT",
+                                        "val": "00000000000000000000000001000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_EMR1",
+                                        "val": "00000000000000000000000000000000100000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_PREA_BEFORE_REF",
+                                        "val": "00000000000000000000000000100000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_EMR2",
+                                        "val": "00000000000000000000000000000000000010000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_EMR3_WAIT",
+                                        "val": "00000000000000000000000000000000010000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_WAIT_TZQOPER",
+                                        "val": "00000000000000000000000000010000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_PREA_WAIT",
+                                        "val": "00000000000000000000000000000000000001000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_EMR3",
+                                        "val": "00000000000000000000000000000000001000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CMD_PREA",
+                                        "val": "00000000000000000000000000000000000000100000"
+                                    },
+                                    {
+                                        "name": "S_INIT_EMR2_WAIT",
+                                        "val": "00000000000000000000000000000000000100000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_CKE_HIGH_WAIT",
+                                        "val": "00000000000000000000000000000000000000010000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_WR",
+                                        "val": "00000000000010000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_DONE",
+                                        "val": "10000000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_RD",
+                                        "val": "00001000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_WR_DATA_WAIT",
+                                        "val": "00000000000001000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_UART_WAIT_TX_DONE",
+                                        "val": "01000000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_RD_DATA_CAPTURE",
+                                        "val": "00000100000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_UART_SETUP_CHAR",
+                                        "val": "00100000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_WR_CMD",
+                                        "val": "00000000000000100000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_PREA_AFTER_RD_WAIT",
+                                        "val": "00010000000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_RD_DATA_WAIT",
+                                        "val": "00000010000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_ACT_WR_WAIT",
+                                        "val": "00000000000000010000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_RD_CMD",
+                                        "val": "00000001000000000000000000000000000000000000"
+                                    },
+                                    {
+                                        "name": "S_INIT_DEASSERT_RESET",
+                                        "val": "00000000000000000000000000000000000000001000"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
