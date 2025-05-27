@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue May 27 11:41:35 2025
+| Date         : Tue May 27 16:09:38 2025
 | Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_methodology -file ddr3_decay_test_top_methodology_drc_routed.rpt -pb ddr3_decay_test_top_methodology_drc_routed.pb -rpx ddr3_decay_test_top_methodology_drc_routed.rpx
 | Design       : ddr3_decay_test_top
@@ -23,12 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max checks: <unlimited>
-             Checks found: 52
+             Checks found: 53
 +-----------+------------------+-----------------------------------+--------+
 | Rule      | Severity         | Description                       | Checks |
 +-----------+------------------+-----------------------------------+--------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell       | 32     |
-| LUTAR-1   | Warning          | LUT drives async reset alert      | 1      |
+| LUTAR-1   | Warning          | LUT drives async reset alert      | 2      |
 | TIMING-18 | Warning          | Missing input or output delay     | 3      |
 | REQP-1959 | Advisory         | connects_SERDES_RST_driver_not_FF | 16     |
 +-----------+------------------+-----------------------------------+--------+
@@ -197,13 +197,24 @@ Related violations: <none>
 
 LUTAR-1#1 Warning
 LUT drives async reset alert  
-LUT cell u_ddr3_phy_inst/u_serdes_dq0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) timer_q_reg[4]/CLR, timer_q_reg[5]/CLR, timer_q_reg[6]/CLR,
-timer_q_reg[7]/CLR, timer_q_reg[8]/CLR, timer_q_reg[9]/CLR,
-tx_done_flag_clk_phy_sys_q_reg/CLR, uart_char_idx_q_reg[0]/CLR,
-uart_char_idx_q_reg[1]/CLR, uart_char_idx_q_reg[2]/CLR,
-uart_char_idx_q_reg[3]/CLR, uart_current_msg_q_reg[0]/CLR,
-uart_current_msg_q_reg[1]/CLR, uart_tx_busy_sync0_clk_phy_sys_reg/PRE,
-uart_tx_busy_sync1_clk_phy_sys_reg/PRE (the first 15 of 93 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+LUT cell u_ddr3_phy_inst/u_serdes_dq0_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) uart_cmd_ack_sync1_reg/CLR, uart_cmd_ack_sync2_reg/CLR,
+uart_cmd_data_200mhz_reg[0]/CLR, uart_cmd_data_200mhz_reg[1]/CLR,
+uart_cmd_data_200mhz_reg[2]/CLR, uart_cmd_data_200mhz_reg[3]/CLR,
+uart_cmd_data_200mhz_reg[4]/CLR, uart_cmd_data_200mhz_reg[5]/CLR,
+uart_cmd_data_200mhz_reg[6]/CLR, uart_cmd_req_200mhz_reg/CLR,
+uart_current_msg_q_reg[0]/CLR, uart_current_msg_q_reg[1]/CLR,
+uart_tx_busy_sync0_reg/CLR, uart_tx_busy_sync1_reg/CLR,
+uart_tx_busy_sync2_reg/CLR (the first 15 of 104 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+LUTAR-1#2 Warning
+LUT drives async reset alert  
+LUT cell u_uart_tx_inst/FSM_sequential_state[1]_i_1, with 2 or more inputs, drives asynchronous preset/clear pin(s) uart_cmd_ack_100mhz_reg/CLR, uart_cmd_req_sync0_reg/CLR,
+uart_cmd_req_sync1_reg/CLR, uart_cmd_req_sync2_reg/CLR,
+uart_tx_data_to_uart_reg[0]/CLR, uart_tx_data_to_uart_reg[1]/CLR,
+uart_tx_data_to_uart_reg[2]/CLR, uart_tx_data_to_uart_reg[3]/CLR,
+uart_tx_data_to_uart_reg[4]/CLR, uart_tx_data_to_uart_reg[5]/CLR,
+uart_tx_data_to_uart_reg[6]/CLR, uart_tx_start_to_uart_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
 Related violations: <none>
 
 TIMING-18#1 Warning

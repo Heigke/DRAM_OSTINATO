@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Tue May 27 11:41:36 2025
+| Date             : Tue May 27 16:09:39 2025
 | Host             : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file ddr3_decay_test_top_power_routed.rpt -pb ddr3_decay_test_top_power_summary_routed.pb -rpx ddr3_decay_test_top_power_routed.rpx
 | Design           : ddr3_decay_test_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.402        |
+| Total On-Chip Power (W)  | 0.399        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.299        |
+| Dynamic (W)              | 0.295        |
 | Device Static (W)        | 0.103        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 83.2         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.011 |        8 |       --- |             --- |
-| Slice Logic    |     0.003 |      463 |       --- |             --- |
-|   LUT as Logic |     0.002 |      276 |     63400 |            0.44 |
-|   Register     |    <0.001 |      146 |    126800 |            0.12 |
+| Slice Logic    |     0.002 |      470 |       --- |             --- |
+|   LUT as Logic |     0.002 |      241 |     63400 |            0.38 |
+|   Register     |    <0.001 |      168 |    126800 |            0.13 |
 |   CARRY4       |    <0.001 |        9 |     15850 |            0.06 |
 |   Others       |     0.000 |        8 |       --- |             --- |
-| Signals        |     0.003 |      527 |       --- |             --- |
+| Signals        |     0.002 |      530 |       --- |             --- |
 | MMCM           |     0.099 |        1 |         6 |           16.67 |
-| I/O            |     0.183 |       56 |       210 |           26.67 |
+| I/O            |     0.182 |       56 |       210 |           26.67 |
 | Static Power   |     0.103 |          |           |                 |
-| Total          |     0.402 |          |           |                 |
+| Total          |     0.399 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.046 |       0.030 |      0.016 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.138 |       0.120 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.044 |       0.028 |      0.016 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.137 |       0.119 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,10 +146,10 @@ Table of Contents
 +---------------------+-----------+
 | Name                | Power (W) |
 +---------------------+-----------+
-| ddr3_decay_test_top |     0.299 |
+| ddr3_decay_test_top |     0.295 |
 |   u_clk_wiz         |     0.101 |
 |     inst            |     0.101 |
-|   u_ddr3_phy_inst   |     0.137 |
+|   u_ddr3_phy_inst   |     0.135 |
 |     u_pad_ck        |     0.011 |
 |     u_pad_dq0       |     0.002 |
 |     u_pad_dq1       |     0.002 |
@@ -169,7 +169,6 @@ Table of Contents
 |     u_pad_dq9       |     0.002 |
 |     u_pad_dqs0      |     0.002 |
 |     u_pad_dqs1      |     0.002 |
-|   u_uart_tx_inst    |     0.001 |
 +---------------------+-----------+
 
 

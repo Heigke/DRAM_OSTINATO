@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue May 27 11:40:47 2025
+| Date         : Tue May 27 16:08:58 2025
 | Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_control_sets -verbose -file ddr3_decay_test_top_control_sets_placed.rpt
 | Design       : ddr3_decay_test_top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    10 |
-|    Minimum number of control sets                        |    10 |
+| Total control sets                                       |    12 |
+|    Minimum number of control sets                        |    12 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    30 |
+| Unused register locations in slices containing registers |    40 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,12 +39,12 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    10 |
+| Total control sets |    12 |
 | >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     2 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     0 |
-| >= 10 to < 12      |     1 |
+| >= 10 to < 12      |     2 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     3 |
@@ -58,31 +58,33 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               5 |            3 |
-| No           | No                    | Yes                    |              14 |            9 |
-| No           | Yes                   | No                     |              47 |           14 |
-| Yes          | No                    | No                     |               7 |            6 |
-| Yes          | No                    | Yes                    |              62 |           20 |
-| Yes          | Yes                   | No                     |              11 |            4 |
+| No           | No                    | No                     |               4 |            2 |
+| No           | No                    | Yes                    |              23 |           12 |
+| No           | Yes                   | No                     |              47 |           22 |
+| Yes          | No                    | No                     |               7 |            1 |
+| Yes          | No                    | Yes                    |              76 |           24 |
+| Yes          | Yes                   | No                     |              11 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------+----------------------------------------------------------+---------------------------------+------------------+----------------+--------------+
-|         Clock Signal        |                       Enable Signal                      |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------------------+----------------------------------------------------------+---------------------------------+------------------+----------------+--------------+
-|  u_clk_wiz/inst/clk_phy_sys |                                                          |                                 |                1 |              2 |         2.00 |
-|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/FSM_sequential_current_state_q_reg[0]    | u_ddr3_phy_inst/sys_rst_fsm_phy |                1 |              2 |         2.00 |
-|  clk100mhz_i_IBUF_BUFG      |                                                          |                                 |                2 |              3 |         1.50 |
-|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/E[0]                                     | u_ddr3_phy_inst/sys_rst_fsm_phy |                1 |              4 |         4.00 |
-|  clk100mhz_i_IBUF_BUFG      |                                                          | u_uart_tx_inst/rst_for_uart     |                2 |              6 |         3.00 |
-|  clk100mhz_i_IBUF_BUFG      | u_uart_tx_inst/tx_data_reg[6]_i_1_n_0                    |                                 |                6 |              7 |         1.17 |
-|  clk100mhz_i_IBUF_BUFG      | u_uart_tx_inst/state__0[2]                               | u_uart_tx_inst/rst_for_uart     |                4 |             11 |         2.75 |
-|  u_clk_wiz/inst/clk_phy_sys | timer_s                                                  | u_ddr3_phy_inst/sys_rst_fsm_phy |               13 |             24 |         1.85 |
-|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/FSM_sequential_current_state_q_reg[2][0] | u_ddr3_phy_inst/sys_rst_fsm_phy |                5 |             32 |         6.40 |
-|  u_clk_wiz/inst/clk_phy_sys |                                                          | u_ddr3_phy_inst/sys_rst_fsm_phy |               21 |             55 |         2.62 |
-+-----------------------------+----------------------------------------------------------+---------------------------------+------------------+----------------+--------------+
++-----------------------------+------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+|         Clock Signal        |                        Enable Signal                       |             Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
+|  u_clk_wiz/inst/clk_phy_sys |                                                            |                                          |                1 |              2 |         2.00 |
+|  u_clk_wiz/inst/clk_phy_sys | status_led1_o_i_1_n_0                                      | u_ddr3_phy_inst/AR[0]                    |                1 |              2 |         2.00 |
+|  clk100mhz_i_IBUF_BUFG      |                                                            |                                          |                1 |              2 |         2.00 |
+|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/E[0]                                       | u_ddr3_phy_inst/AR[0]                    |                1 |              4 |         4.00 |
+|  u_clk_wiz/inst/clk_phy_sys | uart_cmd_req_200mhz0                                       | u_ddr3_phy_inst/AR[0]                    |                3 |              7 |         2.33 |
+|  clk100mhz_i_IBUF_BUFG      | u_uart_tx_inst/tx_data_reg[6]_i_1_n_0                      |                                          |                1 |              7 |         7.00 |
+|  clk100mhz_i_IBUF_BUFG      | uart_cmd_req_edge                                          | u_uart_tx_inst/reset_btn_uart_sync_1_reg |                2 |              7 |         3.50 |
+|  clk100mhz_i_IBUF_BUFG      |                                                            | u_uart_tx_inst/reset_btn_uart_sync_1_reg |                5 |             11 |         2.20 |
+|  clk100mhz_i_IBUF_BUFG      | u_uart_tx_inst/state__0[2]                                 | u_uart_tx_inst/reset_btn_uart_sync_1_reg |                5 |             11 |         2.20 |
+|  u_clk_wiz/inst/clk_phy_sys | timer_s                                                    | u_ddr3_phy_inst/AR[0]                    |                9 |             24 |         2.67 |
+|  u_clk_wiz/inst/clk_phy_sys | u_ddr3_phy_inst/FSM_sequential_current_state_q_reg[0]_0[0] | u_ddr3_phy_inst/AR[0]                    |                8 |             32 |         4.00 |
+|  u_clk_wiz/inst/clk_phy_sys |                                                            | u_ddr3_phy_inst/AR[0]                    |               29 |             59 |         2.03 |
++-----------------------------+------------------------------------------------------------+------------------------------------------+------------------+----------------+--------------+
 
 
