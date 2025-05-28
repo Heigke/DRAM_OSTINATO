@@ -14,10 +14,10 @@
       <Cursor1Time time="8,192"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="266"></NameColumnWidth>
-      <ValueColumnWidth column_width="70"></ValueColumnWidth>
+      <NameColumnWidth column_width="217"></NameColumnWidth>
+      <ValueColumnWidth column_width="290"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="103" />
+   <WVObjectSize size="104" />
    <wave_markers>
    </wave_markers>
    <wvobject type="logic" fp_name="&lt;const0&gt;">
@@ -703,8 +703,8 @@
    </wvobject>
    <wvobject type="array" fp_name="ila_rddata">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">ila_rddata[0:0]</obj_property>
-      <obj_property name="ObjectShortName">ila_rddata[0:0]</obj_property>
+      <obj_property name="ElementShortName">ila_rddata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ila_rddata[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
@@ -750,6 +750,14 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">ila_wrdata[31:0]</obj_property>
       <obj_property name="ObjectShortName">ila_wrdata[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="ila_rddata">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">ila_rddata[31:0]</obj_property>
+      <obj_property name="ObjectShortName">ila_rddata[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
