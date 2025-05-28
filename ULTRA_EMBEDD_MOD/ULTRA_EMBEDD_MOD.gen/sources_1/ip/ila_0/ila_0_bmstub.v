@@ -46,11 +46,11 @@ module ila_0 (
   (* X_INTERFACE_IGNORE = "true" *)
   input [31:0]probe7;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [0:0]probe8;
+  input [31:0]probe8;
   (* X_INTERFACE_IGNORE = "true" *)
   input [31:0]probe9;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [0:0]probe10;
+  input [31:0]probe10;
   (* X_INTERFACE_IGNORE = "true" *)
   input [31:0]probe11;
   (* X_INTERFACE_IGNORE = "true" *)
