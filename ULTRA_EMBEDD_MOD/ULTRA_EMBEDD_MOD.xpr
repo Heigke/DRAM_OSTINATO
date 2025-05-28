@@ -91,6 +91,13 @@
   <FileSets Version="1" Minor="32">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/ip/clk_wiz_0/clk_wiz_0.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -116,18 +123,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_sweep.sv">
+      <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_sweep2.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_sweep.sv"/>
-          <Attr Name="ImportTime" Val="1748436384"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/ip/ila_0/ila_0.xci">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_sweep2.sv"/>
+          <Attr Name="ImportTime" Val="1748453056"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -135,7 +134,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ddr3_decay_test_top"/>
+        <Option Name="TopModule" Val="ddr3_decay_sweep_top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -157,7 +156,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ddr3_decay_test_top"/>
+        <Option Name="TopModule" Val="ddr3_decay_sweep_top"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>

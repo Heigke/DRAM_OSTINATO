@@ -37,4 +37,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ddr3_decay_test_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ddr3_decay_test_top.tcl
+EAStep vivado -log ddr3_decay_sweep_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ddr3_decay_sweep_top.tcl

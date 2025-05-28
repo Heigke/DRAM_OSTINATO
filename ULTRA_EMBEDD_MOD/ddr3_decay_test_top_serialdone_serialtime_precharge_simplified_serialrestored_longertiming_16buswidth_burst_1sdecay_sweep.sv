@@ -1,16 +1,15 @@
-// ddr3_decay_test_top.sv
-// Enhanced version with multiple decay time iterations, multiple tests per setting,
-// similarity calculation, and detailed UART output.
-module ddr3_decay_test_top (
+// ddr3_decay_sweep_top.sv
+// Enhanced DDR3 decay test with address and timing sweep capabilities
+module ddr3_decay_sweep_top (
     input wire clk100mhz_i,      // Board clock 100MHz
     input wire reset_btn_i,      // Active high reset button for whole system
     input wire start_btn_i,      // Button to start the DDR3 test sequence
 
     // LEDs for status
-    output logic status_led0_o,  // Test in progress / Idle / All Complete
-    output logic status_led1_o,  // Last test success (data match)
-    output logic status_led2_o,  // Last test fail (data mismatch / decay)
-    output logic status_led3_o,  // UART TX activity
+    output logic status_led0_o,    // Test in progress / Idle
+    output logic status_led1_o,    // Current test pass
+    output logic status_led2_o,    // Current test fail
+    output logic status_led3_o,    // UART TX activity
 
     output logic uart_txd_o,       // UART TX pin
 
@@ -33,25 +32,27 @@ module ddr3_decay_test_top (
 );
 
     // --- Clocking and Reset Logic ---
-    logic clk_phy_sys;       // PHY system clock (200MHz), FSM runs on this
-    logic clk_phy_ddr;       // PHY DDR clock (400MHz)
-    logic clk_phy_ddr90;     // PHY DDR clock 90-deg phase (400MHz)
-    logic clk_idelay_ref;    // PHY IDELAYCTRL reference clock (200MHz)
+    logic clk_phy_sys;      // PHY system clock (200MHz), FSM runs on this
+    logic clk_phy_ddr;      // PHY DDR clock (400MHz)
+    logic clk_phy_ddr90;    // PHY DDR clock 90-deg phase (400MHz)
+    logic clk_idelay_ref;   // PHY IDELAYCTRL reference clock (200MHz)
     logic mmcm_locked;
     
-    logic sys_rst_fsm_phy;   // Synchronized, active high reset for FSM and PHY (clk_phy_sys domain)
-    logic rst_for_uart;      // Synchronized, active high reset for UART (clk100mhz_i domain)
+    logic sys_rst_fsm_phy;  // Synchronized, active high reset for FSM and PHY (clk_phy_sys domain)
+    logic rst_for_uart;     // Synchronized, active high reset for UART (clk100mhz_i domain)
 
+    // MMCM instance
     clk_wiz_0 u_clk_wiz (
         .clk_phy_sys(clk_phy_sys),
         .clk_phy_ddr(clk_phy_ddr),
         .clk_phy_ddr90(clk_phy_ddr90),
         .clk_idelay_ref(clk_idelay_ref),
-        .reset(reset_btn_i), // MMCM reset tied to board reset
+        .reset(reset_btn_i),
         .locked(mmcm_locked),
         .clk_in1(clk100mhz_i)
     );
 
+    // Reset synchronizers
     logic reset_btn_phy_sync_0, reset_btn_phy_sync_1;
     always_ff @(posedge clk_phy_sys) begin
         reset_btn_phy_sync_0 <= reset_btn_i;
@@ -69,7 +70,7 @@ module ddr3_decay_test_top (
     // --- DFI PHY Instance ---
     localparam TPHY_RDLAT_C  = 4;
     localparam TPHY_WRLAT_C  = 3;
-    localparam CAS_LATENCY_C = 6;  // CL=6 for DDR3-1333 (adjust if using different speed grade)
+    localparam CAS_LATENCY_C = 6;  // CL=6 for DDR3-1333
 
     logic [14:0] dfi_address_s;
     logic [2:0]  dfi_bank_s;
@@ -78,15 +79,15 @@ module ddr3_decay_test_top (
     logic [31:0] dfi_wrdata_s, dfi_rddata_r;
     logic [3:0]  dfi_wrdata_mask_s;
     logic        dfi_rddata_valid_r;
-    logic [1:0]  dfi_rddata_dnv_r; // Not used in this example, but part of DFI
+    logic [1:0]  dfi_rddata_dnv_r;
 
     ddr3_dfi_phy #( 
-        .REFCLK_FREQUENCY(200),      // IDELAYCTRL reference clock frequency in MHz
-        .DQS_TAP_DELAY_INIT(15),     // Initial DQS IDELAY tap value (adjust per board)
-        .DQ_TAP_DELAY_INIT(1),       // Initial DQ IDELAY tap value (adjust per board)
+        .REFCLK_FREQUENCY(200), 
+        .DQS_TAP_DELAY_INIT(15), 
+        .DQ_TAP_DELAY_INIT(1),
         .TPHY_RDLAT(TPHY_RDLAT_C), 
         .TPHY_WRLAT(TPHY_WRLAT_C), 
-        .TPHY_WRDATA(0)              // Delay from dfi_wrdata_en to first DQ/DM change
+        .TPHY_WRDATA(0) 
     )
     u_ddr3_phy_inst (
         .clk_i(clk_phy_sys), 
@@ -94,9 +95,9 @@ module ddr3_decay_test_top (
         .clk_ddr90_i(clk_phy_ddr90), 
         .clk_ref_i(clk_idelay_ref),
         .rst_i(sys_rst_fsm_phy), 
-        .cfg_valid_i(1'b0),          // Configuration interface not used in this example
+        .cfg_valid_i(1'b0), 
         .cfg_i(32'd0),
-        .dfi_address_i(dfi_address_s[14:0]), // DFI Address (Row/Col)
+        .dfi_address_i(dfi_address_s[14:0]),
         .dfi_bank_i(dfi_bank_s), 
         .dfi_cas_n_i(dfi_cas_n_s),
         .dfi_cke_i(dfi_cke_s), 
@@ -107,11 +108,11 @@ module ddr3_decay_test_top (
         .dfi_we_n_i(dfi_we_n_s),
         .dfi_wrdata_i(dfi_wrdata_s), 
         .dfi_wrdata_en_i(dfi_wrdata_en_s), 
-        .dfi_wrdata_mask_i(dfi_wrdata_mask_s), // DFI Write Data Mask (all enabled)
+        .dfi_wrdata_mask_i(dfi_wrdata_mask_s),
         .dfi_rddata_en_i(dfi_rddata_en_s), 
         .dfi_rddata_o(dfi_rddata_r),
         .dfi_rddata_valid_o(dfi_rddata_valid_r), 
-        .dfi_rddata_dnv_o(dfi_rddata_dnv_r),  // DFI Read Data Not Valid (per DQS group)
+        .dfi_rddata_dnv_o(dfi_rddata_dnv_r),
         .ddr3_ck_p_o(ddr3_ck_p_o[0]), 
         .ddr3_ck_n_o(ddr3_ck_n_o[0]), 
         .ddr3_cke_o(ddr3_cke_o[0]),
@@ -130,112 +131,96 @@ module ddr3_decay_test_top (
     );
 
     // --- Controller FSM ---
-    // Iteration and Test Parameters
-    localparam NUM_DECAY_SETTINGS = 4; // Number of different decay times to test
-    localparam NUM_TESTS_PER_DECAY_SETTING = 3; // Number of write/decay/read cycles per decay time
-
-    // Decay times in milliseconds, converted to clock cycles (200MHz clock)
-    // 1ms = 200,000 cycles; 10ms = 2,000,000; 100ms = 20,000,000; 1000ms = 200,000,000
-    logic [27:0] decay_time_target_cycles [NUM_DECAY_SETTINGS-1:0];
-    initial begin // For simulation; for synthesis, consider localparam array or ROM
-        decay_time_target_cycles[0] = 28'd200_000;     // 1ms
-        decay_time_target_cycles[1] = 28'd2_000_000;    // 10ms
-        decay_time_target_cycles[2] = 28'd20_000_000;   // 100ms
-        decay_time_target_cycles[3] = 28'd200_000_000;  // 1000ms
-    end
-    
-    // Corresponding decay times in ms for UART output
-    logic [15:0] decay_time_ms_values [NUM_DECAY_SETTINGS-1:0];
-     initial begin
-        decay_time_ms_values[0] = 16'd1;
-        decay_time_ms_values[1] = 16'd10;
-        decay_time_ms_values[2] = 16'd100;
-        decay_time_ms_values[3] = 16'd1000;
-    end
-
-    logic [$clog2(NUM_DECAY_SETTINGS)-1:0] current_decay_idx_q;
-    logic [$clog2(NUM_TESTS_PER_DECAY_SETTING):0] tests_run_for_current_decay_q; // Counter for tests
-    logic [27:0] current_decay_setting_cycles_q;
-    logic [15:0] current_decay_ms_for_uart_q;
-
-
-    // FSM States
-    typedef enum logic [6:0] { // Wider for more states
-        S_IDLE,
-        S_INIT_RESET, S_INIT_RESET_WAIT, S_INIT_CKE_LOW, S_INIT_STABLE,
-        S_INIT_MRS2, S_INIT_MRS3, S_INIT_MRS1, S_INIT_MRS0, S_INIT_ZQCL,
-        S_INIT_DONE,
-
-        S_START_NEW_DECAY_SETTING,
-        S_START_TEST_ITERATION,
-
-        S_WRITE_ACTIVATE, S_WRITE_ACTIVATE_WAIT, S_WRITE_CMD,
-        S_WRITE_BURST_0, S_WRITE_BURST_1, S_WRITE_BURST_2, S_WRITE_BURST_3,
-        S_WRITE_WAIT, S_PRECHARGE_AFTER_WRITE, S_PRECHARGE_WAIT,
-        S_DECAY_WAIT,
-        S_READ_ACTIVATE, S_READ_ACTIVATE_WAIT, S_READ_CMD, S_READ_WAIT,
-        S_READ_CAPTURE_0, S_READ_CAPTURE_1, S_READ_CAPTURE_2, S_READ_CAPTURE_3,
-        S_READ_DONE,
-        
-        S_CALCULATE_SIMILARITY,
-
-        S_UART_PREPARE_MSG, // Prepares current segment of UART message
-        S_UART_SEND_CHAR,   // Sends one character
-        S_UART_WAIT_TX_DONE,// Waits for UART TX to be free
-
-        S_CHECK_FOR_MORE_TESTS,
-        S_ALL_TESTS_COMPLETE
+    typedef enum logic [5:0] {
+        S_IDLE                      = 6'd0,
+        S_INIT_RESET                = 6'd1,
+        S_INIT_RESET_WAIT           = 6'd2,
+        S_INIT_CKE_LOW              = 6'd3,
+        S_INIT_STABLE               = 6'd4,
+        S_INIT_MRS2                 = 6'd5,
+        S_INIT_MRS3                 = 6'd6,
+        S_INIT_MRS1                 = 6'd7,
+        S_INIT_MRS0                 = 6'd8,
+        S_INIT_ZQCL                 = 6'd9,
+        S_INIT_DONE                 = 6'd10,
+        S_WRITE_ACTIVATE            = 6'd11,
+        S_WRITE_ACTIVATE_WAIT       = 6'd12,
+        S_WRITE_CMD                 = 6'd13,
+        S_WRITE_BURST_0             = 6'd14,
+        S_WRITE_BURST_1             = 6'd15,
+        S_WRITE_BURST_2             = 6'd16,
+        S_WRITE_BURST_3             = 6'd17,
+        S_WRITE_WAIT                = 6'd18,
+        S_PRECHARGE_AFTER_WRITE     = 6'd19,
+        S_PRECHARGE_WAIT            = 6'd20,
+        S_DECAY_WAIT                = 6'd21,
+        S_READ_ACTIVATE             = 6'd22,
+        S_READ_ACTIVATE_WAIT        = 6'd23,
+        S_READ_CMD                  = 6'd24,
+        S_READ_WAIT                 = 6'd25,
+        S_READ_CAPTURE_0            = 6'd26,
+        S_READ_CAPTURE_1            = 6'd27,
+        S_READ_CAPTURE_2            = 6'd28,
+        S_READ_CAPTURE_3            = 6'd29,
+        S_READ_DONE                 = 6'd30,
+        S_UART_START                = 6'd31,
+        S_UART_SEND_CHAR            = 6'd32,
+        S_UART_WAIT                 = 6'd33,
+        S_NEXT_MEASUREMENT          = 6'd34,
+        S_NEXT_ADDRESS              = 6'd35,
+        S_NEXT_DECAY_TIME           = 6'd36,
+        S_DONE                      = 6'd37
     } state_t;
     
     state_t current_state_q, next_state_s;
 
-    // Timing parameters (200MHz clock for FSM)
+    // Timing parameters
     localparam T_RESET_US           = 24'd40_000;   // 200us @ 200MHz
-    localparam T_STABLE_US          = 24'd100_000;  // 500us @ 200MHz 
+    localparam T_STABLE_US          = 24'd100_000;  // 500us @ 200MHz  
     localparam T_INIT_WAIT          = 24'd1024;     // General init wait
-    localparam T_MODE_REG_SET       = 24'd20;       // tMRD (4 cycles) + margin
-    localparam T_ZQINIT             = 24'd102_400;  // tZQinit (512ns -> 102.4 cycles @ 200MHz), use 512 cycles for safety
-    localparam T_ACTIVATE_TO_RW     = 24'd20;       // tRCD (e.g., 13.75ns for -125 -> ~3 cycles) + margin
-    localparam T_WRITE_TO_PRECHARGE = 24'd20;       // tWR (15ns -> 3 cycles) + tWL + margin
-    localparam T_PRECHARGE          = 24'd20;       // tRP (e.g., 13.75ns -> ~3 cycles) + margin
-    localparam T_READ_LATENCY       = TPHY_RDLAT_C + CAS_LATENCY_C + 4; // CL + PHY latency + margin
-    
-    logic [27:0] timer_q; 
+    localparam T_MODE_REG_SET       = 24'd20;       // tMRD + margin
+    localparam T_ZQINIT             = 24'd512;      // tZQINIT
+    localparam T_ACTIVATE_TO_RW     = 24'd20;       // tRCD + margin
+    localparam T_WRITE_TO_PRECHARGE = 24'd20;       // tWR + margin
+    localparam T_PRECHARGE          = 24'd20;       // tRP + margin
+    localparam T_READ_LATENCY       = TPHY_RDLAT_C + CAS_LATENCY_C + 4; // CL + PHY latency
 
+    logic [31:0] timer_q;
+
+    // Test pattern generation
     logic [127:0] write_data_q;  // Full burst data (8 x 16-bit)
     logic [127:0] read_data_q;   // Full burst data captured
-    logic init_sequence_done_q;
-    logic [2:0]  burst_cnt_q;    // Burst counter for write
-    logic [2:0]  read_burst_cnt_q; // Read burst counter for capture
-    logic [7:0]  similar_bits_count_q; // Max 128 similar bits
-
-    localparam [127:0] TEST_PATTERN = 128'hA5A5_B6B6_C7C7_D8D8_E9E9_F0F0_1234_5678; // Example pattern
+    logic        init_done_q;
+    logic [2:0]  burst_cnt_q;    // Burst counter for write/read
+    logic [2:0]  read_burst_cnt_q; // Read burst counter
     
-    localparam TEST_ROW  = 14'h0001; // Use a different row to avoid bank 0, row 0 if possible
-    localparam TEST_COL  = 10'h000;  // Start of column
-    localparam TEST_BANK = 3'b001;   // Use a different bank
-
+    // Sweep parameters
+    logic [7:0]  decay_time_idx_q;    // Index into decay time array (0-19 for 20 steps)
+    logic [9:0]  address_idx_q;       // Address sweep index
+    logic [3:0]  measurement_cnt_q;   // Repeat measurement counter
+    logic [31:0] decay_timer_target_q; // Current decay time in cycles
+    
+    // Test results
+    logic        test_pass_q;
+    logic [7:0]  bit_errors_q;        // Count of bit errors in current test
+    
+    // Address generation
+    logic [13:0] current_row_q;
+    logic [9:0]  current_col_q;
+    logic [2:0]  current_bank_q;
+    
+    // Constants for sweep
+    localparam MEASUREMENTS_PER_POINT = 5;
+    localparam NUM_ADDRESSES = 100;      // Test 100 different addresses
+    localparam NUM_DECAY_TIMES = 20;     // 20 decay times from 1ms to 1000ms
+    
     // UART control
     logic uart_tx_busy;
-    logic uart_tx_busy_sync0, uart_tx_busy_sync1; // Synchronized to clk_phy_sys
-    logic uart_tx_start_s; // Internal signal before potential CDC
-    logic [7:0] uart_tx_data_s;  // Internal signal before potential CDC
-
-    // UART message assembly
-    typedef enum logic [3:0] {
-        UART_SEG_DECAY_VAL, UART_SEG_COMMA1,
-        UART_SEG_WRITE_HEX, UART_SEG_COMMA2,
-        UART_SEG_READ_HEX,  UART_SEG_COMMA3,
-        UART_SEG_SIMILARITY_VAL,
-        UART_SEG_CR, UART_SEG_LF,
-        UART_SEG_DONE
-    } uart_segment_type_t;
-
-    uart_segment_type_t uart_current_segment_q;
-    logic [4:0] uart_char_ptr_q; // Max 32 chars for hex patterns
-
-    logic [7:0] uart_data_segment_str_q [31:0]; // Buffer for current string segment being sent (max 32 hex chars)
-    logic [4:0] uart_data_segment_len_q;      // Length of current segment in buffer
+    logic uart_tx_start;
+    logic [7:0] uart_tx_data;
+    logic [7:0] uart_msg_idx_q;
+    logic [3:0] uart_msg_type_q;  // 0=header, 1=data, 2=newline
+    logic [15:0] uart_data_word_q; // Current 16-bit word to send
 
     // Start button synchronization
     logic start_btn_sync, start_btn_prev, start_btn_edge;
@@ -244,496 +229,571 @@ module ddr3_decay_test_top (
             start_btn_sync <= 1'b0;
             start_btn_prev <= 1'b0;
         end else begin
-            start_btn_sync <= start_btn_i; // start_btn_i is already on clk100mhz_i, needs proper CDC if FSM is faster
-                                          // Assuming start_btn_i is debounced and held long enough
+            start_btn_sync <= start_btn_i;
             start_btn_prev <= start_btn_sync;
         end
     end
     assign start_btn_edge = start_btn_sync & ~start_btn_prev;
 
-    // UART busy signal synchronization
-    always_ff @(posedge clk_phy_sys or posedge sys_rst_fsm_phy) begin
-        if (sys_rst_fsm_phy) begin
-            uart_tx_busy_sync0 <= 1'b0;
-            uart_tx_busy_sync1 <= 1'b0;
-        end else begin
-            uart_tx_busy_sync0 <= uart_tx_busy;
-            uart_tx_busy_sync1 <= uart_tx_busy_sync0;
+    // Calculate decay time based on index (exponential sweep from 1ms to 1000ms)
+    function [31:0] get_decay_time_cycles;
+        input [7:0] idx;
+        real base_ms;
+        real exp_factor;
+        real time_ms;
+        begin
+            // Exponential sweep: time_ms = 1 * 10^((idx/19)*3)
+            // This gives us 1ms to 1000ms in 20 steps
+            base_ms = 1.0;
+            exp_factor = real'(idx) * 3.0 / 19.0;
+            time_ms = base_ms * (10.0 ** exp_factor);
+            get_decay_time_cycles = $rtoi(time_ms * 200000.0); // Convert ms to cycles at 200MHz
         end
-    end
+    endfunction
+
+    // Generate pseudo-random test pattern based on address
+    function [127:0] generate_test_pattern;
+        input [13:0] row;
+        input [9:0] col;
+        input [2:0] bank;
+        logic [31:0] seed;
+        begin
+            seed = {row, col, bank, 5'b10101};
+            // Simple LFSR-based pattern generation
+            generate_test_pattern[31:0]   = seed ^ 32'hA5A5A5A5;
+            generate_test_pattern[63:32]  = (seed << 1) ^ 32'h5A5A5A5A;
+            generate_test_pattern[95:64]  = (seed << 2) ^ 32'hF0F0F0F0;
+            generate_test_pattern[127:96] = (seed << 3) ^ 32'h0F0F0F0F;
+        end
+    endfunction
+
+    // Count bit errors between write and read data
+    function [7:0] count_bit_errors;
+        input [127:0] expected;
+        input [127:0] actual;
+        integer i;
+        begin
+            count_bit_errors = 0;
+            for (i = 0; i < 128; i = i + 1) begin
+                if (expected[i] != actual[i])
+                    count_bit_errors = count_bit_errors + 1;
+            end
+            // Cap at 255
+            if (count_bit_errors > 255)
+                count_bit_errors = 255;
+        end
+    endfunction
 
     // State machine sequential logic
     always_ff @(posedge clk_phy_sys or posedge sys_rst_fsm_phy) begin
         if (sys_rst_fsm_phy) begin
             current_state_q <= S_IDLE;
-            timer_q <= 28'd0;
-            write_data_q <= TEST_PATTERN;
+            timer_q <= 32'd0;
+            write_data_q <= 128'd0;
             read_data_q <= 128'd0;
-            init_sequence_done_q <= 1'b0;
+            init_done_q <= 1'b0;
             burst_cnt_q <= 3'd0;
             read_burst_cnt_q <= 3'd0;
-            similar_bits_count_q <= 8'd0;
-            
-            current_decay_idx_q <= 0;
-            tests_run_for_current_decay_q <= 0;
-            current_decay_setting_cycles_q <= decay_time_target_cycles[0];
-            current_decay_ms_for_uart_q    <= decay_time_ms_values[0];
-
-            uart_current_segment_q <= UART_SEG_DECAY_VAL;
-            uart_char_ptr_q <= 5'd0;
-            uart_data_segment_len_q <= 5'd0;
-
+            uart_msg_idx_q <= 8'd0;
+            uart_msg_type_q <= 4'd0;
+            decay_time_idx_q <= 8'd0;
+            address_idx_q <= 10'd0;
+            measurement_cnt_q <= 4'd0;
+            decay_timer_target_q <= 32'd0;
+            test_pass_q <= 1'b0;
+            bit_errors_q <= 8'd0;
+            current_row_q <= 14'd0;
+            current_col_q <= 10'd0;
+            current_bank_q <= 3'd0;
+            uart_data_word_q <= 16'd0;
         end else begin
             current_state_q <= next_state_s;
             
-            if (current_state_q != next_state_s) begin // Reset timer on state change
-                timer_q <= 28'd0;
+            // Update timer
+            if (current_state_q != next_state_s) begin
+                timer_q <= 32'd0;
             end else begin
-                if (timer_q < '1) begin // Prevent timer overflow, saturate
-                    timer_q <= timer_q + 1;
-                end
+                timer_q <= timer_q + 1;
             end
             
-            if (next_state_s == S_IDLE) begin // Reset test parameters when returning to IDLE
-                init_sequence_done_q <= 1'b0;
-                current_decay_idx_q <= 0;
-                tests_run_for_current_decay_q <= 0;
-                 current_decay_setting_cycles_q <= decay_time_target_cycles[0];
-                 current_decay_ms_for_uart_q    <= decay_time_ms_values[0];
-            end
-
-            if (next_state_s == S_START_NEW_DECAY_SETTING) begin
-                current_decay_setting_cycles_q <= decay_time_target_cycles[current_decay_idx_q];
-                current_decay_ms_for_uart_q    <= decay_time_ms_values[current_decay_idx_q];
-                tests_run_for_current_decay_q <= 0;
+            // Set init done flag
+            if (current_state_q == S_INIT_DONE && next_state_s == S_WRITE_ACTIVATE) begin
+                init_done_q <= 1'b1;
             end
             
-            if (next_state_s == S_START_TEST_ITERATION) begin
-                read_data_q <= 128'd0;
-                similar_bits_count_q <= 8'd0;
-                read_burst_cnt_q <= 3'd0; // Ensure read burst counter is reset here
+            // Generate new address when moving to next address
+            if (current_state_q == S_NEXT_ADDRESS) begin
+                // Simple address generation - spread across rows/cols/banks
+                current_bank_q <= address_idx_q[2:0];
+                current_row_q <= {4'd0, address_idx_q[9:0]};
+                current_col_q <= {address_idx_q[7:0], 2'b00}; // Word aligned
+                
+                // Generate test pattern for this address
+                write_data_q <= generate_test_pattern(current_row_q, current_col_q, current_bank_q);
             end
-
-            if (current_state_q == S_INIT_DONE && init_sequence_done_q == 1'b0) begin // Latch that init sequence is done
-                 init_sequence_done_q <= 1'b1;
+            
+            // Update decay timer target
+            if (current_state_q == S_PRECHARGE_WAIT && next_state_s == S_DECAY_WAIT) begin
+                decay_timer_target_q <= get_decay_time_cycles(decay_time_idx_q);
             end
             
             // Handle burst counter for writes
             if (current_state_q == S_WRITE_CMD) begin
                 burst_cnt_q <= 3'd0;
-            end else if (current_state_q >= S_WRITE_BURST_0 && current_state_q < S_WRITE_WAIT) begin // Check if it's a burst state
-                 if (dfi_wrdata_en_s) begin // Increment only when data is actually sent
-                    burst_cnt_q <= burst_cnt_q + 1;
-                 end
+            end else if (current_state_q >= S_WRITE_BURST_0 && current_state_q <= S_WRITE_BURST_3) begin
+                burst_cnt_q <= burst_cnt_q + 1;
             end
             
             // Handle read data capture
-            if (current_state_q == S_READ_CMD) begin // Reset read burst counter before read command
+            if (current_state_q == S_READ_CMD) begin
                 read_burst_cnt_q <= 3'd0;
-                read_data_q <= 128'd0; // Clear previous read data
             end else if (dfi_rddata_valid_r && current_state_q >= S_READ_CAPTURE_0 && current_state_q <= S_READ_CAPTURE_3) begin
-                if (read_burst_cnt_q < 4) begin // Capture 4 beats of 32-bit data for 128-bit total
-                    case (read_burst_cnt_q)
-                        3'd0: read_data_q[31:0]   <= dfi_rddata_r;
-                        3'd1: read_data_q[63:32]  <= dfi_rddata_r;
-                        3'd2: read_data_q[95:64]  <= dfi_rddata_r;
-                        3'd3: read_data_q[127:96] <= dfi_rddata_r;
-                    endcase
-                    read_burst_cnt_q <= read_burst_cnt_q + 1;
-                end
-            end
-
-            if (next_state_s == S_CALCULATE_SIMILARITY) begin
-                logic [7:0] count = 8'd0;
-                for (int i = 0; i < 128; i = i + 1) begin
-                    if (write_data_q[i] == read_data_q[i]) begin
-                        count = count + 1;
-                    end
-                end
-                similar_bits_count_q <= count;
-            end
-
-            // UART message state updates
-            if (next_state_s == S_UART_PREPARE_MSG) begin
-                uart_char_ptr_q <= 5'd0;
-                // uart_current_segment_q is set by the state transitioning TO S_UART_PREPARE_MSG
-            end else if (current_state_q == S_UART_SEND_CHAR && next_state_s == S_UART_WAIT_TX_DONE) begin
-                // Character has been sent (or attempted)
-            end else if (current_state_q == S_UART_WAIT_TX_DONE && next_state_s == S_UART_PREPARE_MSG) begin
-                // Current segment finished, moving to next segment
-                uart_char_ptr_q <= 5'd0; // Reset for new segment
-            end else if (current_state_q == S_UART_WAIT_TX_DONE && next_state_s == S_UART_SEND_CHAR) begin
-                // More characters in current segment
-                uart_char_ptr_q <= uart_char_ptr_q + 1;
+                // Capture 32-bit data per cycle (2 x 16-bit words)
+                case (read_burst_cnt_q)
+                    3'd0: read_data_q[31:0]   <= dfi_rddata_r;
+                    3'd1: read_data_q[63:32]  <= dfi_rddata_r;
+                    3'd2: read_data_q[95:64]  <= dfi_rddata_r;
+                    3'd3: read_data_q[127:96] <= dfi_rddata_r;
+                endcase
+                read_burst_cnt_q <= read_burst_cnt_q + 1;
             end
             
-            if (next_state_s == S_CHECK_FOR_MORE_TESTS) begin
-                if (tests_run_for_current_decay_q < NUM_TESTS_PER_DECAY_SETTING - 1) begin
-                    tests_run_for_current_decay_q <= tests_run_for_current_decay_q + 1;
-                end else begin // All tests for current decay done
-                    if (current_decay_idx_q < NUM_DECAY_SETTINGS - 1) begin
-                        current_decay_idx_q <= current_decay_idx_q + 1;
-                        // tests_run_for_current_decay_q is reset in S_START_NEW_DECAY_SETTING
-                    end else begin
-                        // All decay settings and tests complete
-                    end
-                end
+            // Check test results
+            if (current_state_q == S_READ_DONE) begin
+                bit_errors_q <= count_bit_errors(write_data_q, read_data_q);
+                test_pass_q <= (read_data_q == write_data_q);
+            end
+            
+            // UART message control
+            if (current_state_q == S_UART_WAIT && next_state_s == S_UART_SEND_CHAR) begin
+                uart_msg_idx_q <= uart_msg_idx_q + 1;
+            end else if (current_state_q != S_UART_SEND_CHAR && current_state_q != S_UART_WAIT) begin
+                uart_msg_idx_q <= 8'd0;
+            end
+            
+            // Increment counters
+            if (current_state_q == S_NEXT_MEASUREMENT) begin
+                measurement_cnt_q <= measurement_cnt_q + 1;
+            end
+            
+            if (current_state_q == S_NEXT_ADDRESS) begin
+                address_idx_q <= address_idx_q + 1;
+                measurement_cnt_q <= 4'd0;
+            end
+            
+            if (current_state_q == S_NEXT_DECAY_TIME) begin
+                decay_time_idx_q <= decay_time_idx_q + 1;
+                address_idx_q <= 10'd0;
+                measurement_cnt_q <= 4'd0;
+            end
+            
+            // Reset on idle
+            if (current_state_q == S_IDLE) begin
+                decay_time_idx_q <= 8'd0;
+                address_idx_q <= 10'd0;
+                measurement_cnt_q <= 4'd0;
+                init_done_q <= 1'b0;
             end
         end
     end
 
     // State machine combinational logic
     always_comb begin
+        // Default values
         next_state_s = current_state_q;
-        uart_tx_start_s = 1'b0;
-        uart_tx_data_s = 8'h00;
+        uart_tx_start = 1'b0;
+        uart_tx_data = 8'h00;
         
-        dfi_cs_n_s = 1'b0; // Keep chip selected unless in IDLE or specific deselect phases
+        // Default DDR3 signals (NOP)
+        dfi_cs_n_s = 1'b0;  // Keep chip selected
         dfi_ras_n_s = 1'b1;
         dfi_cas_n_s = 1'b1;
         dfi_we_n_s = 1'b1;
-        dfi_cke_s = 1'b1;   // CKE high during normal operation
+        dfi_cke_s = 1'b1;
         dfi_reset_n_s = 1'b1;
-        dfi_odt_s = 1'b0;   // ODT typically enabled by PHY during writes/reads, controller can suggest
+        dfi_odt_s = 1'b0;
         dfi_address_s = 15'd0;
         dfi_bank_s = 3'd0;
         dfi_wrdata_s = 32'd0;
         dfi_wrdata_en_s = 1'b0;
-        dfi_wrdata_mask_s = 4'h0; // Enable all byte lanes
+        dfi_wrdata_mask_s = 4'h0;
         dfi_rddata_en_s = 1'b0;
-
-        // Default UART segment data (cleared before each segment preparation)
-        for (int i=0; i<32; i++) uart_data_segment_str_q[i] = 8'h00;
-        uart_data_segment_len_q = 0;
         
         case (current_state_q)
             S_IDLE: begin
-                dfi_cs_n_s = 1'b1; // Deselect chip
-                dfi_cke_s = 1'b0;  // CKE low for power down or pre-init
+                dfi_cs_n_s = 1'b1;
+                dfi_cke_s = 1'b0;
                 if (start_btn_edge) begin
-                    if (!init_sequence_done_q) begin
-                        next_state_s = S_INIT_RESET;
-                    end else begin
-                        next_state_s = S_START_NEW_DECAY_SETTING; // Restart tests
-                    end
+                    next_state_s = S_INIT_RESET;
                 end
             end
             
-            // --- Initialization Sequence ---
+            // Init states (same as before)
             S_INIT_RESET: begin
-                dfi_reset_n_s = 1'b0; // Assert DDR_RESET_N
-                dfi_cke_s = 1'b0;     // Keep CKE low
+                dfi_reset_n_s = 1'b0;
+                dfi_cke_s = 1'b0;
                 next_state_s = S_INIT_RESET_WAIT;
             end
+            
             S_INIT_RESET_WAIT: begin
                 dfi_reset_n_s = 1'b0;
                 dfi_cke_s = 1'b0;
-                if (timer_q >= T_RESET_US) begin // Wait for tPW_RESET (min 200us)
+                if (timer_q >= T_RESET_US) begin
                     next_state_s = S_INIT_CKE_LOW;
                 end
             end
-            S_INIT_CKE_LOW: begin // After reset deassertion, CKE must remain low for tXPR (min 5 CKs or tRFC+10ns)
-                                  // Here using a longer stable time
-                dfi_reset_n_s = 1'b1; // Deassert DDR_RESET_N
+            
+            S_INIT_CKE_LOW: begin
+                dfi_reset_n_s = 1'b1;
                 dfi_cke_s = 1'b0;
-                if (timer_q >= T_STABLE_US) begin // Wait for clock stable and CKE low duration (min 500us)
+                if (timer_q >= T_STABLE_US) begin
                     next_state_s = S_INIT_STABLE;
                 end
             end
-            S_INIT_STABLE: begin // Bring CKE high
+            
+            S_INIT_STABLE: begin
                 dfi_cke_s = 1'b1;
-                if (timer_q >= T_INIT_WAIT) begin // General wait, e.g. tDLLK (min 512 CKs)
+                if (timer_q >= T_INIT_WAIT) begin
                     next_state_s = S_INIT_MRS2;
                 end
             end
-            S_INIT_MRS2: begin // Load Mode Register MR2
-                // MR2: BA1=1, BA0=0. Set write latency, etc.
-                // For simplicity, keeping default values (often 0 for self-refresh settings)
-                dfi_ras_n_s = 1'b0; dfi_cas_n_s = 1'b0; dfi_we_n_s = 1'b0; // MRS command
-                dfi_bank_s  = 3'b010; // Select MR2
-                dfi_address_s = 15'h0000; // A5-A3 for WL (CAS Write Latency). CL=6, AL=0 -> WL=CL-1=5 (010b)
-                                         // A6 for Self-Refresh Temp Range (0 normal)
-                if (timer_q >= T_MODE_REG_SET) begin // Wait tMRD (min 4 CKs)
+            
+            S_INIT_MRS2: begin
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b0;
+                dfi_we_n_s = 1'b0;
+                dfi_bank_s = 3'b010;
+                dfi_address_s = 15'd0;
+                if (timer_q >= T_MODE_REG_SET) begin
                     next_state_s = S_INIT_MRS3;
                 end
             end
-            S_INIT_MRS3: begin // Load Mode Register MR3
-                // MR3: BA1=1, BA0=1. MPR settings.
-                dfi_ras_n_s = 1'b0; dfi_cas_n_s = 1'b0; dfi_we_n_s = 1'b0;
-                dfi_bank_s  = 3'b011; // Select MR3
-                dfi_address_s = 15'h0000; // All zeros for default MPR settings
+            
+            S_INIT_MRS3: begin
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b0;
+                dfi_we_n_s = 1'b0;
+                dfi_bank_s = 3'b011;
+                dfi_address_s = 15'd0;
                 if (timer_q >= T_MODE_REG_SET) begin
                     next_state_s = S_INIT_MRS1;
                 end
             end
-            S_INIT_MRS1: begin // Load Mode Register MR1
-                // MR1: BA1=0, BA0=1. DLL Enable, ODT settings.
-                dfi_ras_n_s = 1'b0; dfi_cas_n_s = 1'b0; dfi_we_n_s = 1'b0;
-                dfi_bank_s  = 3'b001; // Select MR1
-                // A0=0 (DLL Enable), A2,A6,A9 for Rtt_Nom (e.g., 001 for RZQ/4=60ohm)
-                // A1,A5 for AL (Additive Latency). AL=0 for this example.
-                dfi_address_s = 15'b00000_00_0_01_0_00_0; // DLL Enable, AL=0, Rtt_Nom=RZQ/4 (001 for A9,A6,A2)
+            
+            S_INIT_MRS1: begin
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b0;
+                dfi_we_n_s = 1'b0;
+                dfi_bank_s = 3'b001;
+                dfi_address_s = 15'b00000_00_0_01_0_00_0;
                 if (timer_q >= T_MODE_REG_SET) begin
                     next_state_s = S_INIT_MRS0;
                 end
             end
-            S_INIT_MRS0: begin // Load Mode Register MR0
-                // MR0: BA1=0, BA0=0. Burst Length, CAS Latency, DLL Reset.
-                dfi_ras_n_s = 1'b0; dfi_cas_n_s = 1'b0; dfi_we_n_s = 1'b0;
-                dfi_bank_s  = 3'b000; // Select MR0
-                // BL8 (A1,A0=00), CL=6 (A6,A5,A4=010), DLL Reset (A8=1)
-                // A2=0 (Sequential), A12=0 (TDQS disable)
-                dfi_address_s = 15'b0_0_0_1_010_1_0_00; // BL=8, Read Burst Type=Sequential, CL=6, DLL Reset
+            
+            S_INIT_MRS0: begin
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b0;
+                dfi_we_n_s = 1'b0;
+                dfi_bank_s = 3'b000;
+                // MRS0: BL=8, Sequential, CL=6, DLL Reset
+                dfi_address_s = 15'b000_0_010_1_0_000_0_0_00;
                 if (timer_q >= T_MODE_REG_SET) begin
                     next_state_s = S_INIT_ZQCL;
                 end
             end
-            S_INIT_ZQCL: begin // ZQ Calibration Long
-                dfi_we_n_s = 1'b0; // ZQCL command (WE_n=0, CS_n=0, RAS_n=1, CAS_n=1)
-                dfi_address_s[10] = 1'b1; // A10=1 for ZQCL (ZQ Long Calibration)
-                if (timer_q >= T_ZQINIT) begin // Wait tZQinit (min 512ns or 512 CKs for some devices)
+            
+            S_INIT_ZQCL: begin
+                dfi_we_n_s = 1'b0;
+                dfi_address_s[10] = 1'b1;
+                if (timer_q >= T_ZQINIT) begin
                     next_state_s = S_INIT_DONE;
                 end
             end
+            
             S_INIT_DONE: begin
-                if (timer_q >= T_INIT_WAIT) begin // Extra wait after init
-                    next_state_s = S_START_NEW_DECAY_SETTING;
+                if (timer_q >= T_INIT_WAIT) begin
+                    next_state_s = S_WRITE_ACTIVATE;
                 end
             end
-
-            // --- Test Iteration Control ---
-            S_START_NEW_DECAY_SETTING: begin
-                // Parameters (current_decay_setting_cycles_q, etc.) are set in sequential block
-                next_state_s = S_START_TEST_ITERATION;
-            end
-            S_START_TEST_ITERATION: begin
-                 // Parameters (read_data_q, etc.) are set in sequential block
-                next_state_s = S_WRITE_ACTIVATE;
-            end
-
-            // --- Write Sequence ---
+            
+            // Write states with proper burst handling
             S_WRITE_ACTIVATE: begin
-                dfi_ras_n_s = 1'b0; // ACTIVATE command
-                dfi_bank_s  = TEST_BANK;
-                dfi_address_s = {1'b0, TEST_ROW}; // Row address on A13-A0
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b1;
+                dfi_we_n_s = 1'b1;
+                dfi_bank_s = current_bank_q;
+                dfi_address_s = {1'b0, current_row_q};
                 next_state_s = S_WRITE_ACTIVATE_WAIT;
             end
+            
             S_WRITE_ACTIVATE_WAIT: begin
-                if (timer_q >= T_ACTIVATE_TO_RW) begin // Wait tRCD
+                if (timer_q >= T_ACTIVATE_TO_RW) begin
                     next_state_s = S_WRITE_CMD;
                 end
             end
+            
             S_WRITE_CMD: begin
-                dfi_cas_n_s = 1'b0; dfi_we_n_s = 1'b0; // WRITE command
-                dfi_bank_s  = TEST_BANK;
-                dfi_address_s = {5'd0, TEST_COL}; // Column address on A9-A0 (A10=0 for no AP)
-                dfi_odt_s = 1'b1; // Enable ODT for write
+                dfi_ras_n_s = 1'b1;
+                dfi_cas_n_s = 1'b0;
+                dfi_we_n_s = 1'b0;
+                dfi_bank_s = current_bank_q;
+                dfi_address_s = {5'd0, current_col_q};
+                dfi_odt_s = 1'b1;
                 next_state_s = S_WRITE_BURST_0;
             end
+            
+            // Write burst - 4 cycles for BL8 with 32-bit interface
             S_WRITE_BURST_0: begin
                 dfi_wrdata_s = write_data_q[31:0];
-                dfi_wrdata_en_s = 1'b1; dfi_odt_s = 1'b1;
+                dfi_wrdata_en_s = 1'b1;
+                dfi_wrdata_mask_s = 4'h0;
+                dfi_odt_s = 1'b1;
                 next_state_s = S_WRITE_BURST_1;
             end
+            
             S_WRITE_BURST_1: begin
                 dfi_wrdata_s = write_data_q[63:32];
-                dfi_wrdata_en_s = 1'b1; dfi_odt_s = 1'b1;
+                dfi_wrdata_en_s = 1'b1;
+                dfi_wrdata_mask_s = 4'h0;
+                dfi_odt_s = 1'b1;
                 next_state_s = S_WRITE_BURST_2;
             end
+            
             S_WRITE_BURST_2: begin
                 dfi_wrdata_s = write_data_q[95:64];
-                dfi_wrdata_en_s = 1'b1; dfi_odt_s = 1'b1;
+                dfi_wrdata_en_s = 1'b1;
+                dfi_wrdata_mask_s = 4'h0;
+                dfi_odt_s = 1'b1;
                 next_state_s = S_WRITE_BURST_3;
             end
+            
             S_WRITE_BURST_3: begin
                 dfi_wrdata_s = write_data_q[127:96];
-                dfi_wrdata_en_s = 1'b1; dfi_odt_s = 1'b1;
+                dfi_wrdata_en_s = 1'b1;
+                dfi_wrdata_mask_s = 4'h0;
+                dfi_odt_s = 1'b1;
                 next_state_s = S_WRITE_WAIT;
             end
-            S_WRITE_WAIT: begin // Wait for tWR (Write Recovery) + tWL (Write Latency)
-                dfi_odt_s = 1'b0; // Can disable ODT after burst
+            
+            S_WRITE_WAIT: begin
+                dfi_odt_s = 1'b0;
                 if (timer_q >= T_WRITE_TO_PRECHARGE) begin
                     next_state_s = S_PRECHARGE_AFTER_WRITE;
                 end
             end
+            
             S_PRECHARGE_AFTER_WRITE: begin
-                dfi_ras_n_s = 1'b0; dfi_we_n_s = 1'b0; // PRECHARGE command
-                dfi_address_s[10] = 1'b1; // A10=1 for Precharge All Banks
-                // Or precharge specific bank: dfi_bank_s = TEST_BANK; dfi_address_s[10] = 1'b0;
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b1;
+                dfi_we_n_s = 1'b0;
+                dfi_address_s[10] = 1'b1; // All banks
                 next_state_s = S_PRECHARGE_WAIT;
             end
+            
             S_PRECHARGE_WAIT: begin
-                if (timer_q >= T_PRECHARGE) begin // Wait tRP (Precharge Period)
+                if (timer_q >= T_PRECHARGE) begin
                     next_state_s = S_DECAY_WAIT;
                 end
             end
+            
             S_DECAY_WAIT: begin
-                dfi_cke_s = 1'b0; // Optional: CKE low during long decay to save power (if no refresh needed)
-                                  // For this test, assume refresh is handled or not critical for short decay.
-                                  // If CKE is low, it must be brought high tXP before next command.
-                if (timer_q >= current_decay_setting_cycles_q) begin
+                if (timer_q >= decay_timer_target_q) begin
                     next_state_s = S_READ_ACTIVATE;
                 end
             end
-
-            // --- Read Sequence ---
+            
+            // Read states with proper burst handling
             S_READ_ACTIVATE: begin
-                dfi_cke_s = 1'b1; // Ensure CKE is high
-                dfi_ras_n_s = 1'b0; // ACTIVATE command
-                dfi_bank_s  = TEST_BANK;
-                dfi_address_s = {1'b0, TEST_ROW};
+                dfi_ras_n_s = 1'b0;
+                dfi_cas_n_s = 1'b1;
+                dfi_we_n_s = 1'b1;
+                dfi_bank_s = current_bank_q;
+                dfi_address_s = {1'b0, current_row_q};
                 next_state_s = S_READ_ACTIVATE_WAIT;
             end
+            
             S_READ_ACTIVATE_WAIT: begin
-                if (timer_q >= T_ACTIVATE_TO_RW) begin // Wait tRCD
+                if (timer_q >= T_ACTIVATE_TO_RW) begin
                     next_state_s = S_READ_CMD;
                 end
             end
+            
             S_READ_CMD: begin
-                dfi_cas_n_s = 1'b0; dfi_we_n_s = 1'b1; // READ command
-                dfi_bank_s  = TEST_BANK;
-                dfi_address_s = {5'd0, TEST_COL};
-                dfi_rddata_en_s = 1'b1; // Enable DFI read data path
+                dfi_ras_n_s = 1'b1;
+                dfi_cas_n_s = 1'b0;
+                dfi_we_n_s = 1'b1;
+                dfi_bank_s = current_bank_q;
+                dfi_address_s = {5'd0, current_col_q};
+                dfi_rddata_en_s = 1'b1;
                 next_state_s = S_READ_WAIT;
             end
-            S_READ_WAIT: begin // Wait for CAS Latency + PHY Read Latency
+            
+            S_READ_WAIT: begin
                 dfi_rddata_en_s = 1'b1;
                 if (timer_q >= T_READ_LATENCY) begin
                     next_state_s = S_READ_CAPTURE_0;
                 end
             end
-            S_READ_CAPTURE_0: begin // Start capturing burst data
+            
+            // Read capture states - wait for all burst data
+            S_READ_CAPTURE_0: begin
                 dfi_rddata_en_s = 1'b1;
-                if (read_burst_cnt_q >= 1) next_state_s = S_READ_CAPTURE_1; // Wait for first data beat
+                if (read_burst_cnt_q >= 3'd1) begin
+                    next_state_s = S_READ_CAPTURE_1;
+                end
             end
+            
             S_READ_CAPTURE_1: begin
                 dfi_rddata_en_s = 1'b1;
-                if (read_burst_cnt_q >= 2) next_state_s = S_READ_CAPTURE_2;
+                if (read_burst_cnt_q >= 3'd2) begin
+                    next_state_s = S_READ_CAPTURE_2;
+                end
             end
+            
             S_READ_CAPTURE_2: begin
                 dfi_rddata_en_s = 1'b1;
-                if (read_burst_cnt_q >= 3) next_state_s = S_READ_CAPTURE_3;
+                if (read_burst_cnt_q >= 3'd3) begin
+                    next_state_s = S_READ_CAPTURE_3;
+                end
             end
+            
             S_READ_CAPTURE_3: begin
-                dfi_rddata_en_s = 1'b1; // Keep enabled for last beat
-                if (read_burst_cnt_q >= 4) begin // All 4 beats (128 bits) captured
+                if (read_burst_cnt_q >= 3'd4) begin
                     next_state_s = S_READ_DONE;
                 end
             end
+            
             S_READ_DONE: begin
-                dfi_rddata_en_s = 1'b0; // Disable DFI read path
-                if (timer_q >= 4'd5) begin // Small delay before calculating/UART
-                    next_state_s = S_CALCULATE_SIMILARITY;
+                if (timer_q >= 4'd10) begin
+                    next_state_s = S_UART_START;
                 end
-            end
-            S_CALCULATE_SIMILARITY: begin
-                // similar_bits_count_q is updated in sequential block based on this state
-                uart_current_segment_q <= UART_SEG_DECAY_VAL; // Start UART message
-                next_state_s = S_UART_PREPARE_MSG;
-            end
-
-            // --- UART Output Sequence ---
-            S_UART_PREPARE_MSG: begin
-                // Prepare uart_data_segment_str_q and uart_data_segment_len_q based on uart_current_segment_q
-                case (uart_current_segment_q)
-                    UART_SEG_DECAY_VAL: begin
-                        logic [15:0] val = current_decay_ms_for_uart_q;
-                        uart_data_segment_str_q[0] = (val / 1000) % 10 + "0"; // Thousands
-                        uart_data_segment_str_q[1] = (val / 100)  % 10 + "0"; // Hundreds
-                        uart_data_segment_str_q[2] = (val / 10)   % 10 + "0"; // Tens
-                        uart_data_segment_str_q[3] = (val / 1)    % 10 + "0"; // Ones
-                        uart_data_segment_len_q = 4; // Fixed 4 digits
-                    end
-                    UART_SEG_COMMA1, UART_SEG_COMMA2, UART_SEG_COMMA3: begin
-                        uart_data_segment_str_q[0] = ",";
-                        uart_data_segment_len_q = 1;
-                    end
-                    UART_SEG_WRITE_HEX: begin
-                        for (int i=0; i<32; i++) begin // 128 bits / 4 bits_per_hex_char = 32 chars
-                            uart_data_segment_str_q[i] = hex_to_ascii(write_data_q[(127 - i*4) -: 4]);
-                        end
-                        uart_data_segment_len_q = 32;
-                    end
-                    UART_SEG_READ_HEX: begin
-                        for (int i=0; i<32; i++) begin
-                            uart_data_segment_str_q[i] = hex_to_ascii(read_data_q[(127 - i*4) -: 4]);
-                        end
-                        uart_data_segment_len_q = 32;
-                    end
-                    UART_SEG_SIMILARITY_VAL: begin
-                        logic [7:0] val = similar_bits_count_q;
-                        uart_data_segment_str_q[0] = (val / 100) % 10 + "0"; // Hundreds
-                        uart_data_segment_str_q[1] = (val / 10)  % 10 + "0"; // Tens
-                        uart_data_segment_str_q[2] = (val / 1)   % 10 + "0"; // Ones
-                        uart_data_segment_len_q = 3; // Fixed 3 digits
-                    end
-                    UART_SEG_CR: begin
-                        uart_data_segment_str_q[0] = "\r"; // Carriage Return
-                        uart_data_segment_len_q = 1;
-                    end
-                    UART_SEG_LF: begin
-                        uart_data_segment_str_q[0] = "\n"; // Line Feed
-                        uart_data_segment_len_q = 1;
-                    end
-                    UART_SEG_DONE: begin // Should not prepare here, this is a transition target
-                        uart_data_segment_len_q = 0;
-                    end
-                    default: uart_data_segment_len_q = 0;
-                endcase
-                if (uart_data_segment_len_q > 0) begin
-                    next_state_s = S_UART_SEND_CHAR;
-                end else if (uart_current_segment_q == UART_SEG_DONE) { // All segments sent
-                     next_state_s = S_CHECK_FOR_MORE_TESTS;
-                } else { // Error or empty segment, try next
-                    // This logic needs to be robust: if len is 0, advance segment
-                    uart_current_segment_q <= uart_current_segment_q + 1; // Advance to next segment
-                    // next_state_s remains S_UART_PREPARE_MSG to re-evaluate
-                }
-            end
-
-            S_UART_SEND_CHAR: begin
-                if (uart_char_ptr_q < uart_data_segment_len_q) begin
-                    uart_tx_data_s = uart_data_segment_str_q[uart_char_ptr_q];
-                    uart_tx_start_s = 1'b1;
-                    next_state_s = S_UART_WAIT_TX_DONE;
-                end else begin // Current segment fully sent
-                    uart_current_segment_q <= uart_current_segment_q + 1; // Advance to next segment
-                    if (uart_current_segment_q >= UART_SEG_DONE) begin // Check if all segments are done
-                        next_state_s = S_CHECK_FOR_MORE_TESTS;
-                    end else begin
-                        next_state_s = S_UART_PREPARE_MSG; // Prepare next segment
-                    end
-                end
-            end
-
-            S_UART_WAIT_TX_DONE: begin
-                if (!uart_tx_busy_sync1) begin // UART is ready for next char
-                    next_state_s = S_UART_SEND_CHAR; // Send next char of current segment (ptr incremented in seq logic)
-                                                    // Actually, ptr should be incremented here before going back
-                                                    // Or, S_UART_SEND_CHAR handles completion of segment
-                }
-                // Stays in S_UART_WAIT_TX_DONE if busy
             end
             
-            // --- Loop Control ---
-            S_CHECK_FOR_MORE_TESTS: begin
-                if (tests_run_for_current_decay_q < NUM_TESTS_PER_DECAY_SETTING - 1) begin
-                    // More tests for current decay setting
-                    next_state_s = S_START_TEST_ITERATION; 
-                end else begin // All tests for current decay done
-                    if (current_decay_idx_q < NUM_DECAY_SETTINGS - 1) begin
-                        // More decay settings to test
-                        next_state_s = S_START_NEW_DECAY_SETTING;
+            // UART states - send comprehensive test data
+            S_UART_START: begin
+                if (!uart_tx_busy) begin
+                    next_state_s = S_UART_SEND_CHAR;
+                end
+            end
+            
+            S_UART_SEND_CHAR: begin
+                uart_tx_start = 1'b1;
+                
+                // Format: "DT:xxxxx,ADDR:xxxx,MEAS:x,ERR:xxx,DATA:xxxxxxxxxxxxxxxx\r\n"
+                case (uart_msg_idx_q)
+                    // "DT:" - Decay time in ms
+                    8'd0: uart_tx_data = "D";
+                    8'd1: uart_tx_data = "T";
+                    8'd2: uart_tx_data = ":";
+                    8'd3: uart_tx_data = hex_to_ascii(decay_timer_target_q[31:28]);
+                    8'd4: uart_tx_data = hex_to_ascii(decay_timer_target_q[27:24]);
+                    8'd5: uart_tx_data = hex_to_ascii(decay_timer_target_q[23:20]);
+                    8'd6: uart_tx_data = hex_to_ascii(decay_timer_target_q[19:16]);
+                    8'd7: uart_tx_data = hex_to_ascii(decay_timer_target_q[15:12]);
+                    8'd8: uart_tx_data = ",";
+                    
+                    // "ADDR:" - Address (bank, row[7:0], col[7:0])
+                    8'd9:  uart_tx_data = "A";
+                    8'd10: uart_tx_data = "D";
+                    8'd11: uart_tx_data = "D";
+                    8'd12: uart_tx_data = "R";
+                    8'd13: uart_tx_data = ":";
+                    8'd14: uart_tx_data = hex_to_ascii({1'b0, current_bank_q});
+                    8'd15: uart_tx_data = hex_to_ascii(current_row_q[11:8]);
+                    8'd16: uart_tx_data = hex_to_ascii(current_row_q[7:4]);
+                    8'd17: uart_tx_data = hex_to_ascii(current_row_q[3:0]);
+                    8'd18: uart_tx_data = hex_to_ascii(current_col_q[9:6]);
+                    8'd19: uart_tx_data = hex_to_ascii(current_col_q[5:2]);
+                    8'd20: uart_tx_data = ",";
+                    
+                    // "MEAS:" - Measurement number
+                    8'd21: uart_tx_data = "M";
+                    8'd22: uart_tx_data = "E";
+                    8'd23: uart_tx_data = "A";
+                    8'd24: uart_tx_data = "S";
+                    8'd25: uart_tx_data = ":";
+                    8'd26: uart_tx_data = hex_to_ascii(measurement_cnt_q);
+                    8'd27: uart_tx_data = ",";
+                    
+                    // "ERR:" - Bit errors
+                    8'd28: uart_tx_data = "E";
+                    8'd29: uart_tx_data = "R";
+                    8'd30: uart_tx_data = "R";
+                    8'd31: uart_tx_data = ":";
+                    8'd32: uart_tx_data = hex_to_ascii(bit_errors_q[7:4]);
+                    8'd33: uart_tx_data = hex_to_ascii(bit_errors_q[3:0]);
+                    8'd34: uart_tx_data = ",";
+                    
+                    // "PASS:" - Pass/Fail
+                    8'd35: uart_tx_data = "P";
+                    8'd36: uart_tx_data = "A";
+                    8'd37: uart_tx_data = "S";
+                    8'd38: uart_tx_data = "S";
+                    8'd39: uart_tx_data = ":";
+                    8'd40: uart_tx_data = test_pass_q ? "1" : "0";
+                    8'd41: uart_tx_data = ",";
+                    
+                    // "RD:" - First 32 bits of read data
+                    8'd42: uart_tx_data = "R";
+                    8'd43: uart_tx_data = "D";
+                    8'd44: uart_tx_data = ":";
+                    8'd45: uart_tx_data = hex_to_ascii(read_data_q[31:28]);
+                    8'd46: uart_tx_data = hex_to_ascii(read_data_q[27:24]);
+                    8'd47: uart_tx_data = hex_to_ascii(read_data_q[23:20]);
+                    8'd48: uart_tx_data = hex_to_ascii(read_data_q[19:16]);
+                    8'd49: uart_tx_data = hex_to_ascii(read_data_q[15:12]);
+                    8'd50: uart_tx_data = hex_to_ascii(read_data_q[11:8]);
+                    8'd51: uart_tx_data = hex_to_ascii(read_data_q[7:4]);
+                    8'd52: uart_tx_data = hex_to_ascii(read_data_q[3:0]);
+                    
+                    // Newline
+                    8'd53: uart_tx_data = "\r";
+                    8'd54: uart_tx_data = "\n";
+                    
+                    default: uart_tx_data = " ";
+                endcase
+                
+                next_state_s = S_UART_WAIT;
+            end
+            
+            S_UART_WAIT: begin
+                if (!uart_tx_busy) begin
+                    if (uart_msg_idx_q >= 8'd54) begin
+                        next_state_s = S_NEXT_MEASUREMENT;
                     end else begin
-                        // All decay settings and tests complete
-                        next_state_s = S_ALL_TESTS_COMPLETE;
+                        next_state_s = S_UART_SEND_CHAR;
                     end
                 end
             end
-
-            S_ALL_TESTS_COMPLETE: begin
+            
+            S_NEXT_MEASUREMENT: begin
+                if (measurement_cnt_q >= MEASUREMENTS_PER_POINT - 1) begin
+                    next_state_s = S_NEXT_ADDRESS;
+                end else begin
+                    next_state_s = S_WRITE_ACTIVATE; // Repeat test at same address
+                end
+            end
+            
+            S_NEXT_ADDRESS: begin
+                if (address_idx_q >= NUM_ADDRESSES - 1) begin
+                    next_state_s = S_NEXT_DECAY_TIME;
+                end else begin
+                    next_state_s = S_WRITE_ACTIVATE; // Test next address
+                end
+            end
+            
+            S_NEXT_DECAY_TIME: begin
+                if (decay_time_idx_q >= NUM_DECAY_TIMES - 1) begin
+                    next_state_s = S_DONE;
+                end else begin
+                    next_state_s = S_WRITE_ACTIVATE; // Test with next decay time
+                end
+            end
+            
+            S_DONE: begin
                 if (start_btn_edge) begin
-                    next_state_s = S_IDLE; // Restart entire sequence
+                    next_state_s = S_IDLE;
                 end
             end
             
@@ -745,17 +805,10 @@ module ddr3_decay_test_top (
     
     // LED outputs
     always_comb begin
-        status_led0_o = (current_state_q != S_IDLE) && (current_state_q != S_ALL_TESTS_COMPLETE);
-        // status_led1_o and status_led2_o reflect the result of the *last completed test* when in S_ALL_TESTS_COMPLETE
-        if (current_state_q == S_ALL_TESTS_COMPLETE || (current_state_q == S_CHECK_FOR_MORE_TESTS && uart_current_segment_q == UART_SEG_DONE)) begin
-             status_led1_o = (similar_bits_count_q == 128); // Success if all bits matched
-             status_led2_o = (similar_bits_count_q != 128); // Fail otherwise
-        end else begin
-             status_led1_o = 1'b0;
-             status_led2_o = 1'b0;
-        end
-        status_led3_o = uart_tx_busy; // Direct from UART module (clk100mhz domain)
-                                      // Or use uart_tx_busy_sync1 for FSM domain indication
+        status_led0_o = (current_state_q != S_IDLE) && (current_state_q != S_DONE);
+        status_led1_o = test_pass_q && (current_state_q >= S_READ_DONE);
+        status_led2_o = ~test_pass_q && (current_state_q >= S_READ_DONE);
+        status_led3_o = uart_tx_busy;
     end
 
     // Helper function for hex to ASCII conversion
@@ -770,157 +823,68 @@ module ddr3_decay_test_top (
     endfunction
 
     // UART instance
-    // Baud rate = clk / CLKS_PER_BIT. For 115200 baud with 100MHz clk:
-    // CLKS_PER_BIT = 100,000,000 / 115200 = ~868
     uart_tx #(
-        .CLKS_PER_BIT(868) 
+        .CLKS_PER_BIT(868)
     ) u_uart_tx (
         .clk(clk100mhz_i),
-        .rst(rst_for_uart), // Reset for UART module
-        .tx_start(uart_tx_start_s), // FSM controls start, needs CDC if domains differ significantly
-        .tx_data(uart_tx_data_s),   // FSM provides data
+        .rst(rst_for_uart),
+        .tx_start(uart_tx_start),
+        .tx_data(uart_tx_data),
         .tx_serial(uart_txd_o),
         .tx_busy(uart_tx_busy),
-        .tx_done() // Not used here
+        .tx_done()
     );
 
-    // ILA signals for debugging (subset)
-    logic [6:0]  ila_state_q;
-    logic [15:0] ila_timer_q_low; // Lower 16 bits of timer
-    logic [7:0]  ila_similar_bits;
-    logic [$clog2(NUM_DECAY_SETTINGS)-1:0] ila_decay_idx;
-    logic [$clog2(NUM_TESTS_PER_DECAY_SETTING):0] ila_test_iter;
-    logic [3:0] ila_uart_segment;
-    logic [4:0] ila_uart_char_ptr;
+    // ILA signals for debugging
+    logic [5:0]  ila_state;
+    logic [31:0] ila_timer;
+    logic        ila_wrdata_en;
+    logic [31:0] ila_wrdata;
+    logic        ila_rddata_valid;
+    logic [31:0] ila_rddata;
+    logic [127:0] ila_captured_data;
+    logic [127:0] ila_write_data;
+    logic [7:0]  ila_bit_errors;
+    logic [7:0]  ila_decay_idx;
+    logic [9:0]  ila_addr_idx;
+    logic [3:0]  ila_meas_cnt;
+    logic        ila_test_pass;
     
     always_comb begin
-        ila_state_q = current_state_q;
-        ila_timer_q_low = timer_q[15:0];
-        ila_similar_bits = similar_bits_count_q;
-        ila_decay_idx = current_decay_idx_q;
-        ila_test_iter = tests_run_for_current_decay_q;
-        ila_uart_segment = uart_current_segment_q;
-        ila_uart_char_ptr = uart_char_ptr_q;
+        ila_state = current_state_q;
+        ila_timer = timer_q;
+        ila_wrdata_en = dfi_wrdata_en_s;
+        ila_wrdata = dfi_wrdata_s;
+        ila_rddata_valid = dfi_rddata_valid_r;
+        ila_rddata = dfi_rddata_r;
+        ila_captured_data = read_data_q;
+        ila_write_data = write_data_q;
+        ila_bit_errors = bit_errors_q;
+        ila_decay_idx = decay_time_idx_q;
+        ila_addr_idx = address_idx_q;
+        ila_meas_cnt = measurement_cnt_q;
+        ila_test_pass = test_pass_q;
     end
 
-    // ILA instance (adjust probe connections to match your ILA configuration)
-    // ila_0 u_ila (
-    //     .clk(clk_phy_sys),
-    //     .probe0(ila_state_q),          // Current FSM state
-    //     .probe1(ila_timer_q_low),      // Timer value (lower bits)
-    //     .probe2(dfi_address_s[9:0]),   // DFI address (lower bits for column)
-    //     .probe3(dfi_bank_s),           // DFI bank
-    //     .probe4({dfi_ras_n_s, dfi_cas_n_s, dfi_we_n_s}), // DFI command type
-    //     .probe5(dfi_wrdata_en_s),      // DFI write enable
-    //     .probe6(dfi_rddata_valid_r),   // DFI read valid
-    //     .probe7(ila_similar_bits),     // Calculated similar bits
-    //     .probe8(ila_decay_idx),        // Current decay setting index
-    //     .probe9(ila_test_iter),        // Current test iteration for decay setting
-    //     .probe10(ila_uart_segment),    // UART message segment
-    //     .probe11(ila_uart_char_ptr),   // UART character pointer in segment
-    //     .probe12(read_data_q[31:0]),   // Sample of read data
-    //     .probe13(write_data_q[31:0]),  // Sample of write data
-    //     .probe14(start_btn_edge),
-    //     .probe15(uart_tx_busy_sync1)
-    // );
+    // ILA instance
+    ila_0 u_ila (
+        .clk(clk_phy_sys),
+        .probe0(ila_state),
+        .probe1({2'd0, ila_state}),
+        .probe2(ila_timer[15:0]),
+        .probe3(ila_test_pass),
+        .probe4({5'd0, current_bank_q}),
+        .probe5(current_col_q),
+        .probe6(current_bank_q),
+        .probe7(ila_wrdata_en),
+        .probe8(ila_wrdata),
+        .probe9(ila_rddata_valid),
+        .probe10(ila_rddata),
+        .probe11(ila_captured_data[31:0]),
+        .probe12(ila_bit_errors),
+        .probe13({4'd0, ila_meas_cnt}),
+        .probe14((current_state_q == S_DECAY_WAIT)),
+        .probe15(ila_decay_idx)
+    );
 
 endmodule
-
-// Basic UART TX module (ensure this matches your project's UART module)
-// This is a placeholder if you don't have one.
-// A real UART module would handle start/stop bits, parity, etc.
-module uart_tx #(
-    parameter CLKS_PER_BIT = 868 // Default for 115200 baud @ 100MHz
-) (
-    input wire clk,
-    input wire rst,
-    input wire tx_start,      // Start transmission signal (pulse)
-    input wire [7:0] tx_data, // Data to transmit
-    output logic tx_serial,   // Serial output
-    output logic tx_busy,     // UART is busy transmitting
-    output logic tx_done      // Transmission of one byte complete (pulse)
-);
-    typedef enum logic [3:0] {
-        S_IDLE,
-        S_START_BIT,
-        S_DATA_BITS,
-        S_STOP_BIT
-    } uart_state_t;
-
-    uart_state_t current_state, next_state;
-    logic [$clog2(CLKS_PER_BIT)-1:0] clk_counter;
-    logic [3:0] bit_counter; // For 8 data bits + start/stop
-    logic [7:0] data_reg;
-
-    assign tx_done = (current_state == S_STOP_BIT) && (clk_counter == CLKS_PER_BIT - 1);
-
-    always_ff @(posedge clk or posedge rst) begin
-        if (rst) begin
-            current_state <= S_IDLE;
-            clk_counter <= 0;
-            bit_counter <= 0;
-            tx_serial <= 1'b1; // Idle high
-            tx_busy <= 1'b0;
-            data_reg <= 8'h00;
-        end else begin
-            current_state <= next_state;
-            clk_counter <= (current_state == S_IDLE || clk_counter == CLKS_PER_BIT -1) ? 0 : clk_counter + 1;
-            
-            if (current_state == S_IDLE && tx_start) begin
-                data_reg <= tx_data;
-            end
-
-            if (clk_counter == CLKS_PER_BIT - 1) begin
-                if (current_state == S_DATA_BITS || current_state == S_START_BIT) begin
-                    bit_counter <= bit_counter + 1;
-                end else if (current_state == S_STOP_BIT) begin
-                     bit_counter <= 0; // Reset for next byte
-                end
-            end
-            
-            case (current_state)
-                S_IDLE: tx_busy <= 1'b0;
-                S_START_BIT, S_DATA_BITS, S_STOP_BIT: tx_busy <= 1'b1;
-            endcase
-
-            // Serial output logic
-            case (current_state)
-                S_IDLE: tx_serial <= 1'b1;
-                S_START_BIT: tx_serial <= 1'b0;
-                S_DATA_BITS: tx_serial <= data_reg[bit_counter-1]; // Send LSB first after start bit
-                S_STOP_BIT: tx_serial <= 1'b1;
-                default: tx_serial <= 1'b1;
-            endcase
-        end
-    end
-
-    always_comb begin
-        next_state = current_state;
-        case (current_state)
-            S_IDLE: begin
-                if (tx_start) begin
-                    next_state = S_START_BIT;
-                end
-            end
-            S_START_BIT: begin
-                if (clk_counter == CLKS_PER_BIT - 1) begin
-                    next_state = S_DATA_BITS;
-                end
-            end
-            S_DATA_BITS: begin
-                if (clk_counter == CLKS_PER_BIT - 1) begin
-                    if (bit_counter == 8) begin // 8 data bits sent (bit_counter goes 1 to 8)
-                        next_state = S_STOP_BIT;
-                    end
-                end
-            end
-            S_STOP_BIT: begin
-                if (clk_counter == CLKS_PER_BIT - 1) begin
-                    next_state = S_IDLE;
-                end
-            end
-            default: next_state = S_IDLE;
-        endcase
-    end
-endmodule
-
