@@ -22,7 +22,10 @@ module ila_0 (
   probe12,
   probe13,
   probe14,
-  probe15
+  probe15,
+  probe16,
+  probe17,
+  probe18
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 signal_clock CLK" *)
@@ -32,35 +35,41 @@ module ila_0 (
   (* X_INTERFACE_IGNORE = "true" *)
   input [5:0]probe0;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [15:0]probe1;
+  input [7:0]probe1;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [0:0]probe2;
+  input [15:0]probe2;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [2:0]probe3;
+  input [0:0]probe3;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [14:0]probe4;
+  input [2:0]probe4;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [2:0]probe5;
+  input [9:0]probe5;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [0:0]probe6;
+  input [2:0]probe6;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [31:0]probe7;
+  input [0:0]probe7;
   (* X_INTERFACE_IGNORE = "true" *)
   input [31:0]probe8;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [31:0]probe9;
+  input [0:0]probe9;
   (* X_INTERFACE_IGNORE = "true" *)
   input [31:0]probe10;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [31:0]probe11;
+  input [127:0]probe11;
   (* X_INTERFACE_IGNORE = "true" *)
   input [0:0]probe12;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [0:0]probe13;
+  input [8:0]probe13;
   (* X_INTERFACE_IGNORE = "true" *)
   input [0:0]probe14;
   (* X_INTERFACE_IGNORE = "true" *)
-  input [0:0]probe15;
+  input [7:0]probe15;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [0:0]probe16;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [0:0]probe17;
+  (* X_INTERFACE_IGNORE = "true" *)
+  input [0:0]probe18;
 
   // stub module has no contents
 

@@ -67,12 +67,12 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="5"/>
-    <Option Name="WTModelSimExportSim" Val="5"/>
-    <Option Name="WTQuestaExportSim" Val="5"/>
+    <Option Name="WTXSimExportSim" Val="10"/>
+    <Option Name="WTModelSimExportSim" Val="10"/>
+    <Option Name="WTQuestaExportSim" Val="10"/>
     <Option Name="WTIesExportSim" Val="0"/>
-    <Option Name="WTVcsExportSim" Val="5"/>
-    <Option Name="WTRivieraExportSim" Val="5"/>
+    <Option Name="WTVcsExportSim" Val="10"/>
+    <Option Name="WTRivieraExportSim" Val="10"/>
     <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
@@ -123,10 +123,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_sweep2.sv">
+      <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_o3swap_latencyfix_readfix.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_sweep2.sv"/>
-          <Attr Name="ImportTime" Val="1748453056"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_o3swap_latencyfix_readfix.sv"/>
+          <Attr Name="ImportTime" Val="1748504172"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -134,7 +134,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ddr3_decay_sweep_top"/>
+        <Option Name="TopModule" Val="ddr3_decay_test_top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -156,7 +156,7 @@
       <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="ddr3_decay_sweep_top"/>
+        <Option Name="TopModule" Val="ddr3_decay_test_top"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>

@@ -39,6 +39,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log ddr3_decay_sweep_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ddr3_decay_sweep_top.tcl -notrace
+EAStep vivado -log ddr3_decay_test_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source ddr3_decay_test_top.tcl -notrace
 
 

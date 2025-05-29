@@ -1,0 +1,197 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Thu May 29 09:40:26 2025
+| Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_drc -file ddr3_decay_test_top_drc_opted.rpt -pb ddr3_decay_test_top_drc_opted.pb -rpx ddr3_decay_test_top_drc_opted.rpx
+| Design       : ddr3_decay_test_top
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 32
++-----------+----------+----------------------------------------------------+--------+
+| Rule      | Severity | Description                                        | Checks |
++-----------+----------+----------------------------------------------------+--------+
+| REQP-101  | Warning  | enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND | 16     |
+| REQP-1580 | Warning  | Phase alignment                                    | 16     |
++-----------+----------+----------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+REQP-101#1 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in0: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#2 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in10: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#3 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in11: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#4 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in12: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#5 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in13: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#6 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in14: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#7 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in15: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#8 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in1: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#9 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in2: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#10 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in3: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#11 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in4: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#12 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in5: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#13 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in6: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#14 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in7: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#15 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in8: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-101#16 Warning
+enum_NUM_CE_1_connects_CE2_ACTIVE_connects_CE2_GND  
+u_ddr3_phy_inst/u_serdes_dq_in9: Useless CE2 input pin. With NUM_CE set 1, the CE2 input pin is being ignored.
+Related violations: <none>
+
+REQP-1580#1 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in0. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in0/OCLK / u_ddr3_phy_inst/u_serdes_dq_in0/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in0/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in0/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#2 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in1. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in1/OCLK / u_ddr3_phy_inst/u_serdes_dq_in1/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in1/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in1/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#3 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in10. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in10/OCLK / u_ddr3_phy_inst/u_serdes_dq_in10/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in10/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in10/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#4 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in11. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in11/OCLK / u_ddr3_phy_inst/u_serdes_dq_in11/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in11/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in11/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#5 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in12. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in12/OCLK / u_ddr3_phy_inst/u_serdes_dq_in12/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in12/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in12/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#6 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in13. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in13/OCLK / u_ddr3_phy_inst/u_serdes_dq_in13/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in13/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in13/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#7 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in14. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in14/OCLK / u_ddr3_phy_inst/u_serdes_dq_in14/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in14/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in14/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#8 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in15. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in15/OCLK / u_ddr3_phy_inst/u_serdes_dq_in15/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in15/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in15/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#9 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in2. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in2/OCLK / u_ddr3_phy_inst/u_serdes_dq_in2/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in2/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in2/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#10 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in3. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in3/OCLK / u_ddr3_phy_inst/u_serdes_dq_in3/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in3/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in3/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#11 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in4. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in4/OCLK / u_ddr3_phy_inst/u_serdes_dq_in4/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in4/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in4/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#12 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in5. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in5/OCLK / u_ddr3_phy_inst/u_serdes_dq_in5/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in5/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in5/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#13 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in6. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in6/OCLK / u_ddr3_phy_inst/u_serdes_dq_in6/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in6/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in6/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#14 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in7. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in7/OCLK / u_ddr3_phy_inst/u_serdes_dq_in7/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in7/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in7/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#15 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in8. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in8/OCLK / u_ddr3_phy_inst/u_serdes_dq_in8/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in8/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in8/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+REQP-1580#16 Warning
+Phase alignment  
+Unsupported clocking topology used for ISERDESE2 u_ddr3_phy_inst/u_serdes_dq_in9. This can result in corrupted data. The u_ddr3_phy_inst/u_serdes_dq_in9/OCLK / u_ddr3_phy_inst/u_serdes_dq_in9/CLKDIV pins should be driven by the same source through the same buffer type or by a BUFIO / BUFR combination in order to have a proper phase relationship and the u_ddr3_phy_inst/u_serdes_dq_in9/CLK pin should be driven similarly to the u_ddr3_phy_inst/u_serdes_dq_in9/OCLK pin. Please refer to the Select I/O User Guide for supported clocking topologies of the chosen INTERFACE_TYPE mode.
+Related violations: <none>
+
+
