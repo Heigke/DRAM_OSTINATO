@@ -1,6 +1,6 @@
 import csv
 
-csv_file = "iladata_read_trust7.csv"
+csv_file = "iladata_r.csv"
 
 KEY_FIELDS = {
     "sample": "Sample in Buffer",

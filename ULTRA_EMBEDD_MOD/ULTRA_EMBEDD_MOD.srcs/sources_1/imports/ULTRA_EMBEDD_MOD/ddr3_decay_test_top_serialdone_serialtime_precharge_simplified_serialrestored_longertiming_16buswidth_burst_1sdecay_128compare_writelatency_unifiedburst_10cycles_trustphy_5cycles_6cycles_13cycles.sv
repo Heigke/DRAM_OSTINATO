@@ -69,7 +69,7 @@ module ddr3_decay_test_top (
 
     // --- DFI PHY Instance ---
     // FIX: Update read latency to match measured 14 cycles (13 + 1 for pipeline)
-    localparam TPHY_RDLAT_C  = 13;  // Measured: CL(6) + 2 PHY + 5 fabric = 13
+    localparam TPHY_RDLAT_C  = 10;  // Measured: CL(6) + 2 PHY + 5 fabric = 13
     localparam TPHY_WRLAT_C  = 3;
 
     logic [14:0] dfi_address_s;
