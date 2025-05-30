@@ -91,8 +91,8 @@ input [8 : 0] probe13;
 input [0 : 0] probe14;
 input [7 : 0] probe15;
 input [0 : 0] probe16;
-input [0 : 0] probe17;
-input [0 : 0] probe18;
+input [2 : 0] probe17;
+input [2 : 0] probe18;
 
 
 endmodule

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748504214" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ddr3_decay_test_top.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1748598370" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ddr3_decay_test_top.dcp">
   <File Type="VDS-TIMING-PB" Name="ddr3_decay_test_top_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="ddr3_decay_test_top_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="ddr3_decay_test_top.dcp"/>
@@ -43,10 +43,10 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_o3swap_latencyfix_readfix.sv">
+    <File Path="$PSRCDIR/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv">
       <FileInfo>
-        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_o3swap_latencyfix_readfix.sv"/>
-        <Attr Name="ImportTime" Val="1748504172"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv"/>
+        <Attr Name="ImportTime" Val="1748598357"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

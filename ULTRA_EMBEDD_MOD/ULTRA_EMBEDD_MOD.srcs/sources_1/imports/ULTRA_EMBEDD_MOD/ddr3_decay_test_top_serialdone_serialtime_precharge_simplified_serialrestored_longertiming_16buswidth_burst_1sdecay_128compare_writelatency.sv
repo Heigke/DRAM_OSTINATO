@@ -795,7 +795,7 @@ module ddr3_decay_test_top (
         .probe8(ila_wrdata),                   
         .probe9(ila_rddata_valid),             
         .probe10(ila_rddata),                  
-        .probe11(ila_captured_data[31:0]),     
+        .probe11(ila_captured_data[127:0]),     
         .probe12(init_done_q),                 
         .probe13({ila_data_match, ila_write_lat_cnt, ila_burst_cnt}), 
         .probe14((current_state_q == S_DECAY_WAIT)),    

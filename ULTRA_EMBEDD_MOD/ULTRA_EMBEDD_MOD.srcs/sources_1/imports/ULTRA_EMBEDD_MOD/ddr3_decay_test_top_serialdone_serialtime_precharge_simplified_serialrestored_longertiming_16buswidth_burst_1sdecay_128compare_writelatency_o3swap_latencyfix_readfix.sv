@@ -71,14 +71,16 @@ module ddr3_decay_test_top (
     localparam TPHY_RDLAT_C  = 4;
     localparam TPHY_WRLAT_C  = 3;
     localparam CAS_LATENCY_C = 6;  // CL=6 for DDR3-1333
-    //localparam WRITE_LATENCY_C = 14;   
-logic [4:0]  write_lat_cnt_q;       // Needs to count up to at least 14
-localparam WL_CYCLES = 13;                 // from the measurement above
-// ------------------------------------------------------------------
-// READ-latency: RL (controller cycles) − tPHY_RDLAT(=4)  → 6 cycles
-// ------------------------------------------------------------------
-localparam int RDLAT_CYCLES = 6;        //  = 10 – 4  (CL6 + pipeline)
-logic  [3:0]  read_lat_cnt_q;           // counts up to at least 6
+    
+    // ─────────────────────────────────────────────────────────────
+    // CORRECT MEASURED CONTROLLER LATENCIES
+    // ─────────────────────────────────────────────────────────────
+    localparam int WL_CYCLES = 15;   // WRITE-cmd → wrdata_en (measured)
+    localparam int RL_CYCLES = 13;   // READ-cmd → rddata_valid (measured)
+    
+    // Counters for timing
+    logic [4:0] write_lat_cnt_q;      // Needs to count up to at least 14
+    logic [3:0] read_lat_cnt_q;       // Needs to count up to at least 12
 
     logic [14:0] dfi_address_s;
     logic [2:0]  dfi_bank_s;
@@ -137,14 +139,16 @@ logic  [3:0]  read_lat_cnt_q;           // counts up to at least 6
         .ddr3_dqs_n_io(ddr3_dqs_n_io), 
         .ddr3_dq_io(ddr3_dq_io)
     );
-// ---- helper functions (place just above the FSM) -----------------
-function automatic [31:0] host2phy (input [31:0] w);
-    host2phy = {w[15:0], w[31:16]};   // swap the two 16-bit halves
-endfunction
+    
+    // ---- helper functions ----
+    // Host ⇄ PHY: swap individual bytes, not 16-bit halves
+    function automatic [31:0] host2phy (input [31:0] w);
+        host2phy = {w[7:0], w[15:8], w[23:16], w[31:24]};
+    endfunction
 
-function automatic [31:0] phy2host (input [31:0] w);
-    phy2host = {w[15:0], w[31:16]};   // same swap the other way round
-endfunction
+    function automatic [31:0] phy2host (input [31:0] w);
+        phy2host = {w[7:0], w[15:8], w[23:16], w[31:24]};
+    endfunction
 
     // --- Controller FSM ---
     typedef enum logic [5:0] {
@@ -203,7 +207,6 @@ endfunction
     logic        init_done_q;
     logic [2:0]  burst_cnt_q;    // Burst counter for write/read
     logic [2:0]  read_capture_cnt_q; // Counter for read capture cycles
-   // logic [2:0]  write_lat_cnt_q;   // Write latency counter
     logic        data_match_q;    // Result of 128-bit comparison
     
     // Test pattern - make it more distinctive for each word
@@ -245,6 +248,7 @@ endfunction
             burst_cnt_q <= 3'd0;
             read_capture_cnt_q <= 3'd0;
             write_lat_cnt_q <= 5'd0;
+            read_lat_cnt_q <= 4'd0;
             uart_msg_idx_q <= 6'd0;
             uart_msg_type_q <= 3'd0;
             data_match_q <= 1'b0;
@@ -269,10 +273,9 @@ endfunction
                 burst_cnt_q <= 3'd0;
                 read_capture_cnt_q <= 3'd0;
                 write_lat_cnt_q <= 5'd0;
+                read_lat_cnt_q <= 4'd0;
                 read_data_q <= 128'd0;
                 data_match_q <= 1'b0;
-                    //write_lat_cnt_q <= 5'd0;
-                            read_lat_cnt_q <= 4'd0;  // NEW
             end
             
             // Handle write latency counter
@@ -281,13 +284,16 @@ endfunction
             end else if (current_state_q == S_WRITE_DATA_WAIT) begin
                 write_lat_cnt_q <= write_lat_cnt_q + 5'd1;
             end
-            // <<< Add the read-latency counter code right after this >>>
-        if (current_state_q == S_READ_CMD)
-            read_lat_cnt_q <= 4'd0;
-        else if (current_state_q == S_READ_WAIT &&
-                 read_lat_cnt_q != RDLAT_CYCLES-1)
-            read_lat_cnt_q <= read_lat_cnt_q + 4'd1;
-        // <<< End >>>
+            
+            // ─────────────────────────────────────────────────────────────
+            // READ-LATENCY COUNTER
+            // ─────────────────────────────────────────────────────────────
+            if (current_state_q == S_READ_CMD) begin
+                read_lat_cnt_q <= 4'd0;
+            end else if (current_state_q == S_READ_WAIT && read_lat_cnt_q != RL_CYCLES-1) begin
+                read_lat_cnt_q <= read_lat_cnt_q + 4'd1;
+            end
+            
             // Handle burst counter for writes
             if (current_state_q == S_WRITE_DATA_WAIT) begin
                 burst_cnt_q <= 3'd0;
@@ -302,7 +308,7 @@ endfunction
             end
             
             // Handle read data capture - capture on valid signal
-            if (dfi_rddata_valid_r && (current_state_q == S_READ_WAIT || current_state_q == S_READ_CAPTURE)) begin
+            if (dfi_rddata_valid_r && current_state_q == S_READ_CAPTURE) begin
                 case (read_capture_cnt_q)
                     3'd0: read_data_q[31:0]   <= phy2host(dfi_rddata_r);
                     3'd1: read_data_q[63:32]  <= phy2host(dfi_rddata_r);
@@ -477,17 +483,18 @@ endfunction
                 next_state_s = S_WRITE_DATA_WAIT;
             end
             
-            // Wait for write latency
+            // ─────────────────────────────────────────────────────────────
+            // WRITE LATENCY CHECK WITH CORRECT THRESHOLD
+            // ─────────────────────────────────────────────────────────────
             S_WRITE_DATA_WAIT: begin
-                if (write_lat_cnt_q >= WL_CYCLES - 1) begin
+                if (write_lat_cnt_q >= WL_CYCLES - 1) begin  // 15-1 = 14
                     next_state_s = S_WRITE_BURST_0;
                 end
             end
             
             // Write burst - continuous 4 cycles for BL8
             S_WRITE_BURST_0: begin
-                //dfi_wrdata_s = write_data_q[31:0];
-                    dfi_wrdata_s      = host2phy(write_data_q[31:0]);
+                dfi_wrdata_s = host2phy(write_data_q[31:0]);
                 dfi_wrdata_en_s = 1'b1;
                 dfi_wrdata_mask_s = 4'h0;
                 dfi_odt_s = 1'b1;
@@ -495,8 +502,7 @@ endfunction
             end
             
             S_WRITE_BURST_1: begin
-                //dfi_wrdata_s = write_data_q[63:32];
-                    dfi_wrdata_s      = host2phy(write_data_q[63:32]);
+                dfi_wrdata_s = host2phy(write_data_q[63:32]);
                 dfi_wrdata_en_s = 1'b1;
                 dfi_wrdata_mask_s = 4'h0;
                 dfi_odt_s = 1'b1;
@@ -504,8 +510,7 @@ endfunction
             end
             
             S_WRITE_BURST_2: begin
-                //dfi_wrdata_s = write_data_q[95:64];
-                    dfi_wrdata_s      = host2phy(write_data_q[95:64]);
+                dfi_wrdata_s = host2phy(write_data_q[95:64]);
                 dfi_wrdata_en_s = 1'b1;
                 dfi_wrdata_mask_s = 4'h0;
                 dfi_odt_s = 1'b1;
@@ -513,8 +518,7 @@ endfunction
             end
             
             S_WRITE_BURST_3: begin
-                //dfi_wrdata_s = write_data_q[127:96];
-                                    dfi_wrdata_s      = host2phy(write_data_q[127:96]);
+                dfi_wrdata_s = host2phy(write_data_q[127:96]);
                 dfi_wrdata_en_s = 1'b1;
                 dfi_wrdata_mask_s = 4'h0;
                 dfi_odt_s = 1'b1;
@@ -569,26 +573,26 @@ endfunction
                 dfi_we_n_s = 1'b1;
                 dfi_bank_s = TEST_BANK;
                 dfi_address_s = {5'd0, TEST_COL};
-                //dfi_rddata_en_s = 1'b1;
                 next_state_s = S_READ_WAIT;
             end
             
+            // ─────────────────────────────────────────────────────────────
+            // dfi_rddata_en ASSERTION (one cycle BEFORE valid data)
+            // ─────────────────────────────────────────────────────────────
             S_READ_WAIT: begin
-    // raise rddata_en exactly RDLAT_CYCLES after READ CMD
-    dfi_rddata_en_s = (read_lat_cnt_q == RDLAT_CYCLES-1);
-    if (dfi_rddata_en_s) begin              // first strobe done → go capture
-        next_state_s = S_READ_CAPTURE;
-        end
-end
+                dfi_rddata_en_s = (read_lat_cnt_q == RL_CYCLES-1); // 12th cycle after cmd
+                if (dfi_rddata_en_s) begin  // first strobe issued → start capture
+                    next_state_s = S_READ_CAPTURE;
+                end
+            end
 
-S_READ_CAPTURE: begin
-    // keep rddata_en high for the remaining 3 beats (BL-8)
-    dfi_rddata_en_s = (read_capture_cnt_q < 3);
-    if (read_capture_cnt_q >= 3'd4) begin  // all 4 words captured
-        next_state_s = S_READ_DONE;
-        end
-end
-
+            S_READ_CAPTURE: begin
+                // Keep rddata_en high for the remaining 3 beats (BL-8)
+                dfi_rddata_en_s = (read_capture_cnt_q < 3);
+                if (read_capture_cnt_q >= 3'd4) begin  // all 4 words captured
+                    next_state_s = S_READ_DONE;
+                end
+            end
             
             S_READ_DONE: begin
                 if (timer_q >= 4'd10) begin
@@ -809,15 +813,16 @@ end
         ila_decay_phase = {3'd0, (current_state_q == S_DECAY_WAIT)};
         ila_write_lat_cnt = write_lat_cnt_q;
     end
-// These markers will go high for one cycle when a read or write command is issued
-logic ila_read_cmd_pulse, ila_write_cmd_pulse;
+    
+    // These markers will go high for one cycle when a read or write command is issued
+    logic ila_read_cmd_pulse, ila_write_cmd_pulse;
 
-always_comb begin
-    // DDR3: Read command = {RAS_n=1, CAS_n=0, WE_n=1}
-    ila_read_cmd_pulse  = (ila_cmd_valid && (ila_cmd_type == 3'b101));
-    // DDR3: Write command = {RAS_n=1, CAS_n=0, WE_n=0}
-    ila_write_cmd_pulse = (ila_cmd_valid && (ila_cmd_type == 3'b100));
-end
+    always_comb begin
+        // DDR3: Read command = {RAS_n=1, CAS_n=0, WE_n=1}
+        ila_read_cmd_pulse  = (ila_cmd_valid && (ila_cmd_type == 3'b101));
+        // DDR3: Write command = {RAS_n=1, CAS_n=0, WE_n=0}
+        ila_write_cmd_pulse = (ila_cmd_valid && (ila_cmd_type == 3'b100));
+    end
 
     // ILA instance
     ila_0 u_ila (
@@ -838,10 +843,9 @@ end
         .probe13({ila_data_match, ila_write_lat_cnt, ila_burst_cnt}), 
         .probe14((current_state_q == S_DECAY_WAIT)),    
         .probe15({5'd0, ila_rd_capture_cnt}),
-        .probe16(dfi_wrdata_en),   // 1-bit
-        .probe17(ila_read_cmd_pulse),   // <--- ADD THIS!
-        .probe18(ila_write_cmd_pulse)   // <--- AND THIS!      
+        .probe16(dfi_wrdata_en_s),   // 1-bit
+        .probe17(ila_read_cmd_pulse),
+        .probe18(ila_write_cmd_pulse)      
     );
 
 endmodule
-

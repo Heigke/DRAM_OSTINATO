@@ -1,0 +1,9 @@
+event,burst_idx,sample,beat_cnt,data,timer,fsm,bank,addr
+write_burst,0,8192,0,deadbeef,3,0e,0,000
+write_burst,0,8193,1,a5a55a5a,4,0e,0,000
+write_burst,0,8194,2,9abcdef0,5,0e,0,000
+write_burst,0,8195,3,12345678,6,0e,0,000
+raw_write,,8192,0,deadbeef,3,0e,0,000
+raw_write,,8193,1,a5a55a5a,4,0e,0,000
+raw_write,,8194,2,9abcdef0,5,0e,0,000
+raw_write,,8195,3,12345678,6,0e,0,000
