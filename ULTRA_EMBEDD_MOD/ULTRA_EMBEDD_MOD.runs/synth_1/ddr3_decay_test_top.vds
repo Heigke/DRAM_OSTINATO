@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri May 30 19:07:27 2025
-# Process ID         : 1968066
+# Start of session at: Sat May 31 17:54:17 2025
+# Process ID         : 2121404
 # Current directory  : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1
 # Command line       : vivado -log ddr3_decay_test_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ddr3_decay_test_top.tcl
 # Log file           : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/ddr3_decay_test_top.vds
@@ -13,13 +13,13 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
-# CPU Frequency      : 1800.042 MHz
+# CPU Frequency      : 1399.813 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16440 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18587 MB
-# Available Virtual  : 8189 MB
+# Available Virtual  : 12185 MB
 #-----------------------------------------------------------
 source ddr3_decay_test_top.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/utils_1/imports/synth_1/ddr3_decay_test_top.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 1968156
+INFO: [Synth 8-7075] Helper process launched with PID 2121450
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1945.176 ; gain = 418.828 ; free physical = 1430 ; free virtual = 6682
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1945.867 ; gain = 421.797 ; free physical = 1963 ; free virtual = 10542
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-11241] undeclared symbol 'tms_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_ext.vh:30]
 INFO: [Synth 8-11241] undeclared symbol 'runtest_int', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/hdl/verilog/xsdbm_v3_0_3_bs_core_ext.vh:32]
@@ -177,7 +177,7 @@ INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_phy' [/home/heigke/Dokument/T
 	Parameter REFCLK_FREQUENCY bound to: 200 - type: integer 
 	Parameter DQS_TAP_DELAY_INIT bound to: 15 - type: integer 
 	Parameter DQ_TAP_DELAY_INIT bound to: 1 - type: integer 
-	Parameter TPHY_RDLAT bound to: 10 - type: integer 
+	Parameter TPHY_RDLAT bound to: 11 - type: integer 
 	Parameter TPHY_WRLAT bound to: 3 - type: integer 
 	Parameter TPHY_WRDATA bound to: 0 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'OBUFDS' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:99442]
@@ -312,7 +312,7 @@ INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_phy' (0#1) [/home/heigke
 INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v:3]
 	Parameter CLKS_PER_BIT bound to: 868 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/uart_tx.v:3]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:813]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:815]
 INFO: [Synth 8-6157] synthesizing module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/synth/ila_0.v:48]
 INFO: [Synth 8-6157] synthesizing module 'CFGLUT5' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:3129]
 INFO: [Synth 8-6155] done synthesizing module 'CFGLUT5' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:3129]
@@ -334,12 +334,12 @@ WARNING: [Synth 8-7071] port 'trig_out' of module 'ila_v6_2_16_ila' is unconnect
 WARNING: [Synth 8-7071] port 'trig_out_ack' of module 'ila_v6_2_16_ila' is unconnected for instance 'inst' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/synth/ila_0.v:3245]
 WARNING: [Synth 8-7023] instance 'inst' of module 'ila_v6_2_16_ila' has 1033 connections declared, but only 1027 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/synth/ila_0.v:3245]
 INFO: [Synth 8-6155] done synthesizing module 'ila_0' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/synth/ila_0.v:48]
-WARNING: [Synth 8-689] width (32) of port connection 'probe11' does not match port width (128) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:826]
-WARNING: [Synth 8-689] width (8) of port connection 'probe13' does not match port width (9) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:828]
-WARNING: [Synth 8-689] width (8) of port connection 'probe14' does not match port width (1) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:829]
+WARNING: [Synth 8-689] width (32) of port connection 'probe11' does not match port width (128) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:828]
+WARNING: [Synth 8-689] width (8) of port connection 'probe13' does not match port width (9) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:830]
+WARNING: [Synth 8-689] width (8) of port connection 'probe14' does not match port width (1) of module 'ila_0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:831]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_decay_test_top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:3]
 WARNING: [Synth 8-3848] Net sl_iport0 in module/entity ila_0 does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/ila_0/synth/ila_0.v:134]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:813]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ila'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:815]
 INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_ddr3_phy_inst'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.srcs/sources_1/imports/ULTRA_EMBEDD_MOD/ddr3_decay_test_top_serialdone_serialtime_precharge_simplified_serialrestored_longertiming_16buswidth_burst_1sdecay_128compare_writelatency_unifiedburst_10cycles_trustphy_5cycles_6cycles_13cycles.sv:92]
 WARNING: [Synth 8-7129] Port CLKB in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
 WARNING: [Synth 8-7129] Port DOUTA_I[267] in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
@@ -443,18 +443,18 @@ WARNING: [Synth 8-7129] Port DOUTA_I[170] in module blk_mem_gen_v8_4_9_blk_mem_o
 WARNING: [Synth 8-7129] Port DOUTA_I[169] in module blk_mem_gen_v8_4_9_blk_mem_output_block is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:01:07 ; elapsed = 00:01:12 . Memory (MB): peak = 2471.621 ; gain = 945.273 ; free physical = 1057 ; free virtual = 6303
+Finished RTL Elaboration : Time (s): cpu = 00:01:06 ; elapsed = 00:01:11 . Memory (MB): peak = 2472.312 ; gain = 948.242 ; free physical = 1499 ; free virtual = 10081
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:12 . Memory (MB): peak = 2471.621 ; gain = 945.273 ; free physical = 1058 ; free virtual = 6304
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 2472.312 ; gain = 948.242 ; free physical = 1499 ; free virtual = 10081
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:08 ; elapsed = 00:01:12 . Memory (MB): peak = 2471.621 ; gain = 945.273 ; free physical = 1058 ; free virtual = 6304
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:07 ; elapsed = 00:01:11 . Memory (MB): peak = 2472.312 ; gain = 948.242 ; free physical = 1499 ; free virtual = 10081
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.37 ; elapsed = 00:00:00.38 . Memory (MB): peak = 2471.621 ; gain = 0.000 ; free physical = 1044 ; free virtual = 6290
+Netlist sorting complete. Time (s): cpu = 00:00:00.35 ; elapsed = 00:00:00.35 . Memory (MB): peak = 2472.312 ; gain = 0.000 ; free physical = 1499 ; free virtual = 10081
 INFO: [Netlist 29-17] Analyzing 480 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -486,7 +486,7 @@ Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_RE
 Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc] for cell 'u_clk_wiz/inst'
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2527.648 ; gain = 0.000 ; free physical = 1046 ; free virtual = 6317
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2528.340 ; gain = 0.000 ; free physical = 1498 ; free virtual = 10081
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 250 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 208 instances
@@ -495,18 +495,18 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.27 . Memory (MB): peak = 2527.648 ; gain = 0.000 ; free physical = 991 ; free virtual = 6263
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.24 ; elapsed = 00:00:00.24 . Memory (MB): peak = 2528.340 ; gain = 0.000 ; free physical = 1496 ; free virtual = 10079
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 2527.648 ; gain = 1001.301 ; free physical = 1000 ; free virtual = 6243
+Finished Constraint Validation : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2528.340 ; gain = 1004.270 ; free physical = 1460 ; free virtual = 10043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1000 ; free virtual = 6243
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:31 ; elapsed = 00:01:34 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1460 ; free virtual = 10043
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -517,7 +517,7 @@ Applied set_property KEEP_HIERARCHY = SOFT for u_clk_wiz/inst. (constraint file 
 Applied set_property KEEP_HIERARCHY = SOFT for u_ila. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for u_clk_wiz. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:32 ; elapsed = 00:01:36 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1008 ; free virtual = 6250
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:31 ; elapsed = 00:01:35 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1466 ; free virtual = 10049
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_tx'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'xsdbs_v1_0_4_reg_p2s'
@@ -810,7 +810,7 @@ INFO: [Synth 8-3898] No Re-encoding of one hot register 'current_state_reg' in m
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_q_reg' using encoding 'one-hot' in module 'ddr3_decay_test_top'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1079 ; free virtual = 6333
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:38 ; elapsed = 00:01:42 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1472 ; free virtual = 10066
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -832,25 +832,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:02:34 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1075 ; free virtual = 6350
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:02:29 ; elapsed = 00:02:35 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1447 ; free virtual = 10055
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:44 ; elapsed = 00:02:50 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1058 ; free virtual = 6334
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:45 ; elapsed = 00:02:51 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1465 ; free virtual = 10073
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:56 ; elapsed = 00:03:02 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1048 ; free virtual = 6323
+Finished Timing Optimization : Time (s): cpu = 00:02:57 ; elapsed = 00:03:03 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1471 ; free virtual = 10079
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:03:00 ; elapsed = 00:03:07 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1053 ; free virtual = 6328
+Finished Technology Mapping : Time (s): cpu = 00:03:02 ; elapsed = 00:03:08 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1473 ; free virtual = 10081
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -908,37 +908,37 @@ WARNING: [Synth 8-3295] tying undriven pin inst:sl_iport0[0] to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:trig_in to constant 0
 WARNING: [Synth 8-3295] tying undriven pin inst:trig_out_ack to constant 0
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:08 ; elapsed = 00:03:14 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1003 ; free virtual = 6279
+Finished IO Insertion : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:08 ; elapsed = 00:03:14 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1003 ; free virtual = 6279
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:09 ; elapsed = 00:03:15 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1011 ; free virtual = 6286
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:10 ; elapsed = 00:03:17 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:09 ; elapsed = 00:03:15 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1011 ; free virtual = 6286
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:10 ; elapsed = 00:03:17 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1011 ; free virtual = 6286
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:10 ; elapsed = 00:03:17 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1011 ; free virtual = 6286
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:10 ; elapsed = 00:03:17 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -955,17 +955,17 @@ Report Cell Usage:
 |      |Cell       |Count |
 +------+-----------+------+
 |1     |BUFG       |     6|
-|2     |CARRY4     |   105|
+|2     |CARRY4     |   106|
 |3     |CFGLUT5    |   231|
 |4     |IDELAYCTRL |     1|
 |5     |IDELAYE2   |    18|
 |7     |ISERDESE2  |    16|
-|8     |LUT1       |    95|
-|9     |LUT2       |   359|
-|10    |LUT3       |   266|
-|11    |LUT4       |   309|
-|12    |LUT5       |   355|
-|13    |LUT6       |  1416|
+|8     |LUT1       |    94|
+|9     |LUT2       |   366|
+|10    |LUT3       |   262|
+|11    |LUT4       |   304|
+|12    |LUT5       |   365|
+|13    |LUT6       |  1410|
 |14    |MMCME2_ADV |     1|
 |15    |MUXF7      |    47|
 |16    |OSERDESE2  |    20|
@@ -974,9 +974,9 @@ Report Cell Usage:
 |20    |SRL16E     |   271|
 |21    |SRLC16E    |     2|
 |22    |SRLC32E    |    17|
-|23    |FDCE       |   207|
+|23    |FDCE       |   211|
 |24    |FDPE       |     1|
-|25    |FDRE       |  3116|
+|25    |FDRE       |  3117|
 |26    |FDSE       |    12|
 |27    |IBUF       |     3|
 |28    |IOBUF      |    16|
@@ -985,19 +985,19 @@ Report Cell Usage:
 |31    |OBUFDS     |     1|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2535.652 ; gain = 1009.305 ; free physical = 1011 ; free virtual = 6286
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:10 ; elapsed = 00:03:17 . Memory (MB): peak = 2536.344 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 8724 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:56 ; elapsed = 00:03:03 . Memory (MB): peak = 2535.652 ; gain = 953.277 ; free physical = 1017 ; free virtual = 6292
-Synthesis Optimization Complete : Time (s): cpu = 00:03:09 ; elapsed = 00:03:16 . Memory (MB): peak = 2535.660 ; gain = 1009.305 ; free physical = 1017 ; free virtual = 6292
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:58 ; elapsed = 00:03:05 . Memory (MB): peak = 2536.344 ; gain = 956.246 ; free physical = 1464 ; free virtual = 10072
+Synthesis Optimization Complete : Time (s): cpu = 00:03:11 ; elapsed = 00:03:17 . Memory (MB): peak = 2536.352 ; gain = 1012.273 ; free physical = 1464 ; free virtual = 10072
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.17 . Memory (MB): peak = 2535.660 ; gain = 0.000 ; free physical = 1207 ; free virtual = 6482
-INFO: [Netlist 29-17] Analyzing 557 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.17 ; elapsed = 00:00:00.18 . Memory (MB): peak = 2536.352 ; gain = 0.000 ; free physical = 1636 ; free virtual = 10244
+INFO: [Netlist 29-17] Analyzing 558 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Chipscope 16-324] Core: u_ila UUID: c30a8330-47ba-5203-8dbc-7e3e3214d902 
 INFO: [Opt 31-138] Pushed 3 inverter(s) to 32 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2597.617 ; gain = 0.000 ; free physical = 1208 ; free virtual = 6483
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2592.371 ; gain = 0.000 ; free physical = 1642 ; free virtual = 10251
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 250 instances were transformed.
   CFGLUT5 => CFGLUT5 (SRL16E, SRLC32E): 208 instances
@@ -1006,15 +1006,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   IOBUFDS => IOBUFDS (IBUFDS, INV, OBUFTDS(x2)): 2 instances
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
 
-Synth Design complete | Checksum: daa0ca46
+Synth Design complete | Checksum: 2597a659
 INFO: [Common 17-83] Releasing license: Synthesis
 223 Infos, 233 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:32 ; elapsed = 00:03:33 . Memory (MB): peak = 2597.617 ; gain = 1217.629 ; free physical = 1159 ; free virtual = 6435
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2000.109; main = 1790.588; forked = 273.186
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3459.816; main = 2597.621; forked = 924.160
+synth_design: Time (s): cpu = 00:03:34 ; elapsed = 00:03:35 . Memory (MB): peak = 2592.371 ; gain = 1153.871 ; free physical = 1644 ; free virtual = 10253
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1987.146; main = 1773.358; forked = 268.321
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3460.500; main = 2592.375; forked = 924.152
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2621.629 ; gain = 0.000 ; free physical = 1159 ; free virtual = 6435
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2616.383 ; gain = 0.000 ; free physical = 1661 ; free virtual = 10270
 INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDD_MOD/ULTRA_EMBEDD_MOD.runs/synth_1/ddr3_decay_test_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file ddr3_decay_test_top_utilization_synth.rpt -pb ddr3_decay_test_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri May 30 19:11:13 2025...
+INFO: [Common 17-206] Exiting Vivado at Sat May 31 17:58:05 2025...

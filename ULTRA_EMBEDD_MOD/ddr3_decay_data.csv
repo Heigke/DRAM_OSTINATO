@@ -1,0 +1,2 @@
+decay_ms,sample_num,avg_flipped_bits,std_flipped_bits,avg_flip_rate_pct,std_flip_rate_pct,num_samples
+1,1,-8064.00,0.00,-6300.00,0.00,1

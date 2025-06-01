@@ -1,0 +1,117 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
+| Date         : Sun Jun  1 10:09:49 2025
+| Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    39 |
+|    Minimum number of control sets                        |    39 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    76 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    39 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     5 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     8 |
+| >= 16              |    18 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              51 |           22 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             233 |           91 |
+| Yes          | No                    | No                     |              18 |            5 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             702 |          183 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------+---------------------------------------------------------+---------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                      Enable Signal                      |            Set/Reset Signal           | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+---------------------------------------------------------+---------------------------------------+------------------+----------------+--------------+
+|  clk_w_BUFG  | u_uart/U_TX/bit_cnt                                     | u_rst/rst_w                           |                1 |              1 |         1.00 |
+|  clk_w_BUFG  | u_rst/sel                                               |                                       |                1 |              3 |         3.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/count[3]_i_1__0_n_0              | u_rst/rst_w                           |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/E[0]                             | u_rst/rst_w                           |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_ddr/u_core/u_id_fifo/count[3]_i_1_n_0                 | u_rst/rst_w                           |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/awvalid_q_reg[0]                 | u_rst/rst_w                           |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_TX/E[0]                                        | u_uart/U_TX/SR[0]                     |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_TX/tx_cnt_q_reg[3][0]                          |                                       |                2 |              7 |         3.50 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/count_reg[0]_2[0]                 | u_rst/rst_w                           |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_uart/U_RX/data_o[7]_i_1_n_0                           |                                       |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_ddr/u_core/u_seq/rst_q_reg                            |                                       |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/count_reg[3]_0                   | u_ddr/u_axi/u_response/SR[0]          |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_TX/shift[8]_i_1_n_0                            | u_rst/rst_w                           |                3 |              9 |         3.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[4][14]_i_1_n_0                | u_rst/rst_w                           |                2 |             15 |         7.50 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[3][14]_i_1_n_0                | u_rst/rst_w                           |                3 |             15 |         5.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[5][14]_i_1_n_0                | u_rst/rst_w                           |                4 |             15 |         3.75 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[2][14]_i_1_n_0                | u_rst/rst_w                           |                4 |             15 |         3.75 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[1][14]_i_1_n_0                | u_rst/rst_w                           |                3 |             15 |         5.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[0][14]_i_1_n_0                | u_rst/rst_w                           |                8 |             15 |         1.88 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[6][14]_i_1_n_0                | u_rst/rst_w                           |                5 |             15 |         3.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[7][14]_i_1_n_0                | u_rst/rst_w                           |                6 |             15 |         2.50 |
+|  clk_w_BUFG  | u_uart/U_TX/tx_busy                                     | u_uart/U_TX/clk_cnt[15]_i_1_n_0       |                4 |             16 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_RX/clk_cnt_0                                   | u_rst/rst_w                           |                7 |             16 |         2.29 |
+|  clk_w_BUFG  | led0                                                    | u_ddr/u_axi/u_response/count_reg[3]_0 |                6 |             23 |         3.83 |
+|  clk_w_BUFG  | led[0]_i_1_n_0                                          | u_uart/arvalid_o_reg_0                |                6 |             23 |         3.83 |
+|  clk_w_BUFG  | u_ddr/u_axi/prio_rd_q1                                  | u_rst/rst_w                           |               12 |             30 |         2.50 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/E[0]                              | u_rst/rst_w                           |               11 |             30 |         2.73 |
+|  clk_w_BUFG  | u_uart/U_RX/stb_o_reg_2[0]                              | u_rst/rst_w                           |               10 |             30 |         3.00 |
+|  clk_w_BUFG  | u_uart/U_RX/stb_o_reg_0[0]                              | u_rst/rst_w                           |                8 |             30 |         3.75 |
+|  clk_w_BUFG  | u_uart/U_RX/stb_o_reg_1[0]                              | u_rst/rst_w                           |                7 |             32 |         4.57 |
+|  clk_w_BUFG  | u_uart/U_RX/E[0]                                        | u_rst/rst_w                           |                5 |             32 |         6.40 |
+|  clk_w_BUFG  |                                                         | u_rst/SR[0]                           |               15 |             36 |         2.40 |
+|  clk_w_BUFG  |                                                         |                                       |               22 |             53 |         2.41 |
+|  clk_w_BUFG  | u_phy/E[0]                                              | u_rst/rst_w                           |               29 |            130 |         4.48 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/wdata_q                           | u_rst/rst_w                           |               27 |            144 |         5.33 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/ram_reg_0_7_0_5_i_1__0_n_0       |                                       |               23 |            180 |         7.83 |
+|  clk_w_BUFG  | u_ddr/u_core/u_seq/u_write_fifo/ram_reg_0_3_0_5_i_1_n_0 |                                       |               24 |            192 |         8.00 |
+|  clk_w_BUFG  |                                                         | u_rst/rst_w                           |               76 |            197 |         2.59 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/ram_reg_0_1_0_5_i_1_n_0           |                                       |               30 |            240 |         8.00 |
++--------------+---------------------------------------------------------+---------------------------------------+------------------+----------------+--------------+
+
+

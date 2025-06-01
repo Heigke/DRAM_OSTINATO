@@ -69,7 +69,7 @@ module ddr3_decay_test_top (
 
     // --- DFI PHY Instance ---
     // FIX: Update read latency to match measured 14 cycles (13 + 1 for pipeline)
-    localparam TPHY_RDLAT_C  = 10;  // Measured: CL(6) + 2 PHY + 5 fabric = 13
+    localparam TPHY_RDLAT_C  = 11;  // Measured: CL(6) + 2 PHY + 5 fabric = 13
     localparam TPHY_WRLAT_C  = 3;
 
     logic [14:0] dfi_address_s;
@@ -173,10 +173,12 @@ module ddr3_decay_test_top (
     localparam T_ACTIVATE_TO_RW     = 24'd20;       // tRCD + margin
     localparam T_WRITE_TO_PRECHARGE = 24'd30;       // tWR + tRTP + margin
     localparam T_PRECHARGE          = 24'd20;       // tRP + margin
-    localparam T_DECAY_MS           = 24'd200_000;  // 1ms @ 200MHz for testing
+    //localparam T_DECAY_MS           = 24'd200_000;  // 1ms @ 200MHz for testing
+localparam T_DECAY_MS = 31'd2_000_000_000;  // 10 seconds @ 200MHz
 
     // Registers
-    logic [27:0] timer_q;
+    //logic [27:0] timer_q;
+    logic [30:0] timer_q;
     logic [127:0] write_data_q;      // Full burst data (8 x 16-bit)
     logic [127:0] read_data_q;       // Full burst data captured
     logic        init_done_q;
