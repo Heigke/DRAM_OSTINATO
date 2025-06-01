@@ -156,13 +156,7 @@ module uart_rx #(
 endmodule
 
 //=================================================================
-//  Mini UART-to-AXI-Lite bridge   (v2 - complete hand-shake)
-//=================================================================
-//=================================================================
-//  Mini UART-to-AXI-Lite bridge   (v2 - complete hand-shake)
-//=================================================================
-//=================================================================
-//  Mini UART-to-AXI-Lite bridge   (v3 - with init wait)
+//  Mini UART-to-AXI-Lite bridge
 //=================================================================
 module mini_uart_axi #(
     parameter CLK_HZ   = 100_000_000,
@@ -170,19 +164,17 @@ module mini_uart_axi #(
 )(
     input  wire        clk_i,
     input  wire        rst_i,
-
-    // UART
     input  wire        rx_i,
     output wire        tx_o,
 
     // AXI-Lite master
     output reg         awvalid_o,
-    output reg  [31:0] awaddr_o,
+    output reg [31:0]  awaddr_o,
     output wire [3:0]  awid_o,
     input  wire        awready_i,
 
     output reg         wvalid_o,
-    output reg  [31:0] wdata_o,
+    output reg [31:0]  wdata_o,
     output wire [3:0]  wstrb_o,
     output reg         wlast_o,
     input  wire        wready_i,
@@ -191,7 +183,7 @@ module mini_uart_axi #(
     output wire        bready_o,
 
     output reg         arvalid_o,
-    output reg  [31:0] araddr_o,
+    output reg [31:0]  araddr_o,
     output wire [3:0]  arid_o,
     input  wire        arready_i,
 
@@ -201,9 +193,7 @@ module mini_uart_axi #(
     output wire        rready_o
 );
 
-// ---------------------------------------------------------------
-// UART (unchanged)
-// ---------------------------------------------------------------
+// UART instantiation
 wire        rx_stb;
 wire [7:0]  rx_data;
 reg         tx_stb;
@@ -227,240 +217,136 @@ uart_tx #(.CLK_HZ(CLK_HZ), .BAUDRATE(BAUDRATE)) U_TX (
     .busy_o(tx_busy)
 );
 
-// ---------------------------------------------------------------
-// Init delay counter - wait ~500ms for DDR3 to initialize
-// ---------------------------------------------------------------
-reg [26:0] init_cnt = 0;
-wire init_done = init_cnt[26];  // ~670ms at 100MHz
+// Command parser
+localparam C_IDLE   = 0,
+           C_GETWR  = 1,
+           C_GETRD  = 2;
 
-always @(posedge clk_i) begin
-    if (rst_i)
-        init_cnt <= 0;
-    else if (!init_done)
-        init_cnt <= init_cnt + 1;
+reg [1:0]  state_q;
+reg [3:0]  nib_cnt_q;
+reg [63:0] shift_q;
+
+function automatic [3:0] hex2n;
+    input [7:0] c;
+begin
+    if (c >= "0" && c <= "9") hex2n = c - "0";
+    else if (c >= "a" && c <= "f") hex2n = c - "a" + 4'd10;
+    else hex2n = c - "A" + 4'd10;
 end
-
-// ---------------------------------------------------------------
-// Parser  →  tiny command FIFO ( 1 slot each for R & W )
-// ---------------------------------------------------------------
-localparam P_IDLE   = 2'd0,
-           P_GETADR = 2'd1,
-           P_GETDAT = 2'd2;
-
-reg  [1:0]   p_state = P_IDLE;
-reg  [63:0]  shift;
-reg  [3:0]   nib_cnt;
-reg          wr_tag, rd_tag;
-reg  [31:0]  wr_addr, wr_data;
-reg  [31:0]  rd_addr;
-reg          cmd_is_write;
-
-// Feedback from AXI state machines
-wire         wr_done;
-wire         rd_done;
-
-function [3:0] hex2n (input [7:0] c);
-    hex2n = (c>="0"&&c<="9") ? c-"0" :
-            (c>="a"&&c<="f") ? c-"a"+4'd10 : c-"A"+4'd10;
 endfunction
 
-wire is_hex = (rx_data>="0"&&rx_data<="9")||
-              (rx_data>="a"&&rx_data<="f")||
-              (rx_data>="A"&&rx_data<="F");
+wire is_hex = (rx_data >= "0" && rx_data <= "9") ||
+              (rx_data >= "a" && rx_data <= "f") ||
+              (rx_data >= "A" && rx_data <= "F");
 
-always @(posedge clk_i) begin
-    if (rst_i) begin
-        p_state <= P_IDLE;
-        shift <= 0;
-        nib_cnt <= 0;
-        wr_tag <= 0;
-        rd_tag <= 0;
-        cmd_is_write <= 0;
-    end else begin
-        // Clear tags when AXI FSMs acknowledge
-        if (wr_done) wr_tag <= 0;
-        if (rd_done) rd_tag <= 0;
+always @(posedge clk_i)
+if (rst_i) begin
+    awvalid_o <= 0;
+    wvalid_o  <= 0;
+    arvalid_o <= 0;
+    awaddr_o  <= 0;
+    araddr_o  <= 0;
+    wdata_o   <= 0;
+    wlast_o   <= 0;
+    nib_cnt_q <= 0;
+    shift_q   <= 0;
+    state_q   <= C_IDLE;
+end else begin
+    // Default: clear single-cycle signals
+    awvalid_o <= 0;
+    wvalid_o  <= 0;
+    arvalid_o <= 0;
+    wlast_o   <= 0;
+
+    if (rx_stb) begin
+        case (state_q)
+        C_IDLE: begin
+            if (rx_data == "W" || rx_data == "w") begin
+                state_q   <= C_GETWR;
+                nib_cnt_q <= 0;
+                shift_q   <= 0;
+            end
+            else if (rx_data == "R" || rx_data == "r") begin
+                state_q   <= C_GETRD;
+                nib_cnt_q <= 0;
+                shift_q   <= 0;
+            end
+        end
         
-        if (rx_stb) begin
-            case (p_state)
-            P_IDLE: begin
-                shift   <= 0; 
-                nib_cnt <= 0;
-                
-                // Send init status on '?' command
-                if (rx_data == "?") begin
-                    // Will trigger status response
-                end else if (rx_data=="W"||rx_data=="w") begin
-                    p_state <= P_GETADR;
-                    cmd_is_write <= 1;
-                end else if (rx_data=="R"||rx_data=="r") begin
-                    p_state <= P_GETADR;
-                    cmd_is_write <= 0;
-                end
+        C_GETWR: begin
+            if (is_hex) begin
+                shift_q   <= {shift_q[59:0], hex2n(rx_data)};
+                nib_cnt_q <= nib_cnt_q + 1;
             end
-            //-----------------------------------------------------------
-            P_GETADR: begin
-                if (is_hex) begin
-                    shift <= {shift[59:0],hex2n(rx_data)};  
-                    nib_cnt <= nib_cnt+1;
-                end else if (rx_data==" " && nib_cnt!=0 && cmd_is_write) begin
-                    wr_addr <= shift[31:0];   
-                    shift   <= 0;             
-                    nib_cnt <= 0;
-                    p_state <= P_GETDAT;
-                end else if ((rx_data==8'h0d)||(rx_data==8'h0a)) begin
-                    if (!cmd_is_write && init_done) begin  // Only allow reads after init
-                        rd_addr <= shift[31:0];
-                        rd_tag  <= 1;   
-                    end
-                    p_state <= P_IDLE;
-                end
+            else if (rx_data == " ") begin
+                awaddr_o  <= shift_q[31:0];
+                shift_q   <= 0;
+                nib_cnt_q <= 0;
             end
-            //-----------------------------------------------------------
-            P_GETDAT: begin
-                if (is_hex) begin
-                    shift <= {shift[59:0],hex2n(rx_data)};  
-                    nib_cnt <= nib_cnt+1;
-                end else if ((rx_data==8'h0d)||(rx_data==8'h0a)) begin
-                    if (init_done) begin  // Only allow writes after init
-                        wr_data <= shift[31:0];  
-                        wr_tag <= 1;
-                    end
-                    p_state <= P_IDLE;
-                end
+            else if (rx_data == 8'h0A || rx_data == 8'h0D) begin
+                wdata_o   <= shift_q[31:0];
+                wvalid_o  <= 1;
+                wlast_o   <= 1;
+                awvalid_o <= 1;
+                state_q   <= C_IDLE;
             end
-            endcase
         end
-    end
-end
-
-//-----------------------------------------------------------------
-// AXI Write FSM
-//-----------------------------------------------------------------
-localparam A_IDLE  = 2'd0,
-           A_AW    = 2'd1,
-           A_W     = 2'd2,
-           A_B     = 2'd3;
-
-reg [1:0] astate = A_IDLE;
-assign wr_done = (astate == A_IDLE) && wr_tag;
-
-always @(posedge clk_i) begin
-    if (rst_i) begin
-        awvalid_o <= 0;
-        wvalid_o <= 0;
-        wlast_o <= 0;
-        astate <= A_IDLE;
-    end else begin
-        case (astate)
-        A_IDLE: if (wr_tag) begin
-            awaddr_o <= wr_addr;  
-            wdata_o <= wr_data;
-            awvalid_o<= 1;        
-            wvalid_o<= 1;
-            wlast_o <= 1;
-            astate   <= A_AW;
-        end
-        A_AW: begin
-            if (awready_i) awvalid_o <= 0;
-            if (wready_i) begin
-                wvalid_o  <= 0;
-                wlast_o <= 0;
+        
+        C_GETRD: begin
+            if (is_hex) begin
+                shift_q   <= {shift_q[59:0], hex2n(rx_data)};
+                nib_cnt_q <= nib_cnt_q + 1;
             end
-            if (!awvalid_o && !wvalid_o) astate <= A_B;
+            else if (rx_data == 8'h0A || rx_data == 8'h0D) begin
+                araddr_o  <= shift_q[31:0];
+                arvalid_o <= 1;
+                state_q   <= C_IDLE;
+            end
         end
-        A_B: if (bvalid_i) astate <= A_IDLE;
         endcase
     end
 end
 
-//-----------------------------------------------------------------
-// AXI Read FSM
-//-----------------------------------------------------------------
-localparam R_IDLE = 2'd0,
-           R_AR   = 2'd1,
-           R_DATA = 2'd2;
-
-reg [1:0] rstate = R_IDLE;
-assign rd_done = (rstate == R_IDLE) && rd_tag;
-
-always @(posedge clk_i) begin
-    if (rst_i) begin
-        arvalid_o <= 0;   
-        rstate <= R_IDLE;
-    end else begin
-        case (rstate)
-        R_IDLE: if (rd_tag) begin
-            araddr_o <= rd_addr;
-            arvalid_o<= 1;
-            rstate   <= R_AR;
-        end
-        R_AR: if (arready_i) begin
-            arvalid_o <= 0;  
-            rstate <= R_DATA;
-        end
-        R_DATA: if (rvalid_i && rlast_i) rstate <= R_IDLE;
-        endcase
-    end
-end
-
-assign wstrb_o = 4'hF;
-assign awid_o = 4'd0;
-assign arid_o = 4'd0;
+assign awid_o   = 4'd0;
+assign arid_o   = 4'd0;
+assign wstrb_o  = 4'hF;
 assign bready_o = 1'b1;
 assign rready_o = 1'b1;
 
-//-----------------------------------------------------------------
-// Status and echo response
-//-----------------------------------------------------------------
-reg [3:0] tx_cnt = 4'd15;
+// Echo read-back
+reg [3:0] tx_cnt_q;
 reg       tx_busy_d;
-reg       send_status = 0;
 
-function [7:0] n2h (input [3:0] n);
-    n2h = (n<10) ? (n+"0") : (n-10+"a");
+function automatic [7:0] nib2hex;
+    input [3:0] n;
+begin
+    nib2hex = (n < 10) ? (n + "0") : (n - 10 + "a");
+end
 endfunction
 
-// Detect '?' command
 always @(posedge clk_i) begin
-    if (rx_stb && rx_data == "?")
-        send_status <= 1;
-    else if (send_status && !tx_busy)
-        send_status <= 0;
-end
+    tx_busy_d <= tx_busy;
+    tx_stb    <= 1'b0;
 
-always @(posedge clk_i) begin
-    tx_busy_d <= tx_busy;   
-    tx_stb <= 0;
-    
-    // Priority: status message over read data
-    if (send_status && !tx_busy) begin
-        case (tx_cnt)
-        15: begin tx_data <= init_done ? "R" : "W"; tx_stb <= 1; tx_cnt <= 14; end
-        14: begin tx_data <= 8'h0A; tx_stb <= 1; tx_cnt <= 15; end
-        default: tx_cnt <= 15;
-        endcase
-    end else if (rvalid_i && !tx_busy) begin
-        tx_cnt <= 0;
-    end else if (!tx_busy && tx_busy_d && tx_cnt < 4'd15) begin
-        tx_cnt <= tx_cnt + 1;
-    end
+    if (rvalid_i && !tx_busy)
+        tx_cnt_q <= 4'd0;
+    else if (!tx_busy && tx_busy_d)
+        tx_cnt_q <= tx_cnt_q + 1;
 
-    if (!send_status && !tx_busy && tx_cnt <= 8) begin
-        case (tx_cnt)
-        0: begin tx_data<=n2h(rdata_i[31:28]); tx_stb<=1; end
-        1: begin tx_data<=n2h(rdata_i[27:24]); tx_stb<=1; end
-        2: begin tx_data<=n2h(rdata_i[23:20]); tx_stb<=1; end
-        3: begin tx_data<=n2h(rdata_i[19:16]); tx_stb<=1; end
-        4: begin tx_data<=n2h(rdata_i[15:12]); tx_stb<=1; end
-        5: begin tx_data<=n2h(rdata_i[11: 8]); tx_stb<=1; end
-        6: begin tx_data<=n2h(rdata_i[ 7: 4]); tx_stb<=1; end
-        7: begin tx_data<=n2h(rdata_i[ 3: 0]); tx_stb<=1; end
-        8: begin tx_data<=8'h0a;               tx_stb<=1; end
+    if (!tx_busy) begin
+        case (tx_cnt_q)
+        0: begin tx_data <= nib2hex(rdata_i[31:28]); tx_stb <= 1; end
+        1: begin tx_data <= nib2hex(rdata_i[27:24]); tx_stb <= 1; end
+        2: begin tx_data <= nib2hex(rdata_i[23:20]); tx_stb <= 1; end
+        3: begin tx_data <= nib2hex(rdata_i[19:16]); tx_stb <= 1; end
+        4: begin tx_data <= nib2hex(rdata_i[15:12]); tx_stb <= 1; end
+        5: begin tx_data <= nib2hex(rdata_i[11: 8]); tx_stb <= 1; end
+        6: begin tx_data <= nib2hex(rdata_i[ 7: 4]); tx_stb <= 1; end
+        7: begin tx_data <= nib2hex(rdata_i[ 3: 0]); tx_stb <= 1; end
+        8: begin tx_data <= 8'h0A;                   tx_stb <= 1; end
         endcase
     end
 end
-
 endmodule
 
 //=================================================================
