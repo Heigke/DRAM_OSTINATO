@@ -84,7 +84,7 @@ read_verilog -library xil_defaultlib {
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/phy/xc7/ddr3_dfi_phy.v
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/ddr3_dfi_seq.v
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/arty_a7/reset_gen.v
-  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/arty_a7/top.v
+  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/arty_a7/topv2.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
