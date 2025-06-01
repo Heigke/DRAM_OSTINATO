@@ -163,10 +163,10 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/arty_a7/topv2.v">
+      <File Path="$PSRCDIR/sources_1/imports/arty_a7/topv1.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/topv2.v"/>
-          <Attr Name="ImportTime" Val="1748788766"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/topv1.v"/>
+          <Attr Name="ImportTime" Val="1748790106"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
