@@ -399,16 +399,7 @@ begin
         end
     end
     endcase
-    //-------------------------------------------------------------
-// FIX: auto-precharge just closed a row - fix bookkeeping
-//-------------------------------------------------------------
-if ((state_q == STATE_READ || state_q == STATE_WRITE) &&
-    DISABLE_AUTO_REFRESH && cmd_accept_w)
-begin
-    row_open_q[addr_bank_w] <= 1'b0;
 end
-end
-
 
 //-----------------------------------------------------------------
 // Command
@@ -759,3 +750,4 @@ assign data_out_o = ram[rd_ptr];
 
 
 endmodule
+

@@ -658,7 +658,7 @@ ddr3_dfi_phy #(
     .REFCLK_FREQUENCY  (200),
     .DQS_TAP_DELAY_INIT(30),
     .DQ_TAP_DELAY_INIT (0),
-    .TPHY_RDLAT        (4)
+    .TPHY_RDLAT        (5)
 ) u_phy (
     .clk_i         (clk_w),
     .rst_i         (rst_w),
