@@ -17,7 +17,7 @@ BAUDRATE = 115200
 TIMEOUT = 0.3  # Increased timeout
 
 # Partial write configuration
-USE_PARTIAL_WRITES = True  # Set to True to enable partial writes
+USE_PARTIAL_WRITES = False  # Set to True to enable partial writes
 PARTIAL_WRITE_CYCLES = 1    # Number of cycles (1-8) when enabled
 
 # Memory search parameters - aligned to 128-bit boundaries
