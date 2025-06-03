@@ -164,6 +164,7 @@ endmodule
 //=================================================================
 //  Mini UART-to-AXI-Lite bridge   (v3 - with init wait)
 //=================================================================
+// Fixed Mini UART-to-AXI-Lite bridge with robust configuration handling
 module mini_uart_axi #(
     parameter CLK_HZ   = 100_000_000,
     parameter BAUDRATE = 115200
@@ -175,7 +176,7 @@ module mini_uart_axi #(
     input  wire        rx_i,
     output wire        tx_o,
 
-    // AXI-Lite master (existing ports)
+    // AXI-Lite master
     output reg         awvalid_o,
     output reg  [31:0] awaddr_o,
     output wire [3:0]  awid_o,
@@ -199,10 +200,8 @@ module mini_uart_axi #(
     input  wire [31:0] rdata_i,
     input  wire        rlast_i,
     output wire        rready_o,
-    
-    // ADD: Partial write control
-    output reg         partial_wr_ctrl_o,
-    output reg  [15:0] wr_duration_ctrl_o
+    output wire        cfg_partial_write,
+    output wire [3:0]  cfg_write_cycles
 );
 
 // ---------------------------------------------------------------
@@ -249,8 +248,9 @@ end
 // ---------------------------------------------------------------
 localparam P_IDLE   = 2'd0,
            P_GETADR = 2'd1,
-           P_GETDAT = 2'd2;
-           P_GETDUR = 3'd3;  // New state
+           P_GETDAT = 2'd2,
+           P_CONFIG = 2'd3;
+
 reg  [1:0]   p_state = P_IDLE;
 reg  [63:0]  shift;
 reg  [3:0]   nib_cnt;
@@ -258,7 +258,13 @@ reg          wr_tag, rd_tag;
 reg  [31:0]  wr_addr, wr_data;
 reg  [31:0]  rd_addr;
 reg          cmd_is_write;
-reg          cmd_is_partial;  // New flag
+
+// Configuration registers for partial write control
+reg         cfg_partial_write_en = 1'b0;
+reg [3:0]   cfg_write_cycles_reg = 4'd8;  // Default to full 8 cycles
+
+assign cfg_partial_write = cfg_partial_write_en;
+assign cfg_write_cycles = cfg_write_cycles_reg;
 
 // Feedback from AXI state machines
 wire         wr_done;
@@ -281,15 +287,11 @@ always @(posedge clk_i) begin
         wr_tag <= 0;
         rd_tag <= 0;
         cmd_is_write <= 0;
-        cmd_is_partial <= 0;
-        partial_wr_ctrl_o <= 0;
-        wr_duration_ctrl_o <= 16'd8;
+        cfg_partial_write_en <= 1'b0;
+        cfg_write_cycles_reg <= 4'd8;
     end else begin
         // Clear tags when AXI FSMs acknowledge
-        if (wr_done) begin
-            wr_tag <= 0;
-            partial_wr_ctrl_o <= 0;
-        end
+        if (wr_done) wr_tag <= 0;
         if (rd_done) rd_tag <= 0;
         
         if (rx_stb) begin
@@ -298,23 +300,25 @@ always @(posedge clk_i) begin
                 shift   <= 0; 
                 nib_cnt <= 0;
                 
+                // Send init status on '?' command
                 if (rx_data == "?") begin
                     // Will trigger status response
                 end else if (rx_data=="W"||rx_data=="w") begin
                     p_state <= P_GETADR;
                     cmd_is_write <= 1;
-                    cmd_is_partial <= 0;
-                end else if (rx_data=="P"||rx_data=="p") begin  // Partial write
-                    p_state <= P_GETADR;
-                    cmd_is_write <= 1;
-                    cmd_is_partial <= 1;
                 end else if (rx_data=="R"||rx_data=="r") begin
                     p_state <= P_GETADR;
                     cmd_is_write <= 0;
-                    cmd_is_partial <= 0;
+                end else if (rx_data=="C"||rx_data=="c") begin
+                    // Configuration command: C<enable><cycles>
+                    // Example: C18 = enable partial write with 8 cycles
+                    //          C04 = disable partial write
+                    p_state <= P_CONFIG;
+                    shift <= 0;
+                    nib_cnt <= 0;
                 end
             end
-            
+            //-----------------------------------------------------------
             P_GETADR: begin
                 if (is_hex) begin
                     shift <= {shift[59:0],hex2n(rx_data)};  
@@ -325,49 +329,51 @@ always @(posedge clk_i) begin
                     nib_cnt <= 0;
                     p_state <= P_GETDAT;
                 end else if ((rx_data==8'h0d)||(rx_data==8'h0a)) begin
-                    if (!cmd_is_write && init_done) begin
+                    if (!cmd_is_write && init_done) begin  // Only allow reads after init
                         rd_addr <= shift[31:0];
                         rd_tag  <= 1;   
                     end
                     p_state <= P_IDLE;
+                end else if (!is_hex && rx_data!=" ") begin
+                    // Invalid character - return to idle
+                    p_state <= P_IDLE;
                 end
             end
-            
+            //-----------------------------------------------------------
             P_GETDAT: begin
                 if (is_hex) begin
                     shift <= {shift[59:0],hex2n(rx_data)};  
                     nib_cnt <= nib_cnt+1;
-                end else if (rx_data==" " && cmd_is_partial && nib_cnt==8) begin
-                    wr_data <= shift[31:0];
-                    shift   <= 0;
-                    nib_cnt <= 0;
-                    p_state <= P_GETDUR;
                 end else if ((rx_data==8'h0d)||(rx_data==8'h0a)) begin
-                    if (init_done) begin
+                    if (init_done) begin  // Only allow writes after init
                         wr_data <= shift[31:0];  
                         wr_tag <= 1;
-                        if (cmd_is_partial) begin
-                            partial_wr_ctrl_o <= 1;
-                            wr_duration_ctrl_o <= 16'd4; // Default partial duration
-                        end else begin
-                            partial_wr_ctrl_o <= 0;
-                            wr_duration_ctrl_o <= 16'd8;
-                        end
                     end
+                    p_state <= P_IDLE;
+                end else if (!is_hex) begin
+                    // Invalid character - return to idle
                     p_state <= P_IDLE;
                 end
             end
-            
-            P_GETDUR: begin
+            //-----------------------------------------------------------
+            P_CONFIG: begin
                 if (is_hex) begin
-                    shift <= {shift[59:0],hex2n(rx_data)};  
-                    nib_cnt <= nib_cnt+1;
+                    shift <= {shift[59:0], hex2n(rx_data)};
+                    nib_cnt <= nib_cnt + 1;
                 end else if ((rx_data==8'h0d)||(rx_data==8'h0a)) begin
-                    if (init_done) begin
-                        wr_duration_ctrl_o <= shift[15:0];
-                        wr_tag <= 1;
-                        partial_wr_ctrl_o <= 1;
+                    // Process configuration command
+                    if (nib_cnt == 2) begin
+                        // Valid 2-nibble config command
+                        cfg_partial_write_en <= shift[4];
+                        if (shift[3:0] >= 4'd1 && shift[3:0] <= 4'd8)
+                            cfg_write_cycles_reg <= shift[3:0];
+                        else
+                            cfg_write_cycles_reg <= 4'd8; // Default to 8 if invalid
                     end
+                    // Always return to idle after config command
+                    p_state <= P_IDLE;
+                end else begin
+                    // Invalid character - return to idle
                     p_state <= P_IDLE;
                 end
             end
@@ -504,14 +510,12 @@ always @(posedge clk_i) begin
 end
 
 endmodule
-
 //=================================================================
 //  TOP
 //=================================================================
 module top (
     input  wire         clk100mhz,
-wire partial_wr_ctrl_w;
-wire [15:0] wr_duration_ctrl_w;
+
     // USB-UART
     input  wire         uart_rx_i,   // A9 (PC → FPGA)
     output wire         uart_tx_o,   // D10 (FPGA → PC)
@@ -541,7 +545,8 @@ wire [15:0] wr_duration_ctrl_w;
 // Clock & reset
 //-----------------------------------------------------------------
 wire clk_w, rst_w, clk_ddr_w, clk_ddr_dqs_w, clk_ref_w;
-
+wire        cfg_partial_write;
+wire [3:0]  cfg_write_cycles;
 artix7_pll u_pll (
      .clkref_i (clk100mhz),
      .clkout0_o(clk_w),          // 100 MHz fabric
@@ -606,9 +611,7 @@ mini_uart_axi #(
     .rvalid_i (axi_rvalid),
     .rdata_i  (axi_rdata),
     .rlast_i  (axi_rlast),
-    .rready_o (axi_rready),
-      .partial_wr_ctrl_o(partial_wr_ctrl_w),
-    .wr_duration_ctrl_o(wr_duration_ctrl_w)
+    .rready_o (axi_rready)
 );
 
 // Fixed-value AXI fields
@@ -694,8 +697,10 @@ ddr3_axi #(
     .dfi_rddata_i     (dfi_rddata),
     .dfi_rddata_valid_i(dfi_rddata_valid),
     .dfi_rddata_dnv_i (dfi_rddata_dnv),
-        .partial_wr_ctrl_i(partial_wr_ctrl_w),
-    .wr_duration_ctrl_i(wr_duration_ctrl_w)
+        // Add these new connections:
+    .cfg_partial_write_i(cfg_partial_write),
+    .cfg_write_cycles_i(cfg_write_cycles)
+
 );
 
 //-----------------------------------------------------------------
@@ -703,7 +708,7 @@ ddr3_axi #(
 //-----------------------------------------------------------------
 ddr3_dfi_phy #(
     .REFCLK_FREQUENCY  (200),
-    .DQS_TAP_DELAY_INIT(27),
+    .DQS_TAP_DELAY_INIT(30),
     .DQ_TAP_DELAY_INIT (0),
     .TPHY_RDLAT        (5)
 ) u_phy (
@@ -760,3 +765,7 @@ always @(posedge clk_w) begin
 end
 
 endmodule
+
+
+
+

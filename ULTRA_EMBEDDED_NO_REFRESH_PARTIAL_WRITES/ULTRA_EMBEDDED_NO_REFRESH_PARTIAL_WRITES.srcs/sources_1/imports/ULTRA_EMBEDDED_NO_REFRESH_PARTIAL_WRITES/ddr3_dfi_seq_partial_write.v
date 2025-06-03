@@ -54,9 +54,9 @@ module ddr3_dfi_seq
     ,input  [ 31:0]  dfi_rddata_i
     ,input           dfi_rddata_valid_i
     ,input  [  1:0]  dfi_rddata_dnv_i
-    // ADD: Partial write control
-    ,input           partial_wr_i
-    ,input  [ 15:0]  wr_duration_i
+    // PARTIAL WRITE CONTROL - NEW INPUTS
+    ,input           partial_write_en_i      // Enable partial write mode
+    ,input  [  2:0]  partial_write_cycles_i  // Number of write cycles (1-8)
 
     // Outputs
     ,output          accept_o
@@ -109,23 +109,16 @@ localparam DELAY_W = 6;
 reg [DELAY_W-1:0] delay_q;
 reg [DELAY_W-1:0] delay_r;
 
-// ADD: Partial write state
-reg         partial_mode_q;
-reg [15:0]  partial_duration_q;
-reg [15:0]  partial_timer_q;
-
 //-----------------------------------------------------------------
-// Write data FIFO (modified to include partial write info)
+// Write data FIFO
 //-----------------------------------------------------------------
 wire [127:0] wrdata_w;
 wire [15:0]  wrdata_mask_w;
 wire         write_pop_w;
-wire         partial_wr_fifo_w;
-wire [15:0]  wr_duration_fifo_w;
 
 ddr3_dfi_fifo
 #(
-     .WIDTH(144 + 1 + 16)  // Added partial write flag and duration
+     .WIDTH(144)
     ,.DEPTH(4)
     ,.ADDR_W(2)
 )
@@ -135,11 +128,11 @@ u_write_fifo
     ,.rst_i(rst_i)
 
     ,.push_i(command_i == CMD_WRITE && accept_o)
-    ,.data_in_i({wr_duration_i, partial_wr_i, wrdata_mask_i, wrdata_i})
+    ,.data_in_i({wrdata_mask_i, wrdata_i})
     ,.accept_o()
 
     ,.valid_o()
-    ,.data_out_o({wr_duration_fifo_w, partial_wr_fifo_w, wrdata_mask_w, wrdata_w})
+    ,.data_out_o({wrdata_mask_w, wrdata_w})
     ,.pop_i(write_pop_w)
 );
 
@@ -172,58 +165,19 @@ wire write_early_accept_w = (last_cmd_q == CMD_WRITE && command_i == CMD_WRITE &
 assign accept_o  = (delay_q == {DELAY_W{1'b0}}) || read_early_accept_w || write_early_accept_w || (command_i == CMD_NOP);
 
 //-----------------------------------------------------------------
-// Write Enable (Modified for partial write)
+// Write Enable
 //-----------------------------------------------------------------
 localparam WR_SHIFT_W = tPHY_WRLAT+DDR_BURST_LEN;
 reg [WR_SHIFT_W-1:0] wr_en_q;
-reg                  partial_active_q;
-
 always @ (posedge clk_i )
 if (rst_i)
-begin
-    wr_en_q          <= {(WR_SHIFT_W){1'b0}};
-    partial_mode_q   <= 1'b0;
-    partial_duration_q <= 16'd8;
-    partial_timer_q  <= 16'd0;
-    partial_active_q <= 1'b0;
-end
+    wr_en_q       <= {(WR_SHIFT_W){1'b0}};
+else if (command_i == CMD_WRITE && accept_o)
+    wr_en_q       <= {{(DDR_BURST_LEN){1'b1}}, wr_en_q[tPHY_WRLAT:1]};
 else
-begin
-    // Standard write enable shift register
-    if (command_i == CMD_WRITE && accept_o)
-    begin
-        wr_en_q       <= {{(DDR_BURST_LEN){1'b1}}, wr_en_q[tPHY_WRLAT:1]};
-        partial_mode_q <= partial_wr_i;
-        partial_duration_q <= partial_wr_i ? wr_duration_i : 16'd8;
-    end
-    else
-        wr_en_q       <= {1'b0, wr_en_q[WR_SHIFT_W-1:1]};
-    
-    // Partial write timer control
-    if (wr_en_q[0] && !partial_active_q)
-    begin
-        partial_active_q <= 1'b1;
-        partial_timer_q  <= 16'd0;
-    end
-    else if (partial_active_q)
-    begin
-        partial_timer_q <= partial_timer_q + 16'd1;
-        
-        // Stop write early if partial mode and duration reached
-        if (partial_mode_q && partial_timer_q >= partial_duration_q - 1)
-        begin
-            partial_active_q <= 1'b0;
-            wr_en_q <= {(WR_SHIFT_W){1'b0}};  // Clear all pending writes
-        end
-        else if (partial_timer_q >= DDR_BURST_LEN - 1)
-        begin
-            partial_active_q <= 1'b0;
-        end
-    end
-end
+    wr_en_q       <= {1'b0, wr_en_q[WR_SHIFT_W-1:1]};
 
-// Write enable is active when shift register says so, but can be cut short by partial write
-wire wr_en_w = wr_en_q[0] && (!partial_mode_q || (partial_active_q && partial_timer_q < partial_duration_q));
+wire wr_en_w = wr_en_q[0];
 
 //-----------------------------------------------------------------
 // Read Enable
@@ -389,24 +343,79 @@ begin
     dfi_wrdata_mask_q   <= {DDR_DQM_W{1'b0}};
 end
 
-// Modified to handle partial writes
-assign write_pop_w = (wr_en_w && (dfi_wr_idx_q == 2'd3)) || 
-                     (partial_mode_q && partial_active_q && partial_timer_q >= partial_duration_q - 1);
+assign write_pop_w       = wr_en_w && (dfi_wr_idx_q == 2'd3);
 
 assign dfi_wrdata_o      = dfi_wrdata_q;
 assign dfi_wrdata_mask_o = dfi_wrdata_mask_q;
 
-// Make sure dfi_wrdata_en is synchronous
+//-----------------------------------------------------------------
+// PARTIAL WRITE CONTROL - MINIMAL MODIFICATION
+//-----------------------------------------------------------------
+// Track write cycle count for partial writes
+reg [2:0] wr_cycle_cnt_q;
+reg       wr_burst_active_q;
+
+always @ (posedge clk_i)
+if (rst_i)
+begin
+    wr_cycle_cnt_q   <= 3'd0;
+    wr_burst_active_q <= 1'b0;
+end
+else
+begin
+    // Detect start of write burst
+    if (wr_en_w && !wr_burst_active_q)
+    begin
+        wr_burst_active_q <= 1'b1;
+        wr_cycle_cnt_q <= 3'd1;
+    end
+    // Count cycles during write burst
+    else if (wr_en_w && wr_burst_active_q)
+    begin
+        if (wr_cycle_cnt_q < 3'd8)
+            wr_cycle_cnt_q <= wr_cycle_cnt_q + 3'd1;
+    end
+    // Reset when write burst ends
+    else if (!wr_en_w && wr_burst_active_q)
+    begin
+        wr_burst_active_q <= 1'b0;
+        wr_cycle_cnt_q <= 3'd0;
+    end
+end
+
+// Generate modified write enable
+reg dfi_wrdata_en_modified;
+always @ (*)
+begin
+    if (partial_write_en_i && wr_burst_active_q)
+    begin
+        // Only enable for configured number of cycles
+        if (wr_cycle_cnt_q <= partial_write_cycles_i)
+            dfi_wrdata_en_modified = wr_en_w;
+        else
+            dfi_wrdata_en_modified = 1'b0;
+    end
+    else
+    begin
+        // Normal operation
+        dfi_wrdata_en_modified = wr_en_w;
+    end
+end
+
+// Make sure dfi_wrdata_en is synchronous (MODIFIED)
 reg dfi_wrdata_en_q;
 
 always @ (posedge clk_i )
 if (rst_i)
     dfi_wrdata_en_q <= 1'b0;
 else
-    dfi_wrdata_en_q <= wr_en_w;
+    dfi_wrdata_en_q <= dfi_wrdata_en_modified;  // Use modified signal
 
 assign dfi_wrdata_en_o   = dfi_wrdata_en_q;
 
+//-----------------------------------------------------------------
+// Original read data enable (unchanged)
+//-----------------------------------------------------------------
 // Make sure dfi_rddata_en is synchronous
 reg dfi_rddata_en_q;
 
@@ -473,7 +482,7 @@ end
 endmodule
 
 //-----------------------------------------------------------------
-// FIFO (modified for larger width)
+// FIFO
 //-----------------------------------------------------------------
 module ddr3_dfi_fifo
 
@@ -481,7 +490,7 @@ module ddr3_dfi_fifo
 // Params
 //-----------------------------------------------------------------
 #(
-    parameter WIDTH   = 161,  // Increased for partial write signals
+    parameter WIDTH   = 144,
     parameter DEPTH   = 2,
     parameter ADDR_W  = 1
 )

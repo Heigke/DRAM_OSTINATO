@@ -36,6 +36,8 @@ module ddr3_core
     ,parameter DDR_ROW_W        = 15
     ,parameter DDR_BRC_MODE     = 0
     ,parameter DISABLE_AUTO_REFRESH = 1'b1   // << new
+      ,parameter ENABLE_PARTIAL_WRITE = 1'b1
+    ,parameter PARTIAL_WRITE_CYCLES = 2  // Configurable write truncation
 
 )
 //-----------------------------------------------------------------
@@ -56,8 +58,8 @@ module ddr3_core
     ,input  [ 31:0]  dfi_rddata_i
     ,input           dfi_rddata_valid_i
     ,input  [  1:0]  dfi_rddata_dnv_i
-    ,input           inport_partial_wr_i
-    ,input  [ 15:0]  inport_wr_duration_i
+   ,input           cfg_partial_write_i     // Enable partial write mode
+    ,input  [ 3:0]   cfg_write_cycles_i      // Number of write cycles (1-8)
     // Outputs
     ,output          cfg_stall_o
     ,output          inport_accept_o
@@ -264,9 +266,30 @@ begin
     //-----------------------------------------
     // STATE_WRITE
     //-----------------------------------------
+      //-----------------------------------------
+    // STATE_WRITE
+    //-----------------------------------------
     STATE_WRITE :
     begin
-        next_state_r = STATE_IDLE;
+        // Modified for partial writes
+        if (ENABLE_PARTIAL_WRITE && cfg_partial_write_i)
+        begin
+            // Early termination based on configured cycles
+            if (cmd_accept_w)
+            begin
+                // Use configured write cycles instead of full burst
+                next_state_r = STATE_IDLE;
+                
+                // Force early precharge to cut off write
+                if (cfg_write_cycles_i < 4'd8)
+                    target_state_r = STATE_PRECHARGE;
+            end
+        end
+        else
+        begin
+            // Normal write operation
+            next_state_r = STATE_IDLE;
+        end
     end
     //-----------------------------------------
     // STATE_PRECHARGE
@@ -546,16 +569,25 @@ begin
     //-----------------------------------------
     // STATE_WRITE
     //-----------------------------------------
+     //-----------------------------------------
+    // STATE_WRITE
+    //-----------------------------------------
     STATE_WRITE :
     begin
         command_r        = CMD_WRITE;
         addr_r           = {addr_col_w[DDR_ROW_W-1:3], 3'b0};
         bank_r           = addr_bank_w;
 
-        // Disable auto precharge (auto close of row)
-        //addr_r[AUTO_PRECHARGE] = 1'b0;
-        addr_r[AUTO_PRECHARGE] = DISABLE_AUTO_REFRESH ? 1'b1 : 1'b0;
-
+        // Modified: Control auto-precharge based on partial write mode
+        if (ENABLE_PARTIAL_WRITE && cfg_partial_write_i && cfg_write_cycles_i < 4'd8)
+        begin
+            // Force auto-precharge for early termination
+            addr_r[AUTO_PRECHARGE] = 1'b1;
+        end
+        else
+        begin
+            addr_r[AUTO_PRECHARGE] = DISABLE_AUTO_REFRESH ? 1'b1 : 1'b0;
+        end
     end
     default:
         ;
@@ -604,50 +636,86 @@ assign cfg_stall_o = ~(state_q == STATE_IDLE && cmd_accept_w);
 //-----------------------------------------------------------------
 // DDR3 DFI Interface
 //-----------------------------------------------------------------
-ddr3_dfi_seq
-#(
-     .DDR_MHZ(DDR_MHZ)
-    ,.DDR_WRITE_LATENCY(DDR_WRITE_LATENCY)
-    ,.DDR_READ_LATENCY(DDR_READ_LATENCY)
-)
-u_seq
-(
-     .clk_i(clk_i)
-    ,.rst_i(rst_i)
+// In ddr3_core_partial_write.v, modify the instantiation:
 
-    ,.address_i(addr_r)
-    ,.bank_i(bank_r)
-    ,.command_i(command_r)
-    ,.cke_i(cke_r)
-    ,.accept_o(cmd_accept_w)
+// Replace the existing u_seq instantiation with conditional compilation:
+localparam ENABLE_PARTIAL_WRITE_SEQ = 1'b1;
 
-    ,.wrdata_i(ram_write_data_w)
-    ,.wrdata_mask_i(~ram_wr_w)
-
-   // ADD: Partial write control
-    ,.partial_wr_i(inport_partial_wr_i)
-    ,.wr_duration_i(inport_wr_duration_i)
-
-    ,.rddata_valid_o(sdram_rd_valid_w)
-    ,.rddata_o(sdram_data_in_w)
-
-    ,.dfi_address_o(dfi_address_o)
-    ,.dfi_bank_o(dfi_bank_o)
-    ,.dfi_cas_n_o(dfi_cas_n_o)
-    ,.dfi_cke_o(dfi_cke_o)
-    ,.dfi_cs_n_o(dfi_cs_n_o)
-    ,.dfi_odt_o(dfi_odt_o)
-    ,.dfi_ras_n_o(dfi_ras_n_o)
-    ,.dfi_reset_n_o(dfi_reset_n_o)
-    ,.dfi_we_n_o(dfi_we_n_o)
-    ,.dfi_wrdata_o(dfi_wrdata_o)
-    ,.dfi_wrdata_en_o(dfi_wrdata_en_o)
-    ,.dfi_wrdata_mask_o(dfi_wrdata_mask_o)
-    ,.dfi_rddata_en_o(dfi_rddata_en_o)
-    ,.dfi_rddata_i(dfi_rddata_i)
-    ,.dfi_rddata_valid_i(dfi_rddata_valid_i)
-    ,.dfi_rddata_dnv_i(dfi_rddata_dnv_i)
-);
+generate
+if (ENABLE_PARTIAL_WRITE_SEQ) begin : gen_partial_seq
+    // Use the partial write wrapper
+   ddr3_dfi_seq #(
+        .DDR_MHZ(DDR_MHZ),
+        .DDR_WRITE_LATENCY(DDR_WRITE_LATENCY),
+        .DDR_READ_LATENCY(DDR_READ_LATENCY)
+    ) u_seq (
+        .clk_i(clk_i),
+        .rst_i(rst_i),
+        .address_i(addr_r),
+        .bank_i(bank_r),
+        .command_i(command_r),
+        .cke_i(cke_r),
+        .accept_o(cmd_accept_w),
+        .wrdata_i(ram_write_data_w),
+        .wrdata_mask_i(~ram_wr_w),
+        .rddata_valid_o(sdram_rd_valid_w),
+        .rddata_o(sdram_data_in_w),
+        .dfi_address_o(dfi_address_o),
+        .dfi_bank_o(dfi_bank_o),
+        .dfi_cas_n_o(dfi_cas_n_o),
+        .dfi_cke_o(dfi_cke_o),
+        .dfi_cs_n_o(dfi_cs_n_o),
+        .dfi_odt_o(dfi_odt_o),
+        .dfi_ras_n_o(dfi_ras_n_o),
+        .dfi_reset_n_o(dfi_reset_n_o),
+        .dfi_we_n_o(dfi_we_n_o),
+        .dfi_wrdata_o(dfi_wrdata_o),
+        .dfi_wrdata_en_o(dfi_wrdata_en_o),
+        .dfi_wrdata_mask_o(dfi_wrdata_mask_o),
+        .dfi_rddata_en_o(dfi_rddata_en_o),
+        .dfi_rddata_i(dfi_rddata_i),
+        .dfi_rddata_valid_i(dfi_rddata_valid_i),
+        .dfi_rddata_dnv_i(dfi_rddata_dnv_i),
+         .partial_write_en_i(cfg_partial_write_i),
+    .partial_write_cycles_i(cfg_write_cycles_i)
+    );
+end else begin : gen_normal_seq
+    // Use the original sequencer directly
+    ddr3_dfi_seq #(
+        .DDR_MHZ(DDR_MHZ),
+        .DDR_WRITE_LATENCY(DDR_WRITE_LATENCY),
+        .DDR_READ_LATENCY(DDR_READ_LATENCY)
+    ) u_seq (
+        .clk_i(clk_i),
+        .rst_i(rst_i),
+        .address_i(addr_r),
+        .bank_i(bank_r),
+        .command_i(command_r),
+        .cke_i(cke_r),
+        .accept_o(cmd_accept_w),
+        .wrdata_i(ram_write_data_w),
+        .wrdata_mask_i(~ram_wr_w),
+        .rddata_valid_o(sdram_rd_valid_w),
+        .rddata_o(sdram_data_in_w),
+        .dfi_address_o(dfi_address_o),
+        .dfi_bank_o(dfi_bank_o),
+        .dfi_cas_n_o(dfi_cas_n_o),
+        .dfi_cke_o(dfi_cke_o),
+        .dfi_cs_n_o(dfi_cs_n_o),
+        .dfi_odt_o(dfi_odt_o),
+        .dfi_ras_n_o(dfi_ras_n_o),
+        .dfi_reset_n_o(dfi_reset_n_o),
+        .dfi_we_n_o(dfi_we_n_o),
+        .dfi_wrdata_o(dfi_wrdata_o),
+        .dfi_wrdata_en_o(dfi_wrdata_en_o),
+        .dfi_wrdata_mask_o(dfi_wrdata_mask_o),
+        .dfi_rddata_en_o(dfi_rddata_en_o),
+        .dfi_rddata_i(dfi_rddata_i),
+        .dfi_rddata_valid_i(dfi_rddata_valid_i),
+        .dfi_rddata_dnv_i(dfi_rddata_dnv_i)
+    );
+end
+endgenerate
 
 // Read data output
 assign ram_read_data_w = sdram_data_in_w;

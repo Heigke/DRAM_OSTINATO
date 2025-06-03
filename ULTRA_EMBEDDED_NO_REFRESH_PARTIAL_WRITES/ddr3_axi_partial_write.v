@@ -58,8 +58,9 @@ module ddr3_axi
     ,input  [ 31:0]  dfi_rddata_i
     ,input           dfi_rddata_valid_i
     ,input  [  1:0]  dfi_rddata_dnv_i
-    ,input           partial_wr_ctrl_i
-    ,input  [ 15:0]  wr_duration_ctrl_i
+       ,input           cfg_partial_write_i
+    ,input  [3:0]    cfg_write_cycles_i
+
     // Outputs
     ,output          inport_awready_o
     ,output          inport_wready_o
@@ -208,9 +209,7 @@ u_axi
 (
     .clk_i(clk_i),
     .rst_i(rst_i),
-// ADD:
-    .partial_wr_ctrl_i(partial_wr_ctrl_i),
-    .wr_duration_ctrl_i(wr_duration_ctrl_i),
+
     // AXI port
     .axi_awvalid_i(axi_awvalid_w),
     .axi_awaddr_i(axi_awaddr_w),
@@ -299,6 +298,8 @@ u_core
     ,.dfi_rddata_i(dfi_rddata_i)
     ,.dfi_rddata_valid_i(dfi_rddata_valid_i)
     ,.dfi_rddata_dnv_i(dfi_rddata_dnv_i)
+      ,.cfg_partial_write_i(cfg_partial_write_i)
+    ,.cfg_write_cycles_i(cfg_write_cycles_i)
 );
 
 

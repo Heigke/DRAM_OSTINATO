@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Mon Jun  2 19:51:19 2025
-# Process ID         : 2822746
+# Start of session at: Tue Jun  3 20:20:38 2025
+# Process ID         : 3245017
 # Current directory  : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.runs/synth_1
 # Command line       : vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file           : /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.runs/synth_1/top.vds
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 22.04.5 LTS
 # Processor Detail   : Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz
-# CPU Frequency      : 3399.660 MHz
+# CPU Frequency      : 400.000 MHz
 # CPU Physical cores : 4
 # CPU Logical cores  : 8
 # Host memory        : 16440 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 18587 MB
-# Available Virtual  : 9065 MB
+# Available Virtual  : 7462 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

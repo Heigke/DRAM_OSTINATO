@@ -7,8 +7,6 @@ import sys
 import threading
 from colorama import Fore, Back, Style, init
 from datetime import datetime, timedelta
-import numpy as np
-from collections import defaultdict
 
 # Initialize colorama
 init(autoreset=True)
@@ -18,220 +16,118 @@ SERIAL_PORT = "/dev/ttyUSB1"
 BAUDRATE = 115200
 TIMEOUT = 0.2
 
-# Test addresses - use your weak cells from decay test
-TEST_ADDRESSES = [
-    0x00007000, 0x00008000, 0x0008F000, 0x00B60000,
-    0x00ED8000, 0x00908000, 0x00F10000, 0x01E40000,
-    0x00990000, 0x00AE8000, 0x00B58000, 0x00B90000,
-    0x00BB0000, 0x00BC0000, 0x01E00000, 0x01000000,
-    0x00A00000, 0x00C00000, 0x01C00000, 0x01030000,
+# Memory regions to test
+MEMORY_REGIONS = [
+    {"name": "Known Weak", "start": 0x00000000, "end": 0x00010000, "step": 0x1000},
 ]
 
-# Partial write durations to test (in DDR cycles)
-PARTIAL_DURATIONS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20, 25, 30]
-
-# Test patterns with descriptions
+# Test patterns for partial charge
 TEST_PATTERNS = [
-    {"name": "All High", "value": "FFFFFFFF", "description": "Maximum charge target"},
-    {"name": "All Low", "value": "00000000", "description": "Minimum charge target"},
-    {"name": "Checker", "value": "AAAAAAAA", "description": "Alternating bits"},
-    {"name": "InvCheck", "value": "55555555", "description": "Inverse alternating"},
-    {"name": "HighLow", "value": "FFFF0000", "description": "Half high, half low"},
-    {"name": "LowHigh", "value": "0000FFFF", "description": "Half low, half high"},
-    {"name": "Single1", "value": "00000001", "description": "Single bit high"},
-    {"name": "Single0", "value": "FFFFFFFE", "description": "Single bit low"},
+    {"name": "All Ones", "pattern": "FFFFFFFF", "description": "Maximum charge target"},
+    {"name": "All Zeros", "pattern": "00000000", "description": "Minimum charge target"},
+    {"name": "Checkerboard", "pattern": "AAAAAAAA", "description": "Adjacent cell interference"},
+    {"name": "Inv Checkerboard", "pattern": "55555555", "description": "Inverse interference"},
 ]
 
-# Read delays after partial write (ms)
-READ_DELAYS = [0, 10, 50, 100, 500, 1000]
+# Partial write durations (in cycles)
+PARTIAL_DURATIONS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 15, 20]
 
-# Number of repetitions per test
-REPETITIONS = 3
+# Read delays after partial write (seconds)
+READ_DELAYS = [0, 0.01, 0.05, 0.1, 0.5, 1.0]
 
-# ASCII Art and animations
-BANNER = f"""{Fore.CYAN}
-╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║   ██████╗  █████╗ ██████╗ ████████╗██╗ █████╗ ██╗          ██████╗██╗  ██╗ ║
-║   ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██║██╔══██╗██║         ██╔════╝██║  ██║ ║
-║   ██████╔╝███████║██████╔╝   ██║   ██║███████║██║         ██║     ███████║ ║
-║   ██╔═══╝ ██╔══██║██╔══██╗   ██║   ██║██╔══██║██║         ██║     ██╔══██║ ║
-║   ██║     ██║  ██║██║  ██║   ██║   ██║██║  ██║███████╗    ╚██████╗██║  ██║ ║
-║   ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝╚═╝  ╚═╝╚══════╝     ╚═════╝╚═╝  ╚═╝ ║
-║                                                                              ║
-║                      {Fore.YELLOW}⚡ DRAM Partial Charge Analyzer ⚡{Fore.CYAN}                      ║
-║                                                                              ║
-╚══════════════════════════════════════════════════════════════════════════════╝
-{Style.RESET_ALL}"""
+# Write parameters (from working decay script)
+NWRITES = 10
+NVERIFY = 5
 
-CHARGE_LEVELS = [
-    "░░░░░░░░",  # 0-12.5%
-    "█░░░░░░░",  # 12.5-25%
-    "██░░░░░░",  # 25-37.5%
-    "███░░░░░",  # 37.5-50%
-    "████░░░░",  # 50-62.5%
-    "█████░░░",  # 62.5-75%
-    "██████░░",  # 75-87.5%
-    "███████░",  # 87.5-100%
-    "████████",  # 100%
-]
+# Global variables for animation
+animation_running = False
+current_status = ""
+
+# ASCII art
+PARTIAL_CHARGE_ART = """
+    ╔═══════════════════════════════════════╗
+    ║      PARTIAL CHARGE WEAK CELL FINDER  ║
+    ║              ⚡⚡⚡⚡⚡⚡⚡             ║
+    ║         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄            ║
+    ║        ▐░░░░░▓▓▓▓▓░░░░░░░▌           ║
+    ║        ▐░█▀▀▀▓▓▓▓▓▀▀▀▀█░▌           ║
+    ║        ▐░▌  PARTIAL   ▐░▌           ║
+    ║        ▐░█▄▄▄▓▓▓▓▓▄▄▄▄█░▌           ║
+    ║        ▐░░░░░▓▓▓▓▓░░░░░░░▌           ║
+    ║         ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀            ║
+    ╚═══════════════════════════════════════╝
+"""
 
 ANIMATIONS = {
-    'charge': ['⚡', '🔌', '⚡', '💡', '⚡', '🔋', '⚡'],
-    'test': ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏'],
+    'write': ['⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷'],
+    'read': ['◐', '◓', '◑', '◒'],
+    'partial': ['⚡', '🔌', '⚡', '💡', '⚡', '🔋'],
     'wait': ['⏳', '⌛', '⏳', '⌛'],
-    'success': ['✨', '💫', '⭐', '🌟'],
 }
 
 def clear_line():
     """Clear the current line"""
-    print('\r' + ' ' * 100 + '\r', end='', flush=True)
+    print('\r' + ' ' * 80 + '\r', end='', flush=True)
 
-def fancy_print(message, msg_type="info", indent=0):
-    """Print messages with fancy formatting"""
-    timestamp = datetime.now().strftime("%H:%M:%S")
-    indent_str = "  " * indent
-    
-    if msg_type == "header":
-        print(f"\n{Fore.CYAN}{'═' * 80}")
-        print(f"{Fore.CYAN}║{Style.BRIGHT} {message.center(76)} {Style.NORMAL}{Fore.CYAN}║")
-        print(f"{Fore.CYAN}{'═' * 80}{Style.RESET_ALL}")
-    elif msg_type == "subheader":
-        print(f"\n{indent_str}{Fore.BLUE}┌─ {message} {'─' * (60 - len(message) - len(indent_str))}")
-    elif msg_type == "success":
-        print(f"{indent_str}{Fore.GREEN}[{timestamp}] ✓ {message}{Style.RESET_ALL}")
-    elif msg_type == "error":
-        print(f"{indent_str}{Fore.RED}[{timestamp}] ✗ {message}{Style.RESET_ALL}")
-    elif msg_type == "warning":
-        print(f"{indent_str}{Fore.YELLOW}[{timestamp}] ⚠ {message}{Style.RESET_ALL}")
-    elif msg_type == "found":
-        print(f"{indent_str}{Fore.MAGENTA}[{timestamp}] 🎯 {message}{Style.RESET_ALL}")
-    elif msg_type == "charge":
-        print(f"{indent_str}{Fore.YELLOW}[{timestamp}] ⚡ {message}{Style.RESET_ALL}")
-    elif msg_type == "data":
-        print(f"{indent_str}{Fore.CYAN}[{timestamp}] 📊 {message}{Style.RESET_ALL}")
-    else:
-        print(f"{indent_str}{Fore.BLUE}[{timestamp}] ℹ {message}{Style.RESET_ALL}")
+def animate_spinner(stop_event, animation_type='write'):
+    """Animated spinner that runs in a separate thread"""
+    frames = ANIMATIONS.get(animation_type, ANIMATIONS['write'])
+    idx = 0
+    while not stop_event.is_set():
+        frame = frames[idx % len(frames)]
+        status = f"{frame} {current_status}"
+        print(f"\r{status}", end='', flush=True)
+        idx += 1
+        time.sleep(0.1)
+    clear_line()
 
-def progress_bar(current, total, width=50, title="Progress", show_percent=True, color_mode="gradient"):
-    """Enhanced progress bar with multiple color modes"""
+def progress_bar(current, total, width=50, title="Progress"):
+    """Display a colored progress bar"""
     percentage = current / total if total > 0 else 0
     filled = int(width * percentage)
     
-    # Color selection based on mode
-    if color_mode == "gradient":
-        if percentage < 0.25:
-            bar_color = Fore.RED
-        elif percentage < 0.50:
-            bar_color = Fore.YELLOW
-        elif percentage < 0.75:
-            bar_color = Fore.CYAN
-        else:
-            bar_color = Fore.GREEN
-    elif color_mode == "charge":
-        bar_color = Fore.YELLOW
+    # Color based on percentage
+    if percentage < 0.33:
+        color = Fore.RED
+    elif percentage < 0.66:
+        color = Fore.YELLOW
     else:
-        bar_color = Fore.BLUE
+        color = Fore.GREEN
     
-    # Create the bar
-    bar_filled = bar_color + '█' * filled
-    bar_empty = Fore.WHITE + '░' * (width - filled)
-    bar = f"{bar_filled}{bar_empty}"
+    bar = f"{color}{'█' * filled}{Fore.WHITE}{'░' * (width - filled)}"
     
-    # Percentage display
-    percent_str = f" {percentage*100:.1f}%" if show_percent else ""
-    
-    # Stats display
-    stats = f" ({current}/{total})"
-    
-    print(f"\r{title}: [{bar}]{percent_str}{stats}  ", end='', flush=True)
+    print(f"\r{title}: [{bar}] {percentage*100:.1f}% ({current}/{total})", end='', flush=True)
 
-def visualize_bits(value1, value2):
-    """Visualize bit differences between two values"""
-    try:
-        v1 = int(value1, 16)
-        v2 = int(value2, 16)
-        
-        visual = ""
-        for i in range(31, -1, -1):
-            bit1 = (v1 >> i) & 1
-            bit2 = (v2 >> i) & 1
-            
-            if bit1 == bit2 == 1:
-                visual += f"{Fore.GREEN}1"
-            elif bit1 == bit2 == 0:
-                visual += f"{Fore.BLUE}0"
-            elif bit1 == 1 and bit2 == 0:
-                visual += f"{Fore.RED}↓"  # Discharged
-            else:
-                visual += f"{Fore.YELLOW}↑"  # Charged up
-            
-            if i % 4 == 0 and i > 0:
-                visual += " "
-        
-        return visual + Style.RESET_ALL
-    except:
-        return "ERROR"
-
-def calculate_charge_level(expected, actual):
-    """Calculate and visualize charge level"""
-    try:
-        exp_val = int(expected, 16)
-        act_val = int(actual, 16)
-        
-        # Count matching bits weighted by position
-        match_score = 0
-        total_score = 0
-        
-        for i in range(32):
-            exp_bit = (exp_val >> i) & 1
-            act_bit = (act_val >> i) & 1
-            weight = 1  # Could weight MSBs higher
-            
-            total_score += weight
-            if exp_bit == act_bit:
-                match_score += weight
-        
-        charge_percent = (match_score / total_score) * 100 if total_score > 0 else 0
-        
-        # Select charge visualization
-        level_idx = min(int(charge_percent / 12.5), 8)
-        charge_visual = CHARGE_LEVELS[level_idx]
-        
-        # Color based on charge level
-        if charge_percent > 90:
-            color = Fore.GREEN
-        elif charge_percent > 70:
-            color = Fore.CYAN
-        elif charge_percent > 50:
-            color = Fore.YELLOW
-        elif charge_percent > 30:
-            color = Fore.MAGENTA
-        else:
-            color = Fore.RED
-        
-        return {
-            'percent': charge_percent,
-            'visual': f"{color}{charge_visual}{Style.RESET_ALL}",
-            'match_bits': match_score,
-            'total_bits': total_score
-        }
-    except:
-        return {
-            'percent': 0,
-            'visual': f"{Fore.RED}ERROR{Style.RESET_ALL}",
-            'match_bits': 0,
-            'total_bits': 32
-        }
+def fancy_print(message, msg_type="info"):
+    """Print messages with fancy formatting"""
+    timestamp = datetime.now().strftime("%H:%M:%S")
+    
+    if msg_type == "header":
+        print(f"\n{Fore.CYAN}{'═' * 60}")
+        print(f"{Fore.CYAN}║{Style.BRIGHT} {message.center(56)} {Style.NORMAL}{Fore.CYAN}║")
+        print(f"{Fore.CYAN}{'═' * 60}{Style.RESET_ALL}")
+    elif msg_type == "success":
+        print(f"{Fore.GREEN}[{timestamp}] ✓ {message}{Style.RESET_ALL}")
+    elif msg_type == "error":
+        print(f"{Fore.RED}[{timestamp}] ✗ {message}{Style.RESET_ALL}")
+    elif msg_type == "warning":
+        print(f"{Fore.YELLOW}[{timestamp}] ⚠ {message}{Style.RESET_ALL}")
+    elif msg_type == "found":
+        print(f"{Fore.MAGENTA}[{timestamp}] 🎯 {message}{Style.RESET_ALL}")
+    elif msg_type == "partial":
+        print(f"{Fore.YELLOW}[{timestamp}] ⚡ {message}{Style.RESET_ALL}")
+    else:
+        print(f"{Fore.BLUE}[{timestamp}] ℹ {message}{Style.RESET_ALL}")
 
 class PartialChargeTester:
     def __init__(self, serial_port):
         self.ser = serial_port
-        self.results = []
-        self.summary_stats = defaultdict(lambda: defaultdict(int))
+        self.weak_cells = []
+        self.total_tests = 0
+        self.tests_completed = 0
         
     def write_cmd(self, addr, data):
-        """Standard write command"""
+        """Standard write command (from working decay script)"""
         cmd = f"W{addr:08X} {data}\r"
         self.ser.write(cmd.encode('ascii'))
         time.sleep(0.01)
@@ -240,10 +136,10 @@ class PartialChargeTester:
         """Partial write command: PAAAAAAAA DDDDDDDD TTTT"""
         cmd = f"P{addr:08X} {data} {duration:04X}\r"
         self.ser.write(cmd.encode('ascii'))
-        time.sleep(0.02)  # Slightly longer delay for partial writes
+        time.sleep(0.02)
     
     def read_cmd(self, addr):
-        """Read command"""
+        """Read command (from working decay script)"""
         cmd = f"R{addr:08X}\r"
         self.ser.write(cmd.encode('ascii'))
         self.ser.flush()
@@ -256,331 +152,217 @@ class PartialChargeTester:
             if self.ser.in_waiting:
                 try:
                     line = self.ser.readline().decode("ascii", errors="ignore").strip()
-                    if line and len(line) >= 8:
+                    if line:
                         response = line
                         break
                 except:
                     pass
         
-        return response[-8:].upper() if response and len(response) >= 8 else None
-    
-    def test_partial_charge(self, addr, pattern, duration, read_delay_ms=0):
-        """Test partial charge at specific address"""
-        pattern_val = pattern['value']
-        
-        # Step 1: Write opposite pattern to ensure we can detect changes
-        opposite = "FFFFFFFF" if pattern_val == "00000000" else "00000000"
-        self.write_cmd(addr, opposite)
-        time.sleep(0.01)
-        
-        # Verify opposite pattern
-        verify = self.read_cmd(addr)
-        if verify != opposite:
-            return None
-        
-        # Step 2: Perform partial write
-        self.partial_write_cmd(addr, pattern_val, duration)
-        
-        # Step 3: Wait if specified
-        if read_delay_ms > 0:
-            time.sleep(read_delay_ms / 1000.0)
-        
-        # Step 4: Read back
-        readback = self.read_cmd(addr)
-        
-        if readback:
-            charge_info = calculate_charge_level(pattern_val, readback)
-            
-            result = {
-                'addr': addr,
-                'pattern': pattern['name'],
-                'pattern_val': pattern_val,
-                'duration': duration,
-                'read_delay_ms': read_delay_ms,
-                'opposite': opposite,
-                'readback': readback,
-                'charge_level': charge_info['percent'],
-                'charge_visual': charge_info['visual'],
-                'match_bits': charge_info['match_bits'],
-                'bit_visual': visualize_bits(pattern_val, readback)
-            }
-            
-            return result
+        # Extract hex value from response (handle corrupted data)
+        if response:
+            # Try to extract 8 hex characters
+            hex_chars = ''.join(c for c in response[-8:] if c in '0123456789ABCDEFabcdef')
+            if len(hex_chars) == 8:
+                return hex_chars.upper()
         
         return None
     
-    def run_comprehensive_test(self, addresses=None):
-        """Run comprehensive partial charge characterization"""
+    def hamming_distance(self, hex1, hex2):
+        """Calculate bit differences"""
+        try:
+            v1 = int(hex1, 16)
+            v2 = int(hex2, 16)
+            return bin(v1 ^ v2).count('1')
+        except:
+            return 32
+    
+    def calculate_charge_level(self, expected, actual):
+        """Calculate charge level as percentage"""
+        try:
+            exp_val = int(expected, 16)
+            act_val = int(actual, 16)
+            
+            # Count matching bits
+            xor = exp_val ^ act_val
+            matching_bits = 32 - bin(xor).count('1')
+            
+            return (matching_bits / 32) * 100
+        except:
+            return 0
+    
+    def test_partial_charge_pattern(self, addresses, pattern_info, duration, read_delay):
+        """Test partial charge with specific pattern and duration"""
+        pattern = pattern_info['pattern']
+        pattern_name = pattern_info['name']
         
-        if addresses is None:
-            addresses = TEST_ADDRESSES
+        # Prepare opposite pattern
+        opposite = "FFFFFFFF" if pattern == "00000000" else "00000000"
         
-        # Display banner
-        print(BANNER)
+        # Write opposite pattern to all addresses
+        global current_status
+        current_status = f"Writing opposite pattern to {len(addresses)} addresses"
         
-        fancy_print("INITIALIZING PARTIAL CHARGE CHARACTERIZATION", "header")
+        stop_event = threading.Event()
+        animator = threading.Thread(target=animate_spinner, args=(stop_event, 'write'))
+        animator.start()
+        
+        try:
+            for addr in addresses:
+                for _ in range(NWRITES):
+                    self.write_cmd(addr, opposite)
+        finally:
+            stop_event.set()
+            animator.join()
+        
+        # Verify writes
+        verified = []
+        current_status = f"Verifying opposite pattern"
+        
+        stop_event = threading.Event()
+        animator = threading.Thread(target=animate_spinner, args=(stop_event, 'read'))
+        animator.start()
+        
+        try:
+            for addr in addresses:
+                success = False
+                for _ in range(NVERIFY):
+                    data = self.read_cmd(addr)
+                    if data and data == opposite:
+                        success = True
+                        break
+                if success:
+                    verified.append(addr)
+        finally:
+            stop_event.set()
+            animator.join()
+        
+        if not verified:
+            return []
+        
+        # Perform partial writes
+        current_status = f"Partial write: {pattern_name} for {duration} cycles"
+        
+        stop_event = threading.Event()
+        animator = threading.Thread(target=animate_spinner, args=(stop_event, 'partial'))
+        animator.start()
+        
+        try:
+            for addr in verified:
+                # Multiple partial writes to ensure effect
+                for _ in range(3):
+                    self.partial_write_cmd(addr, pattern, duration)
+                    time.sleep(0.01)
+        finally:
+            stop_event.set()
+            animator.join()
+        
+        # Wait if specified
+        if read_delay > 0:
+            fancy_print(f"Waiting {read_delay}s after partial write", "info")
+            time.sleep(read_delay)
+        
+        # Read back and analyze
+        weak_found = []
+        current_status = f"Reading back after partial write"
+        
+        stop_event = threading.Event()
+        animator = threading.Thread(target=animate_spinner, args=(stop_event, 'read'))
+        animator.start()
+        
+        try:
+            for addr in verified:
+                # Multiple reads to get stable value
+                read_values = []
+                for _ in range(3):
+                    data = self.read_cmd(addr)
+                    if data:
+                        read_values.append(data)
+                
+                if read_values:
+                    # Use most common value
+                    final_value = max(set(read_values), key=read_values.count)
+                    
+                    charge_level = self.calculate_charge_level(pattern, final_value)
+                    hamming = self.hamming_distance(pattern, final_value)
+                    
+                    # Check if partial charge achieved (not fully charged/discharged)
+                    if 10 < charge_level < 90 and hamming > 0:
+                        weak_found.append({
+                            'addr': addr,
+                            'expected': pattern,
+                            'readback': final_value,
+                            'charge_level': charge_level,
+                            'flipped_bits': hamming,
+                            'pattern_name': pattern_name,
+                            'duration': duration,
+                            'read_delay': read_delay
+                        })
+        finally:
+            stop_event.set()
+            animator.join()
+        
+        return weak_found
+    
+    def run_partial_charge_test(self):
+        """Run partial charge detection test"""
+        # Display header
+        print(f"{Fore.CYAN}{PARTIAL_CHARGE_ART}{Style.RESET_ALL}")
+        fancy_print("STARTING PARTIAL CHARGE DETECTION", "header")
         
         # Calculate total tests
-        total_tests = len(addresses) * len(TEST_PATTERNS) * len(PARTIAL_DURATIONS) * len(READ_DELAYS) * REPETITIONS
-        fancy_print(f"Test Configuration:", "info")
-        fancy_print(f"Addresses to test: {len(addresses)}", "data", 1)
-        fancy_print(f"Patterns: {len(TEST_PATTERNS)}", "data", 1)
-        fancy_print(f"Duration steps: {len(PARTIAL_DURATIONS)} ({min(PARTIAL_DURATIONS)}-{max(PARTIAL_DURATIONS)} cycles)", "data", 1)
-        fancy_print(f"Read delays: {len(READ_DELAYS)} ({min(READ_DELAYS)}-{max(READ_DELAYS)}ms)", "data", 1)
-        fancy_print(f"Repetitions: {REPETITIONS}", "data", 1)
-        fancy_print(f"Total measurements: {total_tests:,}", "data", 1)
+        total_addresses = sum(len(range(r['start'], r['end'], r['step'])) for r in MEMORY_REGIONS)
+        self.total_tests = len(TEST_PATTERNS) * len(PARTIAL_DURATIONS) * len(READ_DELAYS)
         
-        # Estimate time
-        time_per_test = 0.1  # seconds
-        estimated_time = total_tests * time_per_test
-        fancy_print(f"Estimated time: {estimated_time/60:.1f} minutes", "info", 1)
+        fancy_print(f"Memory regions: {len(MEMORY_REGIONS)}", "info")
+        fancy_print(f"Test patterns: {len(TEST_PATTERNS)}", "info")
+        fancy_print(f"Partial durations: {PARTIAL_DURATIONS}", "info")
+        fancy_print(f"Read delays: {READ_DELAYS}", "info")
+        fancy_print(f"Total configurations: {self.total_tests}", "info")
         
-        test_num = 0
-        vulnerable_cells = []
-        charge_profiles = defaultdict(list)
+        test_number = 0
         
         # Main test loop
-        for addr_idx, addr in enumerate(addresses):
-            fancy_print(f"TESTING ADDRESS 0x{addr:08X} [{addr_idx+1}/{len(addresses)}]", "subheader")
-            
-            addr_results = []
-            
-            for pattern in TEST_PATTERNS:
-                pattern_charge_data = []
-                
-                for duration in PARTIAL_DURATIONS:
-                    duration_results = []
+        for pattern_info in TEST_PATTERNS:
+            for duration in PARTIAL_DURATIONS:
+                for read_delay in READ_DELAYS:
+                    test_number += 1
                     
-                    for delay_ms in READ_DELAYS:
-                        delay_charge_sum = 0
-                        valid_tests = 0
-                        
-                        for rep in range(REPETITIONS):
-                            test_num += 1
-                            
-                            # Update progress every 10 tests
-                            if test_num % 10 == 0:
-                                progress_bar(test_num, total_tests, 
-                                           title=f"  Testing {pattern['name']} @ {duration} cycles",
-                                           color_mode="charge")
-                            
-                            # Run test
-                            result = self.test_partial_charge(addr, pattern, duration, delay_ms)
-                            
-                            if result:
-                                self.results.append(result)
-                                delay_charge_sum += result['charge_level']
-                                valid_tests += 1
-                                
-                                # Check for interesting results
-                                if 20 < result['charge_level'] < 80:  # Partial charge detected
-                                    vulnerable_cells.append(result)
-                        
-                        # Calculate average for this delay
-                        if valid_tests > 0:
-                            avg_charge = delay_charge_sum / valid_tests
-                            duration_results.append({
-                                'delay_ms': delay_ms,
-                                'avg_charge': avg_charge
-                            })
+                    fancy_print(f"TEST {test_number}/{self.total_tests}", "header")
+                    fancy_print(f"Pattern: {pattern_info['name']} ({pattern_info['description']})", "info")
+                    fancy_print(f"Partial write duration: {duration} cycles", "partial")
+                    fancy_print(f"Read delay: {read_delay} seconds", "info")
                     
-                    # Store results for this duration
-                    if duration_results:
-                        pattern_charge_data.append({
-                            'duration': duration,
-                            'delays': duration_results
-                        })
-                
-                # Visualize pattern results
-                if pattern_charge_data:
-                    clear_line()
-                    print(f"\n    {Fore.CYAN}Pattern: {pattern['name']} - {pattern['description']}{Style.RESET_ALL}")
-                    print(f"    {'Duration':<10} {'Charge Level by Read Delay (ms)':<50}")
-                    print(f"    {'(cycles)':<10} {'0':<8} {'10':<8} {'50':<8} {'100':<8} {'500':<8} {'1000':<8}")
-                    print(f"    {'-'*70}")
+                    # Collect addresses from all regions
+                    all_addresses = []
+                    for region in MEMORY_REGIONS:
+                        region_addrs = list(range(region['start'], region['end'], region['step']))
+                        all_addresses.extend(region_addrs)
+                        fancy_print(f"Testing {region['name']}: {len(region_addrs)} addresses", "info")
                     
-                    for dur_data in pattern_charge_data[:8]:  # Show first 8 durations
-                        dur = dur_data['duration']
-                        line = f"    {dur:<10}"
+                    # Run the test
+                    weak = self.test_partial_charge_pattern(all_addresses, pattern_info, duration, read_delay)
+                    
+                    if weak:
+                        fancy_print(f"Found {len(weak)} cells with partial charge! ⚡", "found")
+                        self.weak_cells.extend(weak)
                         
-                        for delay_info in dur_data['delays']:
-                            charge = delay_info['avg_charge']
-                            
-                            # Color code the charge level
-                            if charge > 90:
-                                color = Fore.GREEN
-                            elif charge > 70:
-                                color = Fore.CYAN
-                            elif charge > 50:
-                                color = Fore.YELLOW
-                            elif charge > 30:
-                                color = Fore.MAGENTA
-                            else:
-                                color = Fore.RED
-                            
-                            line += f"{color}{charge:>6.1f}%{Style.RESET_ALL}  "
-                        
-                        print(line)
-            
-            print()  # Blank line between addresses
+                        # Show some examples
+                        for cell in weak[:3]:
+                            print(f"    → 0x{cell['addr']:08X}: {cell['expected']} → {cell['readback']} "
+                                  f"(Charge: {cell['charge_level']:.1f}%, {cell['flipped_bits']} bits different)")
+                    else:
+                        fancy_print("No partial charges detected", "warning")
+                    
+                    # Update progress
+                    progress = (test_number / self.total_tests) * 100
+                    progress_bar(test_number, self.total_tests, title="Overall Progress")
+                    print()  # New line after progress bar
         
-        clear_line()
-        fancy_print("ANALYSIS COMPLETE!", "header")
-        
-        # Generate comprehensive analysis
-        self.analyze_results(vulnerable_cells)
-        
-        return vulnerable_cells
-    
-    def analyze_results(self, vulnerable_cells):
-        """Analyze and display comprehensive results"""
-        
-        if not self.results:
-            fancy_print("No test results to analyze!", "warning")
-            return
-        
-        # 1. Charge Profile Analysis
-        fancy_print("CHARGE RETENTION PROFILES", "subheader")
-        
-        # Group by duration
-        duration_stats = defaultdict(list)
-        for r in self.results:
-            duration_stats[r['duration']].append(r['charge_level'])
-        
-        print(f"\n  {Fore.CYAN}Average Charge Level by Write Duration:{Style.RESET_ALL}")
-        print(f"  {'Duration':<12} {'Avg Charge':<12} {'Visualization':<30} {'Samples':<10}")
-        print(f"  {'-'*65}")
-        
-        for duration in sorted(duration_stats.keys()):
-            charges = duration_stats[duration]
-            avg_charge = sum(charges) / len(charges)
-            
-            # Create visual bar
-            bar_len = int(avg_charge / 5)  # 20 char max
-            bar = '█' * bar_len + '░' * (20 - bar_len)
-            
-            # Color based on charge
-            if avg_charge > 80:
-                color = Fore.GREEN
-            elif avg_charge > 60:
-                color = Fore.CYAN
-            elif avg_charge > 40:
-                color = Fore.YELLOW
-            else:
-                color = Fore.RED
-            
-            print(f"  {duration:<12} {avg_charge:>10.1f}% {color}{bar}{Style.RESET_ALL} {len(charges):>8}")
-        
-        # 2. Vulnerable Cells Summary
-        if vulnerable_cells:
-            fancy_print("CELLS WITH PARTIAL CHARGE VULNERABILITY", "subheader")
-            
-            # Find cells most sensitive to partial writes
-            addr_vulnerability = defaultdict(list)
-            for cell in vulnerable_cells:
-                addr_vulnerability[cell['addr']].append(cell)
-            
-            print(f"\n  {Fore.MAGENTA}Top Vulnerable Addresses:{Style.RESET_ALL}")
-            print(f"  {'Address':<12} {'Min Duration':<15} {'Avg Partial':<15} {'Pattern':<15}")
-            print(f"  {'-'*60}")
-            
-            # Sort by number of vulnerable conditions
-            sorted_addrs = sorted(addr_vulnerability.items(), 
-                                key=lambda x: len(x[1]), reverse=True)[:10]
-            
-            for addr, cells in sorted_addrs:
-                min_duration = min(c['duration'] for c in cells)
-                avg_partial = sum(c['charge_level'] for c in cells) / len(cells)
-                common_pattern = max(set(c['pattern'] for c in cells), 
-                                   key=lambda p: sum(1 for c in cells if c['pattern'] == p))
-                
-                # Vulnerability indicator
-                if min_duration <= 3:
-                    vuln_color = Fore.RED
-                    vuln_text = "CRITICAL"
-                elif min_duration <= 6:
-                    vuln_color = Fore.YELLOW
-                    vuln_text = "HIGH"
-                else:
-                    vuln_color = Fore.GREEN
-                    vuln_text = "MEDIUM"
-                
-                print(f"  0x{addr:08X}   {min_duration:<15} {avg_partial:>13.1f}% {common_pattern:<15} "
-                      f"{vuln_color}[{vuln_text}]{Style.RESET_ALL}")
-        
-        # 3. Optimal Attack Parameters
-        fancy_print("OPTIMAL PARTIAL CHARGE PARAMETERS", "subheader")
-        
-        # Find duration that creates most partial charges (30-70% range)
-        partial_by_duration = defaultdict(int)
-        for r in self.results:
-            if 30 <= r['charge_level'] <= 70:
-                partial_by_duration[r['duration']] += 1
-        
-        if partial_by_duration:
-            optimal_duration = max(partial_by_duration.items(), key=lambda x: x[1])[0]
-            print(f"\n  {Fore.GREEN}Recommended partial write duration: {optimal_duration} cycles{Style.RESET_ALL}")
-            print(f"  This duration created partial charges in {partial_by_duration[optimal_duration]} tests")
-        
-        # 4. Charge Decay Analysis
-        fancy_print("CHARGE DECAY CHARACTERISTICS", "subheader")
-        
-        # Analyze how charge changes with read delay
-        delay_stats = defaultdict(list)
-        for r in self.results:
-            if r['read_delay_ms'] > 0:
-                delay_stats[r['read_delay_ms']].append(r['charge_level'])
-        
-        if delay_stats:
-            print(f"\n  {Fore.CYAN}Average Charge Retention Over Time:{Style.RESET_ALL}")
-            print(f"  {'Delay (ms)':<12} {'Avg Charge':<12} {'Decay':<12}")
-            print(f"  {'-'*36}")
-            
-            baseline = sum(self.results[i]['charge_level'] for i in range(len(self.results)) 
-                         if self.results[i]['read_delay_ms'] == 0) / len([r for r in self.results if r['read_delay_ms'] == 0])
-            
-            for delay in sorted(delay_stats.keys()):
-                charges = delay_stats[delay]
-                avg_charge = sum(charges) / len(charges)
-                decay = baseline - avg_charge
-                
-                decay_color = Fore.GREEN if decay < 5 else Fore.YELLOW if decay < 10 else Fore.RED
-                
-                print(f"  {delay:<12} {avg_charge:>10.1f}% {decay_color}{decay:>10.1f}%{Style.RESET_ALL}")
-        
-        # 5. Save Results
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"partial_charge_analysis_{timestamp}.csv"
-        
-        with open(filename, 'w') as f:
-            f.write("Address,Pattern,Duration,ReadDelay,ChargeLevel,Readback\n")
-            for r in self.results:
-                f.write(f"0x{r['addr']:08X},{r['pattern']},{r['duration']},"
-                       f"{r['read_delay_ms']},{r['charge_level']:.1f},{r['readback']}\n")
-        
-        fancy_print(f"Detailed results saved to: {filename}", "success")
-        
-        # 6. Visual Summary
-        print(f"\n{Fore.CYAN}{'═' * 80}")
-        print(f"║{' TEST SUMMARY '.center(78)}║")
-        print(f"{'═' * 80}{Style.RESET_ALL}")
-        
-        total_tests = len(self.results)
-        vulnerable_count = len(vulnerable_cells)
-        
-        print(f"\n  Total measurements: {total_tests:,}")
-        print(f"  Vulnerable conditions found: {vulnerable_count:,}")
-        print(f"  Vulnerability rate: {(vulnerable_count/total_tests)*100:.2f}%")
-        
-        if vulnerable_cells:
-            min_duration = min(c['duration'] for c in vulnerable_cells)
-            print(f"\n  {Fore.YELLOW}⚡ Minimum cycles for partial charge: {min_duration}")
-            print(f"  ⚡ Most vulnerable pattern: {max(set(c['pattern'] for c in vulnerable_cells), key=lambda p: sum(1 for c in vulnerable_cells if c['pattern'] == p))}")
-            print(f"  ⚡ Addresses with partial charge: {len(set(c['addr'] for c in vulnerable_cells))}{Style.RESET_ALL}")
+        return self.weak_cells
 
 def main():
     try:
-        # Initialize serial connection
+        # Open serial connection
         fancy_print("Initializing serial connection...", "info")
         ser = serial.Serial(SERIAL_PORT, BAUDRATE, timeout=TIMEOUT)
         time.sleep(0.1)
@@ -588,51 +370,80 @@ def main():
         ser.reset_output_buffer()
         fancy_print(f"Connected to {SERIAL_PORT} @ {BAUDRATE} baud", "success")
         
-        # Check if DDR3 is initialized
-        fancy_print("Checking DDR3 status...", "info")
-        ser.write(b"?\r")
-        time.sleep(0.1)
-        response = ser.readline().decode("ascii", errors="ignore").strip()
-        
-        if response == "W":
-            fancy_print("DDR3 still initializing, please wait...", "warning")
-            while response != "R":
-                time.sleep(1)
-                ser.write(b"?\r")
-                response = ser.readline().decode("ascii", errors="ignore").strip()
-        
-        fancy_print("DDR3 ready!", "success")
-        
     except serial.SerialException as e:
         fancy_print(f"Failed to open serial port: {e}", "error")
         return 1
     
-    # Create tester
+    # Create tester instance
     tester = PartialChargeTester(ser)
     
-    # Run comprehensive test
+    # Run partial charge test
     start_time = time.time()
-    vulnerable_cells = tester.run_comprehensive_test(TEST_ADDRESSES[:10])  # Test first 10 addresses
+    weak_cells = tester.run_partial_charge_test()
     elapsed = time.time() - start_time
     
-    # Final summary
-    print(f"\n{Fore.GREEN}{'═' * 80}")
-    print(f"║{' ⚡ PARTIAL CHARGE ANALYSIS COMPLETE ⚡ '.center(78)}║")
-    print(f"{'═' * 80}{Style.RESET_ALL}")
+    # Display final results
+    fancy_print("TEST COMPLETE!", "header")
+    fancy_print(f"Total runtime: {elapsed/60:.1f} minutes", "info")
+    fancy_print(f"Total cells with partial charge: {len(weak_cells)}", "success" if weak_cells else "warning")
     
-    print(f"\nTotal runtime: {elapsed/60:.1f} minutes")
-    print(f"Tests per second: {len(tester.results)/elapsed:.1f}")
+    if weak_cells:
+        # Find the most responsive cells
+        print(f"\n{Fore.MAGENTA}Cells Most Responsive to Partial Writes:{Style.RESET_ALL}")
+        print("─" * 70)
+        
+        # Sort by charge level (looking for 40-60% range as ideal)
+        ideal_partial = sorted(weak_cells, 
+                             key=lambda x: abs(x['charge_level'] - 50))[:10]
+        
+        for i, cell in enumerate(ideal_partial, 1):
+            charge_bar = '█' * int(cell['charge_level'] / 10) + '░' * (10 - int(cell['charge_level'] / 10))
+            print(f"{i:2d}. 0x{cell['addr']:08X} - Duration: {cell['duration']:2d} cycles - "
+                  f"Charge: [{charge_bar}] {cell['charge_level']:.1f}% - "
+                  f"Pattern: {cell['pattern_name']}")
+        
+        # Save results
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"partial_charge_results_{timestamp}.csv"
+        
+        with open(filename, 'w') as f:
+            f.write("Address,Pattern,Duration,ReadDelay,Expected,Readback,ChargeLevel,FlippedBits\n")
+            for cell in weak_cells:
+                f.write(f"0x{cell['addr']:08X},{cell['pattern_name']},{cell['duration']},"
+                       f"{cell['read_delay']},{cell['expected']},{cell['readback']},"
+                       f"{cell['charge_level']:.1f},{cell['flipped_bits']}\n")
+        
+        fancy_print(f"Results saved to {filename}", "success")
+        
+        # Generate optimal parameters
+        print(f"\n{Fore.CYAN}Optimal Parameters for Partial Charge Attack:{Style.RESET_ALL}")
+        durations = [cell['duration'] for cell in weak_cells]
+        if durations:
+            optimal_duration = min(durations)
+            print(f"Minimum duration for partial charge: {optimal_duration} cycles")
+            
+            vulnerable_addrs = list(set(cell['addr'] for cell in weak_cells if cell['duration'] <= optimal_duration + 2))
+            print(f"\nMost vulnerable addresses:")
+            for addr in vulnerable_addrs[:5]:
+                print(f"  - 0x{addr:08X}")
+    
+    else:
+        fancy_print("No partial charges detected!", "warning")
+        print("\nSuggestions:")
+        print("1. The partial write command may need different timing")
+        print("2. Try testing known weak addresses from decay test")
+        print("3. Increase temperature to make cells more vulnerable")
+        print("4. Try different duration ranges")
     
     # Cleanup
     ser.close()
     
-    # Exit animation
-    print(f"\n{Fore.YELLOW}", end='')
-    exit_msg = "⚡ Thank you for using Partial Charge Analyzer! ⚡"
-    for i, char in enumerate(exit_msg):
+    # Final animation
+    print(f"\n{Fore.GREEN}", end='')
+    for char in "⚡ Partial Charge Test Complete! ⚡":
         print(char, end='', flush=True)
-        time.sleep(0.03)
-    print(Style.RESET_ALL + "\n")
+        time.sleep(0.05)
+    print(Style.RESET_ALL)
     
     return 0
 
