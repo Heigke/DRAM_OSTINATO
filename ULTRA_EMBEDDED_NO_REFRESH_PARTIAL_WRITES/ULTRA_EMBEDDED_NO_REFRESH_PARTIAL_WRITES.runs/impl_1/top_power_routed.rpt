@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Tue Jun  3 21:00:19 2025
+| Date             : Fri Jun  6 16:48:08 2025
 | Host             : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.580        |
+| Total On-Chip Power (W)  | 0.583        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.476        |
+| Dynamic (W)              | 0.479        |
 | Device Static (W)        | 0.104        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 82.4         |
-| Junction Temperature (C) | 27.6         |
+| Max Ambient (C)          | 82.3         |
+| Junction Temperature (C) | 27.7         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,20 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |        8 |       --- |             --- |
-| Slice Logic              |     0.002 |     2844 |       --- |             --- |
-|   LUT as Logic           |     0.001 |      751 |     63400 |            1.18 |
-|   CARRY4                 |    <0.001 |       52 |     15850 |            0.33 |
-|   Register               |    <0.001 |     1137 |    126800 |            0.90 |
+| Clocks                   |     0.011 |        8 |       --- |             --- |
+| Slice Logic              |     0.002 |     3037 |       --- |             --- |
+|   LUT as Logic           |     0.002 |      937 |     63400 |            1.48 |
+|   CARRY4                 |    <0.001 |       60 |     15850 |            0.38 |
+|   Register               |    <0.001 |     1193 |    126800 |            0.94 |
 |   LUT as Distributed RAM |    <0.001 |      310 |     19000 |            1.63 |
-|   F7/F8 Muxes            |    <0.001 |       31 |     63400 |            0.05 |
-|   LUT as Shift Register  |    <0.001 |        2 |     19000 |            0.01 |
+|   F7/F8 Muxes            |    <0.001 |       21 |     63400 |            0.03 |
 |   Others                 |     0.000 |       29 |       --- |             --- |
-| Signals                  |     0.002 |     2268 |       --- |             --- |
+| Signals                  |     0.003 |     2449 |       --- |             --- |
 | PLL                      |     0.113 |        1 |         6 |           16.67 |
-| I/O                      |     0.346 |       55 |       210 |           26.19 |
+| I/O                      |     0.350 |       55 |       210 |           26.19 |
 | Static Power             |     0.104 |          |           |                 |
-| Total                    |     0.580 |          |           |                 |
+| Total                    |     0.583 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -75,13 +74,13 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.051 |       0.034 |      0.016 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.139 |       0.120 |      0.018 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.050 |       0.034 |      0.016 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.139 |       0.121 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco135   |       1.350 |     0.170 |       0.166 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.172 |       0.168 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -131,8 +130,8 @@ Table of Contents
 +---------------+------------------+-----------------+
 | Clock         | Domain           | Constraint (ns) |
 +---------------+------------------+-----------------+
-| OCLKB0        | u_pll/clkout1_o  |             2.5 |
 | clk_ddr_dqs_w | u_pll/clkout3_o  |             2.5 |
+| clk_ddr_w     | u_pll/clkout1_o  |             2.5 |
 | clk_ref_w     | u_pll/clkout2_o  |             5.0 |
 | clk_w         | u_pll/clkout0_o  |            10.0 |
 | clkfbout_w    | u_pll/clkfbout_w |            10.0 |
@@ -149,14 +148,14 @@ Table of Contents
 +-----------------------------+-----------+
 | Name                        | Power (W) |
 +-----------------------------+-----------+
-| top                         |     0.476 |
-|   u_ddr                     |     0.006 |
+| top                         |     0.479 |
+|   u_ddr                     |     0.008 |
 |     u_axi                   |     0.004 |
-|       u_request             |     0.001 |
+|       u_request             |     0.002 |
 |       u_response            |     0.001 |
-|     u_core                  |     0.003 |
-|       gen_partial_seq.u_seq |     0.002 |
-|   u_phy                     |     0.302 |
+|     u_core                  |     0.004 |
+|       gen_partial_seq.u_seq |     0.003 |
+|   u_phy                     |     0.304 |
 |     u_pad_ck                |     0.006 |
 |     u_pad_dq0               |     0.011 |
 |     u_pad_dq1               |     0.011 |

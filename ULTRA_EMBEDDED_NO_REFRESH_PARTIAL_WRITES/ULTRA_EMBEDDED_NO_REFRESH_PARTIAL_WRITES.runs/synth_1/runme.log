@@ -7,7 +7,7 @@
   **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Tue Jun  3 20:58:32 2025
+  **** Start of session at: Fri Jun  6 16:46:05 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -24,15 +24,26 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3266912
+INFO: [Synth 8-7075] Helper process launched with PID 4045562
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1910.422 ; gain = 429.801 ; free physical = 4292 ; free virtual = 9321
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1910.676 ; gain = 429.770 ; free physical = 569 ; free virtual = 3400
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-6901] identifier 'awvalid_w' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_pmem.v:173]
-WARNING: [Synth 8-10929] literal value 'd8 truncated to fit in 3 bits [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:388]
-WARNING: [Synth 8-6901] identifier 'wr_burst_active_q' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:357]
-WARNING: [Synth 8-6901] identifier 'wr_cycle_cnt_q' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:357]
-INFO: [Synth 8-6157] synthesizing module 'top' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:516]
+WARNING: [Synth 8-6901] identifier 'command_r' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:197]
+WARNING: [Synth 8-6901] identifier 'write_ack_q' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:199]
+WARNING: [Synth 8-6901] identifier 'dbg_state' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:659]
+WARNING: [Synth 8-6901] identifier 'wr_valid_q0' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:98]
+WARNING: [Synth 8-6901] identifier 'wr_valid_q1' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:99]
+WARNING: [Synth 8-6901] identifier 'dqs_out_en_n_q' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:100]
+WARNING: [Synth 8-6901] identifier 'dfi_wr_mask_q' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:101]
+WARNING: [Synth 8-6901] identifier 'dm_out_w' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:102]
+INFO: [Synth 8-11241] undeclared symbol 'wr_done', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:363]
+INFO: [Synth 8-11241] undeclared symbol 'rd_done', assumed default net type 'wire' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:383]
+WARNING: [Synth 8-6901] identifier 'tx_cnt' is used before its declaration [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:407]
+CRITICAL WARNING: [Synth 8-9339] data object 'cfg_write_cycles' is already declared [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:564]
+INFO: [Synth 8-6826] previous declaration of 'cfg_write_cycles' is from here [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:517]
+CRITICAL WARNING: [Synth 8-11152] second declaration of 'cfg_write_cycles' is ignored [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:564]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:484]
 INFO: [Synth 8-6157] synthesizing module 'artix7_pll' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/artix7_pil.v:2]
 INFO: [Synth 8-6157] synthesizing module 'IBUF' [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:75825]
 INFO: [Synth 8-6155] done synthesizing module 'IBUF' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:75825]
@@ -64,28 +75,28 @@ INFO: [Synth 8-6155] done synthesizing module 'BUFH' (0#1) [/tools/Xilinx/Vivado
 INFO: [Synth 8-6155] done synthesizing module 'artix7_pll' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/artix7_pil.v:2]
 INFO: [Synth 8-6157] synthesizing module 'reset_gen' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/reset_gen.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'reset_gen' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/reset_gen.v:1]
-INFO: [Synth 8-6157] synthesizing module 'mini_uart_axi' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:168]
+INFO: [Synth 8-6157] synthesizing module 'mini_uart_axi' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:173]
 	Parameter CLK_HZ bound to: 100000000 - type: integer 
 	Parameter BAUDRATE bound to: 115200 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:65]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:65]
 	Parameter CLK_HZ bound to: 100000000 - type: integer 
 	Parameter BAUDRATE bound to: 115200 - type: integer 
-INFO: [Synth 8-226] default block is never used [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:102]
-INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:65]
-INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:18]
+INFO: [Synth 8-226] default block is never used [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:102]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:65]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:18]
 	Parameter CLK_HZ bound to: 100000000 - type: integer 
 	Parameter BAUDRATE bound to: 115200 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:18]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:403]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:440]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:498]
-INFO: [Synth 8-6155] done synthesizing module 'mini_uart_axi' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:168]
-WARNING: [Synth 8-7071] port 'awid_o' of module 'mini_uart_axi' is unconnected for instance 'u_uart' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:588]
-WARNING: [Synth 8-7071] port 'arid_o' of module 'mini_uart_axi' is unconnected for instance 'u_uart' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:588]
-WARNING: [Synth 8-7071] port 'cfg_partial_write' of module 'mini_uart_axi' is unconnected for instance 'u_uart' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:588]
-WARNING: [Synth 8-7071] port 'cfg_write_cycles' of module 'mini_uart_axi' is unconnected for instance 'u_uart' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:588]
-WARNING: [Synth 8-7023] instance 'u_uart' of module 'mini_uart_axi' has 25 connections declared, but only 21 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:588]
-INFO: [Synth 8-6157] synthesizing module 'ddr3_axi' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write.v:26]
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:18]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:333]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:366]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:386]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:404]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:446]
+INFO: [Synth 8-6155] done synthesizing module 'mini_uart_axi' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:173]
+WARNING: [Synth 8-7071] port 'awid_o' of module 'mini_uart_axi' is unconnected for instance 'u_uart' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:570]
+WARNING: [Synth 8-7071] port 'arid_o' of module 'mini_uart_axi' is unconnected for instance 'u_uart' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:570]
+WARNING: [Synth 8-7023] instance 'u_uart' of module 'mini_uart_axi' has 36 connections declared, but only 34 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:570]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_axi' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write_debug_timing.v:26]
 	Parameter DDR_MHZ bound to: 100 - type: integer 
 	Parameter DDR_WRITE_LATENCY bound to: 4 - type: integer 
 	Parameter DDR_READ_LATENCY bound to: 4 - type: integer 
@@ -107,29 +118,35 @@ INFO: [Synth 8-6157] synthesizing module 'ddr3_axi_pmem_fifo__parameterized0' [/
 	Parameter ADDR_W bound to: 3 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_axi_pmem_fifo__parameterized0' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_pmem.v:504]
 INFO: [Synth 8-6155] done synthesizing module 'ddr3_axi_pmem' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_pmem.v:26]
-INFO: [Synth 8-6157] synthesizing module 'ddr3_core' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write.v:26]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_core' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:26]
 	Parameter DDR_MHZ bound to: 100 - type: integer 
 	Parameter DDR_WRITE_LATENCY bound to: 4 - type: integer 
 	Parameter DDR_READ_LATENCY bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_seq' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:26]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_seq' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev8_debug_timingv1.v:26]
 	Parameter DDR_MHZ bound to: 100 - type: integer 
 	Parameter DDR_WRITE_LATENCY bound to: 4 - type: integer 
 	Parameter DDR_READ_LATENCY bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_fifo' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:500]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_fifo' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev8_debug_timingv1.v:540]
 	Parameter WIDTH bound to: 144 - type: integer 
 	Parameter DEPTH bound to: 4 - type: integer 
 	Parameter ADDR_W bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_fifo' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:500]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_seq' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:26]
-WARNING: [Synth 8-689] width (4) of port connection 'partial_write_cycles_i' does not match port width (3) of module 'ddr3_dfi_seq' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write.v:680]
-INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write.v:751]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_fifo' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev8_debug_timingv1.v:540]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_seq' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev8_debug_timingv1.v:26]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_fifo' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:785]
 	Parameter WIDTH bound to: 16 - type: integer 
 	Parameter DEPTH bound to: 8 - type: integer 
 	Parameter ADDR_W bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write.v:751]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_core' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write.v:26]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_axi' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write.v:26]
-INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_phy' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_fifo' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:785]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_core' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:26]
+WARNING: [Synth 8-7071] port 'cfg_partial_write_i' of module 'ddr3_core' is unconnected for instance 'u_core' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write_debug_timing.v:284]
+WARNING: [Synth 8-7023] instance 'u_core' of module 'ddr3_core' has 44 connections declared, but only 43 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write_debug_timing.v:284]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_axi' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write_debug_timing.v:26]
+WARNING: [Synth 8-7071] port 'cfg_partial_write_i' of module 'ddr3_axi' is unconnected for instance 'u_ddr' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:669]
+WARNING: [Synth 8-7071] port 'cfg_write_cycles_i' of module 'ddr3_axi' is unconnected for instance 'u_ddr' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:669]
+WARNING: [Synth 8-7071] port 'debug_seq_wr_cycle_cnt' of module 'ddr3_axi' is unconnected for instance 'u_ddr' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:669]
+WARNING: [Synth 8-7071] port 'debug_seq_wr_burst_active' of module 'ddr3_axi' is unconnected for instance 'u_ddr' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:669]
+WARNING: [Synth 8-7023] instance 'u_ddr' of module 'ddr3_axi' has 58 connections declared, but only 54 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:669]
+INFO: [Synth 8-6157] synthesizing module 'ddr3_dfi_phy' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:25]
 	Parameter REFCLK_FREQUENCY bound to: 200 - type: integer 
 	Parameter DQS_TAP_DELAY_INIT bound to: 30 - type: integer 
 	Parameter DQ_TAP_DELAY_INIT bound to: 0 - type: integer 
@@ -182,91 +199,98 @@ INFO: [Synth 8-6157] synthesizing module 'ISERDESE2' [/tools/Xilinx/Vivado/2024.
 	Parameter NUM_CE bound to: 1 - type: integer 
 	Parameter SERDES_MODE bound to: MASTER - type: string 
 INFO: [Synth 8-6155] done synthesizing module 'ISERDESE2' (0#1) [/tools/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:82955]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1473]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1473]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1473]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1473]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in0' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1473]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1550]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1550]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1550]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1550]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in1' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1550]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1627]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1627]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1627]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1627]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in2' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1627]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1704]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1704]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1704]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1704]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in3' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1704]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1781]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1781]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1781]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1781]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in4' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1781]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1858]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1858]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1858]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1858]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in5' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1858]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1935]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1935]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1935]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1935]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in6' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:1935]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2012]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2012]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2012]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2012]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in7' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2012]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2089]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2089]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2089]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2089]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in8' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2089]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2166]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2166]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2166]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2166]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in9' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2166]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2243]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2243]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2243]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2243]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in10' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2243]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2320]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2320]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2320]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2320]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in11' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2320]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2397]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2397]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2397]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2397]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in12' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2397]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2474]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2474]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2474]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2474]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in13' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2474]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2551]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2551]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2551]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2551]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in14' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2551]
-WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2628]
-WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2628]
-WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2628]
-WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2628]
-WARNING: [Synth 8-7023] instance 'u_serdes_dq_in15' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:2628]
-INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_phy' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:516]
-WARNING: [Synth 8-6014] Unused sequential element wr_accept_q_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev2.v:156]
-WARNING: [Synth 8-3848] Net cfg_partial_write in module/entity top does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:548]
-WARNING: [Synth 8-3848] Net cfg_write_cycles in module/entity top does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write.v:549]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1480]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1480]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1480]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in0' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1480]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in0' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1480]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1557]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1557]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1557]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in1' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1557]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in1' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1557]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1634]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1634]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1634]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in2' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1634]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in2' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1634]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1711]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1711]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1711]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in3' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1711]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in3' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1711]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1788]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1788]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1788]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in4' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1788]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in4' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1788]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1865]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1865]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1865]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in5' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1865]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in5' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1865]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1942]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1942]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1942]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in6' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1942]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in6' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:1942]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2019]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2019]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2019]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in7' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2019]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in7' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2019]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2096]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2096]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2096]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in8' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2096]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in8' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2096]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2173]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2173]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2173]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in9' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2173]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in9' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2173]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2250]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2250]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2250]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in10' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2250]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in10' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2250]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2327]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2327]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2327]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in11' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2327]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in11' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2327]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2404]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2404]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2404]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in12' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2404]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in12' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2404]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2481]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2481]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2481]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in13' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2481]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in13' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2481]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2558]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2558]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2558]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in14' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2558]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in14' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2558]
+WARNING: [Synth 8-7071] port 'Q5' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2635]
+WARNING: [Synth 8-7071] port 'Q6' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2635]
+WARNING: [Synth 8-7071] port 'Q7' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2635]
+WARNING: [Synth 8-7071] port 'Q8' of module 'ISERDESE2' is unconnected for instance 'u_serdes_dq_in15' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2635]
+WARNING: [Synth 8-7023] instance 'u_serdes_dq_in15' of module 'ISERDESE2' has 28 connections declared, but only 24 given [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:2635]
+INFO: [Synth 8-6155] done synthesizing module 'ddr3_dfi_phy' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_phy_debug.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:484]
+WARNING: [Synth 8-6014] Unused sequential element wr_accept_q_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_dfi_seq_partial_writev8_debug_timingv1.v:177]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_core'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_axi_partial_write_debug_timing.v:284]
+WARNING: [Synth 8-3848] Net dbg_state in module/entity ddr3_core does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:760]
+WARNING: [Synth 8-3848] Net seq_wrdata_en_debug in module/entity ddr3_core does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:668]
+WARNING: [Synth 8-3848] Net seq_wrdata_debug in module/entity ddr3_core does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:669]
+WARNING: [Synth 8-3848] Net seq_wrdata_mask_debug in module/entity ddr3_core does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:670]
+WARNING: [Synth 8-3848] Net debug_seq_wr_cycle_cnt_o in module/entity ddr3_core does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:94]
+WARNING: [Synth 8-3848] Net debug_seq_wr_burst_active_o in module/entity ddr3_core does not have driver. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ddr3_core_partial_write_debug_timing.v:95]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_phy'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:743]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'u_uart'. This will prevent further optimization [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.srcs/sources_1/imports/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/topv1_partial_write_debug_timingv2.v:570]
 WARNING: [Synth 8-7129] Port cfg_i[31] in module ddr3_dfi_phy is either unconnected or has no load
 WARNING: [Synth 8-7129] Port cfg_i[30] in module ddr3_dfi_phy is either unconnected or has no load
 WARNING: [Synth 8-7129] Port cfg_i[29] in module ddr3_dfi_phy is either unconnected or has no load
@@ -287,42 +311,100 @@ WARNING: [Synth 8-7129] Port cfg_i[4] in module ddr3_dfi_phy is either unconnect
 WARNING: [Synth 8-7129] Port dfi_address_i[14] in module ddr3_dfi_phy is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dfi_rddata_dnv_i[1] in module ddr3_dfi_seq is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dfi_rddata_dnv_i[0] in module ddr3_dfi_seq is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[31] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[30] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[29] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[28] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[27] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[26] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[25] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[24] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[23] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[31] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[30] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[29] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[3] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[2] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[1] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[0] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_awburst_i[1] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_awburst_i[0] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_arburst_i[1] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_arburst_i[0] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ram_error_i in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port clk_i in module ddr3_axi_retime is either unconnected or has no load
-WARNING: [Synth 8-7129] Port rst_i in module ddr3_axi_retime is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[79] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[78] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[77] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[76] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[75] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[74] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[73] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[72] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[71] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[70] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[69] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[68] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[67] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[66] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[65] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[64] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[63] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[62] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[61] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[60] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[59] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[58] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[57] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[56] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[55] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[54] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[53] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[52] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[51] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[50] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[49] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[48] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[47] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[46] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[45] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[44] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[43] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[42] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[41] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[40] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[39] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[38] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[37] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[36] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[35] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[34] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[33] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[32] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[31] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[30] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[29] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[28] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[27] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[26] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[25] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[24] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[23] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[22] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[21] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[20] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[19] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[18] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[17] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[16] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[15] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[14] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[13] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[12] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[11] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[10] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[9] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[8] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[7] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[6] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[5] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[4] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[3] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[2] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[1] in module ddr3_core is either unconnected or has no load
+WARNING: [Synth 8-7129] Port debug_state_name_o[0] in module ddr3_core is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1999.391 ; gain = 518.770 ; free physical = 4213 ; free virtual = 9235
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2001.613 ; gain = 520.707 ; free physical = 483 ; free virtual = 3318
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2014.234 ; gain = 533.613 ; free physical = 4222 ; free virtual = 9245
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2019.426 ; gain = 538.520 ; free physical = 479 ; free virtual = 3314
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2014.234 ; gain = 533.613 ; free physical = 4222 ; free virtual = 9245
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2019.426 ; gain = 538.520 ; free physical = 479 ; free virtual = 3314
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2020.172 ; gain = 0.000 ; free physical = 4219 ; free virtual = 9241
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2025.363 ; gain = 0.000 ; free physical = 478 ; free virtual = 3314
 INFO: [Netlist 29-17] Analyzing 54 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -336,7 +418,7 @@ Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2163.984 ; gain = 0.000 ; free physical = 4235 ; free virtual = 9258
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2167.176 ; gain = 0.000 ; free physical = 479 ; free virtual = 3325
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 20 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
@@ -344,29 +426,30 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   OBUFDS => OBUFDS_DUAL_BUF (INV, OBUFDS(x2)): 1 instance 
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2163.984 ; gain = 0.000 ; free physical = 4235 ; free virtual = 9258
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2167.176 ; gain = 0.000 ; free physical = 479 ; free virtual = 3325
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2163.984 ; gain = 683.363 ; free physical = 4289 ; free virtual = 9318
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2167.176 ; gain = 686.270 ; free physical = 481 ; free virtual = 3326
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2171.988 ; gain = 691.367 ; free physical = 4289 ; free virtual = 9318
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2175.180 ; gain = 694.273 ; free physical = 481 ; free virtual = 3326
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2171.988 ; gain = 691.367 ; free physical = 4289 ; free virtual = 9318
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2175.180 ; gain = 694.273 ; free physical = 481 ; free virtual = 3327
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
 INFO: [Synth 8-802] inferred FSM for state register 'p_state_reg' in module 'mini_uart_axi'
 INFO: [Synth 8-802] inferred FSM for state register 'astate_reg' in module 'mini_uart_axi'
 INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'mini_uart_axi'
+INFO: [Synth 8-802] inferred FSM for state register 't_state_reg' in module 'mini_uart_axi'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -401,22 +484,30 @@ INFO: [Synth 8-3354] encoded FSM with state register 'p_state_reg' using encodin
                      A_B |                              100 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'astate_reg' using encoding 'one-hot' in module 'mini_uart_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               00
+                 iSTATE0 |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 't_state_reg' using encoding 'one-hot' in module 'mini_uart_axi'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2171.988 ; gain = 691.367 ; free physical = 4293 ; free virtual = 9323
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2175.180 ; gain = 694.273 ; free physical = 486 ; free virtual = 3333
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
 	   2 Input   27 Bit       Adders := 1     
 	   2 Input   16 Bit       Adders := 2     
-	   2 Input    8 Bit       Adders := 10    
-	   2 Input    6 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 13    
+	   2 Input    6 Bit       Adders := 3     
 	   2 Input    4 Bit       Adders := 9     
-	   2 Input    3 Bit       Adders := 7     
-	   2 Input    2 Bit       Adders := 9     
+	   2 Input    3 Bit       Adders := 9     
+	   2 Input    2 Bit       Adders := 10    
 	   2 Input    1 Bit       Adders := 2     
 +---Registers : 
 	              128 Bit    Registers := 3     
@@ -429,11 +520,11 @@ Detailed RTL Component Info :
 	               10 Bit    Registers := 1     
 	                8 Bit    Registers := 9     
 	                7 Bit    Registers := 2     
-	                6 Bit    Registers := 1     
-	                4 Bit    Registers := 20    
-	                3 Bit    Registers := 6     
+	                6 Bit    Registers := 3     
+	                4 Bit    Registers := 21    
+	                3 Bit    Registers := 7     
 	                2 Bit    Registers := 9     
-	                1 Bit    Registers := 40    
+	                1 Bit    Registers := 43    
 +---RAMs : 
 	               1K Bit	(8 X 144 bit)          RAMs := 1     
 	              576 Bit	(4 X 144 bit)          RAMs := 1     
@@ -453,23 +544,24 @@ Detailed RTL Component Info :
 	   2 Input   10 Bit        Muxes := 2     
 	   2 Input    9 Bit        Muxes := 1     
 	   4 Input    8 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 21    
+	   2 Input    8 Bit        Muxes := 26    
 	   3 Input    8 Bit        Muxes := 2     
-	   2 Input    7 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 1     
+	   2 Input    7 Bit        Muxes := 3     
+	   2 Input    6 Bit        Muxes := 5     
 	   5 Input    5 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 29    
-	   4 Input    4 Bit        Muxes := 2     
+	   2 Input    4 Bit        Muxes := 35    
+	   4 Input    4 Bit        Muxes := 5     
+	   6 Input    4 Bit        Muxes := 1     
 	   8 Input    4 Bit        Muxes := 4     
-	   2 Input    3 Bit        Muxes := 13    
-	   4 Input    3 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 14    
+	   4 Input    3 Bit        Muxes := 2     
 	   3 Input    3 Bit        Muxes := 2     
-	   5 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 2     
-	   2 Input    2 Bit        Muxes := 17    
-	   2 Input    1 Bit        Muxes := 71    
-	   4 Input    1 Bit        Muxes := 17    
-	   3 Input    1 Bit        Muxes := 17    
+	   2 Input    2 Bit        Muxes := 18    
+	   2 Input    1 Bit        Muxes := 86    
+	   4 Input    1 Bit        Muxes := 20    
+	   3 Input    1 Bit        Muxes := 18    
+	   6 Input    1 Bit        Muxes := 1     
 	  10 Input    1 Bit        Muxes := 2     
 	   8 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
@@ -488,49 +580,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-7129] Port cfg_i[31] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[30] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[29] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[28] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[27] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[26] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[25] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[24] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[15] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[14] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[13] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[12] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[11] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[7] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[6] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[5] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_i[4] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dfi_address_i[14] in module ddr3_dfi_phy is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dfi_rddata_dnv_i[1] in module ddr3_dfi_seq is either unconnected or has no load
-WARNING: [Synth 8-7129] Port dfi_rddata_dnv_i[0] in module ddr3_dfi_seq is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[31] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[30] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[29] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[28] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[27] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[26] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[25] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[24] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port cfg_data_i[23] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[31] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[30] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[29] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[3] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[2] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[1] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port inport_addr_i[0] in module ddr3_core is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_awburst_i[1] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_awburst_i[0] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_arburst_i[1] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port axi_arburst_i[0] in module ddr3_axi_pmem is either unconnected or has no load
-WARNING: [Synth 8-7129] Port ram_error_i in module ddr3_axi_pmem is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2171.988 ; gain = 691.367 ; free physical = 4273 ; free virtual = 9301
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2175.180 ; gain = 694.273 ; free physical = 486 ; free virtual = 3342
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -540,8 +591,8 @@ Distributed RAM: Preliminary Mapping Report (see note below)
 +---------------+--------------------------------------------+-----------+----------------------+--------------+
 |Module Name    | RTL Object                                 | Inference | Size (Depth x Width) | Primitives   | 
 +---------------+--------------------------------------------+-----------+----------------------+--------------+
-|\u_ddr/u_axi   | u_request/ram_reg                          | Implied   | 2 x 193              | RAM32M x 33  | 
-|\u_ddr/u_axi   | u_response/ram_reg                         | Implied   | 8 x 144              | RAM32M x 24  | 
+|top            | u_ddr/u_axi/u_request/ram_reg              | Implied   | 2 x 193              | RAM32M x 33  | 
+|top            | u_ddr/u_axi/u_response/ram_reg             | Implied   | 8 x 140              | RAM32M x 24  | 
 |\u_ddr/u_core  | gen_partial_seq.u_seq/u_write_fifo/ram_reg | Implied   | 4 x 144              | RAM32M x 24  | 
 |\u_ddr/u_core  | u_id_fifo/ram_reg                          | Implied   | 8 x 16               | RAM32M x 3   | 
 +---------------+--------------------------------------------+-----------+----------------------+--------------+
@@ -554,13 +605,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2194.988 ; gain = 714.367 ; free physical = 4274 ; free virtual = 9310
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2195.180 ; gain = 714.273 ; free physical = 403 ; free virtual = 3266
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:27 . Memory (MB): peak = 2225.020 ; gain = 744.398 ; free physical = 4247 ; free virtual = 9283
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 2252.789 ; gain = 771.883 ; free physical = 341 ; free virtual = 3203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -570,8 +621,8 @@ Distributed RAM: Final Mapping Report
 +---------------+--------------------------------------------+-----------+----------------------+--------------+
 |Module Name    | RTL Object                                 | Inference | Size (Depth x Width) | Primitives   | 
 +---------------+--------------------------------------------+-----------+----------------------+--------------+
-|\u_ddr/u_axi   | u_request/ram_reg                          | Implied   | 2 x 193              | RAM32M x 33  | 
-|\u_ddr/u_axi   | u_response/ram_reg                         | Implied   | 8 x 144              | RAM32M x 24  | 
+|top            | u_ddr/u_axi/u_request/ram_reg              | Implied   | 2 x 193              | RAM32M x 33  | 
+|top            | u_ddr/u_axi/u_response/ram_reg             | Implied   | 8 x 140              | RAM32M x 24  | 
 |\u_ddr/u_core  | gen_partial_seq.u_seq/u_write_fifo/ram_reg | Implied   | 4 x 144              | RAM32M x 24  | 
 |\u_ddr/u_core  | u_id_fifo/ram_reg                          | Implied   | 8 x 16               | RAM32M x 3   | 
 +---------------+--------------------------------------------+-----------+----------------------+--------------+
@@ -583,7 +634,7 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 2241.035 ; gain = 760.414 ; free physical = 4234 ; free virtual = 9270
+Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2269.812 ; gain = 788.906 ; free physical = 324 ; free virtual = 3187
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -597,57 +648,41 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4163] Replicating register \u_phy/reset_n_q_reg  to handle IOB=TRUE attribute
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Finished IO Insertion : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 220 ; free virtual = 3083
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 220 ; free virtual = 3083
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 219 ; free virtual = 3082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 219 ; free virtual = 3082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 219 ; free virtual = 3082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP, Shift Register and Retiming Reporting
----------------------------------------------------------------------------------
-
-Static Shift Register Report:
-+------------+---------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|Module Name | RTL Name                                          | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
-+------------+---------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-|top         | u_ddr/u_core/gen_partial_seq.u_seq/wr_en_q_reg[0] | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
-|top         | u_phy/rd_en_q_reg[0]                              | 11     | 1     | YES          | NO                 | YES               | 1      | 0       | 
-+------------+---------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
-
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 219 ; free virtual = 3082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -663,46 +698,48 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |BUFG       |     2|
+|1     |BUFG       |     1|
 |2     |BUFH       |     1|
-|3     |CARRY4     |    52|
+|3     |CARRY4     |    60|
 |4     |IDELAYCTRL |     1|
 |5     |IDELAYE2   |    18|
 |7     |ISERDESE2  |    16|
-|8     |LUT1       |    90|
-|9     |LUT2       |   129|
-|10    |LUT3       |   256|
-|11    |LUT4       |    97|
-|12    |LUT5       |   111|
-|13    |LUT6       |   291|
-|14    |MUXF7      |    26|
-|15    |MUXF8      |     5|
-|16    |OSERDESE2  |    20|
-|17    |PLLE2_BASE |     1|
-|18    |RAM32M     |    77|
-|19    |RAM32X1D   |     2|
-|20    |SRL16E     |     2|
-|21    |FDRE       |  1082|
-|22    |FDSE       |    77|
-|23    |IBUF       |     2|
-|24    |IOBUF      |    16|
-|25    |IOBUFDS    |     2|
-|26    |OBUF       |    31|
-|27    |OBUFDS     |     1|
+|8     |LUT1       |   111|
+|9     |LUT2       |   202|
+|10    |LUT3       |   113|
+|11    |LUT4       |   101|
+|12    |LUT5       |   292|
+|13    |LUT6       |   346|
+|14    |MUXF7      |    21|
+|15    |OSERDESE2  |    20|
+|16    |PLLE2_BASE |     1|
+|17    |RAM32M     |    77|
+|18    |RAM32X1D   |     2|
+|19    |FDRE       |  1172|
+|20    |FDSE       |    75|
+|21    |IBUF       |     2|
+|22    |IOBUF      |    16|
+|23    |IOBUFDS    |     2|
+|24    |OBUF       |    31|
+|25    |OBUFDS     |     1|
 +------+-----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.848 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2410.625 ; gain = 929.719 ; free physical = 219 ; free virtual = 3082
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 2383.848 ; gain = 753.477 ; free physical = 4123 ; free virtual = 9158
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 2383.855 ; gain = 903.227 ; free physical = 4123 ; free virtual = 9158
+Synthesis finished with 0 errors, 0 critical warnings and 164 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 2410.625 ; gain = 781.969 ; free physical = 219 ; free virtual = 3082
+Synthesis Optimization Complete : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 2410.633 ; gain = 929.719 ; free physical = 219 ; free virtual = 3082
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2383.855 ; gain = 0.000 ; free physical = 4280 ; free virtual = 9315
-INFO: [Netlist 29-17] Analyzing 216 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2410.633 ; gain = 0.000 ; free physical = 220 ; free virtual = 3083
+INFO: [Netlist 29-17] Analyzing 214 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Shape Builder 18-132] Instance u_phy/reset_n_q_reg has IOB = TRUE property, but it cannot be placed in an OLOGIC site. Instance u_phy/reset_n_q_reg cannot be placed in site OLOGIC_X0Y0 because the output signal of the cell requires general routing to fabric and cells placed in OLOGIC can only be routed to delay or I/O site.
+WARNING: [Shape Builder 18-132] Instance u_phy/reset_n_q_reg has IOB = TRUE property, but it cannot be placed in an OLOGIC site. Instance u_phy/reset_n_q_reg cannot be placed in site OLOGIC_X0Y0 because the output signal of the cell requires general routing to fabric and cells placed in OLOGIC can only be routed to delay or I/O site.
 INFO: [Opt 31-138] Pushed 3 inverter(s) to 32 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2439.875 ; gain = 0.000 ; free physical = 4292 ; free virtual = 9328
+WARNING: [Shape Builder 18-132] Instance u_phy/reset_n_q_reg has IOB = TRUE property, but it cannot be placed in an OLOGIC site. Instance u_phy/reset_n_q_reg cannot be placed in site OLOGIC_X0Y0 because the output signal of the cell requires general routing to fabric and cells placed in OLOGIC can only be routed to delay or I/O site.
+WARNING: [Shape Builder 18-132] Instance u_phy/reset_n_q_reg has IOB = TRUE property, but it cannot be placed in an OLOGIC site. Instance u_phy/reset_n_q_reg cannot be placed in site OLOGIC_X0Y0 because the output signal of the cell requires general routing to fabric and cells placed in OLOGIC can only be routed to delay or I/O site.
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2466.652 ; gain = 0.000 ; free physical = 222 ; free virtual = 3085
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 99 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 16 instances
@@ -712,14 +749,15 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 77 instances
   RAM32X1D => RAM32X1D (RAMD32(x2)): 2 instances
 
-Synth Design complete | Checksum: db6d9eb4
+Synth Design complete | Checksum: 7b9d691e
 INFO: [Common 17-83] Releasing license: Synthesis
-91 Infos, 178 Warnings, 0 Critical Warnings and 0 Errors encountered.
+101 Infos, 212 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:37 . Memory (MB): peak = 2439.875 ; gain = 1061.855 ; free physical = 4292 ; free virtual = 9328
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1816.120; main = 1666.517; forked = 286.820
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3232.199; main = 2439.879; forked = 924.160
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2463.887 ; gain = 0.000 ; free physical = 4292 ; free virtual = 9328
+synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:41 . Memory (MB): peak = 2466.652 ; gain = 1034.277 ; free physical = 229 ; free virtual = 3093
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1872.411; main = 1828.577; forked = 318.553
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3176.953; main = 2466.656; forked = 924.160
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2490.664 ; gain = 0.000 ; free physical = 224 ; free virtual = 3087
 INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES/ULTRA_EMBEDDED_NO_REFRESH_PARTIAL_WRITES.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun  3 20:59:14 2025...
+INFO: [Common 17-206] Exiting Vivado at Fri Jun  6 16:46:52 2025...

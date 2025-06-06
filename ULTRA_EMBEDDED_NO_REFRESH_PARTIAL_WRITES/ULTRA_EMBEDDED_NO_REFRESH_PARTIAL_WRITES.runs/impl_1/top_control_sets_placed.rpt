@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date         : Tue Jun  3 20:59:45 2025
+| Date         : Fri Jun  6 16:47:30 2025
 | Host         : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,8 +23,8 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    43 |
-|    Minimum number of control sets                        |    43 |
+| Total control sets                                       |    46 |
+|    Minimum number of control sets                        |    46 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
 | Unused register locations in slices containing registers |    87 |
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    43 |
+| Total control sets |    46 |
 | >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     5 |
-| >= 6 to < 8        |     1 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     5 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     8 |
 | >= 16              |    22 |
 +--------------------+-------+
@@ -58,64 +58,67 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              51 |           21 |
+| No           | No                    | No                     |              55 |           24 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             229 |           89 |
-| Yes          | No                    | No                     |             202 |           42 |
+| No           | Yes                   | No                     |             236 |           84 |
+| Yes          | No                    | No                     |             212 |           65 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             655 |          170 |
+| Yes          | Yes                   | No                     |             690 |          199 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------+-----------------------------------------------------------+---------------------------------------+------------------+----------------+--------------+
-| Clock Signal |                       Enable Signal                       |            Set/Reset Signal           | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------+-----------------------------------------------------------+---------------------------------------+------------------+----------------+--------------+
-|  clk_w_BUFG  | u_uart/U_TX/bit_cnt                                       | u_rst/rst_w                           |                1 |              1 |         1.00 |
-|  clk_w_BUFG  | u_rst/sel                                                 |                                       |                1 |              3 |         3.00 |
-|  clk_w_BUFG  | u_uart/U_TX/E[0]                                          | u_uart/U_TX/SR[0]                     |                1 |              4 |         4.00 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_response/arvalid_o_reg[0]                   | u_rst/rst_w                           |                1 |              4 |         4.00 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_response/E[0]                               | u_rst/rst_w                           |                1 |              4 |         4.00 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_response/count[3]_i_1_n_0                   | u_rst/rst_w                           |                2 |              4 |         2.00 |
-|  clk_w_BUFG  | u_ddr/u_core/u_id_fifo/count[3]_i_1__0_n_0                | u_rst/rst_w                           |                2 |              4 |         2.00 |
-|  clk_w_BUFG  | u_uart/U_TX/tx_cnt_reg[0][0]                              |                                       |                3 |              7 |         2.33 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_request/E[0]                                | u_rst/rst_w                           |                2 |              8 |         4.00 |
-|  clk_w_BUFG  | u_ddr/u_core/gen_partial_seq.u_seq/p_0_in                 |                                       |                1 |              8 |         8.00 |
-|  clk_w_BUFG  | u_uart/U_TX/shift[7]_i_1_n_0                              | u_rst/rst_w                           |                3 |              8 |         2.67 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_response/count_reg[1]_0                     | u_ddr/u_axi/u_response/SR[0]          |                3 |              8 |         2.67 |
-|  clk_w_BUFG  | u_uart/U_RX/data_o[7]_i_1_n_0                             |                                       |                2 |              8 |         4.00 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[7][14]_i_1_n_0                  | u_rst/rst_w                           |                8 |             15 |         1.88 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[6][14]_i_1_n_0                  | u_rst/rst_w                           |                3 |             15 |         5.00 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[5][14]_i_1_n_0                  | u_rst/rst_w                           |                3 |             15 |         5.00 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[3][14]_i_1_n_0                  | u_rst/rst_w                           |                4 |             15 |         3.75 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[0][14]_i_1_n_0                  | u_rst/rst_w                           |                5 |             15 |         3.00 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[1][14]_i_1_n_0                  | u_rst/rst_w                           |                4 |             15 |         3.75 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[2][14]_i_1_n_0                  | u_rst/rst_w                           |                3 |             15 |         5.00 |
-|  clk_w_BUFG  | u_ddr/u_core/active_row_q[4][14]_i_1_n_0                  | u_rst/rst_w                           |                4 |             15 |         3.75 |
-|  clk_w_BUFG  | u_uart/U_RX/clk_cnt_0                                     | u_rst/rst_w                           |                5 |             16 |         3.20 |
-|  clk_w_BUFG  | u_uart/U_TX/tx_busy                                       | u_uart/U_TX/clk_cnt[15]_i_1_n_0       |                5 |             16 |         3.20 |
-|  clk_w_BUFG  | led0                                                      | u_ddr/u_axi/u_response/count_reg[1]_0 |                6 |             23 |         3.83 |
-|  clk_w_BUFG  | led[0]_i_1_n_0                                            | u_uart/arvalid_o_reg_0                |                6 |             23 |         3.83 |
-|  clk_w_BUFG  | u_uart/sel                                                | u_rst/rst_w                           |                7 |             27 |         3.86 |
-|  clk_w_BUFG  | u_ddr/u_core/init_done_q                                  | u_rst/rst_w                           |                7 |             27 |         3.86 |
-|  clk_w_BUFG  | u_uart/U_RX/E[0]                                          |                                       |                8 |             30 |         3.75 |
-|  clk_w_BUFG  | u_ddr/u_axi/awvalid_o_reg[0]                              | u_rst/rst_w                           |               10 |             30 |         3.00 |
-|  clk_w_BUFG  | u_uart/U_RX/cmd_is_write_reg[0]                           |                                       |                6 |             30 |         5.00 |
-|  clk_w_BUFG  | u_uart/araddr_o[31]_i_1_n_0                               |                                       |                7 |             30 |         4.29 |
-|  clk_w_BUFG  | u_uart/wvalid_o_reg_0[0]                                  | u_rst/rst_w                           |                9 |             30 |         3.33 |
-|  clk_w_BUFG  | u_uart/U_RX/FSM_sequential_p_state_reg[1]_0[0]            |                                       |                5 |             32 |         6.40 |
-|  clk_w_BUFG  |                                                           | u_rst/SR[0]                           |               12 |             32 |         2.67 |
-|  clk_w_BUFG  | u_uart/U_RX/FSM_sequential_p_state_reg[0][0]              | u_rst/rst_w                           |                7 |             36 |         5.14 |
-|  clk_w_BUFG  |                                                           |                                       |               21 |             53 |         2.52 |
-|  clk_w_BUFG  | u_uart/awaddr_o[31]_i_1_n_0                               |                                       |               10 |             62 |         6.20 |
-|  clk_w_BUFG  | u_phy/rd_en_q_reg[0]_0[0]                                 | u_rst/rst_w                           |               33 |            130 |         3.94 |
-|  clk_w_BUFG  | u_uart/write_data_q                                       | u_rst/rst_w                           |               25 |            132 |         5.28 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_response/ram_reg_0_7_0_5_i_1__0_n_0         |                                       |               23 |            180 |         7.83 |
-|  clk_w_BUFG  | u_ddr/u_core/gen_partial_seq.u_seq/u_write_fifo/p_0_in__0 |                                       |               24 |            192 |         8.00 |
-|  clk_w_BUFG  |                                                           | u_rst/rst_w                           |               77 |            197 |         2.56 |
-|  clk_w_BUFG  | u_ddr/u_axi/u_request/ram_reg_0_1_0_5_i_1_n_0             |                                       |               30 |            240 |         8.00 |
-+--------------+-----------------------------------------------------------+---------------------------------------+------------------+----------------+--------------+
++--------------+-------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+--------------+
+| Clock Signal |                              Enable Signal                              |                       Set/Reset Signal                      | Slice Load Count | Bel Load Count | Bels / Slice |
++--------------+-------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+--------------+
+|  clk_w_BUFG  | u_uart/U_TX/bit_cnt                                                     | u_rst/rst_w                                                 |                1 |              1 |         1.00 |
+|  clk_w_BUFG  | u_rst/count_q[2]_i_1_n_0                                                |                                                             |                1 |              3 |         3.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/E[0]                                             | u_rst/rst_w                                                 |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/rd_data_q_reg[127][0]                            | u_rst/rst_w                                                 |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_ddr/u_core/u_id_fifo/count[3]_i_1_n_0                                 | u_rst/rst_w                                                 |                1 |              4 |         4.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/count[3]_i_1_n_0                                 | u_rst/rst_w                                                 |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_uart/U_TX/E[0]                                                        | u_uart/U_TX/SR[0]                                           |                2 |              4 |         2.00 |
+|  clk_w_BUFG  | u_ddr/u_core/gen_partial_seq.u_seq/twr_timer_q[5]_i_1_n_0               | u_rst/rst_w                                                 |                2 |              6 |         3.00 |
+|  clk_w_BUFG  | u_ddr/u_core/u_id_fifo/E[0]                                             |                                                             |                2 |              6 |         3.00 |
+|  clk_w_BUFG  | u_uart/U_TX/tx_cnt_reg[3][0]                                            |                                                             |                3 |              7 |         2.33 |
+|  clk_w_BUFG  | u_ddr/u_core/u_id_fifo/p_0_in                                           |                                                             |                1 |              8 |         8.00 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/wr_q_reg[0]                                       | u_rst/rst_w                                                 |                3 |              8 |         2.67 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/count_reg[3]_1                                   | u_ddr/u_axi/u_response/SR[0]                                |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_RX/data_o[7]_i_1_n_0                                           |                                                             |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_TX/shift[7]_i_1__0_n_0                                         | u_rst/rst_w                                                 |                2 |              8 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_RX/FSM_sequential_p_state_reg[0]_0[0]                          | u_rst/rst_w                                                 |                2 |             13 |         6.50 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[1][14]_i_1_n_0                                | u_rst/rst_w                                                 |                4 |             15 |         3.75 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[7][14]_i_1_n_0                                | u_rst/rst_w                                                 |                3 |             15 |         5.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[6][14]_i_1_n_0                                | u_rst/rst_w                                                 |                5 |             15 |         3.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[5][14]_i_1_n_0                                | u_rst/rst_w                                                 |                3 |             15 |         5.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[4][14]_i_1_n_0                                | u_rst/rst_w                                                 |                3 |             15 |         5.00 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[3][14]_i_1_n_0                                | u_rst/rst_w                                                 |                4 |             15 |         3.75 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[2][14]_i_1_n_0                                | u_rst/rst_w                                                 |                4 |             15 |         3.75 |
+|  clk_w_BUFG  | u_ddr/u_core/active_row_q[0][14]_i_1_n_0                                | u_rst/rst_w                                                 |                5 |             15 |         3.00 |
+|  clk_w_BUFG  | u_uart/U_TX/tx_busy                                                     | u_uart/U_TX/clk_cnt[15]_i_1_n_0                             |                4 |             16 |         4.00 |
+|  clk_w_BUFG  | u_uart/U_RX/clk_cnt_0                                                   | u_rst/rst_w                                                 |                6 |             16 |         2.67 |
+|  clk_w_BUFG  | led[0]_i_1_n_0                                                          | rx_activity[0]_i_1_n_0                                      |                6 |             23 |         3.83 |
+|  clk_w_BUFG  | led0                                                                    | u_ddr/u_axi/u_response/count_reg[3]_1                       |                6 |             23 |         3.83 |
+|  clk_w_BUFG  | u_uart/sel                                                              | u_rst/rst_w                                                 |                7 |             27 |         3.86 |
+|  clk_w_BUFG  | u_ddr/u_core/init_done_q                                                | u_rst/rst_w                                                 |                6 |             27 |         4.50 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/E[0]                                              | u_rst/rst_w                                                 |               11 |             31 |         2.82 |
+|  clk_w_BUFG  | u_ddr/u_axi/prio_rd_q1                                                  | u_rst/rst_w                                                 |                9 |             31 |         3.44 |
+|  clk_w_BUFG  | u_uart/araddr_o[31]_i_1_n_0                                             |                                                             |                6 |             31 |         5.17 |
+|  clk_w_BUFG  | u_uart/U_RX/cmd_is_write_reg[0]                                         |                                                             |                8 |             31 |         3.88 |
+|  clk_w_BUFG  | u_uart/U_RX/E[0]                                                        |                                                             |                9 |             31 |         3.44 |
+|  clk_w_BUFG  | u_uart/U_RX/FSM_sequential_p_state_reg[0]_2[0]                          |                                                             |               11 |             32 |         2.91 |
+|  clk_w_BUFG  |                                                                         | u_ddr/u_core/gen_partial_seq.u_seq/dfi_wrdata_q[31]_i_1_n_0 |               11 |             32 |         2.91 |
+|  clk_w_BUFG  | u_uart/U_RX/FSM_sequential_p_state_reg[0]_1[0]                          | u_rst/rst_w                                                 |               10 |             36 |         3.60 |
+|  clk_w_BUFG  |                                                                         |                                                             |               24 |             55 |         2.29 |
+|  clk_w_BUFG  | u_uart/awaddr_o[31]_i_1_n_0                                             |                                                             |               23 |             63 |         2.74 |
+|  clk_w_BUFG  | u_phy/dfi_rddata_valid_o                                                | u_rst/rst_w                                                 |               36 |            130 |         3.61 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/write_data_q                                      | u_rst/rst_w                                                 |               46 |            146 |         3.17 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_response/ram_reg_0_7_0_5_i_1_n_0                          |                                                             |               23 |            180 |         7.83 |
+|  clk_w_BUFG  | u_ddr/u_core/gen_partial_seq.u_seq/u_write_fifo/ram_reg_0_3_0_5_i_1_n_0 |                                                             |               24 |            192 |         8.00 |
+|  clk_w_BUFG  |                                                                         | u_rst/rst_w                                                 |               73 |            204 |         2.79 |
+|  clk_w_BUFG  | u_ddr/u_axi/u_request/ram_reg_0_1_0_5_i_1_n_0                           |                                                             |               30 |            240 |         8.00 |
++--------------+-------------------------------------------------------------------------+-------------------------------------------------------------+------------------+----------------+--------------+
 
 

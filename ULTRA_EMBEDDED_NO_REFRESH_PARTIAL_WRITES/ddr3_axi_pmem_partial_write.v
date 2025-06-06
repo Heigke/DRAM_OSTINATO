@@ -49,10 +49,7 @@ module ddr3_axi_pmem
     ,input           ram_error_i
     ,input  [ 15:0]  ram_resp_id_i
     ,input  [127:0]  ram_read_data_i
-,input           partial_wr_ctrl_i
-    ,input  [ 15:0]  wr_duration_ctrl_i
-    ,output          ram_partial_wr_o
-    ,output [ 15:0]  ram_wr_duration_o
+
     // Outputs
     ,output          axi_awready_o
     ,output          axi_wready_o
@@ -269,7 +266,7 @@ begin
     begin
         if (wfirst_q)
         begin
-            wstrb_r = 16'b0;
+    wstrb_r = wstrb_q;  // CORRECT - preserve existing strobes
         end
 
         case (wdata_idx_w)
@@ -367,9 +364,6 @@ wire         ram_rd_w         = rd_q;
 wire [31:0]  ram_addr_w       = {addr_q[31:4], 4'b0};
 wire [127:0] ram_write_data_w = write_data_q;
 wire [15:0]  ram_req_id_w     = {id_q, len_q, addr_q[3:2], rd_q, rd_q | wr_last_q};
-// Partial write control and duration
-//assign ram_partial_wr_o = partial_wr_ctrl_i & wr_q;
-//assign ram_wr_duration_o = wr_duration_ctrl_i;
 
 assign inport_accept_w      = ((!wr_q && !rd_q) || ram_accept_w) && (rd_remain_q == 8'b0);
 
@@ -379,11 +373,10 @@ assign inport_accept_w      = ((!wr_q && !rd_q) || ram_accept_w) && (rd_remain_q
 wire        ram_rd_out_w;
 wire [15:0] ram_wr_out_w;
 wire        ram_valid_out_w;
-wire        ram_partial_wr_out_w;
-wire [15:0] ram_wr_duration_out_w;
+
 ddr3_axi_pmem_fifo
 #( 
-     .WIDTH(16 + 1 + 16 + 128 + 32 + 1 + 16)  // Fixed: 210 bits total
+     .WIDTH(16 + 128 + 32 + 1 + 16)
     ,.DEPTH(2)
     ,.ADDR_W(1)
 )
@@ -393,20 +386,19 @@ u_request
     .rst_i(rst_i),
 
     // Input
-    .data_in_i({ram_wr_duration_o, partial_wr_ctrl_i & wr_q, ram_req_id_w, ram_write_data_w, ram_addr_w, ram_rd_w, ram_wr_w}),
+    .data_in_i({ram_req_id_w, ram_write_data_w, ram_addr_w, ram_rd_w, ram_wr_w}),
     .push_i((|ram_wr_w) || ram_rd_w),
     .accept_o(ram_accept_w),
 
     // Output
     .pop_i(ram_accept_i),
-    .data_out_o({ram_wr_duration_out_w, ram_partial_wr_out_w, ram_req_id_o, ram_write_data_o, ram_addr_o, ram_rd_out_w, ram_wr_out_w}),
+    .data_out_o({ram_req_id_o, ram_write_data_o, ram_addr_o, ram_rd_out_w, ram_wr_out_w}),
     .valid_o(ram_valid_out_w)
 );
 
 assign ram_rd_o = ram_valid_out_w       & ram_rd_out_w;
 assign ram_wr_o = {16{ram_valid_out_w}} & ram_wr_out_w;
-assign ram_partial_wr_o = ram_valid_out_w & ram_partial_wr_out_w;
-assign ram_wr_duration_o = ram_wr_duration_out_w;
+
 //-----------------------------------------------------------------
 // Response state
 //-----------------------------------------------------------------
