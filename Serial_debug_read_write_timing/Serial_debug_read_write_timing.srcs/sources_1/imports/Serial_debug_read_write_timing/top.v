@@ -208,6 +208,32 @@ always @(posedge clk_i) begin
     end
 end
 
+// --- Helper function for hex to nibble conversion ---
+function [3:0] hex2n;
+    input [7:0] c;
+    begin
+        if (c >= 8'h30 && c <= 8'h39)      // '0' to '9'
+            hex2n = c - 8'h30;
+        else if (c >= 8'h41 && c <= 8'h46) // 'A' to 'F'
+            hex2n = c - 8'h41 + 4'h0A;
+        else if (c >= 8'h61 && c <= 8'h66) // 'a' to 'f'
+            hex2n = c - 8'h61 + 4'h0A;
+        else
+            hex2n = 4'h0;
+    end
+endfunction
+
+// --- Helper function for nibble to hex conversion ---
+function [7:0] n2h;
+    input [3:0] n;
+    begin
+        if (n < 4'hA)
+            n2h = n + 8'h30;      // '0' to '9'
+        else
+            n2h = n - 4'hA + 8'h61; // 'a' to 'f'
+    end
+endfunction
+
 // --- Response Logic ---
 localparam TX_IDLE      = 3'd0,
            TX_ECHO      = 3'd1, // For Write command
@@ -218,13 +244,6 @@ localparam TX_IDLE      = 3'd0,
 reg [2:0]  tx_state;
 reg [3:0]  tx_cnt;
 reg [31:0] p_data; // Temporary register for parsing hex values
-
-function [3:0] hex2n(input [7:0] c);
-    hex2n = (c>="0"&&c<="9") ? c-"0" : (c>="A"&&c<="F") ? c-'A'+10 : (c>="a"&&c<="f") ? c-'a'+10 : 0;
-endfunction
-function [7:0] n2h(input [3:0] n);
-    n2h = (n<10) ? (n+"0") : (n-10+"a");
-endfunction
 
 always @(posedge clk_i) begin
     if (rst_i) begin
@@ -243,11 +262,11 @@ always @(posedge clk_i) begin
                 if (cmd_ready) begin
                     tx_cnt <= 0;
                     case (cmd_buffer[0])
-                        '?': tx_state <= TX_STATUS;
-                        't': tx_state <= TX_TIMING;
-                        'R': tx_state <= TX_DUMMY_READ;
-                        'W': tx_state <= TX_ECHO;
-                        'T': begin
+                        8'h3F: tx_state <= TX_STATUS;    // '?'
+                        8'h74: tx_state <= TX_TIMING;    // 't'
+                        8'h52: tx_state <= TX_DUMMY_READ; // 'R'
+                        8'h57: tx_state <= TX_ECHO;      // 'W'
+                        8'h54: begin                     // 'T'
                             // Parse and set timing registers immediately
                             p_data = {hex2n(cmd_buffer[1]), hex2n(cmd_buffer[2]), hex2n(cmd_buffer[3]), hex2n(cmd_buffer[4]),
                                       hex2n(cmd_buffer[5]), hex2n(cmd_buffer[6]), hex2n(cmd_buffer[7]), hex2n(cmd_buffer[8])};
@@ -257,6 +276,10 @@ always @(posedge clk_i) begin
                             timing_custom <= p_data[7:0];
                             tx_state <= TX_ECHO; // Also just respond with "OK"
                         end
+                        default: begin
+                           // Do nothing for unknown commands, just stay in IDLE
+                           tx_state <= TX_IDLE;
+                        end
                     endcase
                 end
             end
@@ -264,8 +287,8 @@ always @(posedge clk_i) begin
             TX_ECHO: begin
                 if (!tx_busy_i) begin
                     case(tx_cnt)
-                        0: begin tx_data_o <= "O"; tx_stb_o <= 1; tx_cnt <= 1; end
-                        1: begin tx_data_o <= "K"; tx_stb_o <= 1; tx_cnt <= 2; end
+                        0: begin tx_data_o <= 8'h4F; tx_stb_o <= 1; tx_cnt <= 1; end // 'O'
+                        1: begin tx_data_o <= 8'h4B; tx_stb_o <= 1; tx_cnt <= 2; end // 'K'
                         2: begin tx_data_o <= 8'h0A; tx_stb_o <= 1; tx_state <= TX_IDLE; end
                     endcase
                 end
@@ -274,7 +297,7 @@ always @(posedge clk_i) begin
             TX_STATUS: begin
                 if (!tx_busy_i) begin
                     case(tx_cnt)
-                        0: begin tx_data_o <= "R"; tx_stb_o <= 1; tx_cnt <= 1; end
+                        0: begin tx_data_o <= 8'h52; tx_stb_o <= 1; tx_cnt <= 1; end // 'R'
                         1: begin tx_data_o <= 8'h0A; tx_stb_o <= 1; tx_state <= TX_IDLE; end
                     endcase
                 end
@@ -283,14 +306,14 @@ always @(posedge clk_i) begin
             TX_DUMMY_READ: begin
                 if (!tx_busy_i) begin
                     case (tx_cnt)
-                        0:  begin tx_data_o <= "D"; tx_stb_o <= 1; tx_cnt <= 1; end
-                        1:  begin tx_data_o <= "E"; tx_stb_o <= 1; tx_cnt <= 2; end
-                        2:  begin tx_data_o <= "A"; tx_stb_o <= 1; tx_cnt <= 3; end
-                        3:  begin tx_data_o <= "D"; tx_stb_o <= 1; tx_cnt <= 4; end
-                        4:  begin tx_data_o <= "B"; tx_stb_o <= 1; tx_cnt <= 5; end
-                        5:  begin tx_data_o <= "E"; tx_stb_o <= 1; tx_cnt <= 6; end
-                        6:  begin tx_data_o <= "E"; tx_stb_o <= 1; tx_cnt <= 7; end
-                        7:  begin tx_data_o <= "F"; tx_stb_o <= 1; tx_cnt <= 8; end
+                        0:  begin tx_data_o <= 8'h44; tx_stb_o <= 1; tx_cnt <= 1; end // 'D'
+                        1:  begin tx_data_o <= 8'h45; tx_stb_o <= 1; tx_cnt <= 2; end // 'E'
+                        2:  begin tx_data_o <= 8'h41; tx_stb_o <= 1; tx_cnt <= 3; end // 'A'
+                        3:  begin tx_data_o <= 8'h44; tx_stb_o <= 1; tx_cnt <= 4; end // 'D'
+                        4:  begin tx_data_o <= 8'h42; tx_stb_o <= 1; tx_cnt <= 5; end // 'B'
+                        5:  begin tx_data_o <= 8'h45; tx_stb_o <= 1; tx_cnt <= 6; end // 'E'
+                        6:  begin tx_data_o <= 8'h45; tx_stb_o <= 1; tx_cnt <= 7; end // 'E'
+                        7:  begin tx_data_o <= 8'h46; tx_stb_o <= 1; tx_cnt <= 8; end // 'F'
                         8:  begin tx_data_o <= 8'h0A; tx_stb_o <= 1; tx_state <= TX_IDLE; end
                     endcase
                 end
@@ -299,8 +322,8 @@ always @(posedge clk_i) begin
             TX_TIMING: begin
                 if (!tx_busy_i) begin
                     case (tx_cnt)
-                        0:  begin tx_data_o <= "T";                      tx_stb_o <= 1; tx_cnt <= 1; end
-                        1:  begin tx_data_o <= ":";                      tx_stb_o <= 1; tx_cnt <= 2; end
+                        0:  begin tx_data_o <= 8'h54;                    tx_stb_o <= 1; tx_cnt <= 1; end // 'T'
+                        1:  begin tx_data_o <= 8'h3A;                    tx_stb_o <= 1; tx_cnt <= 2; end // ':'
                         2:  begin tx_data_o <= n2h(timing_twr[7:4]);     tx_stb_o <= 1; tx_cnt <= 3; end
                         3:  begin tx_data_o <= n2h(timing_twr[3:0]);     tx_stb_o <= 1; tx_cnt <= 4; end
                         4:  begin tx_data_o <= n2h(timing_tras[7:4]);    tx_stb_o <= 1; tx_cnt <= 5; end
@@ -345,8 +368,8 @@ end
 // --- Command Processor Instance ---
 wire       rx_stb;
 wire [7:0] rx_data;
-reg        tx_stb;
-reg  [7:0] tx_data;
+wire       tx_stb;
+wire [7:0] tx_data;
 wire       tx_busy;
 
 command_processor u_cmd_proc (

@@ -1,0 +1,615 @@
+
+*** Running vivado
+    with args -log uart_debug_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_debug_top.tcl
+
+
+****** Vivado v2024.2 (64-bit)
+  **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Sat Jun  7 11:47:04 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source uart_debug_top.tcl -notrace
+Command: synth_design -top uart_debug_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 46698
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1907.926 ; gain = 429.801 ; free physical = 567 ; free virtual = 4308
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'uart_debug_top' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:349]
+INFO: [Synth 8-6157] synthesizing module 'command_processor' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:163]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:289]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:299]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:308]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:324]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:260]
+INFO: [Synth 8-6155] done synthesizing module 'command_processor' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:163]
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:78]
+	Parameter CLK_HZ bound to: 100000000 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:111]
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:78]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:31]
+	Parameter CLK_HZ bound to: 100000000 - type: integer 
+	Parameter BAUDRATE bound to: 115200 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'uart_debug_top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:349]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[9] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[10] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[11] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[12] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[13] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[14] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[15] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[16] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[17] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[18] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[19] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[20] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[21] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[22] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[23] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[24] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[25] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[26] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[27] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[28] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[29] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[30] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[31] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
+WARNING: [Synth 8-6014] Unused sequential element p_data_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:271]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1984.895 ; gain = 506.770 ; free physical = 475 ; free virtual = 4216
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2002.707 ; gain = 524.582 ; free physical = 475 ; free virtual = 4216
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2002.707 ; gain = 524.582 ; free physical = 475 ; free virtual = 4216
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2002.707 ; gain = 0.000 ; free physical = 475 ; free virtual = 4216
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]
+WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:111]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:111]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:112]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:112]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:113]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:113]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:114]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:114]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'led[*]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:115]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:115]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:260]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:260]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:261]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:261]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:262]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:262]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:263]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:263]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[1]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:266]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:266]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[1]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:267]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:267]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[1]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:268]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:268]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[1]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:269]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:269]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:272]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:272]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:273]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:273]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:274]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:274]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:275]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:275]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:278]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:278]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:279]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:279]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:280]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:280]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:281]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:281]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:284]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:284]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:285]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:285]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:286]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:286]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:287]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:287]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:290]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:290]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:291]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:291]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:292]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:292]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:293]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:293]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:296]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:296]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:297]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:297]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:298]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:298]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:299]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:299]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:302]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:302]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:303]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:303]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:304]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:304]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:305]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:305]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:308]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:308]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:309]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:309]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:310]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:310]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:311]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:311]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:314]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:314]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:315]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:315]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:316]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:316]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:317]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:317]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:320]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:320]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:321]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:321]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:322]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:322]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:323]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:323]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:326]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:326]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:327]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:327]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:328]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:328]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:329]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:329]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:332]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:332]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:333]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:333]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:334]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:334]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:335]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:335]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:338]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:338]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:339]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:339]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:340]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:340]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:341]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:341]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[14]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:344]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:344]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[14]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:345]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:345]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[14]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:346]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:346]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[14]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:347]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:347]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[15]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:350]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:350]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[15]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:351]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:351]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[15]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:352]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:352]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[15]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:353]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:353]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:356]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:356]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:357]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:357]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[13]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:358]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:358]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:361]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:361]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:362]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:362]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[12]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:363]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:363]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:366]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:366]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:367]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:367]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[11]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:368]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:368]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:371]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:371]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:372]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:372]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[10]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:373]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:373]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:376]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:376]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:377]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:377]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[9]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:378]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:378]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:381]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:381]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:382]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:382]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[8]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:383]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:383]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:386]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:386]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:387]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:387]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[7]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:388]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:388]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:391]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:391]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:392]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:392]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[6]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:393]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:393]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:396]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:396]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:397]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:397]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[5]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:398]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:398]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:401]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:401]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:402]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:402]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[4]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:403]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:403]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:406]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:406]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:406]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/uart_debug_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/uart_debug_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2148.457 ; gain = 0.000 ; free physical = 467 ; free virtual = 4210
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2148.457 ; gain = 0.000 ; free physical = 467 ; free virtual = 4210
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2148.457 ; gain = 670.332 ; free physical = 475 ; free virtual = 4217
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 475 ; free virtual = 4217
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 475 ; free virtual = 4217
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 TX_IDLE |                              000 |                              000
+               TX_STATUS |                              001 |                              010
+               TX_TIMING |                              010 |                              011
+           TX_DUMMY_READ |                              011 |                              100
+                 TX_ECHO |                              100 |                              001
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'command_processor'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                               00 |                               00
+                   START |                               01 |                               01
+                    DATA |                               10 |                               10
+                    STOP |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 476 ; free virtual = 4219
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 8     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    4 Bit       Adders := 9     
+	   2 Input    3 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 16    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   4 Input   16 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 12    
+	   4 Input    8 Bit        Muxes := 2     
+	  10 Input    8 Bit        Muxes := 1     
+	   5 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 26    
+	   4 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 6     
+	   4 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 26    
+	   4 Input    1 Bit        Muxes := 8     
+	  10 Input    1 Bit        Muxes := 3     
+	  12 Input    1 Bit        Muxes := 3     
+	   5 Input    1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 456 ; free virtual = 4206
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2180.461 ; gain = 702.336 ; free physical = 364 ; free virtual = 4114
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2217.508 ; gain = 739.383 ; free physical = 318 ; free virtual = 4068
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2217.508 ; gain = 739.383 ; free physical = 318 ; free virtual = 4068
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    12|
+|3     |LUT1   |     4|
+|4     |LUT2   |    53|
+|5     |LUT3   |    48|
+|6     |LUT4   |    65|
+|7     |LUT5   |    48|
+|8     |LUT6   |   121|
+|9     |FDRE   |   210|
+|10    |FDSE   |     1|
+|11    |IBUF   |     2|
+|12    |OBUF   |     1|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2365.320 ; gain = 741.445 ; free physical = 210 ; free virtual = 3961
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.328 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2365.328 ; gain = 0.000 ; free physical = 210 ; free virtual = 3960
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2421.348 ; gain = 0.000 ; free physical = 381 ; free virtual = 4131
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 9fb63819
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 125 Warnings, 100 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 2421.348 ; gain = 981.848 ; free physical = 381 ; free virtual = 4131
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1764.156; main = 1764.156; forked = 312.365
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3080.621; main = 2421.352; forked = 924.156
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2445.359 ; gain = 0.000 ; free physical = 381 ; free virtual = 4131
+INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.runs/synth_1/uart_debug_top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file uart_debug_top_utilization_synth.rpt -pb uart_debug_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  7 11:47:39 2025...
