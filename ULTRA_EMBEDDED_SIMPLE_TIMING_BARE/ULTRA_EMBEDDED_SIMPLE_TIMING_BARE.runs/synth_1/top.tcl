@@ -82,7 +82,7 @@ read_verilog -library xil_defaultlib {
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/ddr3_axi_timing_v2.v
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/ddr3_core_timing_v2.v
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/phy/xc7/ddr3_dfi_phy.v
-  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/ddr3_dfi_seq_timing_v2.v
+  /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/src_v/ddr3_dfi_seq_timing_v4.v
   /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE/ULTRA_EMBEDDED_SIMPLE.srcs/sources_1/imports/arty_a7/reset_gen.v
 }
 OPTRACE "Adding files" END { }
