@@ -1,0 +1,254 @@
+Time resolution is 1 ps
+
+=== UART Debug V2 Testbench Starting ===
+Bit time = 8680 ns
+
+[100000000] Waiting for reset...
+[100000000] Reset complete
+
+[200000000] ---- Sending: ?\r ----
+  [200000000] Sending byte: 0x3f ('?')
+  [282495000] DUT RX received: 0x3f ('?')
+  [282505000] Command ready: STATUS
+  [282515000] TX state changed from 0 to 1
+  [282525000] DUT TX sending: 0x52 ('R')
+  [296800000] Sending byte: 0x0d ('
+')
+  [369345000] DUT TX sending: 0x0a ('
+')
+  [369345000] TX state changed from 1 to 0
+  [379295000] DUT RX received: 0x0d ('
+')
+
+[1383600000] ---- Sending: t\r ----
+  [1383600000] Sending byte: 0x74 ('t')
+  [1466095000] DUT RX received: 0x74 ('t')
+  [1466105000] Command ready: GET TIME
+  [1466115000] TX state changed from 0 to 4
+  [1466125000] DUT TX sending: 0x54 ('T')
+  [1480400000] Sending byte: 0x0d ('
+')
+  [1552945000] DUT TX sending: 0x3a (':')
+  [1562895000] DUT RX received: 0x0d ('
+')
+  [1639765000] DUT TX sending: 0x30 ('0')
+  [1726585000] DUT TX sending: 0x31 ('1')
+  [1813405000] DUT TX sending: 0x30 ('0')
+  [1900225000] DUT TX sending: 0x32 ('2')
+  [1987045000] DUT TX sending: 0x30 ('0')
+  [2073865000] DUT TX sending: 0x33 ('3')
+  [2160685000] DUT TX sending: 0x30 ('0')
+  [2247505000] DUT TX sending: 0x34 ('4')
+  [2334325000] DUT TX sending: 0x0a ('
+')
+  [2334325000] TX state changed from 4 to 0
+
+[2567200000] ---- Sending: T01020304\r ----
+  [2567200000] Sending byte: 0x54 ('T')
+  [2649695000] DUT RX received: 0x54 ('T')
+  [2664000000] Sending byte: 0x30 ('0')
+  [2746495000] DUT RX received: 0x30 ('0')
+  [2760800000] Sending byte: 0x31 ('1')
+  [2843295000] DUT RX received: 0x31 ('1')
+  [2857600000] Sending byte: 0x30 ('0')
+  [2940095000] DUT RX received: 0x30 ('0')
+  [2954400000] Sending byte: 0x32 ('2')
+  [3036895000] DUT RX received: 0x32 ('2')
+  [3051200000] Sending byte: 0x30 ('0')
+  [3133695000] DUT RX received: 0x30 ('0')
+  [3148000000] Sending byte: 0x33 ('3')
+  [3230495000] DUT RX received: 0x33 ('3')
+  [3244800000] Sending byte: 0x30 ('0')
+  [3327295000] DUT RX received: 0x30 ('0')
+  [3341600000] Sending byte: 0x34 ('4')
+  [3424095000] DUT RX received: 0x34 ('4')
+  [3438400000] Sending byte: 0x0d ('
+')
+  [3520895000] DUT RX received: 0x0d ('
+')
+  [3520905000] Command ready: SET TIME cfg=0x01020304
+  [3520915000] TX state changed from 0 to 4
+  [3520925000] DUT TX sending: 0x54 ('T')
+  [3607745000] DUT TX sending: 0x3a (':')
+  [3694565000] DUT TX sending: 0x30 ('0')
+  [3781385000] DUT TX sending: 0x31 ('1')
+  [3868205000] DUT TX sending: 0x30 ('0')
+  [3955025000] DUT TX sending: 0x32 ('2')
+  [4041845000] DUT TX sending: 0x30 ('0')
+  [4128665000] DUT TX sending: 0x33 ('3')
+  [4215485000] DUT TX sending: 0x30 ('0')
+  [4302305000] DUT TX sending: 0x34 ('4')
+  [4389125000] DUT TX sending: 0x0a ('
+')
+  [4389125000] TX state changed from 4 to 0
+
+[4525200000] ---- Sending: RAAAAAAAA\r ----
+  [4525200000] Sending byte: 0x52 ('R')
+  [4607695000] DUT RX received: 0x52 ('R')
+  [4622000000] Sending byte: 0x41 ('A')
+  [4704495000] DUT RX received: 0x41 ('A')
+  [4718800000] Sending byte: 0x41 ('A')
+  [4801295000] DUT RX received: 0x41 ('A')
+  [4815600000] Sending byte: 0x41 ('A')
+  [4898095000] DUT RX received: 0x41 ('A')
+  [4912400000] Sending byte: 0x41 ('A')
+  [4994895000] DUT RX received: 0x41 ('A')
+  [5009200000] Sending byte: 0x41 ('A')
+  [5091695000] DUT RX received: 0x41 ('A')
+  [5106000000] Sending byte: 0x41 ('A')
+  [5188495000] DUT RX received: 0x41 ('A')
+  [5202800000] Sending byte: 0x41 ('A')
+  [5285295000] DUT RX received: 0x41 ('A')
+  [5299600000] Sending byte: 0x41 ('A')
+  [5382095000] DUT RX received: 0x41 ('A')
+  [5396400000] Sending byte: 0x0d ('
+')
+  [5478895000] DUT RX received: 0x0d ('
+')
+  [5478905000] Command ready: READ addr=0xaaaaaaaa
+  [5478915000] TX state changed from 0 to 2
+  [5478925000] DUT TX sending: 0x61 ('a')
+  [5565745000] DUT TX sending: 0x61 ('a')
+  [5652565000] DUT TX sending: 0x61 ('a')
+  [5739385000] DUT TX sending: 0x61 ('a')
+  [5826205000] DUT TX sending: 0x61 ('a')
+  [5913025000] DUT TX sending: 0x61 ('a')
+  [5999845000] DUT TX sending: 0x61 ('a')
+  [6086665000] DUT TX sending: 0x61 ('a')
+  [6173485000] DUT TX sending: 0x0a ('
+')
+  [6173485000] TX state changed from 2 to 0
+
+[6483200000] ---- Sending: W12345678 89ABCDEF\r ----
+  [6483200000] Sending byte: 0x57 ('W')
+  [6565695000] DUT RX received: 0x57 ('W')
+  [6580000000] Sending byte: 0x31 ('1')
+  [6662495000] DUT RX received: 0x31 ('1')
+  [6676800000] Sending byte: 0x32 ('2')
+  [6759295000] DUT RX received: 0x32 ('2')
+  [6773600000] Sending byte: 0x33 ('3')
+  [6856095000] DUT RX received: 0x33 ('3')
+  [6870400000] Sending byte: 0x34 ('4')
+  [6952895000] DUT RX received: 0x34 ('4')
+  [6967200000] Sending byte: 0x35 ('5')
+  [7049695000] DUT RX received: 0x35 ('5')
+  [7064000000] Sending byte: 0x36 ('6')
+  [7146495000] DUT RX received: 0x36 ('6')
+  [7160800000] Sending byte: 0x37 ('7')
+  [7243295000] DUT RX received: 0x37 ('7')
+  [7257600000] Sending byte: 0x38 ('8')
+  [7340095000] DUT RX received: 0x38 ('8')
+  [7354400000] Sending byte: 0x20 (' ')
+  [7436895000] DUT RX received: 0x20 (' ')
+  [7451200000] Sending byte: 0x38 ('8')
+  [7533695000] DUT RX received: 0x38 ('8')
+  [7548000000] Sending byte: 0x39 ('9')
+  [7630495000] DUT RX received: 0x39 ('9')
+  [7644800000] Sending byte: 0x41 ('A')
+  [7727295000] DUT RX received: 0x41 ('A')
+  [7741600000] Sending byte: 0x42 ('B')
+  [7824095000] DUT RX received: 0x42 ('B')
+  [7838400000] Sending byte: 0x43 ('C')
+  [7920895000] DUT RX received: 0x43 ('C')
+  [7935200000] Sending byte: 0x44 ('D')
+  [8017695000] DUT RX received: 0x44 ('D')
+  [8032000000] Sending byte: 0x45 ('E')
+  [8114495000] DUT RX received: 0x45 ('E')
+  [8128800000] Sending byte: 0x46 ('F')
+  [8211295000] DUT RX received: 0x46 ('F')
+  [8225600000] Sending byte: 0x0d ('
+')
+  [8308095000] DUT RX received: 0x0d ('
+')
+  [8308105000] Command ready: WRITE addr=0x12345678 data=0x89abcdef
+  [8308115000] TX state changed from 0 to 3
+  [8308125000] DUT TX sending: 0x4f ('O')
+  [8394945000] DUT TX sending: 0x4b ('K')
+  [8481765000] DUT TX sending: 0x0a ('
+')
+  [8481765000] TX state changed from 3 to 0
+
+[9312400000] ---- Sending: five quick t\r ----
+  [9312400000] Sending byte: 0x74 ('t')
+  [9394895000] DUT RX received: 0x74 ('t')
+  [9394905000] Command ready: GET TIME
+  [9394915000] TX state changed from 0 to 4
+  [9394925000] DUT TX sending: 0x54 ('T')
+  [9409200000] Sending byte: 0x0d ('
+')
+  [9481745000] DUT TX sending: 0x3a (':')
+  [9491695000] DUT RX received: 0x0d ('
+')
+  [9568565000] DUT TX sending: 0x30 ('0')
+  [9655385000] DUT TX sending: 0x31 ('1')
+  [9742205000] DUT TX sending: 0x30 ('0')
+  [9829025000] DUT TX sending: 0x32 ('2')
+  [9915845000] DUT TX sending: 0x30 ('0')
+  [9996000000] Sending byte: 0x74 ('t')
+  [10002665000] DUT TX sending: 0x33 ('3')
+  [10078495000] DUT RX received: 0x74 ('t')
+  [10078505000] Command ready: GET TIME
+  [10089485000] DUT TX sending: 0x30 ('0')
+  [10092800000] Sending byte: 0x0d ('
+')
+  [10175295000] DUT RX received: 0x0d ('
+')
+  [10176305000] DUT TX sending: 0x34 ('4')
+  [10263125000] DUT TX sending: 0x0a ('
+')
+  [10263125000] TX state changed from 4 to 0
+  [10679600000] Sending byte: 0x74 ('t')
+  [10762095000] DUT RX received: 0x74 ('t')
+  [10762105000] Command ready: GET TIME
+  [10762115000] TX state changed from 0 to 4
+  [10762125000] DUT TX sending: 0x54 ('T')
+  [10776400000] Sending byte: 0x0d ('
+')
+  [10848945000] DUT TX sending: 0x3a (':')
+  [10858895000] DUT RX received: 0x0d ('
+')
+  [10935765000] DUT TX sending: 0x30 ('0')
+  [11022585000] DUT TX sending: 0x31 ('1')
+  [11109405000] DUT TX sending: 0x30 ('0')
+  [11196225000] DUT TX sending: 0x32 ('2')
+  [11283045000] DUT TX sending: 0x30 ('0')
+  [11363200000] Sending byte: 0x74 ('t')
+  [11369865000] DUT TX sending: 0x33 ('3')
+  [11445695000] DUT RX received: 0x74 ('t')
+  [11445705000] Command ready: GET TIME
+  [11456685000] DUT TX sending: 0x30 ('0')
+  [11460000000] Sending byte: 0x0d ('
+')
+  [11542495000] DUT RX received: 0x0d ('
+')
+  [11543505000] DUT TX sending: 0x34 ('4')
+  [11630325000] DUT TX sending: 0x0a ('
+')
+  [11630325000] TX state changed from 4 to 0
+  [12046800000] Sending byte: 0x74 ('t')
+  [12129295000] DUT RX received: 0x74 ('t')
+  [12129305000] Command ready: GET TIME
+  [12129315000] TX state changed from 0 to 4
+  [12129325000] DUT TX sending: 0x54 ('T')
+  [12143600000] Sending byte: 0x0d ('
+')
+  [12216145000] DUT TX sending: 0x3a (':')
+  [12226095000] DUT RX received: 0x0d ('
+')
+  [12302965000] DUT TX sending: 0x30 ('0')
+  [12389785000] DUT TX sending: 0x31 ('1')
+  [12476605000] DUT TX sending: 0x30 ('0')
+  [12563425000] DUT TX sending: 0x32 ('2')
+  [12650245000] DUT TX sending: 0x30 ('0')
+  [12737065000] DUT TX sending: 0x33 ('3')
+  [12823885000] DUT TX sending: 0x30 ('0')
+  [12910705000] DUT TX sending: 0x34 ('4')
+  [12997525000] DUT TX sending: 0x0a ('
+')
+  [12997525000] TX state changed from 4 to 0
+
+[13730400000] ---- TB finished ----
+=== Test Summary ===
+Check tb_uart_output.txt for captured output
+$finish called at time : 13730400 ns : File "/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sim_1/imports/Serial_debug_read_write_timing/tb_uart_testbench.sv" Line 205
+INFO: xsimkernel Simulation Memory Usage: 265300 KB (Peak: 322572 KB), Simulation CPU Usage: 13060 ms

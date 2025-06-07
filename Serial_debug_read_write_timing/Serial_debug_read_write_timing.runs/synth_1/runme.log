@@ -1,103 +1,73 @@
 
 *** Running vivado
-    with args -log uart_debug_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_debug_top.tcl
+    with args -log top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 
 
 ****** Vivado v2024.2 (64-bit)
   **** SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Sat Jun  7 11:47:04 2025
+  **** Start of session at: Sat Jun  7 14:45:53 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
-source uart_debug_top.tcl -notrace
-Command: synth_design -top uart_debug_top -part xc7a100tcsg324-1
+source top.tcl -notrace
+Command: read_checkpoint -auto_incremental -incremental /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/utils_1/imports/synth_1/uart_debug_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/utils_1/imports/synth_1/uart_debug_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 7 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 46698
+INFO: [Synth 8-7075] Helper process launched with PID 116040
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1907.926 ; gain = 429.801 ; free physical = 567 ; free virtual = 4308
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1910.484 ; gain = 426.832 ; free physical = 2633 ; free virtual = 7122
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'uart_debug_top' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:349]
-INFO: [Synth 8-6157] synthesizing module 'command_processor' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:163]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:289]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:299]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:308]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:324]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:260]
-INFO: [Synth 8-6155] done synthesizing module 'command_processor' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:163]
-INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:78]
-	Parameter CLK_HZ bound to: 100000000 - type: integer 
-	Parameter BAUDRATE bound to: 115200 - type: integer 
-INFO: [Synth 8-226] default block is never used [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:111]
-INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:78]
-INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:31]
-	Parameter CLK_HZ bound to: 100000000 - type: integer 
-	Parameter BAUDRATE bound to: 115200 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:31]
-INFO: [Synth 8-6155] done synthesizing module 'uart_debug_top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:349]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[9] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[10] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[11] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[12] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[13] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[14] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[15] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[16] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[17] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[18] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[19] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[20] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[21] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[22] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[23] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[24] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[25] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[26] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[27] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[28] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[29] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[30] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element cmd_buffer_reg[31] was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:203]
-WARNING: [Synth 8-6014] Unused sequential element p_data_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/top.v:271]
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:357]
+INFO: [Synth 8-6157] synthesizing module 'reset_gen' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:347]
+INFO: [Synth 8-6155] done synthesizing module 'reset_gen' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:347]
+INFO: [Synth 8-6157] synthesizing module 'uart_debug' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:92]
+	Parameter CLK_HZ bound to: 32'sb00000101111101011110000100000000 
+	Parameter BAUDRATE bound to: 32'sb00000000000000011100001000000000 
+INFO: [Synth 8-6157] synthesizing module 'uart_rx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:45]
+	Parameter CLK_HZ bound to: 32'sb00000101111101011110000100000000 
+	Parameter BAUDRATE bound to: 32'sb00000000000000011100001000000000 
+INFO: [Synth 8-6155] done synthesizing module 'uart_rx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:45]
+INFO: [Synth 8-6157] synthesizing module 'uart_tx' [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:9]
+	Parameter CLK_HZ bound to: 32'sb00000101111101011110000100000000 
+	Parameter BAUDRATE bound to: 32'sb00000000000000011100001000000000 
+INFO: [Synth 8-6155] done synthesizing module 'uart_tx' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:269]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:278]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:294]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:304]
+INFO: [Synth 8-6155] done synthesizing module 'uart_debug' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:92]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:357]
+WARNING: [Synth 8-6014] Unused sequential element cmd_data_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:215]
+WARNING: [Synth 8-6014] Unused sequential element tx_busy_d_reg was removed.  [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/sources_1/imports/Serial_debug_read_write_timing/topv2.sv:253]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1984.895 ; gain = 506.770 ; free physical = 475 ; free virtual = 4216
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1987.453 ; gain = 503.801 ; free physical = 2554 ; free virtual = 7037
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2002.707 ; gain = 524.582 ; free physical = 475 ; free virtual = 4216
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2005.266 ; gain = 521.613 ; free physical = 2554 ; free virtual = 7037
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2002.707 ; gain = 524.582 ; free physical = 475 ; free virtual = 4216
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2005.266 ; gain = 521.613 ; free physical = 2554 ; free virtual = 7037
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2002.707 ; gain = 0.000 ; free physical = 475 ; free virtual = 4216
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2005.266 ; gain = 0.000 ; free physical = 2554 ; free virtual = 7037
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]
-WARNING: [Vivado 12-584] No ports matched 'led[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:111]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:111]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[1]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:112]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:112]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:113]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:113]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:114]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:114]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
-WARNING: [Vivado 12-584] No ports matched 'led[*]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:115]
-CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:115]
-Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'ddr3_dq[0]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:260]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:260]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
@@ -381,47 +351,55 @@ WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[4]'. [/home/heigke/Dokument
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:403]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:406]
-INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:406]
 CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:406]
 Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:407]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:407]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[3]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:408]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:408]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:411]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:411]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:412]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:412]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'ddr3_addr[2]'. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:413]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:413]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc:413]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
 Finished Parsing XDC File [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/uart_debug_top_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/uart_debug_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.srcs/constrs_1/imports/Serial_debug_read_write_timing/pin.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2148.457 ; gain = 0.000 ; free physical = 467 ; free virtual = 4210
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2152.016 ; gain = 0.000 ; free physical = 2562 ; free virtual = 7044
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2148.457 ; gain = 0.000 ; free physical = 467 ; free virtual = 4210
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2152.016 ; gain = 0.000 ; free physical = 2562 ; free virtual = 7044
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2148.457 ; gain = 670.332 ; free physical = 475 ; free virtual = 4217
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2152.016 ; gain = 668.363 ; free physical = 2826 ; free virtual = 7318
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 475 ; free virtual = 4217
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2160.020 ; gain = 676.367 ; free physical = 2826 ; free virtual = 7318
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 475 ; free virtual = 4217
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2160.020 ; gain = 676.367 ; free physical = 2796 ; free virtual = 7308
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'command_processor'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'uart_rx'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                 TX_IDLE |                              000 |                              000
-               TX_STATUS |                              001 |                              010
-               TX_TIMING |                              010 |                              011
-           TX_DUMMY_READ |                              011 |                              100
-                 TX_ECHO |                              100 |                              001
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'command_processor'
+INFO: [Synth 8-802] inferred FSM for state register 'p_state_reg' in module 'uart_debug'
+INFO: [Synth 8-802] inferred FSM for state register 'tx_state_reg' in module 'uart_debug'
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -431,48 +409,71 @@ INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encodi
                     STOP |                               11 |                               11
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'uart_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  P_IDLE |                               00 |                               00
+                   P_ADR |                               01 |                               01
+                   P_DAT |                               10 |                               10
+                   P_TIM |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'p_state_reg' using encoding 'sequential' in module 'uart_debug'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 TX_IDLE |                              000 |                              000
+               TX_STATUS |                              001 |                              001
+                 TX_READ |                              010 |                              010
+                TX_WRITE |                              011 |                              011
+                 TX_TIME |                              100 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'tx_state_reg' using encoding 'sequential' in module 'uart_debug'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 476 ; free virtual = 4219
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2160.020 ; gain = 676.367 ; free physical = 2741 ; free virtual = 7296
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   16 Bit       Adders := 2     
-	   2 Input    8 Bit       Adders := 8     
-	   2 Input    5 Bit       Adders := 1     
-	   2 Input    4 Bit       Adders := 9     
+	   2 Input   23 Bit       Adders := 2     
+	   2 Input   10 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 17    
+	   2 Input    4 Bit       Adders := 3     
 	   2 Input    3 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
-	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 16    
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	               23 Bit    Registers := 2     
+	               10 Bit    Registers := 3     
+	                8 Bit    Registers := 4     
 	                5 Bit    Registers := 1     
-	                4 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 6     
+	                1 Bit    Registers := 12    
 +---Muxes : 
-	   4 Input   16 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 1     
+	   4 Input   64 Bit        Muxes := 1     
+	   2 Input   23 Bit        Muxes := 4     
+	   4 Input   10 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 12    
 	   4 Input    8 Bit        Muxes := 2     
-	  10 Input    8 Bit        Muxes := 1     
+	   2 Input    8 Bit        Muxes := 20    
 	   5 Input    8 Bit        Muxes := 1     
-	   2 Input    4 Bit        Muxes := 26    
+	   2 Input    5 Bit        Muxes := 1     
+	   4 Input    5 Bit        Muxes := 1     
+	   5 Input    5 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 5     
 	   4 Input    4 Bit        Muxes := 1     
-	   5 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 5     
 	   5 Input    3 Bit        Muxes := 1     
-	   6 Input    3 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 6     
-	   4 Input    3 Bit        Muxes := 1     
-	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 26    
-	   4 Input    1 Bit        Muxes := 8     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    2 Bit        Muxes := 4     
+	   2 Input    1 Bit        Muxes := 31    
+	   4 Input    1 Bit        Muxes := 18    
 	  10 Input    1 Bit        Muxes := 3     
 	  12 Input    1 Bit        Muxes := 3     
-	   5 Input    1 Bit        Muxes := 5     
+	   5 Input    1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -490,25 +491,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2156.461 ; gain = 678.336 ; free physical = 456 ; free virtual = 4206
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2160.020 ; gain = 676.367 ; free physical = 2765 ; free virtual = 7303
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2180.461 ; gain = 702.336 ; free physical = 364 ; free virtual = 4114
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2181.020 ; gain = 697.367 ; free physical = 2731 ; free virtual = 7280
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2217.508 ; gain = 739.383 ; free physical = 318 ; free virtual = 4068
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2226.066 ; gain = 742.414 ; free physical = 2703 ; free virtual = 7254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2217.508 ; gain = 739.383 ; free physical = 318 ; free virtual = 4068
+Finished Technology Mapping : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2226.066 ; gain = 742.414 ; free physical = 2708 ; free virtual = 7260
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -526,37 +527,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7093
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7093
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7092
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7092
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7092
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7092
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -573,43 +574,45 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |    12|
-|3     |LUT1   |     4|
-|4     |LUT2   |    53|
-|5     |LUT3   |    48|
-|6     |LUT4   |    65|
-|7     |LUT5   |    48|
-|8     |LUT6   |   121|
-|9     |FDRE   |   210|
-|10    |FDSE   |     1|
-|11    |IBUF   |     2|
-|12    |OBUF   |     1|
+|2     |CARRY4 |    19|
+|3     |LUT1   |    51|
+|4     |LUT2   |    57|
+|5     |LUT3   |    98|
+|6     |LUT4   |    39|
+|7     |LUT5   |    51|
+|8     |LUT6   |   117|
+|9     |MUXF7  |     8|
+|10    |MUXF8  |     1|
+|11    |FDRE   |   256|
+|12    |FDSE   |     9|
+|13    |IBUF   |     2|
+|14    |OBUF   |     5|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.320 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.879 ; gain = 885.227 ; free physical = 2488 ; free virtual = 7092
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 2365.320 ; gain = 741.445 ; free physical = 210 ; free virtual = 3961
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 2365.328 ; gain = 887.195 ; free physical = 210 ; free virtual = 3961
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:28 . Memory (MB): peak = 2368.879 ; gain = 738.477 ; free physical = 2441 ; free virtual = 7046
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 2368.887 ; gain = 885.227 ; free physical = 2441 ; free virtual = 7046
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2365.328 ; gain = 0.000 ; free physical = 210 ; free virtual = 3960
-INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2368.887 ; gain = 0.000 ; free physical = 2449 ; free virtual = 7053
+INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2421.348 ; gain = 0.000 ; free physical = 381 ; free virtual = 4131
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2424.906 ; gain = 0.000 ; free physical = 2649 ; free virtual = 7247
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 9fb63819
+Synth Design complete | Checksum: a7ddc6af
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 125 Warnings, 100 Critical Warnings and 0 Errors encountered.
+42 Infos, 103 Warnings, 100 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:31 . Memory (MB): peak = 2421.348 ; gain = 981.848 ; free physical = 381 ; free virtual = 4131
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1764.156; main = 1764.156; forked = 312.365
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3080.621; main = 2421.352; forked = 924.156
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:36 . Memory (MB): peak = 2424.906 ; gain = 1016.754 ; free physical = 2649 ; free virtual = 7247
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1927.921; main = 1755.501; forked = 311.330
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3293.039; main = 2424.910; forked = 924.156
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2445.359 ; gain = 0.000 ; free physical = 381 ; free virtual = 4131
-INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.runs/synth_1/uart_debug_top.dcp' has been generated.
-INFO: [Vivado 12-24828] Executing command : report_utilization -file uart_debug_top_utilization_synth.rpt -pb uart_debug_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jun  7 11:47:39 2025...
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2448.918 ; gain = 0.000 ; free physical = 2649 ; free virtual = 7247
+INFO: [Common 17-1381] The checkpoint '/home/heigke/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/Serial_debug_read_write_timing/Serial_debug_read_write_timing.runs/synth_1/top.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Jun  7 14:46:34 2025...
