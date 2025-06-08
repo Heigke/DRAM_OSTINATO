@@ -279,8 +279,10 @@ u_core
     ,.inport_resp_id_o(ram_resp_id_w)
 
     ,.cfg_enable_i(1'b1)
-    ,.cfg_stb_i(1'b0)
-    ,.cfg_data_i(32'b0)
+    //,.cfg_stb_i(1'b0)
+    //,.cfg_data_i(32'b0)
+        ,.cfg_stb_i(cfg_stb_i)
+    ,.cfg_data_i(cfg_data_i)
     ,.cfg_stall_o()
 
     ,.dfi_address_o(dfi_address_o)
@@ -304,4 +306,5 @@ u_core
 
 
 endmodule
+
 

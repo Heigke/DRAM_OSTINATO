@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2024.2 (lin64) Build 5239630 Fri Nov 08 22:34:34 MST 2024
-| Date             : Sat Jun  7 20:47:24 2025
+| Date             : Sun Jun  8 08:14:06 2025
 | Host             : Heigke running 64-bit Ubuntu 22.04.5 LTS
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.584        |
+| Total On-Chip Power (W)  | 0.582        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.480        |
+| Dynamic (W)              | 0.478        |
 | Device Static (W)        | 0.104        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 82.3         |
@@ -53,19 +53,19 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.013 |        8 |       --- |             --- |
-| Slice Logic              |     0.002 |     2842 |       --- |             --- |
-|   LUT as Logic           |     0.002 |      751 |     63400 |            1.18 |
+| Slice Logic              |     0.002 |     2860 |       --- |             --- |
+|   LUT as Logic           |     0.002 |      756 |     63400 |            1.19 |
 |   CARRY4                 |    <0.001 |       40 |     15850 |            0.25 |
-|   Register               |    <0.001 |     1130 |    126800 |            0.89 |
+|   Register               |    <0.001 |     1144 |    126800 |            0.90 |
 |   LUT as Distributed RAM |    <0.001 |      310 |     19000 |            1.63 |
 |   F7/F8 Muxes            |    <0.001 |       23 |     63400 |            0.04 |
 |   LUT as Shift Register  |    <0.001 |        2 |     19000 |            0.01 |
 |   Others                 |     0.000 |       29 |       --- |             --- |
-| Signals                  |     0.002 |     2286 |       --- |             --- |
+| Signals                  |     0.002 |     2308 |       --- |             --- |
 | PLL                      |     0.113 |        1 |         6 |           16.67 |
-| I/O                      |     0.351 |       55 |       210 |           26.19 |
+| I/O                      |     0.349 |       55 |       210 |           26.19 |
 | Static Power             |     0.104 |          |           |                 |
-| Total                    |     0.584 |          |           |                 |
+| Total                    |     0.582 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,12 +76,12 @@ Table of Contents
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Vccint    |       1.000 |     0.050 |       0.034 |      0.016 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.139 |       0.121 |      0.018 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.139 |       0.120 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco135   |       1.350 |     0.173 |       0.169 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.172 |       0.168 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,37 +146,38 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-----------------+-----------+
-| Name            | Power (W) |
-+-----------------+-----------+
-| top             |     0.480 |
-|   u_ddr         |     0.006 |
-|     u_axi       |     0.003 |
-|       u_request |     0.001 |
-|     u_core      |     0.003 |
-|       u_seq     |     0.002 |
-|   u_phy         |     0.306 |
-|     u_pad_ck    |     0.006 |
-|     u_pad_dq0   |     0.011 |
-|     u_pad_dq1   |     0.011 |
-|     u_pad_dq10  |     0.011 |
-|     u_pad_dq11  |     0.011 |
-|     u_pad_dq12  |     0.011 |
-|     u_pad_dq13  |     0.011 |
-|     u_pad_dq14  |     0.011 |
-|     u_pad_dq15  |     0.011 |
-|     u_pad_dq2   |     0.011 |
-|     u_pad_dq3   |     0.011 |
-|     u_pad_dq4   |     0.011 |
-|     u_pad_dq5   |     0.011 |
-|     u_pad_dq6   |     0.011 |
-|     u_pad_dq7   |     0.011 |
-|     u_pad_dq8   |     0.011 |
-|     u_pad_dq9   |     0.011 |
-|     u_pad_dqs0  |     0.020 |
-|     u_pad_dqs1  |     0.020 |
-|   u_pll         |     0.114 |
-|   u_uart        |     0.002 |
-+-----------------+-----------+
++------------------+-----------+
+| Name             | Power (W) |
++------------------+-----------+
+| top              |     0.478 |
+|   u_ddr          |     0.006 |
+|     u_axi        |     0.003 |
+|       u_request  |     0.001 |
+|       u_response |     0.001 |
+|     u_core       |     0.003 |
+|       u_seq      |     0.002 |
+|   u_phy          |     0.304 |
+|     u_pad_ck     |     0.006 |
+|     u_pad_dq0    |     0.011 |
+|     u_pad_dq1    |     0.011 |
+|     u_pad_dq10   |     0.011 |
+|     u_pad_dq11   |     0.011 |
+|     u_pad_dq12   |     0.011 |
+|     u_pad_dq13   |     0.011 |
+|     u_pad_dq14   |     0.011 |
+|     u_pad_dq15   |     0.011 |
+|     u_pad_dq2    |     0.011 |
+|     u_pad_dq3    |     0.011 |
+|     u_pad_dq4    |     0.011 |
+|     u_pad_dq5    |     0.011 |
+|     u_pad_dq6    |     0.011 |
+|     u_pad_dq7    |     0.011 |
+|     u_pad_dq8    |     0.011 |
+|     u_pad_dq9    |     0.011 |
+|     u_pad_dqs0   |     0.020 |
+|     u_pad_dqs1   |     0.020 |
+|   u_pll          |     0.114 |
+|   u_uart         |     0.002 |
++------------------+-----------+
 
 
