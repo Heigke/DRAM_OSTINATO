@@ -966,6 +966,177 @@ class NeuromorphicDRAMAnalyzer:
         
         return decay_points
 
+
+    def sub_threshold_charge_test(self):
+        """Test if sub-threshold charges exist and decay differently"""
+        fancy_print("SUB-THRESHOLD CHARGE DETECTION TEST", "neural")
+        
+        test_addr = 0x00001000
+        
+        print(f"\n{Fore.CYAN}Hypothesis: Burst 1-2 DO charge cells, just below sense threshold{Style.RESET_ALL}")
+        print(f"Testing by looking at charge accumulation and decay patterns\n")
+        
+        # Test 1: Charge accumulation
+        print(f"{Fore.YELLOW}Test 1: Repeated sub-threshold writes (accumulation test){Style.RESET_ALL}")
+        
+        for burst_len in [1, 2, 3]:
+            print(f"\nBurst {burst_len}:")
+            
+            self.configure_timing(burst_len=burst_len)
+            time.sleep(0.1)
+            
+            # Try different numbers of repeated writes
+            for num_writes in [1, 5, 10, 20, 50]:
+                # Clear cell first
+                self.configure_timing(burst_len=8)
+                self.write_cmd(test_addr, "00000000")
+                time.sleep(0.1)
+                
+                # Now do repeated writes with test burst length
+                self.configure_timing(burst_len=burst_len)
+                for _ in range(num_writes):
+                    self.write_cmd(test_addr, "FFFFFFFF")
+                    time.sleep(0.001)
+                
+                time.sleep(0.01)
+                read_data = self.read_cmd(test_addr)
+                
+                if read_data:
+                    hamming = self.hamming_distance("00000000", read_data)
+                    if hamming > 0:
+                        print(f"  {num_writes:2d} writes: {read_data} ({hamming} bits set)")
+                    else:
+                        print(f"  {num_writes:2d} writes: Still reads as 00000000")
+        
+        # Reset
+        self.configure_timing(burst_len=0)
+        
+        # Test 2: Pre-charge assist
+        print(f"\n{Fore.YELLOW}Test 2: Pre-charge assist test{Style.RESET_ALL}")
+        print("Writing burst=2 on top of existing partial charge\n")
+        
+        # First, put cell at different charge levels
+        pre_charges = [
+            {"burst": 0, "name": "No pre-charge"},
+            {"burst": 1, "name": "Burst 1 pre-charge"},
+            {"burst": 2, "name": "Burst 2 pre-charge"},
+            {"burst": 3, "name": "Burst 3 pre-charge"}
+        ]
+        
+        for pre in pre_charges:
+            print(f"{pre['name']}:")
+            
+            # Clear cell
+            self.configure_timing(burst_len=8)
+            self.write_cmd(test_addr, "00000000")
+            time.sleep(0.1)
+            
+            if pre['burst'] > 0:
+                # Apply pre-charge
+                self.configure_timing(burst_len=pre['burst'])
+                for _ in range(5):
+                    self.write_cmd(test_addr, "AAAAAAAA")
+                time.sleep(0.01)
+            
+            # Now write with burst=2
+            self.configure_timing(burst_len=2)
+            for _ in range(5):
+                self.write_cmd(test_addr, "AAAAAAAA")
+            time.sleep(0.01)
+            
+            read_data = self.read_cmd(test_addr)
+            if read_data:
+                hamming = self.hamming_distance("AAAAAAAA", read_data)
+                if hamming < 16:
+                    print(f"  → Read: {read_data} ({32-hamming} correct bits)")
+                else:
+                    print(f"  → Failed to read pattern")
+        
+        # Reset
+        self.configure_timing(burst_len=0)
+        
+        # Test 3: Decay from sub-threshold
+        print(f"\n{Fore.YELLOW}Test 3: Sub-threshold decay test{Style.RESET_ALL}")
+        print("Do sub-threshold charges decay faster?\n")
+        
+        decay_times = [0, 1, 5, 10, 20]
+        
+        for burst_len in [2, 3, 4]:
+            print(f"\nBurst {burst_len}:")
+            
+            for decay_time in decay_times:
+                # Configure and write
+                self.configure_timing(burst_len=burst_len)
+                for _ in range(10):
+                    self.write_cmd(test_addr, "FFFFFFFF")
+                
+                # Wait
+                time.sleep(decay_time)
+                
+                # Read
+                read_data = self.read_cmd(test_addr)
+                if read_data:
+                    hamming = self.hamming_distance("FFFFFFFF", read_data)
+                    set_bits = 32 - hamming
+                    print(f"  After {decay_time:2d}s: {set_bits:2d} bits still set")
+        
+        # Reset
+        self.configure_timing(burst_len=0)
+        
+        print(f"\n{Fore.GREEN}If burst 1-2 show accumulation or assist effects,")
+        print(f"they ARE storing charge below the sense threshold!{Style.RESET_ALL}")
+
+    def analog_charge_levels_test(self):
+        """Test if we can create multiple analog levels"""
+        fancy_print("ANALOG CHARGE LEVELS TEST", "neural")
+        
+        test_addr = 0x00001000
+        
+        print(f"\n{Fore.CYAN}Testing charge mixture to create analog levels{Style.RESET_ALL}\n")
+        
+        # Test: Mix different burst lengths
+        mix_configs = [
+            {"seq": [1,1,1,1,1], "name": "5x burst=1"},
+            {"seq": [2,2,2], "name": "3x burst=2"},
+            {"seq": [1,1,1,2], "name": "3x burst=1 + 1x burst=2"},
+            {"seq": [2,1,2,1], "name": "Alternating 2,1"},
+            {"seq": [3], "name": "1x burst=3 (reference)"},
+            {"seq": [1,1,1,1,1,1,1,1,1,1], "name": "10x burst=1"},
+        ]
+        
+        for config in mix_configs:
+            print(f"{config['name']}:")
+            
+            # Clear cell
+            self.configure_timing(burst_len=8)
+            self.write_cmd(test_addr, "00000000")
+            time.sleep(0.1)
+            
+            # Apply sequence
+            for burst in config['seq']:
+                self.configure_timing(burst_len=burst)
+                self.write_cmd(test_addr, "FFFFFFFF")
+                time.sleep(0.001)
+            
+            time.sleep(0.01)
+            
+            # Read immediately
+            read_data = self.read_cmd(test_addr)
+            if read_data:
+                # Count set bits
+                val = int(read_data, 16)
+                set_bits = bin(val).count('1')
+                
+                # Show analog level
+                level_bar = '█' * (set_bits // 2)
+                print(f"  → {read_data} ({set_bits}/32 bits) {level_bar}")
+        
+        # Reset
+        self.configure_timing(burst_len=0)
+        
+        print(f"\n{Fore.GREEN}Multiple burst=1 or burst=2 writes might accumulate")
+        print(f"to eventually cross the threshold!{Style.RESET_ALL}")
+        
     def run_comprehensive_analysis(self):
         """Run neuromorphic characterization prioritizing partial charges"""
         # Display header
@@ -978,6 +1149,8 @@ class NeuromorphicDRAMAnalyzer:
          # Phase 0.5: Burst length gradient
         fancy_print("PHASE 0.5: Burst Length Gradient Test", "charge")
         gradient_results = self.burst_length_gradient_test()
+        fancy_print("PHASE 0.7: Sub threshold charge test", "charge")
+        sub_threshold_results = self.sub_threshold_charge_test()
         # Phase 1: Quick partial charge sensitivity sweep
         partial_sensitive_cells = self.partial_charge_sweep()
         
