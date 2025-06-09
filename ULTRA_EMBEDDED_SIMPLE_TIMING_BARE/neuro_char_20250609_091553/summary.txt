@@ -1,0 +1,795 @@
+NEUROMORPHIC DRAM CHARACTERIZATION SUMMARY
+============================================================
+
+Session: 20250609_091553
+Date: 2025-06-09 11:49:26
+Total cells tested: 992
+Test duration: 153.6 minutes
+
+NEUROMORPHIC SUITABILITY:
+  synapses    :    0 cells (  0.0%)
+  neurons     :    0 cells (  0.0%)
+  memory      :  992 cells (100.0%)
+  weights     :    0 cells (  0.0%)
+  unsuitable  :    0 cells (  0.0%)
+  
+  (venv) heigke@Heigke:~/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE_TIMING_BARE$ python NEURODRAM_SWEEP7.py 
+🔌 Connecting to DDR3 controller on /dev/ttyUSB1...
+✓ Connected @ 115200 baud
+
+🔧 Initializing DDR3 Controller...
+✓ DDR3 Controller Ready!
+✓ Using default DDR3 timing configuration
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║  ██████╗ ██████╗  █████╗ ███╗   ███╗    ███╗   ██╗███████╗██╗   ██╗██████╗   ║
+║  ██╔══██╗██╔══██╗██╔══██╗████╗ ████║    ████╗  ██║██╔════╝██║   ██║██╔══██╗  ║
+║  ██║  ██║██████╔╝███████║██╔████╔██║    ██╔██╗ ██║█████╗  ██║   ██║██████╔╝  ║
+║  ██║  ██║██╔══██╗██╔══██║██║╚██╔╝██║    ██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗  ║
+║  ██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║    ██║ ╚████║███████╗╚██████╔╝██║  ██║  ║
+║  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝    ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝  ║
+║                                                                                ║
+║               Neuromorphic DRAM Cell Characterization Suite v1.0               ║
+║                    "Finding the Analog Soul in Digital Memory"                 ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+
+================================================================================
+PHASE 1: FULL CHARGE DECAY ANALYSIS
+Testing decay behavior with different patterns
+================================================================================
+
+Selecting test addresses:
+  Region 'Low Memory': 256 addresses
+  Region 'Bank Boundaries': 480 addresses
+  Region 'High Memory': 256 addresses
+
+📊 Testing 992 addresses
+⏱️  Decay times: [30, 60, 120, 300, 600] seconds
+🎯 Patterns: ['All Ones', 'All Zeros', 'Checkerboard', 'Inverse Check']
+
+
+Testing pattern: All Ones (FFFFFFFF)
+
+  Test 1/20 - Decay time: 30s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 990/992 verified
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (990/990) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/990
+  Cells with bit errors: 2/990
+  🎯 Found 2 cells with errors:
+     0x00EA0000: FFFFFFFF → FF7FFFFF (1 bits)
+     0x01DD0000: FFFFFFFF → FFFFFF7F (1 bits)
+
+  Test 2/20 - Decay time: 60s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 990/992 verified
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (990/990) - Found 10 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/990
+  Cells with bit errors: 10/990
+  🎯 Found 10 cells with errors:
+     0x00B88000: FFFFFFFF → FFFF7FFF (1 bits)
+     0x00D18000: FFFFFFFF → FFFFFBFF (1 bits)
+     0x00EA0000: FFFFFFFF → FF7FFFFF (1 bits)
+     0x00FE0000: FFFFFFFF → FFFFEFFF (1 bits)
+     0x01860000: FFFFFFFF → FFFFF7FF (1 bits)
+     ... and 5 more
+
+  Test 3/20 - Decay time: 120s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 990/992 verified
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (990/990) - Found 63 weak cells
+  Average retention: 99.8%
+  Cells <50% retention: 0/990
+  Cells with bit errors: 63/990
+  🎯 Found 63 cells with errors:
+     0x00800000: FFFFFFFF → FFFFFFF7 (1 bits)
+     0x00848000: FFFFFFFF → FF7FFFFF (1 bits)
+     0x008D0000: FFFFFFFF → FFFFFFDF (1 bits)
+     0x00938000: FFFFFFFF → FFFFBEFF (2 bits)
+     0x00950000: FFFFFFFF → FFFFFFDF (1 bits)
+     ... and 58 more
+
+  Test 4/20 - Decay time: 300s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 990/992 verified
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (990/990) - Found 237 weak cells
+  Average retention: 98.8%
+  Cells <50% retention: 0/990
+  Cells with bit errors: 237/990
+  🎯 Found 237 cells with errors:
+     0x00800000: FFFFFFFF → FFFFFFF7 (1 bits)
+     0x00820000: FFFFFFFF → FFFBFFFF (1 bits)
+     0x00830000: FFFFFFFF → FFFBFFFF (1 bits)
+     0x00840000: FFFFFFFF → 97FFFFFF (3 bits)
+     0x00848000: FFFFFFFF → FF7FFFFF (1 bits)
+     ... and 232 more
+
+  Test 5/20 - Decay time: 600s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 329 weak cells
+  Average retention: 97.7%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 329/992
+  🎯 Found 329 cells with errors:
+     0x00800000: FFFFFFFF → FFFFFFF7 (1 bits)
+     0x00808000: FFFFFFFF → FFF7F7FF (2 bits)
+     0x00810000: FFFFFFFF → FDFFFFFF (1 bits)
+     0x00820000: FFFFFFFF → FFFBFFFF (1 bits)
+     0x00828000: FFFFFFFF → FFFF7FFF (1 bits)
+     ... and 324 more
+
+Testing pattern: All Zeros (00000000)
+
+  Test 6/20 - Decay time: 30s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 2/992
+  🎯 Found 2 cells with errors:
+     0x016B0000: 00000000 → 40000000 (1 bits)
+     0x017F0000: 00000000 → 00008000 (1 bits)
+
+  Test 7/20 - Decay time: 60s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 7 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 7/992
+  🎯 Found 7 cells with errors:
+     0x0002A000: 00000000 → 00000020 (1 bits)
+     0x0004B000: 00000000 → 00000004 (1 bits)
+     0x00330000: 00000000 → 00000400 (1 bits)
+     0x006A0000: 00000000 → 00008000 (1 bits)
+     0x013F0000: 00000000 → 00000400 (1 bits)
+     ... and 2 more
+
+  Test 8/20 - Decay time: 120s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 48 weak cells
+  Average retention: 99.8%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 48/992
+  🎯 Found 48 cells with errors:
+     0x00004000: 00000000 → 80000000 (1 bits)
+     0x00018000: 00000000 → 80000000 (1 bits)
+     0x0002A000: 00000000 → 00000020 (1 bits)
+     0x0004B000: 00000000 → 00000004 (1 bits)
+     0x0004C000: 00000000 → 00000020 (1 bits)
+     ... and 43 more
+
+  Test 9/20 - Decay time: 300s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 296 weak cells
+  Average retention: 98.7%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 296/992
+  🎯 Found 296 cells with errors:
+     0x00001000: 00000000 → 00000001 (1 bits)
+     0x00004000: 00000000 → 80000000 (1 bits)
+     0x00005000: 00000000 → 00010000 (1 bits)
+     0x00006000: 00000000 → 00020000 (1 bits)
+     0x0000E000: 00000000 → 00800000 (1 bits)
+     ... and 291 more
+
+  Test 10/20 - Decay time: 600s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 503 weak cells
+  Average retention: 96.5%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 503/992
+  🎯 Found 503 cells with errors:
+     0x00000000: 00000000 → 00400000 (1 bits)
+     0x00001000: 00000000 → 00001001 (2 bits)
+     0x00002000: 00000000 → 80000000 (1 bits)
+     0x00004000: 00000000 → 82000000 (2 bits)
+     0x00005000: 00000000 → 00010000 (1 bits)
+     ... and 498 more
+
+Testing pattern: Checkerboard (AAAAAAAA)
+
+  Test 11/20 - Decay time: 30s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 1 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 1/991
+  🎯 Found 1 cells with errors:
+     0x016B0000: AAAAAAAA → EAAAAAAA (1 bits)
+
+  Test 12/20 - Decay time: 60s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 8 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 8/991
+  🎯 Found 8 cells with errors:
+     0x0004B000: AAAAAAAA → AAAAAAAE (1 bits)
+     0x000CF000: AAAAAAAA → AAABAAAA (1 bits)
+     0x00330000: AAAAAAAA → AAAAAEAA (1 bits)
+     0x00EA0000: AAAAAAAA → AA2AAAAA (1 bits)
+     0x013F0000: AAAAAAAA → AAAAAEAA (1 bits)
+     ... and 3 more
+
+  Test 13/20 - Decay time: 120s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 56 weak cells
+  Average retention: 99.8%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 56/991
+  🎯 Found 56 cells with errors:
+     0x00027000: AAAAAAAA → AAAAAAAE (1 bits)
+     0x00033000: AAAAAAAA → AAEAAAAA (1 bits)
+     0x0004B000: AAAAAAAA → AAAAAAAE (1 bits)
+     0x0004F000: AAAAAAAA → BAAAAAAA (1 bits)
+     0x00050000: AAAAAAAA → AAAAABAA (1 bits)
+     ... and 51 more
+
+  Test 14/20 - Decay time: 300s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 308 weak cells
+  Average retention: 98.8%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 308/991
+  🎯 Found 308 cells with errors:
+     0x00001000: AAAAAAAA → AAAAAAAB (1 bits)
+     0x00005000: AAAAAAAA → AAABAAAA (1 bits)
+     0x00010000: AAAAAAAA → AEAAAAAA (1 bits)
+     0x00011000: AAAAAAAA → AABAAAAA (1 bits)
+     0x00012000: AAAAAAAA → ABAEAAAA (2 bits)
+     ... and 303 more
+
+  Test 15/20 - Decay time: 600s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 613 weak cells
+  Average retention: 96.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 613/991
+  🎯 Found 613 cells with errors:
+     0x00000000: AAAAAAAA → ABEAAAAA (2 bits)
+     0x00001000: AAAAAAAA → AAAABAAB (2 bits)
+     0x00005000: AAAAAAAA → AAABAAAA (1 bits)
+     0x00006000: AAAAAAAA → AAAEAAAA (1 bits)
+     0x00007000: AAAAAAAA → AAEAAAAA (1 bits)
+     ... and 608 more
+
+Testing pattern: Inverse Check (55555555)
+
+  Test 16/20 - Decay time: 30s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 2/992
+  🎯 Found 2 cells with errors:
+     0x00ED8000: 55555555 → 55555155 (1 bits)
+     0x017F0000: 55555555 → 5555D555 (1 bits)
+
+  Test 17/20 - Decay time: 60s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 6 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 6/991
+  🎯 Found 6 cells with errors:
+     0x00018000: 55555555 → D5555555 (1 bits)
+     0x0002A000: 55555555 → 55555575 (1 bits)
+     0x00069000: 55555555 → 57555555 (1 bits)
+     0x006A0000: 55555555 → 5555D555 (1 bits)
+     0x00D18000: 55555555 → 55555155 (1 bits)
+     ... and 1 more
+
+  Test 18/20 - Decay time: 120s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 992/992 verified
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 58 weak cells
+  Average retention: 99.8%
+  Cells <50% retention: 0/992
+  Cells with bit errors: 58/992
+  🎯 Found 58 cells with errors:
+     0x00004000: 55555555 → D5555555 (1 bits)
+     0x00018000: 55555555 → D5555555 (1 bits)
+     0x0002A000: 55555555 → 55555575 (1 bits)
+     0x0004C000: 55555555 → 55555575 (1 bits)
+     0x00050000: 55555555 → 55557555 (1 bits)
+     ... and 53 more
+
+  Test 19/20 - Decay time: 300s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 331 weak cells
+  Average retention: 98.8%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 331/991
+  🎯 Found 331 cells with errors:
+     0x00004000: 55555555 → D5555555 (1 bits)
+     0x00006000: 55555555 → 55575555 (1 bits)
+     0x0000E000: 55555555 → 55D55555 (1 bits)
+     0x00012000: 55555555 → 75555555 (1 bits)
+     0x00017000: 55555555 → D5D55555 (2 bits)
+     ... and 326 more
+
+  Test 20/20 - Decay time: 600s
+  Writing to all cells... ✓
+  Verifying writes... ✓ 991/992 verified
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (991/991) - Found 623 weak cells
+  Average retention: 97.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 623/991
+  🎯 Found 623 cells with errors:
+     0x00002000: 55555555 → D5555555 (1 bits)
+     0x00004000: 55555555 → D7555555 (2 bits)
+     0x00006000: 55555555 → 55575555 (1 bits)
+     0x00007000: 55555555 → 555D5555 (1 bits)
+     0x0000A000: 55555555 → 55555575 (1 bits)
+     ... and 618 more
+
+============================================================
+PHASE 1 SUMMARY: Found 3503 total weak cells!
+============================================================
+Unique weak addresses: 843
+
+Top 10 weakest cells:
+   1. 0x00ED8000 - 8 bits (All Ones, 600s)
+   2. 0x00FE0000 - 7 bits (All Ones, 600s)
+   3. 0x00088000 - 7 bits (All Zeros, 600s)
+   4. 0x008F8000 - 6 bits (All Ones, 600s)
+   5. 0x00B28000 - 6 bits (All Ones, 600s)
+   6. 0x00E80000 - 6 bits (All Ones, 600s)
+   7. 0x019E0000 - 6 bits (All Ones, 600s)
+   8. 0x01E00000 - 6 bits (All Ones, 600s)
+   9. 0x000C6000 - 6 bits (All Zeros, 600s)
+  10. 0x000F3000 - 6 bits (All Zeros, 600s)
+
+✓ Phase 1 complete in 102.3 minutes
+
+Analyzing decay characteristics...
+
+================================================================================
+PHASE 2: PARTIAL CHARGE ANALYSIS
+Testing analog behavior with different charge levels
+================================================================================
+
+📊 Testing 100 selected cells
+⚡ Charge levels: ['10% charge', '25% charge', '40% charge', '50% charge', '65% charge', '80% charge', '90% charge', '100% charge']
+⏱️  Test times: [0, 10, 30, 60]s
+
+
+Testing 10% charge (burst=1)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 3m 40s    
+  Average charge level: 0.4%
+  Cells responding: 0/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 6m 2s    
+  Average charge level: 0.3%
+  Cells responding: 0/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 9m 52s    
+  Average charge level: 0.3%
+  Cells responding: 0/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 14m 58s    
+  Average charge level: 0.4%
+  Cells responding: 0/100
+
+Testing 25% charge (burst=2)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 12m 11s    
+  Average charge level: 3.9%
+  Cells responding: 0/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 11m 1s    
+  Average charge level: 3.8%
+  Cells responding: 0/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 11m 17s    
+  Average charge level: 3.9%
+  Cells responding: 0/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 12m 50s    
+  Average charge level: 4.0%
+  Cells responding: 0/100
+
+Testing 40% charge (burst=3)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 11m 14s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 10m 17s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 10m 6s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 10m 41s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+Testing 50% charge (burst=4)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 9m 33s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 8m 46s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 8m 25s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 8m 33s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+Testing 65% charge (burst=5)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 7m 39s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 6m 58s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 6m 33s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 6m 24s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+Testing 80% charge (burst=6)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 5m 39s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 5m 2s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 4m 35s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 4m 16s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+Testing 90% charge (burst=7)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 3m 37s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 3m 3s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 2m 33s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 2m 8s    
+  Average charge level: 100.0%
+  Cells responding: 100/100
+
+Testing 100% charge (burst=8)
+
+  Decay time: 0s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 1m 33s    
+  Average charge level: 31.2%
+  Cells responding: 100/100
+
+  Decay time: 10s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 10s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 1m 1s    
+  Average charge level: 31.2%
+  Cells responding: 100/100
+
+  Decay time: 30s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 30s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100) ETA: 30s    
+  Average charge level: 31.2%
+  Cells responding: 100/100
+
+  Decay time: 60s
+  Cleaning cells... ✓
+  Writing partial charge... ✓
+  Waiting 60s... ✓
+  Reading cells:
+    Reading: [██████████████████████████████████████████████████] 100.0% (100/100)    0s     
+  Average charge level: 31.3%
+  Cells responding: 100/100
+
+✓ Phase 2 complete in 17.1 minutes
+
+Analyzing partial charge characteristics...
+
+================================================================================
+PHASE 3: NEIGHBOR COUPLING ANALYSIS
+Testing inter-cell interference
+================================================================================
+
+📊 Testing 100 cell pairs
+🔗 Testing row, column, and diagonal neighbors
+
+Testing pairs: [██████████████████████████████████████████████████] 100.0% (100/100)    20s        
+
+✓ Phase 3 complete in 34.1 minutes
+
+Analyzing coupling patterns...
+Coupling types:
+  ➕ Positive: 0 pairs
+  ➖ Negative: 3 pairs
+  ═ Neutral: 97 pairs
+
+Max effects:
+  Positive: +0.0%
+  Negative: -3.1%
+
+================================================================================
+NEUROMORPHIC SUITABILITY ANALYSIS
+Mapping cells to neural network components
+================================================================================
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        NEUROMORPHIC COMPONENT MAPPING                        ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Total cells characterized: 992
+Neuromorphic suitable: 992 (100.0%)
+
+Cell Distribution:
+┌─────────────────────────────────────┐
+│  ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉ ◉  │  ◉ = Synapse
+│  ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡ ⚡  │  ⚡ = Neuron
+│  ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣ ▣  │  ▣ = Memory
+│  ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈ ◈  │  ◈ = Weight
+└─────────────────────────────────────┘
+
+🔗 SYNAPSES: 0 cells
+   Analog memory for synaptic weights
+
+⚡ NEURONS: 0 cells
+   Integrate-and-fire spiking units
+
+💾 MEMORY: 992 cells
+   Long-term stable storage
+   Top cells:
+     1. 0x00000000 (score: 0.90)
+     2. 0x00001000 (score: 0.90)
+     3. 0x00002000 (score: 0.90)
+     4. 0x00003000 (score: 0.90)
+     5. 0x00004000 (score: 0.90)
+
+⚖️ WEIGHTS: 0 cells
+   Tunable connection strengths
+
+
+✅ Reports saved to: neuro_char_20250609_091553/
+   • JSON report: neuromorphic_report.json
+   • Cell database: cell_database.pkl
+   • Summary: summary.txt
+
+────────────────────────────────────────────────────────────
+TIMING SUMMARY
+────────────────────────────────────────────────────────────
+Total characterization time: 153.6 minutes
+  phase1: 102.3 minutes (66.6%)
+  phase2: 17.1 minutes (11.1%)
+  phase3: 34.1 minutes (22.2%)
+
+✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ 
+NEUROMORPHIC CHARACTERIZATION COMPLETE!
+Your DRAM is ready for neural computation.
+✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ 
+
+🔌 Serial port closed
+

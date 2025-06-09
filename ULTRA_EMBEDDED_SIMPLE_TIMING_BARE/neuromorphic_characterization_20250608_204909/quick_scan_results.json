@@ -1,0 +1,17 @@
+{
+  "leaky_cells": [],
+  "test_configs": [
+    {
+      "burst": 2,
+      "name": "Sub-threshold"
+    },
+    {
+      "burst": 3,
+      "name": "Threshold"
+    },
+    {
+      "burst": 4,
+      "name": "Above-threshold"
+    }
+  ]
+}

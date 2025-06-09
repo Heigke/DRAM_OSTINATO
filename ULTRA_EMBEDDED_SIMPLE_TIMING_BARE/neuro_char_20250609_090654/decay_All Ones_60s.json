@@ -1,0 +1,1507 @@
+{
+  "pattern": "All Ones",
+  "decay_time": 60,
+  "timestamp": "2025-06-09T09:09:29.753724",
+  "results": [
+    {
+      "address": 0,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 4096,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 8192,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 12288,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 16384,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 20480,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 24576,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 28672,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 32768,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 36864,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 40960,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 45056,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 49152,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 53248,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 57344,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 61440,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 65536,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 69632,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 73728,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 77824,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 81920,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 86016,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 90112,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 94208,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 98304,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 102400,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 106496,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 110592,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 114688,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 118784,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 122880,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 126976,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 131072,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 135168,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 139264,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 143360,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 147456,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 151552,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 155648,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 159744,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 163840,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 167936,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 172032,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 176128,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 180224,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 184320,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 188416,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 192512,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 196608,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 200704,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1048576,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1052672,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1056768,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1060864,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1064960,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1069056,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1073152,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1077248,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1081344,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1085440,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1089536,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1093632,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1097728,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1101824,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1105920,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1110016,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1114112,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1118208,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1122304,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1126400,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1130496,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1134592,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1138688,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1142784,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1146880,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1150976,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1155072,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1159168,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1163264,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1167360,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1171456,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1175552,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1179648,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1183744,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1187840,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1191936,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1196032,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1200128,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1204224,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1208320,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1212416,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1216512,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1220608,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1224704,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1228800,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1232896,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1236992,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1241088,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1245184,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 1249280,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2097152,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2101248,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2105344,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2109440,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2113536,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2117632,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2121728,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2125824,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2129920,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2134016,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2138112,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2142208,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2146304,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2150400,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2154496,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2158592,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2162688,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2166784,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2170880,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2174976,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2179072,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2183168,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2187264,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2191360,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2195456,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2199552,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2203648,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2207744,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2211840,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2215936,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2220032,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2224128,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2228224,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2232320,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2236416,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2240512,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2244608,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2248704,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2252800,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2256896,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2260992,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2265088,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2269184,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2273280,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2277376,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2281472,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2285568,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2289664,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2293760,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    },
+    {
+      "address": 2297856,
+      "pattern": "FFFFFFFF",
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "errors": 0,
+      "retention": 1.0,
+      "flipped_bits": "00000000000000000000000000000000",
+      "flip_positions": []
+    }
+  ]
+}

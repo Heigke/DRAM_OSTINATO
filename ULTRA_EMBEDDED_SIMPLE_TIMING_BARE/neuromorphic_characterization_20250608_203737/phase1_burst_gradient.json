@@ -1,0 +1,230 @@
+{
+  "burst_tests": [
+    {
+      "burst": 1,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 2,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 3,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 4,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 5,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 6,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 7,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    },
+    {
+      "burst": 8,
+      "tests": [
+        {
+          "writes": 5,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 10,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        },
+        {
+          "writes": 20,
+          "read": null,
+          "errors": 32,
+          "charge": 0,
+          "set_bits": 0
+        }
+      ],
+      "best_charge": 0,
+      "works": false
+    }
+  ],
+  "threshold": 8,
+  "accumulation": []
+}

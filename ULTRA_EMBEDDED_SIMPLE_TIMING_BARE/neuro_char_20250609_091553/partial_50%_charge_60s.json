@@ -1,0 +1,1007 @@
+{
+  "charge_level": "50% charge",
+  "decay_time": 60,
+  "timestamp": "2025-06-09T11:06:45.197089",
+  "results": [
+    {
+      "address": 0,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 4096,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 8192,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 12288,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 16384,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 20480,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 24576,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 28672,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 32768,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 36864,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 40960,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 45056,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 49152,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 53248,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 57344,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 61440,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 65536,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 69632,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 73728,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 77824,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 81920,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 86016,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 90112,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 94208,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 98304,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 102400,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 106496,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 110592,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 114688,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 118784,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 122880,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 126976,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 131072,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 135168,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 139264,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 143360,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 147456,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 151552,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 155648,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 159744,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 163840,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 167936,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 172032,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 176128,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 180224,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 184320,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 188416,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 192512,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 196608,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 200704,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 204800,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 208896,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 212992,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 217088,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 221184,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 225280,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 229376,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 233472,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 237568,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 241664,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 245760,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 249856,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 253952,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 258048,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 262144,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 266240,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 270336,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 274432,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 278528,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 282624,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 286720,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 290816,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 294912,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 299008,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 303104,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 307200,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 311296,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 315392,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 319488,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 323584,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 327680,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 331776,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 335872,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 339968,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 344064,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 348160,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 352256,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 356352,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 360448,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 364544,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 368640,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 372736,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 376832,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 380928,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 385024,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 389120,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 393216,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 397312,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 401408,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    },
+    {
+      "address": 405504,
+      "charge_config": "50% charge",
+      "burst_len": 4,
+      "decay_time": 60,
+      "read_data": "FFFFFFFF",
+      "set_bits": 32,
+      "charge_level": 1.0,
+      "expected_level": 0.5
+    }
+  ]
+}
