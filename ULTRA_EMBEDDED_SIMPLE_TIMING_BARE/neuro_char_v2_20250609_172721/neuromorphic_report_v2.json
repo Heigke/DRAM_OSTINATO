@@ -1,0 +1,364 @@
+{
+  "session_id": "20250609_172721",
+  "timestamp": "2025-06-10T03:33:48.375072",
+  "total_cells": 992,
+  "test_duration": 36387.06254029274,
+  "neuromorphic_mapping": {
+    "analog_synapses": [],
+    "binary_synapses": [
+      {
+        "address": "0x00069000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0007B000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0007E000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00088000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0008A000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0008D000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00091000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00093000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00095000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x000A3000",
+        "score": 0.8,
+        "key_characteristics": {
+          "decay_class": "medium",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      }
+    ],
+    "stochastic_synapses": [],
+    "lif_neurons": [
+      {
+        "address": "0x00050000",
+        "score": 0.6235743390877824,
+        "key_characteristics": {
+          "decay_class": "fast",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      }
+    ],
+    "threshold_neurons": [
+      {
+        "address": "0x00001000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 2,
+          "analog_quality": 1.4000757551944236
+        }
+      },
+      {
+        "address": "0x00002000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.4428192662098374
+        }
+      },
+      {
+        "address": "0x00003000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2871845054952367
+        }
+      },
+      {
+        "address": "0x00004000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2804254548260388
+        }
+      },
+      {
+        "address": "0x00005000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2956575495822618
+        }
+      },
+      {
+        "address": "0x00006000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2804254548260388
+        }
+      },
+      {
+        "address": "0x00007000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2871845054952367
+        }
+      },
+      {
+        "address": "0x00008000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.294273192468473
+        }
+      },
+      {
+        "address": "0x00009000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2956575495822618
+        }
+      },
+      {
+        "address": "0x0000A000",
+        "score": 0.9284375,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05,
+          "analog_levels": 4,
+          "analog_quality": 2.2804254548260388
+        }
+      }
+    ],
+    "bistable_neurons": [],
+    "weight_storage": [],
+    "short_term_memory": [],
+    "long_term_memory": [
+      {
+        "address": "0x00066000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00067000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00068000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0006A000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0006B000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0006C000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0006D000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0006E000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x0006F000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      },
+      {
+        "address": "0x00070000",
+        "score": 0.9,
+        "key_characteristics": {
+          "decay_class": "slow",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      }
+    ],
+    "leak_generators": [],
+    "coupling_nodes": [
+      {
+        "address": "0x00000000",
+        "score": 0.5,
+        "key_characteristics": {
+          "decay_class": "unknown",
+          "leak_in_rate": 5.857740585774059e-05
+        }
+      }
+    ],
+    "noise_sources": []
+  },
+  "component_statistics": {
+    "analog_synapses": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "binary_synapses": {
+      "count": 166,
+      "percentage": 16.733870967741936
+    },
+    "stochastic_synapses": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "lif_neurons": {
+      "count": 1,
+      "percentage": 0.10080645161290322
+    },
+    "threshold_neurons": {
+      "count": 100,
+      "percentage": 10.080645161290322
+    },
+    "bistable_neurons": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "weight_storage": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "short_term_memory": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "long_term_memory": {
+      "count": 724,
+      "percentage": 72.98387096774194
+    },
+    "leak_generators": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "coupling_nodes": {
+      "count": 1,
+      "percentage": 0.10080645161290322
+    },
+    "noise_sources": {
+      "count": 0,
+      "percentage": 0.0
+    },
+    "unsuitable": {
+      "count": 0,
+      "percentage": 0.0
+    }
+  },
+  "architecture_feasibility": {},
+  "cell_characteristics_summary": {},
+  "phase_timings": {
+    "phase1": 17204.778807640076,
+    "phase2": 11248.983550310135,
+    "phase3": 306.41441082954407,
+    "phase4": 1564.8485424518585,
+    "phase5": 6052.380285978317
+  }
+}

@@ -1,0 +1,1209 @@
+NEUROMORPHIC DRAM CHARACTERIZATION SUMMARY v2.0
+================================================================================
+
+Session: 20250609_172721
+Date: 2025-06-10 03:33:48
+Total cells tested: 992
+Test duration: 10.1 hours
+
+KEY DISCOVERIES:
+----------------------------------------
+• Threshold Behavior: Found in 100 cells
+  - Sharp transition at burst length 3
+  - Jump from ~25% to ~99% charge
+
+• Burst Length 8 Anomaly:
+  - Expected 100% charge, observed ~31%
+  - Suggests internal timing constraints
+
+
+COMPONENT DISTRIBUTION:
+----------------------------------------
+binary_synapses          :   166 cells ( 16.7%)
+lif_neurons              :     1 cells (  0.1%)
+threshold_neurons        :   100 cells ( 10.1%)
+long_term_memory         :   724 cells ( 73.0%)
+coupling_nodes           :     1 cells (  0.1%)
+
+eigke@Heigke:~/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE_TIMING_BARE$ python NEURODRAM_SWEEP9.py 
+🔌 Connecting to DDR3 controller on /dev/ttyUSB1...
+✓ Connected @ 115200 baud
+
+🔧 Initializing DDR3 Controller...
+✓ DDR3 Controller Ready!
+✓ Using default DDR3 timing configuration
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║  ██████╗ ██████╗  █████╗ ███╗   ███╗   ███╗   ██╗███████╗██╗   ██╗██████╗   ║
+║  ██╔══██╗██╔══██╗██╔══██╗████╗ ████║   ████╗  ██║██╔════╝██║   ██║██╔══██╗  ║
+║  ██║  ██║██████╔╝███████║██╔████╔██║   ██╔██╗ ██║█████╗  ██║   ██║██████╔╝  ║
+║  ██║  ██║██╔══██╗██╔══██║██║╚██╔╝██║   ██║██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗  ║
+║  ██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║   ██║ ╚████║███████╗╚██████╔╝██║  ██║  ║
+║  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝   ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝  ║
+║                                                                                ║
+║         Neuromorphic DRAM Cell Characterization Suite v2.0 ENHANCED            ║
+║              "Mapping the Analog Landscape of Digital Memory"                  ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+
+================================================================================
+PHASE 1: COMPREHENSIVE DECAY ANALYSIS
+Testing decay behavior with extended patterns and bit-level tracking
+================================================================================
+
+Selecting test addresses:
+  Region 'Low Memory': 256 addresses
+  Region 'Bank Boundaries': 480 addresses
+  Region 'High Memory': 256 addresses
+
+📊 Testing 992 addresses
+⏱️  Decay times: [0, 10, 30, 60, 120, 300, 600, 1200] seconds
+🎯 Patterns: ['All Ones', 'All Zeros', 'Checkerboard', 'Inverse Check', 'Walking Ones', 'Walking Zeros']
+
+
+Testing pattern: All Ones (FFFFFFFF)
+
+  Test 1/48 - Decay time: 0s
+  Writing to all cells... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 2/48 - Decay time: 10s
+  Writing to all cells... ✓
+  Waiting 10s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 3/48 - Decay time: 30s
+  Writing to all cells... ✓
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 4 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 4/991
+
+  Test 4/48 - Decay time: 60s
+  Writing to all cells... ✓
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 10 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 10/991
+
+  Test 5/48 - Decay time: 120s
+  Writing to all cells... ✓
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 56 weak cells
+  Average retention: 99.8%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 56/991
+
+  Test 6/48 - Decay time: 300s
+  Writing to all cells... ✓
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 231 weak cells
+  Average retention: 98.8%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 231/991
+
+  Test 7/48 - Decay time: 600s
+  Writing to all cells... ✓
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 339 weak cells
+  Average retention: 97.4%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 339/991
+
+  Test 8/48 - Decay time: 1200s
+  Writing to all cells... ✓
+  Waiting 1200s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s 600s 630s 660s 690s 720s 750s 780s 810s 840s 870s 900s 930s 960s 990s 1020s 1050s 1080s 1110s 1140s 1170s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 376 weak cells
+  Average retention: 95.2%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 376/991
+
+Testing pattern: All Zeros (00000000)
+
+  Test 9/48 - Decay time: 0s
+  Writing to all cells... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 0 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 0/991
+
+  Test 10/48 - Decay time: 10s
+  Writing to all cells... ✓
+  Waiting 10s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 3 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 3/991
+
+  Test 11/48 - Decay time: 30s
+  Writing to all cells... ✓
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 10 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 10/991
+
+  Test 12/48 - Decay time: 60s
+  Writing to all cells... ✓
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 28 weak cells
+  Average retention: 99.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 28/991
+
+  Test 13/48 - Decay time: 120s
+  Writing to all cells... ✓
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 109 weak cells
+  Average retention: 99.6%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 109/991
+
+  Test 14/48 - Decay time: 300s
+  Writing to all cells... ✓
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 359 weak cells
+  Average retention: 98.2%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 359/991
+
+  Test 15/48 - Decay time: 600s
+  Writing to all cells... ✓
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 524 weak cells
+  Average retention: 96.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 524/991
+
+  Test 16/48 - Decay time: 1200s
+  Writing to all cells... ✓
+  Waiting 1200s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s 600s 630s 660s 690s 720s 750s 780s 810s 840s 870s 900s 930s 960s 990s 1020s 1050s 1080s 1110s 1140s 1170s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 592 weak cells
+  Average retention: 92.8%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 592/991
+
+Testing pattern: Checkerboard (AAAAAAAA)
+
+  Test 17/48 - Decay time: 0s
+  Writing to all cells... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 18/48 - Decay time: 10s
+  Writing to all cells... ✓
+  Waiting 10s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 3 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 3/991
+
+  Test 19/48 - Decay time: 30s
+  Writing to all cells... ✓
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 8 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 8/991
+
+  Test 20/48 - Decay time: 60s
+  Writing to all cells... ✓
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 19 weak cells
+  Average retention: 99.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 19/991
+
+  Test 21/48 - Decay time: 120s
+  Writing to all cells... ✓
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 88 weak cells
+  Average retention: 99.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 88/991
+
+  Test 22/48 - Decay time: 300s
+  Writing to all cells... ✓
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 360 weak cells
+  Average retention: 98.5%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 360/991
+
+  Test 23/48 - Decay time: 600s
+  Writing to all cells... ✓
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 675 weak cells
+  Average retention: 96.4%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 675/991
+
+  Test 24/48 - Decay time: 1200s
+  Writing to all cells... ✓
+  Waiting 1200s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s 600s 630s 660s 690s 720s 750s 780s 810s 840s 870s 900s 930s 960s 990s 1020s 1050s 1080s 1110s 1140s 1170s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 858 weak cells
+  Average retention: 94.1%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 858/991
+
+Testing pattern: Inverse Check (55555555)
+
+  Test 25/48 - Decay time: 0s
+  Writing to all cells... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 1 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 1/991
+
+  Test 26/48 - Decay time: 10s
+  Writing to all cells... ✓
+  Waiting 10s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 27/48 - Decay time: 30s
+  Writing to all cells... ✓
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 6 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 6/991
+
+  Test 28/48 - Decay time: 60s
+  Writing to all cells... ✓
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 19 weak cells
+  Average retention: 99.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 19/991
+
+  Test 29/48 - Decay time: 120s
+  Writing to all cells... ✓
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 89 weak cells
+  Average retention: 99.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 89/991
+
+  Test 30/48 - Decay time: 300s
+  Writing to all cells... ✓
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 375 weak cells
+  Average retention: 98.5%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 375/991
+
+  Test 31/48 - Decay time: 600s
+  Writing to all cells... ✓
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 659 weak cells
+  Average retention: 96.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 659/991
+
+  Test 32/48 - Decay time: 1200s
+  Writing to all cells... ✓
+  Waiting 1200s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s 600s 630s 660s 690s 720s 750s 780s 810s 840s 870s 900s 930s 960s 990s 1020s 1050s 1080s 1110s 1140s 1170s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 850 weak cells
+  Average retention: 94.1%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 850/991
+
+Testing pattern: Walking Ones (11111111)
+
+  Test 33/48 - Decay time: 0s
+  Writing to all cells... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 0 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 0/991
+
+  Test 34/48 - Decay time: 10s
+  Writing to all cells... ✓
+  Waiting 10s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 35/48 - Decay time: 30s
+  Writing to all cells... ✓
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 8 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 8/991
+
+  Test 36/48 - Decay time: 60s
+  Writing to all cells... ✓
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 24 weak cells
+  Average retention: 99.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 24/991
+
+  Test 37/48 - Decay time: 120s
+  Writing to all cells... ✓
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 92 weak cells
+  Average retention: 99.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 92/991
+
+  Test 38/48 - Decay time: 300s
+  Writing to all cells... ✓
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 355 weak cells
+  Average retention: 98.5%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 355/991
+
+  Test 39/48 - Decay time: 600s
+  Writing to all cells... ✓
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 613 weak cells
+  Average retention: 96.5%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 613/991
+
+  Test 40/48 - Decay time: 1200s
+  Writing to all cells... ✓
+  Waiting 1200s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s 600s 630s 660s 690s 720s 750s 780s 810s 840s 870s 900s 930s 960s 990s 1020s 1050s 1080s 1110s 1140s 1170s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 794 weak cells
+  Average retention: 93.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 794/991
+
+Testing pattern: Walking Zeros (EEEEEEEE)
+
+  Test 41/48 - Decay time: 0s
+  Writing to all cells... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 42/48 - Decay time: 10s
+  Writing to all cells... ✓
+  Waiting 10s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 2 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 2/991
+
+  Test 43/48 - Decay time: 30s
+  Writing to all cells... ✓
+  Waiting 30s for decay... ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 6 weak cells
+  Average retention: 100.0%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 6/991
+
+  Test 44/48 - Decay time: 60s
+  Writing to all cells... ✓
+  Waiting 60s for decay... 30s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 16 weak cells
+  Average retention: 99.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 16/991
+
+  Test 45/48 - Decay time: 120s
+  Writing to all cells... ✓
+  Waiting 120s for decay... 30s 60s 90s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 80 weak cells
+  Average retention: 99.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 80/991
+
+  Test 46/48 - Decay time: 300s
+  Writing to all cells... ✓
+  Waiting 300s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 316 weak cells
+  Average retention: 98.7%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 316/991
+
+  Test 47/48 - Decay time: 600s
+  Writing to all cells... ✓
+  Waiting 600s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 560 weak cells
+  Average retention: 96.9%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 560/991
+
+  Test 48/48 - Decay time: 1200s
+  Writing to all cells... ✓
+  Waiting 1200s for decay... 30s 60s 90s 120s 150s 180s 210s 240s 270s 300s 330s 360s 390s 420s 450s 480s 510s 540s 570s 600s 630s 660s 690s 720s 750s 780s 810s 840s 870s 900s 930s 960s 990s 1020s 1050s 1080s 1110s 1140s 1170s ✓
+  Reading and analyzing cells...
+    Progress: 100.0% (992/992) - Found 746 weak cells
+  Average retention: 94.5%
+  Cells <50% retention: 0/991
+  Cells with bit errors: 746/991
+
+Analyzing bit-level patterns...
+
+Pattern FFFFFFFF:
+  Most unstable bit positions:
+    Bit 10: 110 flips
+    Bit 21: 107 flips
+    Bit 2: 107 flips
+    Bit 18: 105 flips
+    Bit 23: 103 flips
+
+Pattern 00000000:
+  Most unstable bit positions:
+    Bit 16: 172 flips
+    Bit 17: 164 flips
+    Bit 23: 158 flips
+    Bit 15: 155 flips
+    Bit 5: 147 flips
+
+Pattern AAAAAAAA:
+  Most unstable bit positions:
+    Bit 16: 171 flips
+    Bit 2: 151 flips
+    Bit 22: 150 flips
+    Bit 28: 142 flips
+    Bit 4: 140 flips
+
+Pattern 55555555:
+  Most unstable bit positions:
+    Bit 17: 163 flips
+    Bit 15: 151 flips
+    Bit 23: 150 flips
+    Bit 5: 148 flips
+    Bit 19: 140 flips
+
+Pattern 11111111:
+  Most unstable bit positions:
+    Bit 17: 162 flips
+    Bit 23: 151 flips
+    Bit 15: 150 flips
+    Bit 2: 144 flips
+    Bit 22: 142 flips
+
+Pattern EEEEEEEE:
+  Most unstable bit positions:
+    Bit 16: 169 flips
+    Bit 28: 140 flips
+    Bit 4: 137 flips
+    Bit 20: 133 flips
+    Bit 24: 128 flips
+
+✓ Phase 1 complete in 286.7 minutes
+
+Analyzing decay characteristics with curve fitting...
+
+================================================================================
+PHASE 2: LEAK-IN PHENOMENON INVESTIGATION
+Exploring charge accumulation at sub-threshold burst lengths
+================================================================================
+
+📊 Testing 150 selected cells
+⚡ Testing burst lengths: 1, 2, 8 (anomalous)
+⏱️  Observation times: [0, 5, 10, 20, 30, 60, 120, 300, 600, 1200]s
+
+
+Testing Sub-threshold 1 (burst=1)
+
+  Initial condition: Clean start
+    Preparing cells... ✓
+    Writing with burst=1... ✓
+    Monitoring charge evolution:
+      t=   0s:   0.0% average charge
+      t=   5s:   0.0% average charge
+      t=  10s:   0.0% average charge
+      t=  20s:   0.0% average charge
+      t=  30s:   0.0% average charge
+      t=  60s:   0.0% average charge
+      t= 120s:   0.0% average charge
+      t= 300s:   1.1% average charge
+      t= 600s:   2.6% average charge
+      t=1200s:   7.0% average charge
+      Leak-in rate: 0.006% per second
+
+  Initial condition: Pre-charged
+    Preparing cells... ✓
+    Writing with burst=1... ✓
+    Monitoring charge evolution:
+      t=   0s:   0.0% average charge
+      t=   5s:   0.0% average charge
+      t=  10s:   0.0% average charge
+      t=  20s:   0.0% average charge
+      t=  30s:   0.0% average charge
+      t=  60s:   0.0% average charge
+      t= 120s:   0.0% average charge
+      t= 300s:   1.2% average charge
+      t= 600s:   2.7% average charge
+      t=1200s:   6.1% average charge
+      Leak-in rate: 0.005% per second
+
+  Initial condition: Mixed state
+    Preparing cells... ✓
+    Writing with burst=1... ✓
+    Monitoring charge evolution:
+      t=   0s:   0.1% average charge
+      t=   5s:   0.0% average charge
+      t=  10s:   0.0% average charge
+      t=  20s:   0.0% average charge
+      t=  30s:   0.0% average charge
+      t=  60s:   0.0% average charge
+      t= 120s:   0.1% average charge
+      t= 300s:   0.8% average charge
+      t= 600s:   2.4% average charge
+      t=1200s:   6.1% average charge
+      Leak-in rate: 0.005% per second
+
+Testing Sub-threshold 2 (burst=2)
+
+  Initial condition: Clean start
+    Preparing cells... ✓
+    Writing with burst=2... ✓
+    Monitoring charge evolution:
+      t=   0s:   6.2% average charge
+      t=   5s:   6.2% average charge
+      t=  10s:   6.2% average charge
+      t=  20s:   6.2% average charge
+      t=  30s:   6.2% average charge
+      t=  60s:   6.2% average charge
+      t= 120s:   6.3% average charge
+      t= 300s:   7.1% average charge
+      t= 600s:   8.6% average charge
+      t=1200s:  12.3% average charge
+      Leak-in rate: 0.005% per second
+
+  Initial condition: Pre-charged
+    Preparing cells... ✓
+    Writing with burst=2... ✓
+    Monitoring charge evolution:
+      t=   0s:   3.1% average charge
+      t=   5s:   3.1% average charge
+      t=  10s:   3.1% average charge
+      t=  20s:   3.1% average charge
+      t=  30s:   3.1% average charge
+      t=  60s:   3.1% average charge
+      t= 120s:   3.2% average charge
+      t= 300s:   4.1% average charge
+      t= 600s:   5.5% average charge
+      t=1200s:   9.3% average charge
+      Leak-in rate: 0.005% per second
+
+  Initial condition: Mixed state
+    Preparing cells... ✓
+    Writing with burst=2... ✓
+    Monitoring charge evolution:
+      t=   0s:   3.1% average charge
+      t=   5s:   3.1% average charge
+      t=  10s:   3.1% average charge
+      t=  20s:   3.1% average charge
+      t=  30s:   3.1% average charge
+      t=  60s:   3.1% average charge
+      t= 120s:   3.2% average charge
+      t= 300s:   4.1% average charge
+      t= 600s:   5.5% average charge
+      t=1200s:   9.3% average charge
+      Leak-in rate: 0.005% per second
+
+Testing Full burst (anomaly) (burst=8)
+
+  Initial condition: Clean start
+    Preparing cells... ✓
+    Writing with burst=8... ✓
+    Monitoring charge evolution:
+      t=   0s:  31.3% average charge
+      t=   5s:  31.3% average charge
+      t=  10s:  31.3% average charge
+      t=  20s:  31.3% average charge
+      t=  30s:  31.3% average charge
+      t=  60s:  31.3% average charge
+      t= 120s:  31.4% average charge
+      t= 300s:  31.9% average charge
+      t= 600s:  33.0% average charge
+      t=1200s:  35.5% average charge
+      Leak-in rate: 0.004% per second
+
+  Initial condition: Pre-charged
+    Preparing cells... ✓
+    Writing with burst=8... ✓
+    Monitoring charge evolution:
+      t=   0s:  31.2% average charge
+      t=   5s:  31.2% average charge
+      t=  10s:  31.2% average charge
+      t=  20s:  31.2% average charge
+      t=  30s:  31.2% average charge
+      t=  60s:  31.2% average charge
+      t= 120s:  31.3% average charge
+      t= 300s:  31.8% average charge
+      t= 600s:  32.9% average charge
+      t=1200s:  35.4% average charge
+      Leak-in rate: 0.003% per second
+
+  Initial condition: Mixed state
+    Preparing cells... ✓
+    Writing with burst=8... ✓
+    Monitoring charge evolution:
+      t=   0s:  31.1% average charge
+      t=   5s:  31.2% average charge
+      t=  10s:  31.2% average charge
+      t=  20s:  31.2% average charge
+      t=  30s:  31.2% average charge
+      t=  60s:  31.2% average charge
+      t= 120s:  31.3% average charge
+      t= 300s:  31.8% average charge
+      t= 600s:  32.9% average charge
+      t=1200s:  35.5% average charge
+      Leak-in rate: 0.004% per second
+
+✓ Phase 2 complete in 187.5 minutes
+
+Analyzing leak-in patterns...
+
+Burst length 1:
+  Clean start:
+    Initial: 0.0%, Final: 7.0%
+    Change: 7.0%
+  Pre-charged:
+    Initial: 0.0%, Final: 6.1%
+    Change: 6.1%
+  Mixed state:
+    Initial: 0.1%, Final: 6.1%
+    Change: 6.1%
+
+Burst length 2:
+  Clean start:
+    Initial: 6.2%, Final: 12.3%
+    Change: 6.1%
+  Pre-charged:
+    Initial: 3.1%, Final: 9.3%
+    Change: 6.2%
+  Mixed state:
+    Initial: 3.1%, Final: 9.3%
+    Change: 6.2%
+
+Burst length 8:
+  Clean start:
+    Initial: 31.3%, Final: 35.5%
+    Change: 4.2%
+  Pre-charged:
+    Initial: 31.2%, Final: 35.4%
+    Change: 4.2%
+  Mixed state:
+    Initial: 31.1%, Final: 35.5%
+    Change: 4.4%
+
+================================================================================
+PHASE 3: THRESHOLD BEHAVIOR CHARACTERIZATION
+Investigating the critical threshold at burst length 3
+================================================================================
+
+📊 Testing 100 cells
+🎯 Fine-grained burst length sweep around threshold
+
+Testing burst length sensitivity...
+
+  Burst length 1:
+    Standard test (20 iterations)... ✓
+      Average: 0.1% (±0.7%)
+      Expected: 10.0%
+
+  Burst length 2:
+    Standard test (20 iterations)... ✓
+      Average: 6.2% (±0.0%)
+      Expected: 25.0%
+    Testing iteration sensitivity:
+        5 iterations: 3.3%
+       10 iterations: 4.7%
+       15 iterations: 3.1%
+       20 iterations: 6.2%
+       30 iterations: 4.7%
+       50 iterations: 4.7%
+
+  Burst length 3:
+    Standard test (20 iterations)... ✓
+      Average: 99.1% (±9.0%)
+      Expected: 99.0%
+    Testing iteration sensitivity:
+        5 iterations: 95.0%
+       10 iterations: 100.0%
+       15 iterations: 100.0%
+       20 iterations: 100.0%
+       30 iterations: 100.0%
+       50 iterations: 100.0%
+
+  Burst length 4:
+    Standard test (20 iterations)... ✓
+      Average: 6.2% (±0.0%)
+      Expected: 99.0%
+
+  Burst length 5:
+    Standard test (20 iterations)... ✓
+      Average: 6.3% (±0.3%)
+      Expected: 99.0%
+
+  Burst length 6:
+    Standard test (20 iterations)... ✓
+      Average: 6.3% (±0.3%)
+      Expected: 99.0%
+
+  Burst length 7:
+    Standard test (20 iterations)... ✓
+      Average: 6.3% (±0.6%)
+      Expected: 99.0%
+
+  Burst length 8:
+    Standard test (20 iterations)... ✓
+      Average: 31.0% (±2.5%)
+      Expected: 31.0%
+    Testing iteration sensitivity:
+        5 iterations: 30.0%
+       10 iterations: 31.2%
+       15 iterations: 31.6%
+       20 iterations: 31.2%
+       30 iterations: 31.2%
+       50 iterations: 31.2%
+
+Testing timing parameter effects on threshold...
+
+  Timing: Default (tWR=0, tRAS=0)
+    Burst 2: 6.2%
+    Burst 3: 100.0%
+    Burst 8: 31.2%
+
+  Timing: Relaxed (tWR=5, tRAS=5)
+    Burst 2: 6.2%
+    Burst 3: 100.0%
+    Burst 8: 31.2%
+
+  Timing: Very relaxed (tWR=15, tRAS=15)
+    Burst 2: 6.2%
+    Burst 3: 100.0%
+    Burst 8: 31.2%
+
+✓ Phase 3 complete in 5.1 minutes
+
+================================================================================
+PHASE 4: ENHANCED NEIGHBOR COUPLING ANALYSIS
+Testing complex inter-cell interference patterns
+================================================================================
+
+📊 Testing 30 cell groups
+🔗 Testing patterns: isolated, row, column, block, checkerboard
+
+
+Testing Isolated cell...
+    Tested 10/30 groups
+    Tested 20/30 groups
+    Tested 30/30 groups
+
+Testing Row coupling...
+    Tested 10/30 groups
+    Tested 20/30 groups
+    Tested 30/30 groups
+  Average coupling: 49.2%
+  Maximum coupling: 100.0%
+
+Testing Column coupling...
+    Tested 10/30 groups
+    Tested 20/30 groups
+    Tested 30/30 groups
+  Average coupling: 18.8%
+  Maximum coupling: 31.2%
+
+Testing Block pattern...
+    Tested 10/30 groups
+    Tested 20/30 groups
+    Tested 30/30 groups
+  Average coupling: 100.0%
+  Maximum coupling: 100.0%
+
+Testing Checkerboard...
+    Tested 10/30 groups
+    Tested 20/30 groups
+    Tested 30/30 groups
+  Average coupling: 15.6%
+  Maximum coupling: 31.2%
+
+Testing distance-dependent coupling...
+
+✓ Phase 4 complete in 26.1 minutes
+
+Analyzing coupling patterns...
+
+Row coupling:
+  Average coupling: 49.15%
+  Maximum coupling: 100.00%
+
+Column coupling:
+  Average coupling: 18.75%
+  Maximum coupling: 31.25%
+
+Block pattern:
+  Average coupling: 100.00%
+  Maximum coupling: 100.00%
+
+Checkerboard:
+  Average coupling: 15.62%
+  Maximum coupling: 31.25%
+
+Distance-dependent coupling:
+     4 bytes: 6.25% avg, 50.0% detection
+     8 bytes: 37.50% avg, 75.0% detection
+    16 bytes: 6.25% avg, 100.0% detection
+    32 bytes: 6.25% avg, 100.0% detection
+    64 bytes: 6.25% avg, 100.0% detection
+   128 bytes: 29.53% avg, 100.0% detection
+   256 bytes: 30.35% avg, 100.0% detection
+   512 bytes: 30.73% avg, 97.5% detection
+  1024 bytes: 18.29% avg, 92.5% detection
+  2048 bytes: 24.24% avg, 87.5% detection
+  4096 bytes: 25.36% avg, 87.5% detection
+
+================================================================================
+PHASE 5: COMPREHENSIVE PARTIAL CHARGE ANALYSIS
+Fine-grained analog behavior characterization
+================================================================================
+
+📊 Testing 100 cells
+⚡ Extended charge levels with fine granularity
+
+
+Testing Burst 1, 5 iter...
+  t=  0s:   0.4% (± 1.1%)
+  t= 10s:   0.4% (± 1.2%)
+  t= 30s:   0.4% (± 1.2%)
+  t= 60s:   0.4% (± 1.1%)
+  t=120s:   0.8% (± 1.5%)
+  Overall progress: 5.6%
+
+Testing Burst 1, 10 iter...
+  t=  0s:   0.1% (± 0.6%)
+  t= 10s:   0.1% (± 0.7%)
+  t= 30s:   0.1% (± 0.6%)
+  t= 60s:   0.1% (± 0.8%)
+  t=120s:   0.3% (± 1.1%)
+  Overall progress: 11.1%
+
+Testing Burst 1, 15 iter...
+  t=  0s:   0.5% (± 1.3%)
+  t= 10s:   0.4% (± 1.1%)
+  t= 30s:   0.5% (± 1.2%)
+  t= 60s:   0.6% (± 1.3%)
+  t=120s:   0.7% (± 1.4%)
+  Overall progress: 16.7%
+
+Testing Burst 1, 20 iter...
+  t=  0s:   0.1% (± 0.6%)
+  t= 10s:   0.1% (± 0.6%)
+  t= 30s:   0.2% (± 0.8%)
+  t= 60s:   0.1% (± 0.7%)
+  t=120s:   0.3% (± 1.0%)
+  Overall progress: 22.2%
+
+Testing Burst 1, 30 iter...
+  t=  0s:   0.1% (± 0.7%)
+  t= 10s:   0.1% (± 0.7%)
+  t= 30s:   0.1% (± 0.7%)
+  t= 60s:   0.1% (± 0.8%)
+  t=120s:   0.3% (± 1.0%)
+  Overall progress: 27.8%
+
+Testing Burst 1, 50 iter...
+  t=  0s:   0.1% (± 0.7%)
+  t= 10s:   0.2% (± 0.8%)
+  t= 30s:   0.2% (± 0.9%)
+  t= 60s:   0.3% (± 1.0%)
+  t=120s:   0.4% (± 1.1%)
+  Overall progress: 33.3%
+
+Testing Burst 2, 5 iter...
+  t=  0s:   3.9% (± 1.4%)
+  t= 10s:   3.9% (± 1.4%)
+  t= 30s:   3.9% (± 1.4%)
+  t= 60s:   4.0% (± 1.4%)
+  t=120s:   4.1% (± 1.7%)
+  Overall progress: 38.9%
+
+Testing Burst 2, 10 iter...
+  t=  0s:   4.7% (± 1.6%)
+  t= 10s:   4.7% (± 1.6%)
+  t= 30s:   4.7% (± 1.6%)
+  t= 60s:   4.8% (± 1.6%)
+  t=120s:   4.9% (± 1.9%)
+  Overall progress: 44.4%
+
+Testing Burst 2, 15 iter...
+  t=  0s:   3.9% (± 1.4%)
+  t= 10s:   3.9% (± 1.4%)
+  t= 30s:   3.9% (± 1.4%)
+  t= 60s:   4.0% (± 1.4%)
+  t=120s:   4.1% (± 1.7%)
+  Overall progress: 50.0%
+
+Testing Burst 2, 20 iter...
+  t=  0s:   6.2% (± 0.0%)
+  t= 10s:   6.2% (± 0.0%)
+  t= 30s:   6.2% (± 0.0%)
+  t= 60s:   6.3% (± 0.4%)
+  t=120s:   6.5% (± 0.8%)
+  Overall progress: 55.6%
+
+Testing Burst 2, 30 iter...
+  t=  0s:   4.7% (± 1.6%)
+  t= 10s:   4.7% (± 1.6%)
+  t= 30s:   4.7% (± 1.6%)
+  t= 60s:   4.8% (± 1.6%)
+  t=120s:   4.9% (± 1.9%)
+  Overall progress: 61.1%
+
+Testing Burst 2, 50 iter...
+  t=  0s:   4.7% (± 1.6%)
+  t= 10s:   4.7% (± 1.6%)
+  t= 30s:   4.7% (± 1.6%)
+  t= 60s:   4.8% (± 1.7%)
+  t=120s:   4.9% (± 1.9%)
+  Overall progress: 66.7%
+
+Testing Burst 3, standard...
+  t=  0s:  99.1% (± 9.0%)
+  t= 10s:  99.1% (± 9.0%)
+  t= 30s:  99.1% (± 9.0%)
+  t= 60s:  99.1% (± 9.0%)
+  t=120s:  99.1% (± 9.0%)
+  Overall progress: 72.2%
+
+Testing Burst 4, standard...
+  t=  0s:   6.2% (± 0.0%)
+  t= 10s:   6.2% (± 0.0%)
+  t= 30s:   6.2% (± 0.0%)
+  t= 60s:   6.3% (± 0.3%)
+  t=120s:   6.5% (± 0.8%)
+  Overall progress: 77.8%
+
+Testing Burst 5, standard...
+  t=  0s:   6.3% (± 0.3%)
+  t= 10s:   6.3% (± 0.3%)
+  t= 30s:   6.3% (± 0.3%)
+  t= 60s:   6.3% (± 0.4%)
+  t=120s:   6.5% (± 0.9%)
+  Overall progress: 83.3%
+
+Testing Burst 6, standard...
+  t=  0s:   6.3% (± 0.3%)
+  t= 10s:   6.3% (± 0.3%)
+  t= 30s:   6.3% (± 0.3%)
+  t= 60s:   6.3% (± 0.4%)
+  t=120s:   6.5% (± 0.9%)
+  Overall progress: 88.9%
+
+Testing Burst 7, standard...
+  t=  0s:   6.3% (± 0.6%)
+  t= 10s:   6.3% (± 0.6%)
+  t= 30s:   6.3% (± 0.6%)
+  t= 60s:   6.3% (± 0.7%)
+  t=120s:   6.6% (± 1.0%)
+  Overall progress: 94.4%
+
+Testing Burst 8, standard...
+  t=  0s:  31.0% (± 2.5%)
+  t= 10s:  31.0% (± 2.5%)
+  t= 30s:  31.0% (± 2.5%)
+  t= 60s:  31.0% (± 2.5%)
+  t=120s:  31.2% (± 2.6%)
+  Overall progress: 100.0%
+
+Analyzing analog resolution...
+Found 99 cells with good analog properties:
+  1. 0x00002000: 4 levels, linearity=0.61
+  2. 0x00005000: 4 levels, linearity=0.57
+  3. 0x00009000: 4 levels, linearity=0.57
+  4. 0x0000D000: 4 levels, linearity=0.57
+  5. 0x00015000: 4 levels, linearity=0.57
+  6. 0x00019000: 4 levels, linearity=0.57
+  7. 0x0001D000: 4 levels, linearity=0.57
+  8. 0x00021000: 4 levels, linearity=0.57
+  9. 0x00025000: 4 levels, linearity=0.57
+  10. 0x00029000: 4 levels, linearity=0.57
+
+✓ Phase 5 complete in 100.9 minutes
+
+================================================================================
+NEUROMORPHIC SUITABILITY ANALYSIS v2.0
+Advanced mapping to neural network components
+================================================================================
+
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                     NEUROMORPHIC COMPONENT MAPPING v2.0                      ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Total cells characterized: 992
+Neuromorphic suitable: 992 (100.0%)
+
+
+━━━ SYNAPTIC COMPONENTS ━━━
+
+◉ ANALOG SYNAPSES: 0 cells
+   Multi-level analog synaptic weights
+
+◐ BINARY SYNAPSES: 166 cells
+   Binary on/off synapses
+   Top cells:
+     1. 0x00069000 (score: 0.80)
+     2. 0x0007B000 (score: 0.80)
+     3. 0x0007E000 (score: 0.80)
+
+◈ STOCHASTIC SYNAPSES: 0 cells
+   Probabilistic synaptic transmission
+
+━━━ NEURON TYPES ━━━
+
+⚡ LIF NEURONS: 1 cells
+   Leaky integrate-and-fire neurons
+   Top cells:
+     1. 0x00050000 (score: 0.62)
+        Decay rate: 0.012/s
+
+⬡ THRESHOLD NEURONS: 100 cells
+   Threshold-based spiking neurons
+   Top cells:
+     1. 0x00001000 (score: 0.93)
+     2. 0x00002000 (score: 0.93)
+     3. 0x00003000 (score: 0.93)
+
+◑ BISTABLE NEURONS: 0 cells
+   Bistable neuron states
+
+━━━ MEMORY SYSTEMS ━━━
+
+▣ WEIGHT STORAGE: 0 cells
+   Stable weight parameter storage
+
+◔ SHORT TERM MEMORY: 0 cells
+   Short-term memory buffers
+
+▮ LONG TERM MEMORY: 724 cells
+   Long-term stable memory
+   Top cells:
+     1. 0x00066000 (score: 0.90)
+     2. 0x00067000 (score: 0.90)
+     3. 0x00068000 (score: 0.90)
+
+━━━ SPECIAL COMPONENTS ━━━
+
+◊ LEAK GENERATORS: 0 cells
+   Controlled charge leakage sources
+
+⬢ COUPLING NODES: 1 cells
+   Inter-cell coupling mediators
+   Top cells:
+     1. 0x00000000 (score: 0.50)
+
+∿ NOISE SOURCES: 0 cells
+   Stochastic noise generators
+
+────────────────────────────────────────────────────────────
+COMPONENT DISTRIBUTION SUMMARY
+────────────────────────────────────────────────────────────
+SYNAPTIC COMPONENTS: 166 cells (16.7%)
+NEURON TYPES: 101 cells (10.2%)
+MEMORY SYSTEMS: 724 cells (73.0%)
+SPECIAL COMPONENTS: 1 cells (0.1%)
+
+============================================================
+NEUROMORPHIC ARCHITECTURE RECOMMENDATIONS
+============================================================
+
+Limited neuromorphic components available.
+Consider focusing on specialized applications or hybrid architectures.
+
+SPECIFIC FINDINGS AND RECOMMENDATIONS:
+
+• Threshold Behavior:
+  Found 100 cells with sharp threshold at burst=3
+  → Ideal for implementing sigmoid-like activation functions
+  → Can create precise switching behavior for decision circuits
+
+
+✅ Comprehensive reports saved to: neuro_char_v2_20250609_172721/
+    • JSON report: neuromorphic_report_v2.json
+    • Cell database: cell_database_complete.pkl
+    • Text summary: comprehensive_summary.txt
+
+────────────────────────────────────────────────────────────
+TIMING SUMMARY
+────────────────────────────────────────────────────────────
+Total characterization time: 10.1 hours
+  phase1: 286.7 minutes (47.3%)
+  phase2: 187.5 minutes (30.9%)
+  phase3: 5.1 minutes (0.8%)
+  phase4: 26.1 minutes (4.3%)
+  phase5: 100.9 minutes (16.6%)
+
+✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ 
+ENHANCED NEUROMORPHIC CHARACTERIZATION COMPLETE!
+Your DRAM's analog soul has been fully mapped.
+Ready for advanced neural computation architectures.
+✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ 
+
+🔌 Serial port closed
+

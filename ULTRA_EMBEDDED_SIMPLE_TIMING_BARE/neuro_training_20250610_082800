@@ -1,0 +1,2265 @@
+eigke@Heigke:~/Dokument/TAIF_ADVANIA/DRAM_research/DRAM_WRITE_READ_SERIAL/ULTRA_EMBEDDED_SIMPLE_TIMING_BARE$ python NEURODRAM_TRAINING_v2.py 
+🔌 Connecting to DDR3 controller on /dev/ttyUSB1...
+✓ Connected @ 115200 baud
+
+🔧 Initializing DDR3 Controller...
+✓ DDR3 Controller Ready!
+
+Weight allocation:
+  Input→Hidden weights: 16 addresses
+  Hidden→Output weights: 8 addresses
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                ║
+║  ███╗   ██╗███████╗██╗   ██╗██████╗  ██████╗ ██████╗ ██████╗  █████╗ ███╗   ███╗  ║
+║  ████╗  ██║██╔════╝██║   ██║██╔══██╗██╔═══██╗██╔══██╗██╔══██╗██╔══██╗████╗ ████║  ║
+║  ██╔██╗ ██║█████╗  ██║   ██║██████╔╝██║   ██║██║  ██║██████╔╝███████║██╔████╔██║  ║
+║  ██║╚██╗██║██╔══╝  ██║   ██║██╔══██╗██║   ██║██║  ██║██╔══██╗██╔══██║██║╚██╔╝██║  ║
+║  ██║ ╚████║███████╗╚██████╔╝██║  ██║╚██████╔╝██████╔╝██║  ██║██║  ██║██║ ╚═╝ ██║  ║
+║  ╚═╝  ╚═══╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝  ║
+║                                                                                ║
+║              Neuromorphic DRAM Learning Network v1.0                           ║
+║           "Teaching Silicon to Think with Analog Memory"                       ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+
+🧠 Initializing Neuromorphic DRAM Network...
+   • Input neurons: 4
+   • Hidden neurons: 4
+   • Output neurons: 2
+   • Using threshold behavior at burst=3
+   • Training patterns: 4
+
+Initializing synaptic weights...
+✓ Weights initialized
+
+Network State Visualization:
+
+     INPUT           HIDDEN          OUTPUT
+   ┌─────────┐    ┌─────────┐    ┌─────────┐
+   │    ○    │  ══╪══  │    ○    │  ══╪══  │    ◐    │
+   │    ○    │  ══╪══  │    ○    │  ══╪══  │    ◐    │
+   │    ○    │  ══╪══  │    ○    │  ══╪══  │         │
+   │    ○    │  ══╪══  │    ○    │  ══╪══  │         │
+   └─────────┘    └─────────┘    └─────────┘
+
+   ◉ Active (>80%)  ◐ Partial (30-80%)  ○ Inactive (<30%)
+
+🎯 Starting training...
+
+================================================================================
+EPOCH 1
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.07 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.13 → activation=0.06
+    O1: input=0.13 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=1.19 → activation=1.00
+    H2: input=0.19 → activation=0.06
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=2.07 → activation=1.00
+    O1: input=2.07 → activation=1.00
+
+  Target: [1, 0]
+  Output: [1.00, 1.00]
+  Error: 1.000
+
+  Updating weights...
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=1.07 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=2.12 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=1.19 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=2.12 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 1 Summary
+────────────────────────────────────────────────────────────
+Average Error: 0.781
+Learning Progress: [████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 21.9%
+
+================================================================================
+EPOCH 2
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.13 → activation=0.06
+    H1: input=0.13 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=0.25 → activation=0.06
+    H2: input=1.19 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 2 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 3
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.13 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=0.25 → activation=0.06
+    H2: input=1.19 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.07 → activation=1.00
+    H1: input=2.07 → activation=1.00
+    H2: input=2.01 → activation=1.00
+    H3: input=2.01 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=3.06 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 3 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 4
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.13 → activation=0.06
+    H1: input=0.07 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=1.07 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=0.19 → activation=0.06
+    H2: input=1.13 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=3.06 → activation=1.00
+    O1: input=0.19 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=1.19 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 4 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 5
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.25 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.07 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.07 → activation=1.00
+    H1: input=1.13 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=2.01 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 5 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+Network State Visualization:
+
+     INPUT           HIDDEN          OUTPUT
+   ┌─────────┐    ┌─────────┐    ┌─────────┐
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ◉    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ○    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   └─────────┘    └─────────┘    └─────────┘
+
+   ◉ Active (>80%)  ◐ Partial (30-80%)  ○ Inactive (<30%)
+
+================================================================================
+EPOCH 6
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.25 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=1.19 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.07 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=2.01 → activation=1.00
+    H3: input=1.07 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 6 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 7
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.25 → activation=0.06
+    H3: input=0.25 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=1.19 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.01 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 7 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 8
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.07 → activation=0.06
+    H1: input=0.25 → activation=0.06
+    H2: input=0.13 → activation=0.06
+    H3: input=0.25 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=2.12 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.07 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=4.00 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 8 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 9
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.13 → activation=0.06
+    H1: input=0.25 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=0.25 → activation=0.06
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 9 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 10
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.25 → activation=0.06
+    H2: input=0.13 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 10 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+Network State Visualization:
+
+     INPUT           HIDDEN          OUTPUT
+   ┌─────────┐    ┌─────────┐    ┌─────────┐
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ◉    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ○    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   └─────────┘    └─────────┘    └─────────┘
+
+   ◉ Active (>80%)  ◐ Partial (30-80%)  ○ Inactive (<30%)
+
+================================================================================
+EPOCH 11
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.25 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=1.19 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=1.19 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 11 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 12
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.13 → activation=0.06
+    H2: input=0.07 → activation=0.06
+    H3: input=0.07 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=1.13 → activation=1.00
+    H2: input=0.19 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.13 → activation=0.06
+    O1: input=2.12 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.01 → activation=1.00
+    H1: input=1.13 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=1.07 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 12 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 13
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.13 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.13 → activation=0.06
+    H3: input=0.07 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.25 → activation=0.06
+    H1: input=2.07 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.13 → activation=0.06
+    O1: input=2.12 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=1.13 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 13 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 14
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.25 → activation=0.06
+    H2: input=0.13 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.07 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=3.06 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 14 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 15
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.13 → activation=0.06
+    H1: input=0.13 → activation=0.06
+    H2: input=0.25 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=0.19 → activation=0.06
+    H2: input=2.01 → activation=1.00
+    H3: input=1.07 → activation=1.00
+  Computing output layer:
+    O0: input=3.06 → activation=1.00
+    O1: input=0.19 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=1.19 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 15 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+Network State Visualization:
+
+     INPUT           HIDDEN          OUTPUT
+   ┌─────────┐    ┌─────────┐    ┌─────────┐
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ◉    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ○    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   └─────────┘    └─────────┘    └─────────┘
+
+   ◉ Active (>80%)  ◐ Partial (30-80%)  ○ Inactive (<30%)
+
+================================================================================
+EPOCH 16
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.07 → activation=0.06
+    H1: input=0.07 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=1.07 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.07 → activation=1.00
+    H1: input=0.13 → activation=0.06
+    H2: input=1.13 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=3.06 → activation=1.00
+    O1: input=0.19 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=0.25 → activation=0.06
+    H2: input=2.12 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=3.06 → activation=1.00
+    O1: input=0.19 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 16 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 17
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.07 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.07 → activation=1.00
+    H1: input=2.07 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=1.19 → activation=1.00
+    H2: input=1.19 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=3.06 → activation=1.00
+    O1: input=0.19 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=3.06 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 17 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 18
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.19 → activation=0.06
+    H2: input=0.25 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=1.19 → activation=1.00
+    H1: input=2.07 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=1.13 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=2.01 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 18 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 19
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.25 → activation=0.06
+    H1: input=0.25 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=1.19 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=2.07 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=3.06 → activation=1.00
+    H1: input=3.06 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 19 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+================================================================================
+EPOCH 20
+================================================================================
+
+Pattern 1: [0, 0, 0, 0] → [0, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.19 → activation=0.06
+    H1: input=0.07 → activation=0.06
+    H2: input=0.13 → activation=0.06
+    H3: input=0.19 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 0]
+  Output: [0.06, 0.06]
+  Error: 0.125
+
+  Updating weights...
+
+Pattern 2: [1, 0, 1, 0] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.07 → activation=1.00
+    H1: input=0.19 → activation=0.06
+    H2: input=1.13 → activation=1.00
+    H3: input=1.19 → activation=1.00
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+  Target: [1, 0]
+  Output: [0.06, 1.00]
+  Error: 1.938
+
+  Updating weights...
+    ↑ H0→O0 strengthened
+    ↑ H1→O0 strengthened
+    ↑ H2→O0 strengthened
+    ↑ H3→O0 strengthened
+    ↓ H0→O1 weakened
+    ↓ H1→O1 weakened
+    ↓ H2→O1 weakened
+    ↓ H3→O1 weakened
+
+Pattern 3: [0, 1, 0, 1] → [1, 0]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=1.13 → activation=1.00
+    H1: input=1.07 → activation=1.00
+    H2: input=1.13 → activation=1.00
+    H3: input=2.07 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [1, 0]
+  Output: [1.00, 0.06]
+  Error: 0.062
+
+Pattern 4: [1, 1, 1, 1] → [0, 1]
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=1.19 → activation=1.00
+    H2: input=2.12 → activation=1.00
+    H3: input=3.06 → activation=1.00
+  Computing output layer:
+    O0: input=4.00 → activation=1.00
+    O1: input=0.25 → activation=0.06
+
+  Target: [0, 1]
+  Output: [1.00, 0.06]
+  Error: 1.938
+
+  Updating weights...
+    ↓ H0→O0 weakened
+    ↓ H1→O0 weakened
+    ↓ H2→O0 weakened
+    ↓ H3→O0 weakened
+    ↑ H0→O1 strengthened
+    ↑ H1→O1 strengthened
+    ↑ H2→O1 strengthened
+    ↑ H3→O1 strengthened
+
+────────────────────────────────────────────────────────────
+Epoch 20 Summary
+────────────────────────────────────────────────────────────
+Average Error: 1.016
+Learning Progress: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0.0%
+
+Network State Visualization:
+
+     INPUT           HIDDEN          OUTPUT
+   ┌─────────┐    ┌─────────┐    ┌─────────┐
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ◉    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ○    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   └─────────┘    └─────────┘    └─────────┘
+
+   ◉ Active (>80%)  ◐ Partial (30-80%)  ○ Inactive (<30%)
+
+================================================================================
+TESTING TRAINED NETWORK
+================================================================================
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:0.1 N2:0.1 N3:0.1 
+  Computing hidden layer:
+    H0: input=0.25 → activation=0.06
+    H1: input=0.13 → activation=0.06
+    H2: input=0.19 → activation=0.06
+    H3: input=0.13 → activation=0.06
+  Computing output layer:
+    O0: input=0.02 → activation=0.06
+    O1: input=0.25 → activation=0.06
+
+Input: [0, 0, 0, 0]
+Target: [0, 0]
+Output: [0, 0] (raw: [0.06, 0.06])
+✓ Correct!
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:0.1 N2:1.0 N3:0.1 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=0.25 → activation=0.06
+    H2: input=1.19 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.19 → activation=0.06
+    O1: input=3.06 → activation=1.00
+
+Input: [1, 0, 1, 0]
+Target: [1, 0]
+Output: [0, 1] (raw: [0.06, 1.00])
+✗ Incorrect
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:0.1 N1:1.0 N2:0.1 N3:1.0 
+  Computing hidden layer:
+    H0: input=2.12 → activation=1.00
+    H1: input=2.01 → activation=1.00
+    H2: input=2.07 → activation=1.00
+    H3: input=1.13 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+Input: [0, 1, 0, 1]
+Target: [1, 0]
+Output: [0, 1] (raw: [0.06, 1.00])
+✗ Incorrect
+
+→ Forward Pass
+  Clearing neurons... ✓
+  Setting inputs: N0:1.0 N1:1.0 N2:1.0 N3:1.0 
+  Computing hidden layer:
+    H0: input=4.00 → activation=1.00
+    H1: input=2.12 → activation=1.00
+    H2: input=3.06 → activation=1.00
+    H3: input=2.12 → activation=1.00
+  Computing output layer:
+    O0: input=0.25 → activation=0.06
+    O1: input=4.00 → activation=1.00
+
+Input: [1, 1, 1, 1]
+Target: [0, 1]
+Output: [0, 1] (raw: [0.06, 1.00])
+✓ Correct!
+
+Accuracy: 50.0% (2/4)
+
+Network State Visualization:
+
+     INPUT           HIDDEN          OUTPUT
+   ┌─────────┐    ┌─────────┐    ┌─────────┐
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ○    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │    ◉    │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   │    ◉    │  ══╪══  │    ◉    │  ══╪══  │         │
+   └─────────┘    └─────────┘    └─────────┘
+
+   ◉ Active (>80%)  ◐ Partial (30-80%)  ○ Inactive (<30%)
+
+✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ 
+Training Complete! Your DRAM has learned!
+✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ ✨ 
+
+🔌 Serial port closed
+

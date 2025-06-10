@@ -1,0 +1,1340 @@
+{
+  "timestamp": "2025-06-10T01:52:55.814097",
+  "results": {
+    "Row coupling": {
+      "avg_coupling": 0.4915254237288136,
+      "max_coupling": 1.0,
+      "results": [
+        {
+          "base_addr": 65536,
+          "neighbor_addr": 65532,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 98308,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 98300,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 131076,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 131068,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 163844,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 163836,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 196612,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 196604,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 229380,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 229372,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 262148,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 262140,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 294916,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 294908,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 327684,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 327676,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 360452,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 360444,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1114116,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1114108,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1376260,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1376252,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1638404,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1638396,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1900548,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1900540,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2162692,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2162684,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2424836,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2424828,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2686980,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2686972,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2949124,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2949116,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3211268,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3211260,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3473412,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3473404,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16842756,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16842748,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17367044,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17367036,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17891332,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17891324,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18415620,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18415612,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18939908,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18939900,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19464196,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19464188,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19988484,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19988476,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20512772,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20512764,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21037060,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21037052,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21561348,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21561340,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        }
+      ]
+    },
+    "Column coupling": {
+      "avg_coupling": 0.1875,
+      "max_coupling": 0.3125,
+      "results": [
+        {
+          "base_addr": 65536,
+          "neighbor_addr": 69632,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 65536,
+          "neighbor_addr": 61440,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 102400,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 94208,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 135168,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 126976,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 167936,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 159744,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 200704,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 192512,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 233472,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 225280,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 266240,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 258048,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 299008,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 290816,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 331776,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 323584,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 364544,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 356352,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1118208,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1110016,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1380352,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1372160,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1642496,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1634304,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1904640,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1896448,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2166784,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2158592,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2428928,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2420736,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2691072,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2682880,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2953216,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2945024,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3215360,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3207168,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3477504,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3469312,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16846848,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16838656,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17371136,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17362944,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17895424,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17887232,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18419712,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18411520,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18944000,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18935808,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19468288,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19460096,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19992576,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19984384,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20516864,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20508672,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21041152,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21032960,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21565440,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21557248,
+          "coupling_strength": 0.0625,
+          "read_data": "44000000"
+        }
+      ]
+    },
+    "Block pattern": {
+      "avg_coupling": 1.0,
+      "max_coupling": 1.0,
+      "results": [
+        {
+          "base_addr": 65536,
+          "neighbor_addr": 69636,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 102404,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 135172,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 167940,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 200708,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 233476,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 266244,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 299012,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 331780,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 364548,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1118212,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1380356,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1642500,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1904644,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2166788,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2428932,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2691076,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2953220,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3215364,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3477508,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16846852,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17371140,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17895428,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18419716,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18944004,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19468292,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19992580,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20516868,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21041156,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21565444,
+          "coupling_strength": 1.0,
+          "read_data": "FFFFFFFF"
+        }
+      ]
+    },
+    "Checkerboard": {
+      "avg_coupling": 0.15625,
+      "max_coupling": 0.3125,
+      "results": [
+        {
+          "base_addr": 65536,
+          "neighbor_addr": 69632,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 65536,
+          "neighbor_addr": 65540,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 102400,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 98304,
+          "neighbor_addr": 98308,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 135168,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 131072,
+          "neighbor_addr": 131076,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 167936,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 163840,
+          "neighbor_addr": 163844,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 200704,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 196608,
+          "neighbor_addr": 196612,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 233472,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 229376,
+          "neighbor_addr": 229380,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 266240,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 262144,
+          "neighbor_addr": 262148,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 299008,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 294912,
+          "neighbor_addr": 294916,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 331776,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 327680,
+          "neighbor_addr": 327684,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 364544,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 360448,
+          "neighbor_addr": 360452,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1118208,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1114112,
+          "neighbor_addr": 1114116,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1380352,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1376256,
+          "neighbor_addr": 1376260,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1642496,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1638400,
+          "neighbor_addr": 1638404,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1904640,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 1900544,
+          "neighbor_addr": 1900548,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2166784,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2162688,
+          "neighbor_addr": 2162692,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2428928,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2424832,
+          "neighbor_addr": 2424836,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2691072,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2686976,
+          "neighbor_addr": 2686980,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2953216,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 2949120,
+          "neighbor_addr": 2949124,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3215360,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 3211264,
+          "neighbor_addr": 3211268,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3477504,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 3473408,
+          "neighbor_addr": 3473412,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16846848,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 16842752,
+          "neighbor_addr": 16842756,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17371136,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 17367040,
+          "neighbor_addr": 17367044,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17895424,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 17891328,
+          "neighbor_addr": 17891332,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18419712,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 18415616,
+          "neighbor_addr": 18415620,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18944000,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 18939904,
+          "neighbor_addr": 18939908,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19468288,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 19464192,
+          "neighbor_addr": 19464196,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19992576,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 19988480,
+          "neighbor_addr": 19988484,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20516864,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 20512768,
+          "neighbor_addr": 20512772,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21041152,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 21037056,
+          "neighbor_addr": 21037060,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21565440,
+          "coupling_strength": 0.3125,
+          "read_data": "ABD90000"
+        },
+        {
+          "base_addr": 21561344,
+          "neighbor_addr": 21561348,
+          "coupling_strength": 0.0,
+          "read_data": "00000000"
+        }
+      ]
+    },
+    "distance_analysis": {
+      "4": {
+        "avg_coupling": 0.0625,
+        "max_coupling": 0.0625,
+        "detection_rate": 0.5
+      },
+      "8": {
+        "avg_coupling": 0.375,
+        "max_coupling": 1.0,
+        "detection_rate": 0.75
+      },
+      "16": {
+        "avg_coupling": 0.0625,
+        "max_coupling": 0.0625,
+        "detection_rate": 1.0
+      },
+      "32": {
+        "avg_coupling": 0.0625,
+        "max_coupling": 0.0625,
+        "detection_rate": 1.0
+      },
+      "64": {
+        "avg_coupling": 0.0625,
+        "max_coupling": 0.0625,
+        "detection_rate": 1.0
+      },
+      "128": {
+        "avg_coupling": 0.2953125,
+        "max_coupling": 0.9375,
+        "detection_rate": 1.0
+      },
+      "256": {
+        "avg_coupling": 0.303515625,
+        "max_coupling": 0.9375,
+        "detection_rate": 1.0
+      },
+      "512": {
+        "avg_coupling": 0.3072916666666667,
+        "max_coupling": 0.90625,
+        "detection_rate": 0.975
+      },
+      "1024": {
+        "avg_coupling": 0.18285472972972974,
+        "max_coupling": 0.875,
+        "detection_rate": 0.925
+      },
+      "2048": {
+        "avg_coupling": 0.24241071428571428,
+        "max_coupling": 0.875,
+        "detection_rate": 0.875
+      },
+      "4096": {
+        "avg_coupling": 0.25357142857142856,
+        "max_coupling": 0.90625,
+        "detection_rate": 0.875
+      }
+    }
+  }
+}
